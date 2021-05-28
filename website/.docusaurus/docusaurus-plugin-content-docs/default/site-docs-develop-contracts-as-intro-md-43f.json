@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/as/intro",
+  "id": "develop/contracts/as/intro",
+  "isDocsHomePage": false,
+  "title": "AssemblyScript",
+  "description": "The NEAR platform supports writing contracts in Rust and AssemblyScript.",
+  "source": "@site/../docs/develop/contracts/as/intro.md",
+  "sourceDirName": "develop/contracts/as",
+  "slug": "/develop/contracts/as/intro",
+  "permalink": "/docs/develop/contracts/as/intro",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/intro.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Introduction",
+  "frontMatter": {
+    "id": "intro",
+    "title": "AssemblyScript",
+    "sidebar_label": "Introduction"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Smart Contract Overview",
+    "permalink": "/docs/develop/contracts/overview"
+  },
+  "next": {
+    "title": "near-sdk-as",
+    "permalink": "/docs/develop/contracts/as/near-sdk-as"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/basics/create-account",
+  "id": "develop/basics/create-account",
+  "isDocsHomePage": false,
+  "title": "Creating a NEAR Account",
+  "description": "The easiest way to create an account on NEAR is with NEAR Wallet. NEAR has several development networks operating independently of each other with their own accountIDs. Below we have guides for creating account for two of these networks:",
+  "source": "@site/../docs/develop/basics/create-account.md",
+  "sourceDirName": "develop/basics",
+  "slug": "/develop/basics/create-account",
+  "permalink": "/docs/develop/basics/create-account",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/create-account.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Create Account",
+  "frontMatter": {
+    "id": "create-account",
+    "title": "Creating a NEAR Account",
+    "sidebar_label": "Create Account"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/docs/develop/basics/getting-started"
+  },
+  "next": {
+    "title": "Hackathon Startup Guide",
+    "permalink": "/docs/develop/basics/hackathon-startup-guide"
+  }
+}

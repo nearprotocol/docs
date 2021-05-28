@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tools/near-explorer",
+  "id": "tools/near-explorer",
+  "isDocsHomePage": false,
+  "title": "NEAR Explorer",
+  "description": "NEAR Explorer allows you to view block creations in real time! This useful tool allows you to search for transactions and accounts allowing you to view all interactions between users and smart contracts.",
+  "source": "@site/../docs/tools/near-explorer.md",
+  "sourceDirName": "tools",
+  "slug": "/tools/near-explorer",
+  "permalink": "/docs/tools/near-explorer",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-explorer.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "NEAR Explorer",
+  "frontMatter": {
+    "id": "near-explorer",
+    "title": "NEAR Explorer",
+    "sidebar_label": "NEAR Explorer"
+  },
+  "sidebar": "tools",
+  "previous": {
+    "title": "NEAR CLI",
+    "permalink": "/docs/tools/near-cli"
+  },
+  "next": {
+    "title": "NEAR Wallet",
+    "permalink": "/docs/tools/near-wallet"
+  }
+}

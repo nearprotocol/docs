@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/as/testing-as-contracts",
+  "id": "develop/contracts/as/testing-as-contracts",
+  "isDocsHomePage": false,
+  "title": "Testing AssemblyScript Contracts",
+  "description": "A multiplayer \"Place\" game with shared world state.",
+  "source": "@site/../docs/develop/contracts/as/testing.md",
+  "sourceDirName": "develop/contracts/as",
+  "slug": "/develop/contracts/as/testing-as-contracts",
+  "permalink": "/docs/develop/contracts/as/testing-as-contracts",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/testing.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Testing",
+  "frontMatter": {
+    "id": "testing-as-contracts",
+    "title": "Testing AssemblyScript Contracts",
+    "sidebar_label": "Testing"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "near-sdk-as",
+    "permalink": "/docs/develop/contracts/as/near-sdk-as"
+  },
+  "next": {
+    "title": "Rust",
+    "permalink": "/docs/develop/contracts/rust/intro"
+  }
+}

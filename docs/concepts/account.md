@@ -124,7 +124,7 @@ Another way to create a `FunctionAccess` key is to use `near-cli`'s [`add-key`](
 
 If you're familiar with development on Ethereum, it's worth making a quick note about how accounts are different. The image below summarizes some key differences.
 
-![Ethereum vs NEAR accounts](/docs/assets/accounts-compare-ethereum-v-near.png)
+![Ethereum vs NEAR accounts](/img/accounts-compare-ethereum-v-near.png)
 
 _image source: medium.com/@clinder_
 

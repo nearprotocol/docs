@@ -1,0 +1,27 @@
+{
+  "unversionedId": "tokens/token-custody",
+  "id": "tokens/token-custody",
+  "isDocsHomePage": false,
+  "title": "Token Custody Options",
+  "description": "There are several options available to manage your NEAR and NEAR-based assets.",
+  "source": "@site/../docs/tokens/token-custody.md",
+  "sourceDirName": "tokens",
+  "slug": "/tokens/token-custody",
+  "permalink": "/docs/tokens/token-custody",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tokens/token-custody.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Token Custody",
+  "frontMatter": {
+    "id": "token-custody",
+    "title": "Token Custody Options",
+    "sidebar_label": "Token Custody"
+  },
+  "sidebar": "tokens",
+  "next": {
+    "title": "Lockups Explained",
+    "permalink": "/docs/tokens/lockup"
+  }
+}

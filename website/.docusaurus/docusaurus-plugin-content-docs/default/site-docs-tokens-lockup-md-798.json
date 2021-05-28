@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tokens/lockup",
+  "id": "tokens/lockup",
+  "isDocsHomePage": false,
+  "title": "Lockups Explained",
+  "description": "These docs include information about lockups in general, how they are implemented on NEAR, some of the challenges this causes and how you can delegate your locked tokens.",
+  "source": "@site/../docs/tokens/lockup.md",
+  "sourceDirName": "tokens",
+  "slug": "/tokens/lockup",
+  "permalink": "/docs/tokens/lockup",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tokens/lockup.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Lockups Explained",
+  "frontMatter": {
+    "id": "lockup",
+    "title": "Lockups Explained",
+    "sidebar_label": "Lockups Explained"
+  },
+  "sidebar": "tokens",
+  "previous": {
+    "title": "Token Custody Options",
+    "permalink": "/docs/tokens/token-custody"
+  },
+  "next": {
+    "title": "Token Delegation",
+    "permalink": "/docs/validator/delegation"
+  }
+}

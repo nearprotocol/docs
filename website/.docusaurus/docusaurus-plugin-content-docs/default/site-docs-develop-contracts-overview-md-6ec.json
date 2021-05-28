@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/overview",
+  "id": "develop/contracts/overview",
+  "isDocsHomePage": false,
+  "title": "Smart Contract Overview",
+  "description": "Smart Contracts are the back-end of your application that runs code and stores data on the blockchain. All smart contracts on NEAR must be compiled to WebAssembly or simply WASM. Currently, we support two languages AssemblyScript and Rust with custom software development kits (SDKs) to assist in their creation.",
+  "source": "@site/../docs/develop/contracts/overview.md",
+  "sourceDirName": "develop/contracts",
+  "slug": "/develop/contracts/overview",
+  "permalink": "/docs/develop/contracts/overview",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/overview.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Overview",
+  "frontMatter": {
+    "id": "overview",
+    "title": "Smart Contract Overview",
+    "sidebar_label": "Overview"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "near-api-js",
+    "permalink": "/docs/develop/front-end/near-api-js"
+  },
+  "next": {
+    "title": "AssemblyScript",
+    "permalink": "/docs/develop/contracts/as/intro"
+  }
+}

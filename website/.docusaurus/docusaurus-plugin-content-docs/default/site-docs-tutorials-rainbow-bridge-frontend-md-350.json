@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/rainbow-bridge-frontend-mainnet",
+  "id": "tutorials/rainbow-bridge-frontend-mainnet",
+  "isDocsHomePage": false,
+  "title": "Using the Rainbow Bridge (MainNet)",
+  "description": "Tutorial Prerequisites",
+  "source": "@site/../docs/tutorials/rainbow-bridge-frontend.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/rainbow-bridge-frontend-mainnet",
+  "permalink": "/docs/tutorials/rainbow-bridge-frontend-mainnet",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/rainbow-bridge-frontend.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Using Mainnet Frontend",
+  "frontMatter": {
+    "id": "rainbow-bridge-frontend-mainnet",
+    "title": "Using the Rainbow Bridge (MainNet)",
+    "sidebar_label": "Using Mainnet Frontend"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "An Introduction to Rust Smart Contracts",
+    "permalink": "/docs/tutorials/contracts/intro-to-rust"
+  },
+  "next": {
+    "title": "Experimenting with the Rainbow Bridge (TestNet)",
+    "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet"
+  }
+}

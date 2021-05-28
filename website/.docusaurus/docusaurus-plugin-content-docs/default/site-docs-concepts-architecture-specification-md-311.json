@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/architecture/specification",
+  "id": "concepts/architecture/specification",
+  "isDocsHomePage": false,
+  "title": "NEAR Protocol Specification",
+  "description": "NEAR Protocol Specifications and Standards are tracked in two places:",
+  "source": "@site/../docs/concepts/architecture/specification.md",
+  "sourceDirName": "concepts/architecture",
+  "slug": "/concepts/architecture/specification",
+  "permalink": "/docs/concepts/architecture/specification",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/architecture/specification.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Specification",
+  "frontMatter": {
+    "id": "specification",
+    "title": "NEAR Protocol Specification",
+    "sidebar_label": "Specification"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "Transaction",
+    "permalink": "/docs/concepts/transaction"
+  },
+  "next": {
+    "title": "Papers",
+    "permalink": "/docs/concepts/architecture/papers"
+  }
+}

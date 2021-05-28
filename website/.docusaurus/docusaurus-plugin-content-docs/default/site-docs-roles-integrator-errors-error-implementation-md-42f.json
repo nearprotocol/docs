@@ -1,0 +1,31 @@
+{
+  "unversionedId": "roles/integrator/errors/error-implementation",
+  "id": "roles/integrator/errors/error-implementation",
+  "isDocsHomePage": false,
+  "title": "Source Code Survey",
+  "description": "This page provides a very high level, sometimes \"pseudocode\", view of error types and related messages as implemented by the NEAR platform.",
+  "source": "@site/../docs/roles/integrator/errors/error-implementation.md",
+  "sourceDirName": "roles/integrator/errors",
+  "slug": "/roles/integrator/errors/error-implementation",
+  "permalink": "/docs/roles/integrator/errors/error-implementation",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/errors/error-implementation.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Source Code Survey",
+  "frontMatter": {
+    "id": "error-implementation",
+    "title": "Source Code Survey",
+    "sidebar_label": "Source Code Survey"
+  },
+  "sidebar": "integrate",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/roles/integrator/errors/introduction"
+  },
+  "next": {
+    "title": "Token Loss",
+    "permalink": "/docs/roles/integrator/token-loss"
+  }
+}

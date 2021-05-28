@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Source Code Survey · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description"
+    content="This page provides a very high level, sometimes &quot;pseudocode&quot;, view of error types and related messages as implemented by the NEAR platform." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Source Code Survey · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="This page provides a very high level, sometimes &quot;pseudocode&quot;, view of error types and related messages as implemented by the NEAR platform." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/roles/integrator/exchange-integration"
+                  target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Understanding Errors</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Integration</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/exchange-integration">Exchange Integration</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/implicit-accounts">Implicit
+                        Accounts</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Understanding Errors</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/errors/introduction">Introduction</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/roles/integrator/errors/error-implementation">Source Code Survey</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/token-loss">Token Loss</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/faq">Integrator FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/roles/integrator/errors/error-implementation.md"
+                target="_blank" rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Source Code Survey</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p>This page provides a very high level, sometimes &quot;pseudocode&quot;, view of error types and
+                    related messages as implemented by the NEAR platform.</p>
+                  <p>Errors raised by the NEAR platform are implemented in the following locations in
+                    <code>nearcore</code>:</p>
+                  <ul>
+                    <li><a
+                        href="https://github.com/near/nearcore/blob/master/core/primitives/src/errors.rs">nearcore/core/primitives/src/errors.rs</a>
+                    </li>
+                    <li><a
+                        href="https://github.com/near/nearcore/blob/master/runtime/near-vm-errors/src/lib.rs">nearcore/runtime/near-vm-errors/src/lib.rs</a>
+                    </li>
+                  </ul>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="runtimeerror-and-subtypes"></a><a
+                      href="#runtimeerror-and-subtypes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>RuntimeError and subtypes</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="runtimeerror"></a><a href="#runtimeerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>RuntimeError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition"></a><a href="#definition" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Error returned from `Runtime::apply`</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">RuntimeError</span></span> {
+    <span class="hljs-comment">/// An unexpected integer overflow occurred. The likely issue is an invalid state or the transition.</span>
+    UnexpectedIntegerOverflow,
+    <span class="hljs-comment">/// An error happened during TX verification and account charging. It's likely the chunk is invalid.</span>
+    <span class="hljs-comment">/// and should be challenged.</span>
+    InvalidTxError(InvalidTxError),
+    <span class="hljs-comment">/// Unexpected error which is typically related to the node storage corruption.account</span>
+    <span class="hljs-comment">/// That it's possible the input state is invalid or malicious.</span>
+    StorageError(StorageError),
+    <span class="hljs-comment">/// An error happens if `check_balance` fails, which is likely an indication of an invalid state.</span>
+    BalanceMismatchError(BalanceMismatchError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages"></a><a href="#error-messages"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <ul>
+                    <li>see below: <code>InvalidTxError</code>, <code>StorageError</code> and
+                      <code>BalanceMismatchError</code></li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true" id="invalidtxerror"></a><a href="#invalidtxerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>InvalidTxError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-1"></a><a href="#definition-1"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// An error happened during TX execution</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">InvalidTxError</span></span> {
+    <span class="hljs-comment">/// Happens if a wrong AccessKey used or AccessKey has not enough permissions</span>
+    InvalidAccessKeyError(InvalidAccessKeyError),
+    <span class="hljs-comment">/// TX signer_id is not in a valid format or not satisfy requirements see `near_core::primitives::utils::is_valid_account_id`</span>
+    InvalidSignerId { signer_id: AccountId },
+    <span class="hljs-comment">/// TX signer_id is not found in a storage</span>
+    SignerDoesNotExist { signer_id: AccountId },
+    <span class="hljs-comment">/// Transaction nonce must be account[access_key].nonce + 1</span>
+    InvalidNonce { tx_nonce: Nonce, ak_nonce: Nonce },
+    <span class="hljs-comment">/// TX receiver_id is not in a valid format or not satisfy requirements see `near_core::primitives::utils::is_valid_account_id`</span>
+    InvalidReceiverId { receiver_id: AccountId },
+    <span class="hljs-comment">/// TX signature is not valid</span>
+    InvalidSignature,
+    <span class="hljs-comment">/// Account does not have enough balance to cover TX cost</span>
+    NotEnoughBalance {
+        signer_id: AccountId,
+        balance: Balance,
+        cost: Balance,
+    },
+    <span class="hljs-comment">/// Signer account rent is unpaid</span>
+    RentUnpaid {
+        <span class="hljs-comment">/// An account which is required to pay the rent</span>
+        signer_id: AccountId,
+        <span class="hljs-comment">/// Required balance to cover the state rent</span>
+        amount: Balance,
+    },
+    <span class="hljs-comment">/// An integer overflow occurred during transaction cost estimation.</span>
+    CostOverflow,
+    <span class="hljs-comment">/// Transaction parent block hash doesn't belong to the current chain</span>
+    InvalidChain,
+    <span class="hljs-comment">/// Transaction has expired</span>
+    Expired,
+    <span class="hljs-comment">/// An error occurred while validating actions of a Transaction.</span>
+    ActionsValidation(ActionsValidationError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-1"></a><a href="#error-messages-1"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">InvalidTxError::InvalidSignerId { signer_id }
+    <span class="hljs-string">"Invalid signer account ID {:?} according to requirements"</span>
+
+InvalidTxError::SignerDoesNotExist { signer_id }
+    <span class="hljs-string">"Signer {:?} does not exist"</span>
+
+InvalidTxError::InvalidAccessKeyError(access_key_error)
+
+InvalidTxError::InvalidNonce { tx_nonce, ak_nonce }
+    <span class="hljs-string">"Transaction nonce {} must be larger than nonce of the used access key {}"</span>
+
+InvalidTxError::InvalidReceiverId { receiver_id }
+    <span class="hljs-string">"Invalid receiver account ID {:?} according to requirements"</span>
+
+InvalidTxError::InvalidSignature
+    <span class="hljs-string">"Transaction is not signed with the given public key"</span>
+
+InvalidTxError::NotEnoughBalance { signer_id, balance, cost }
+    <span class="hljs-string">"Sender {:?} does not have enough balance {} for operation costing {}"</span>
+
+InvalidTxError::RentUnpaid { signer_id, amount }
+    <span class="hljs-string">"Failed to execute, because the account {:?} wouldn't have enough to pay required rent {}"</span> 
+
+InvalidTxError::CostOverflow
+    <span class="hljs-string">"Transaction gas or balance cost is too high"</span>
+
+InvalidTxError::InvalidChain
+    <span class="hljs-string">"Transaction parent block hash doesn't belong to the current chain"</span>
+
+InvalidTxError::Expired
+    <span class="hljs-string">"Transaction has expired"</span>
+
+InvalidTxError::ActionsValidation(error)
+    <span class="hljs-string">"Transaction actions validation error: {}"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="storageerror"></a><a href="#storageerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>StorageError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-2"></a><a href="#definition-2"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">StorageError</span></span> {
+    <span class="hljs-comment">/// Key-value db internal failure</span>
+    StorageInternalError,
+    <span class="hljs-comment">/// Storage is PartialStorage and requested a missing trie node</span>
+    TrieNodeMissing,
+    <span class="hljs-comment">/// Either invalid state or key-value db is corrupted.</span>
+    <span class="hljs-comment">/// For PartialStorage it cannot be corrupted.</span>
+    <span class="hljs-comment">/// Error message is unreliable and for debugging purposes only. It's also probably ok to</span>
+    <span class="hljs-comment">/// panic in every place that produces this error.</span>
+    <span class="hljs-comment">/// We can check if db is corrupted by verifying everything in the state trie.</span>
+    StorageInconsistentState(<span class="hljs-built_in">String</span>),
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="balancemismatcherror"></a><a href="#balancemismatcherror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>BalanceMismatchError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-3"></a><a href="#definition-3"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Happens when the input balance doesn't match the output balance in Runtime apply.</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BalanceMismatchError</span></span> {
+    <span class="hljs-comment">// Input balances</span>
+    <span class="hljs-keyword">pub</span> incoming_validator_rewards: Balance,
+    <span class="hljs-keyword">pub</span> initial_accounts_balance: Balance,
+    <span class="hljs-keyword">pub</span> incoming_receipts_balance: Balance,
+    <span class="hljs-keyword">pub</span> processed_delayed_receipts_balance: Balance,
+    <span class="hljs-keyword">pub</span> initial_postponed_receipts_balance: Balance,
+    <span class="hljs-comment">// Output balances</span>
+    <span class="hljs-keyword">pub</span> final_accounts_balance: Balance,
+    <span class="hljs-keyword">pub</span> outgoing_receipts_balance: Balance,
+    <span class="hljs-keyword">pub</span> new_delayed_receipts_balance: Balance,
+    <span class="hljs-keyword">pub</span> final_postponed_receipts_balance: Balance,
+    <span class="hljs-keyword">pub</span> total_rent_paid: Balance,
+    <span class="hljs-keyword">pub</span> total_validator_reward: Balance,
+    <span class="hljs-keyword">pub</span> total_balance_burnt: Balance,
+    <span class="hljs-keyword">pub</span> total_balance_slashed: Balance,
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-2"></a><a href="#error-messages-2"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-string">"Balance Mismatch Error. The input balance {} doesn't match output balance {}\n\
+Inputs:\n\
+    \tIncoming validator rewards sum: {}\n\
+    \tInitial accounts balance sum: {}\n\
+    \tIncoming receipts balance sum: {}\n\
+    \tProcessed delayed receipts balance sum: {}\n\
+    \tInitial postponed receipts balance sum: {}\n\
+Outputs:\n\
+    \tFinal accounts balance sum: {}\n\
+    \tOutgoing receipts balance sum: {}\n\
+    \tNew delayed receipts balance sum: {}\n\
+    \tFinal postponed receipts balance sum: {}\n\
+    \tTotal rent paid: {}\n\
+    \tTotal validators reward: {}\n\
+    \tTotal balance burnt: {}\n\
+    \tTotal balance slashed: {}"</span>,
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="invalidaccesskeyerror"></a><a
+                      href="#invalidaccesskeyerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>InvalidAccessKeyError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-4"></a><a href="#definition-4"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">InvalidAccessKeyError</span></span> {
+    <span class="hljs-comment">/// The access key identified by the `public_key` doesn't exist for the account</span>
+    AccessKeyNotFound { account_id: AccountId, public_key: PublicKey },
+    <span class="hljs-comment">/// Transaction `receiver_id` doesn't match the access key receiver_id</span>
+    ReceiverMismatch { tx_receiver: AccountId, ak_receiver: AccountId },
+    <span class="hljs-comment">/// Transaction method name isn't allowed by the access key</span>
+    MethodNameMismatch { method_name: <span class="hljs-built_in">String</span> },
+    <span class="hljs-comment">/// Transaction requires a full permission access key.</span>
+    RequiresFullAccess,
+    <span class="hljs-comment">/// Access Key does not have enough allowance to cover transaction cost</span>
+    NotEnoughAllowance {
+        account_id: AccountId,
+        public_key: PublicKey,
+        allowance: Balance,
+        cost: Balance,
+    },
+    <span class="hljs-comment">/// Having a deposit with a function call action is not allowed with a function call access key.</span>
+    DepositWithFunctionCall,
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-3"></a><a href="#error-messages-3"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">InvalidAccessKeyError::AccessKeyNotFound { account_id, public_key }
+    <span class="hljs-string">"Signer {:?} doesn't have access key with the given public_key {}"</span>
+
+InvalidAccessKeyError::ReceiverMismatch { tx_receiver, ak_receiver }
+    <span class="hljs-string">"Transaction receiver_id {:?} doesn't match the access key receiver_id {:?}"</span>
+
+InvalidAccessKeyError::MethodNameMismatch { method_name }
+    <span class="hljs-string">"Transaction method name {:?} isn't allowed by the access key"</span>
+
+InvalidAccessKeyError::RequiresFullAccess
+    <span class="hljs-string">"The transaction contains more then one action, but it was signed \
+     with an access key which allows transaction to apply only one specific action. \
+     To apply more then one actions TX must be signed with a full access key"</span>
+
+InvalidAccessKeyError::NotEnoughAllowance { account_id, public_key, allowance, cost }
+    <span class="hljs-string">"Access Key {:?}:{} does not have enough balance {} for transaction costing {}"</span>
+
+InvalidAccessKeyError::DepositWithFunctionCall
+    <span class="hljs-string">"Having a deposit with a function call action is not allowed with a function call access key."</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="actionsvalidationerror"></a><a
+                      href="#actionsvalidationerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>ActionsValidationError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-5"></a><a href="#definition-5"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Describes the error for validating a list of actions.</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">ActionsValidationError</span></span> {
+    <span class="hljs-comment">/// The total prepaid gas (for all given actions) exceeded the limit.</span>
+    TotalPrepaidGasExceeded { total_prepaid_gas: Gas, limit: Gas },
+    <span class="hljs-comment">/// The number of actions exceeded the given limit.</span>
+    TotalNumberOfActionsExceeded { total_number_of_actions: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The total number of bytes of the method names exceeded the limit in a Add Key action.</span>
+    AddKeyMethodNamesNumberOfBytesExceeded { total_number_of_bytes: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The length of some method name exceeded the limit in a Add Key action.</span>
+    AddKeyMethodNameLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Integer overflow during a compute.</span>
+    IntegerOverflow,
+    <span class="hljs-comment">/// Invalid account ID.</span>
+    InvalidAccountId { account_id: AccountId },
+    <span class="hljs-comment">/// The size of the contract code exceeded the limit in a DeployContract action.</span>
+    ContractSizeExceeded { size: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The length of the method name exceeded the limit in a Function Call action.</span>
+    FunctionCallMethodNameLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The length of the arguments exceeded the limit in a Function Call action.</span>
+    FunctionCallArgumentsLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-4"></a><a href="#error-messages-4"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">ActionsValidationError::TotalPrepaidGasExceeded     { total_prepaid_gas, limit }
+     <span class="hljs-string">"The total prepaid gas {} exceeds the limit {}"</span>
+     
+ActionsValidationError::TotalNumberOfActionsExceeded {total_number_of_actions, limit }
+     <span class="hljs-string">"The total number of actions {} exceeds the limit {}"</span>
+     
+ActionsValidationError::AddKeyMethodNamesNumberOfBytesExceeded { total_number_of_bytes, limit }
+     <span class="hljs-string">"The total number of bytes in allowed method names {} exceeds the maximum allowed number {} in a AddKey action"</span>
+     
+ActionsValidationError::AddKeyMethodNameLengthExceeded { length, limit }
+     <span class="hljs-string">"The length of some method name {} exceeds the maximum allowed length {} in a AddKey action"</span>
+     
+ActionsValidationError::IntegerOverflow
+     <span class="hljs-string">"Integer overflow during a compute"</span>
+     
+ActionsValidationError::InvalidAccountId { account_id }
+     <span class="hljs-string">"Invalid account ID `{}`"</span>
+     
+ActionsValidationError::ContractSizeExceeded { size, limit }
+     <span class="hljs-string">"The length of the contract size {} exceeds the maximum allowed size {} in a DeployContract action"</span>
+     
+ActionsValidationError::FunctionCallMethodNameLengthExceeded { length, limit }
+     <span class="hljs-string">"The length of the method name {} exceeds the maximum allowed length {} in a FunctionCall action"</span>
+     
+ActionsValidationError::FunctionCallArgumentsLengthExceeded { length, limit }
+     <span class="hljs-string">"The length of the arguments {} exceeds the maximum allowed length {} in a FunctionCall action"</span>
+     
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="txexecutionerror-and-subtypes"></a><a
+                      href="#txexecutionerror-and-subtypes" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>TxExecutionError and subtypes</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="txexecutionerror"></a><a href="#txexecutionerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>TxExecutionError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-6"></a><a href="#definition-6"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Error returned in the ExecutionOutcome in case of failure</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">TxExecutionError</span></span> {
+    <span class="hljs-comment">/// An error happened during Acton execution</span>
+    ActionError(ActionError),
+    <span class="hljs-comment">/// An error happened during Transaction execution</span>
+    InvalidTxError(InvalidTxError),
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="actionerror"></a><a href="#actionerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>ActionError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-7"></a><a href="#definition-7"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust">ActionError
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ActionError</span></span> {
+    <span class="hljs-comment">/// Index of the failed action in the transaction.</span>
+    <span class="hljs-comment">/// Action index is not defined if ActionError.kind is `ActionErrorKind::RentUnpaid`</span>
+    <span class="hljs-keyword">pub</span> index: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">u64</span>&gt;,
+    <span class="hljs-comment">/// The kind of ActionError happened</span>
+    <span class="hljs-keyword">pub</span> kind: ActionErrorKind,
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="actionerrorkind"></a><a href="#actionerrorkind"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>ActionErrorKind</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-8"></a><a href="#definition-8"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">ActionErrorKind</span></span> {
+    <span class="hljs-comment">/// Happens when CreateAccount action tries to create an account with account_id which is already exists in the storage</span>
+    AccountAlreadyExists { account_id: AccountId },
+    <span class="hljs-comment">/// Happens when TX receiver_id doesn't exist (but action is not Action::CreateAccount)</span>
+    AccountDoesNotExist { account_id: AccountId },
+    <span class="hljs-comment">/// A newly created account must be under a namespace of the creator account</span>
+    CreateAccountNotAllowed { account_id: AccountId, predecessor_id: AccountId },
+    <span class="hljs-comment">/// Administrative actions like `DeployContract`, `Stake`, `AddKey`, `DeleteKey`. can be proceed only if sender=receiver</span>
+    <span class="hljs-comment">/// or the first TX action is a `CreateAccount` action</span>
+    ActorNoPermission { account_id: AccountId, actor_id: AccountId },
+    <span class="hljs-comment">/// Account tries to remove an access key that doesn't exist</span>
+    DeleteKeyDoesNotExist { account_id: AccountId, public_key: PublicKey },
+    <span class="hljs-comment">/// The public key is already used for an existing access key</span>
+    AddKeyAlreadyExists { account_id: AccountId, public_key: PublicKey },
+    <span class="hljs-comment">/// Account is staking and can not be deleted</span>
+    DeleteAccountStaking { account_id: AccountId },
+    <span class="hljs-comment">/// Foreign sender (sender=!receiver) can delete an account only if a target account hasn't enough tokens to pay rent</span>
+    DeleteAccountHasRent {
+        account_id: AccountId,
+        balance: Balance,
+    },
+    <span class="hljs-comment">/// ActionReceipt can't be completed, because the remaining balance will not be enough to pay rent.</span>
+    RentUnpaid {
+        <span class="hljs-comment">/// An account which is required to pay the rent</span>
+        account_id: AccountId,
+        <span class="hljs-comment">/// Rent due to pay.</span>
+        amount: Balance,
+    },
+    <span class="hljs-comment">/// Account is not yet staked, but tries to unstake</span>
+    TriesToUnstake { account_id: AccountId },
+    <span class="hljs-comment">/// The account doesn't have enough balance to increase the stake.</span>
+    TriesToStake {
+        account_id: AccountId,
+        stake: Balance,
+        locked: Balance,
+        balance: Balance,
+    },
+    <span class="hljs-comment">/// An error occurred during a `FunctionCall` Action.</span>
+    FunctionCallError(FunctionCallError),
+    <span class="hljs-comment">/// Error occurs when a new `ActionReceipt` created by the `FunctionCall` action fails</span>
+    <span class="hljs-comment">/// receipt validation.</span>
+    NewReceiptValidationError(ReceiptValidationError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-5"></a><a href="#error-messages-5"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">ActionErrorKind::AccountAlreadyExists { account_id } 
+<span class="hljs-string">"Can't create a new account {:?}, because it already exists"</span>
+
+ActionErrorKind::AccountDoesNotExist { account_id } 
+<span class="hljs-string">"Can't complete the action because account {:?} doesn't exist"</span>
+
+ActionErrorKind::ActorNoPermission { actor_id, account_id } 
+<span class="hljs-string">"Actor {:?} doesn't have permission to account {:?} to complete the action"</span>
+
+ActionErrorKind::RentUnpaid { account_id, amount } 
+<span class="hljs-string">"The account {} wouldn't have enough balance to pay required rent {}"</span>
+
+ActionErrorKind::TriesToUnstake { account_id } 
+<span class="hljs-string">"Account {:?} is not yet staked, but tries to unstake"</span>
+
+ActionErrorKind::TriesToStake { account_id, stake, locked, balance } 
+<span class="hljs-string">"Account {:?} tries to stake {}, but has staked {} and only has {}"</span>
+
+ActionErrorKind::CreateAccountNotAllowed { account_id, predecessor_id } 
+<span class="hljs-string">"The new account_id {:?} can't be created by {:?}"</span>
+
+ActionErrorKind::DeleteKeyDoesNotExist { account_id, .. } 
+<span class="hljs-string">"Account {:?} tries to remove an access key that doesn't exist"</span>
+
+ActionErrorKind::AddKeyAlreadyExists { public_key, .. } 
+<span class="hljs-string">"The public key {:?} is already used for an existing access key"</span>
+
+ActionErrorKind::DeleteAccountStaking { account_id }
+<span class="hljs-string">"Account {:?} is staking and can not be deleted"</span>
+
+ActionErrorKind::DeleteAccountHasRent { account_id, balance } 
+<span class="hljs-string">"Account {:?} can't be deleted. It has {}, which is enough to cover the rent"</span>
+
+ActionErrorKind::FunctionCallError(s) 
+
+ActionErrorKind::NewReceiptValidationError(e) 
+<span class="hljs-string">"An new action receipt created during a FunctionCall is not valid: {}"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="receiptvalidationerror"></a><a
+                      href="#receiptvalidationerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>ReceiptValidationError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-9"></a><a href="#definition-9"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Describes the error for validating a receipt.</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">ReceiptValidationError</span></span> {
+    <span class="hljs-comment">/// The `predecessor_id` of a Receipt is not valid.</span>
+    InvalidPredecessorId { account_id: AccountId },
+    <span class="hljs-comment">/// The `receiver_id` of a Receipt is not valid.</span>
+    InvalidReceiverId { account_id: AccountId },
+    <span class="hljs-comment">/// The `signer_id` of an ActionReceipt is not valid.</span>
+    InvalidSignerId { account_id: AccountId },
+    <span class="hljs-comment">/// The `receiver_id` of a DataReceiver within an ActionReceipt is not valid.</span>
+    InvalidDataReceiverId { account_id: AccountId },
+    <span class="hljs-comment">/// The length of the returned data exceeded the limit in a DataReceipt.</span>
+    ReturnedValueLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The number of input data dependencies exceeds the limit in an ActionReceipt.</span>
+    NumberInputDataDependenciesExceeded { number_of_input_data_dependencies: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// An error occurred while validating actions of an ActionReceipt.</span>
+    ActionsValidation(ActionsValidationError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-6"></a><a href="#error-messages-6"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">ReceiptValidationError::InvalidPredecessorId { account_id } 
+<span class="hljs-string">"The predecessor_id `{}` of a Receipt is not valid."</span>
+
+ReceiptValidationError::InvalidReceiverId { account_id } 
+<span class="hljs-string">"The receiver_id `{}` of a Receipt is not valid."</span>
+
+ReceiptValidationError::InvalidSignerId { account_id } 
+<span class="hljs-string">"The signer_id `{}` of an ActionReceipt is not valid."</span>
+
+ReceiptValidationError::InvalidDataReceiverId { account_id } 
+<span class="hljs-string">"The receiver_id `{}` of a DataReceiver within an ActionReceipt is not valid."</span>
+
+ReceiptValidationError::ReturnedValueLengthExceeded { length, limit } 
+<span class="hljs-string">"The length of the returned data {} exceeded the limit {} in a DataReceipt"</span>
+
+ReceiptValidationError::NumberInputDataDependenciesExceeded { number_of_input_data_dependencies, limit } 
+<span class="hljs-string">"The number of input data dependencies {} exceeded the limit {} in an ActionReceipt"</span>
+
+ReceiptValidationError::ActionsValidation(e) 
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="vmerror-and-subtypes"></a><a href="#vmerror-and-subtypes"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>VMError and subtypes</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="vmerror"></a><a href="#vmerror" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>VMError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-10"></a><a href="#definition-10"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">VMError</span></span> {
+    FunctionCallError(FunctionCallError),
+    <span class="hljs-comment">/// Serialized external error from External trait implementation.</span>
+    ExternalError(<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">u8</span>&gt;),
+    <span class="hljs-comment">/// An error that is caused by an operation on an inconsistent state.</span>
+    <span class="hljs-comment">/// E.g. an integer overflow by using a value from the given context.</span>
+    InconsistentStateError(InconsistentStateError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-7"></a><a href="#error-messages-7"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">VMError::ExternalError
+  <span class="hljs-string">"Serialized ExternalError"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="functioncallerror"></a><a href="#functioncallerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>FunctionCallError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-11"></a><a href="#definition-11"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">FunctionCallError</span></span> {
+    CompilationError(CompilationError),
+    LinkError { msg: <span class="hljs-built_in">String</span> },
+    MethodResolveError(MethodResolveError),
+    WasmTrap { msg: <span class="hljs-built_in">String</span> },
+    HostError(HostError),
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-8"></a><a href="#error-messages-8"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">FunctionCallError::WasmTrap
+  <span class="hljs-string">"WebAssembly trap: {}"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="methodresolveerror"></a><a href="#methodresolveerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>MethodResolveError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-12"></a><a href="#definition-12"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">MethodResolveError</span></span> {
+    MethodEmptyName,
+    MethodUTF8Error,
+    MethodNotFound,
+    MethodInvalidSignature,
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="compilationerror"></a><a href="#compilationerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>CompilationError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-13"></a><a href="#definition-13"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">CompilationError</span></span> {
+    CodeDoesNotExist { account_id: <span class="hljs-built_in">String</span> },
+    PrepareError(PrepareError),
+    WasmerCompileError { msg: <span class="hljs-built_in">String</span> },
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-9"></a><a href="#error-messages-9"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">CompilationError::CodeDoesNotExist
+  <span class="hljs-string">"cannot find contract code for account {}"</span>
+
+CompilationError::PrepareError(p)
+  <span class="hljs-string">"PrepareError: {}"</span>
+
+CompilationError::WasmerCompileError
+  <span class="hljs-string">"Wasmer compilation error: {}"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="prepareerror"></a><a href="#prepareerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>PrepareError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-14"></a><a href="#definition-14"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-comment">/// Error that can occur while preparing or executing Wasm smart-contract.</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">PrepareError</span></span> {
+    <span class="hljs-comment">/// Error happened while serializing the module.</span>
+    Serialization,
+    <span class="hljs-comment">/// Error happened while deserializing the module.</span>
+    Deserialization,
+    <span class="hljs-comment">/// Internal memory declaration has been found in the module.</span>
+    InternalMemoryDeclared,
+    <span class="hljs-comment">/// Gas instrumentation failed.</span>
+    <span class="hljs-comment">///</span>
+    <span class="hljs-comment">/// This most likely indicates the module isn't valid.</span>
+    GasInstrumentation,
+    <span class="hljs-comment">/// Stack instrumentation failed.</span>
+    <span class="hljs-comment">///</span>
+    <span class="hljs-comment">/// This  most likely indicates the module isn't valid.</span>
+    StackHeightInstrumentation,
+    <span class="hljs-comment">/// Error happened during instantiation.</span>
+    <span class="hljs-comment">///</span>
+    <span class="hljs-comment">/// This might indicate that `start` function trapped, or module isn't</span>
+    <span class="hljs-comment">/// instantiable and/or unlinkable.</span>
+    Instantiate,
+    <span class="hljs-comment">/// Error creating memory.</span>
+    Memory,
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-10"></a><a href="#error-messages-10"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">Serialization
+  <span class="hljs-string">"Error happened while serializing the module."</span>
+
+Deserialization
+  <span class="hljs-string">"Error happened while deserializing the module."</span>
+
+InternalMemoryDeclared
+  <span class="hljs-string">"Internal memory declaration has been found in the module."</span>
+
+GasInstrumentation
+  <span class="hljs-string">"Gas instrumentation failed."</span>
+
+StackHeightInstrumentation
+  <span class="hljs-string">"Stack instrumentation failed."</span>
+
+Instantiate
+  <span class="hljs-string">"Error happened during instantiation."</span>
+
+Memory
+  <span class="hljs-string">"Error creating memory"</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="hosterror"></a><a href="#hosterror" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>HostError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-15"></a><a href="#definition-15"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">HostError</span></span> {
+    <span class="hljs-comment">/// String encoding is bad UTF-16 sequence</span>
+    BadUTF16,
+    <span class="hljs-comment">/// String encoding is bad UTF-8 sequence</span>
+    BadUTF8,
+    <span class="hljs-comment">/// Exceeded the prepaid gas</span>
+    GasExceeded,
+    <span class="hljs-comment">/// Exceeded the maximum amount of gas allowed to burn per contract</span>
+    GasLimitExceeded,
+    <span class="hljs-comment">/// Exceeded the account balance</span>
+    BalanceExceeded,
+    <span class="hljs-comment">/// Tried to call an empty method name</span>
+    EmptyMethodName,
+    <span class="hljs-comment">/// Smart contract panicked</span>
+    GuestPanic { panic_msg: <span class="hljs-built_in">String</span> },
+    <span class="hljs-comment">/// IntegerOverflow happened during a contract execution</span>
+    IntegerOverflow,
+    <span class="hljs-comment">/// `promise_idx` does not correspond to existing promises</span>
+    InvalidPromiseIndex { promise_idx: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Actions can only be appended to non-joint promise.</span>
+    CannotAppendActionToJointPromise,
+    <span class="hljs-comment">/// Returning joint promise is currently prohibited</span>
+    CannotReturnJointPromise,
+    <span class="hljs-comment">/// Accessed invalid promise result index</span>
+    InvalidPromiseResultIndex { result_idx: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Accessed invalid register id</span>
+    InvalidRegisterId { register_id: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Iterator `iterator_index` was invalidated after its creation by performing a mutable operation on trie</span>
+    IteratorWasInvalidated { iterator_index: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Accessed memory outside the bounds</span>
+    MemoryAccessViolation,
+    <span class="hljs-comment">/// VM Logic returned an invalid receipt index</span>
+    InvalidReceiptIndex { receipt_index: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// Iterator index `iterator_index` does not exist</span>
+    InvalidIteratorIndex { iterator_index: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// VM Logic returned an invalid account id</span>
+    InvalidAccountId,
+    <span class="hljs-comment">/// VM Logic returned an invalid method name</span>
+    InvalidMethodName,
+    <span class="hljs-comment">/// VM Logic provided an invalid public key</span>
+    InvalidPublicKey,
+    <span class="hljs-comment">/// `method_name` is not allowed in view calls</span>
+    ProhibitedInView { method_name: <span class="hljs-built_in">String</span> },
+    <span class="hljs-comment">/// The total number of logs will exceed the limit.</span>
+    NumberOfLogsExceeded { limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The storage key length exceeded the limit.</span>
+    KeyLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The storage value length exceeded the limit.</span>
+    ValueLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The total log length exceeded the limit.</span>
+    TotalLogLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The maximum number of promises within a FunctionCall exceeded the limit.</span>
+    NumberPromisesExceeded { number_of_promises: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The maximum number of input data dependencies exceeded the limit.</span>
+    NumberInputDataDependenciesExceeded { number_of_input_data_dependencies: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The returned value length exceeded the limit.</span>
+    ReturnedValueLengthExceeded { length: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+    <span class="hljs-comment">/// The contract size for DeployContract action exceeded the limit.</span>
+    ContractSizeExceeded { size: <span class="hljs-built_in">u64</span>, limit: <span class="hljs-built_in">u64</span> },
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-11"></a><a href="#error-messages-11"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">BadUTF8 
+  <span class="hljs-string">"String encoding is bad UTF-8 sequence."</span>
+
+BadUTF16 
+  <span class="hljs-string">"String encoding is bad UTF-16 sequence."</span>
+
+GasExceeded 
+  <span class="hljs-string">"Exceeded the prepaid gas."</span>
+
+GasLimitExceeded 
+  <span class="hljs-string">"Exceeded the maximum amount of gas allowed to burn per contract."</span>
+
+BalanceExceeded 
+  <span class="hljs-string">"Exceeded the account balance."</span>
+
+EmptyMethodName 
+  <span class="hljs-string">"Tried to call an empty method name."</span>
+
+GuestPanic { panic_msg } 
+  <span class="hljs-string">"Smart contract panicked: {}"</span>
+
+IntegerOverflow 
+  <span class="hljs-string">"Integer overflow."</span>
+
+InvalidIteratorIndex { iterator_index } 
+  <span class="hljs-string">"Iterator index {:?} does not exist"</span>
+
+InvalidPromiseIndex { promise_idx } 
+  <span class="hljs-string">"{:?} does not correspond to existing promises"</span>
+
+CannotAppendActionToJointPromise 
+  <span class="hljs-string">"Actions can only be appended to non-joint promise."</span>
+
+CannotReturnJointPromise 
+  <span class="hljs-string">"Returning joint promise is currently prohibited."</span>
+
+InvalidPromiseResultIndex { result_idx } 
+  <span class="hljs-string">"Accessed invalid promise result index: {:?}"</span>
+
+InvalidRegisterId { register_id } 
+  <span class="hljs-string">"Accessed invalid register id: {:?}"</span>
+
+IteratorWasInvalidated { iterator_index } 
+  <span class="hljs-string">"Iterator {:?} was invalidated after its creation by performing a mutable operation on trie"</span>
+
+MemoryAccessViolation 
+  <span class="hljs-string">"Accessed memory outside the bounds."</span>
+
+InvalidReceiptIndex { receipt_index } 
+  <span class="hljs-string">"VM Logic returned an invalid receipt index: {:?}"</span>
+
+InvalidAccountId 
+  <span class="hljs-string">"VM Logic returned an invalid account id"</span>
+
+InvalidMethodName 
+  <span class="hljs-string">"VM Logic returned an invalid method name"</span>
+
+InvalidPublicKey 
+  <span class="hljs-string">"VM Logic provided an invalid public key"</span>
+
+ProhibitedInView { method_name } 
+  <span class="hljs-string">"{} is not allowed in view calls"</span>
+
+NumberOfLogsExceeded { limit } 
+  <span class="hljs-string">"The number of logs will exceed the limit {}"</span>
+
+KeyLengthExceeded { length, limit } 
+  <span class="hljs-string">"The length of a storage key {} exceeds the limit {}"</span>
+
+ValueLengthExceeded { length, limit } 
+  <span class="hljs-string">"The length of a storage value {} exceeds the limit {}"</span>
+
+TotalLogLengthExceeded{ length, limit } 
+  <span class="hljs-string">"The length of a log message {} exceeds the limit {}"</span>
+
+NumberPromisesExceeded { number_of_promises, limit } 
+  <span class="hljs-string">"The number of promises within a FunctionCall {} exceeds the limit {}"</span>
+
+NumberInputDataDependenciesExceeded { number_of_input_data_dependencies, limit } 
+  <span class="hljs-string">"The number of input data dependencies {} exceeds the limit {}"</span>
+
+ReturnedValueLengthExceeded { length, limit } 
+  <span class="hljs-string">"The length of a returned value {} exceeds the limit {}"</span>
+
+ContractSizeExceeded { size, limit } 
+  <span class="hljs-string">"The size of a contract code in DeployContract action {} exceeds the limit {}"</span>
+
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="vmlogicerror"></a><a href="#vmlogicerror"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>VMLogicError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-16"></a><a href="#definition-16"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">VMLogicError</span></span> {
+    HostError(HostError),
+    <span class="hljs-comment">/// Serialized external error from External trait implementation.</span>
+    ExternalError(<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">u8</span>&gt;),
+    <span class="hljs-comment">/// An error that is caused by an operation on an inconsistent state.</span>
+    InconsistentStateError(InconsistentStateError),
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="inconsistentstateerror"></a><a
+                      href="#inconsistentstateerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>InconsistentStateError</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="definition-17"></a><a href="#definition-17"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Definition</h4>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">InconsistentStateError</span></span> {
+    <span class="hljs-comment">/// Math operation with a value from the state resulted in a integer overflow.</span>
+    IntegerOverflow,
+}
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="error-messages-12"></a><a href="#error-messages-12"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Messages</h4>
+                  <pre><code class="hljs css language-rust">InconsistentStateError::IntegerOverflow
+    <span class="hljs-string">"Math operation with a value from the state resulted in a integer overflow."</span>
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="rpc-interface"></a><a href="#rpc-interface"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>RPC interface</h2>
+                  <ul>
+                    <li>error name</li>
+                    <li>error subtype(s)</li>
+                    <li>error properties</li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true" id="error-schema"></a><a href="#error-schema"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Error Schema</h3>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"schema"</span>: {
+    <span class="hljs-attr">"BadUTF16"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"BadUTF16"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"BadUTF8"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"BadUTF8"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"BalanceExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"BalanceExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"CannotAppendActionToJointPromise"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CannotAppendActionToJointPromise"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"CannotReturnJointPromise"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CannotReturnJointPromise"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"CodeDoesNotExist"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CodeDoesNotExist"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"CompilationError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CompilationError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"CodeDoesNotExist"</span>,
+        <span class="hljs-string">"PrepareError"</span>,
+        <span class="hljs-string">"WasmerCompileError"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"ContractSizeExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ContractSizeExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"size"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"Deserialization"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Deserialization"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"EmptyMethodName"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"EmptyMethodName"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"FunctionCallError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"FunctionCallError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"CompilationError"</span>,
+        <span class="hljs-string">"LinkError"</span>,
+        <span class="hljs-string">"MethodResolveError"</span>,
+        <span class="hljs-string">"WasmTrap"</span>,
+        <span class="hljs-string">"HostError"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"GasExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"GasExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"GasInstrumentation"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"GasInstrumentation"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"GasLimitExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"GasLimitExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"GuestPanic"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"GuestPanic"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"panic_msg"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"HostError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"HostError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"BadUTF16"</span>,
+        <span class="hljs-string">"BadUTF8"</span>,
+        <span class="hljs-string">"GasExceeded"</span>,
+        <span class="hljs-string">"GasLimitExceeded"</span>,
+        <span class="hljs-string">"BalanceExceeded"</span>,
+        <span class="hljs-string">"EmptyMethodName"</span>,
+        <span class="hljs-string">"GuestPanic"</span>,
+        <span class="hljs-string">"IntegerOverflow"</span>,
+        <span class="hljs-string">"InvalidPromiseIndex"</span>,
+        <span class="hljs-string">"CannotAppendActionToJointPromise"</span>,
+        <span class="hljs-string">"CannotReturnJointPromise"</span>,
+        <span class="hljs-string">"InvalidPromiseResultIndex"</span>,
+        <span class="hljs-string">"InvalidRegisterId"</span>,
+        <span class="hljs-string">"IteratorWasInvalidated"</span>,
+        <span class="hljs-string">"MemoryAccessViolation"</span>,
+        <span class="hljs-string">"InvalidReceiptIndex"</span>,
+        <span class="hljs-string">"InvalidIteratorIndex"</span>,
+        <span class="hljs-string">"InvalidAccountId"</span>,
+        <span class="hljs-string">"InvalidMethodName"</span>,
+        <span class="hljs-string">"InvalidPublicKey"</span>,
+        <span class="hljs-string">"ProhibitedInView"</span>,
+        <span class="hljs-string">"NumberOfLogsExceeded"</span>,
+        <span class="hljs-string">"KeyLengthExceeded"</span>,
+        <span class="hljs-string">"ValueLengthExceeded"</span>,
+        <span class="hljs-string">"TotalLogLengthExceeded"</span>,
+        <span class="hljs-string">"NumberPromisesExceeded"</span>,
+        <span class="hljs-string">"NumberInputDataDependenciesExceeded"</span>,
+        <span class="hljs-string">"ReturnedValueLengthExceeded"</span>,
+        <span class="hljs-string">"ContractSizeExceeded"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"Instantiate"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Instantiate"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"IntegerOverflow"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"IntegerOverflow"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InternalMemoryDeclared"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InternalMemoryDeclared"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidAccountId"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidAccountId"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidIteratorIndex"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidIteratorIndex"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"iterator_index"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidMethodName"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidMethodName"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidPromiseIndex"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidPromiseIndex"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"promise_idx"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidPromiseResultIndex"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidPromiseResultIndex"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"result_idx"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidPublicKey"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidPublicKey"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidReceiptIndex"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidReceiptIndex"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"receipt_index"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidRegisterId"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidRegisterId"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"register_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"IteratorWasInvalidated"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"IteratorWasInvalidated"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"iterator_index"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"KeyLengthExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"KeyLengthExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"LinkError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"LinkError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"msg"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"Memory"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Memory"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MemoryAccessViolation"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MemoryAccessViolation"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodEmptyName"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodEmptyName"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodInvalidSignature"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodInvalidSignature"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodNotFound"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodNotFound"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodResolveError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodResolveError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"MethodEmptyName"</span>,
+        <span class="hljs-string">"MethodUTF8Error"</span>,
+        <span class="hljs-string">"MethodNotFound"</span>,
+        <span class="hljs-string">"MethodInvalidSignature"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodUTF8Error"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodUTF8Error"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"NumberInputDataDependenciesExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NumberInputDataDependenciesExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"number_of_input_data_dependencies"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"NumberOfLogsExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NumberOfLogsExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"NumberPromisesExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NumberPromisesExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"number_of_promises"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"PrepareError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"PrepareError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"Serialization"</span>,
+        <span class="hljs-string">"Deserialization"</span>,
+        <span class="hljs-string">"InternalMemoryDeclared"</span>,
+        <span class="hljs-string">"GasInstrumentation"</span>,
+        <span class="hljs-string">"StackHeightInstrumentation"</span>,
+        <span class="hljs-string">"Instantiate"</span>,
+        <span class="hljs-string">"Memory"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"ProhibitedInView"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ProhibitedInView"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"ReturnedValueLengthExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ReturnedValueLengthExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"Serialization"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Serialization"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"StackHeightInstrumentation"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"StackHeightInstrumentation"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"TotalLogLengthExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"TotalLogLengthExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"ValueLengthExceeded"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ValueLengthExceeded"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"WasmTrap"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"WasmTrap"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"msg"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"WasmerCompileError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"WasmerCompileError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"msg"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"AccessKeyNotFound"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AccessKeyNotFound"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"AccountAlreadyExists"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AccountAlreadyExists"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"AccountDoesNotExist"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AccountDoesNotExist"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"ActionError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ActionError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"AccountAlreadyExists"</span>,
+        <span class="hljs-string">"AccountDoesNotExist"</span>,
+        <span class="hljs-string">"CreateAccountNotAllowed"</span>,
+        <span class="hljs-string">"ActorNoPermission"</span>,
+        <span class="hljs-string">"DeleteKeyDoesNotExist"</span>,
+        <span class="hljs-string">"AddKeyAlreadyExists"</span>,
+        <span class="hljs-string">"DeleteAccountStaking"</span>,
+        <span class="hljs-string">"DeleteAccountHasRent"</span>,
+        <span class="hljs-string">"RentUnpaid"</span>,
+        <span class="hljs-string">"TriesToUnstake"</span>,
+        <span class="hljs-string">"TriesToStake"</span>,
+        <span class="hljs-string">"FunctionCallError"</span>,
+        <span class="hljs-string">"NewReceiptValidationError"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"index"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"ActorNoPermission"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ActorNoPermission"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"actor_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"AddKeyAlreadyExists"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"AddKeyAlreadyExists"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"BalanceMismatchError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"BalanceMismatchError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"final_accounts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"final_postponed_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"incoming_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"incoming_validator_rewards"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"initial_accounts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"initial_postponed_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"new_delayed_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"outgoing_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"processed_delayed_receipts_balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"total_balance_burnt"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"total_balance_slashed"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"total_rent_paid"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"total_validator_reward"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"CostOverflow"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CostOverflow"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"CreateAccountNotAllowed"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"CreateAccountNotAllowed"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"DeleteAccountHasRent"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"DeleteAccountHasRent"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"balance"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"DeleteAccountStaking"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"DeleteAccountStaking"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"DeleteKeyDoesNotExist"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"DeleteKeyDoesNotExist"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"DepositWithFunctionCall"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"DepositWithFunctionCall"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"Expired"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Expired"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidAccessKeyError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidAccessKeyError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"AccessKeyNotFound"</span>,
+        <span class="hljs-string">"ReceiverMismatch"</span>,
+        <span class="hljs-string">"MethodNameMismatch"</span>,
+        <span class="hljs-string">"RequiresFullAccess"</span>,
+        <span class="hljs-string">"NotEnoughAllowance"</span>,
+        <span class="hljs-string">"DepositWithFunctionCall"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidChain"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidChain"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidNonce"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidNonce"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"ak_nonce"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"tx_nonce"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidReceiverId"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidReceiverId"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidSignature"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidSignature"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"InvalidSignerId"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidSignerId"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"InvalidTxError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"InvalidTxError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"InvalidAccessKeyError"</span>,
+        <span class="hljs-string">"InvalidSignerId"</span>,
+        <span class="hljs-string">"SignerDoesNotExist"</span>,
+        <span class="hljs-string">"InvalidNonce"</span>,
+        <span class="hljs-string">"InvalidReceiverId"</span>,
+        <span class="hljs-string">"InvalidSignature"</span>,
+        <span class="hljs-string">"NotEnoughBalance"</span>,
+        <span class="hljs-string">"RentUnpaid"</span>,
+        <span class="hljs-string">"CostOverflow"</span>,
+        <span class="hljs-string">"InvalidChain"</span>,
+        <span class="hljs-string">"Expired"</span>,
+        <span class="hljs-string">"ActionsValidation"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"MethodNameMismatch"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"MethodNameMismatch"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"NotEnoughAllowance"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NotEnoughAllowance"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"allowance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"cost"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"NotEnoughBalance"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NotEnoughBalance"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"cost"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"ReceiverMismatch"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ReceiverMismatch"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"ak_receiver"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"tx_receiver"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"RentUnpaid"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"RentUnpaid"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"RequiresFullAccess"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"RequiresFullAccess"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"SignerDoesNotExist"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"SignerDoesNotExist"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"TriesToStake"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"TriesToStake"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"balance"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"locked"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"stake"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"TriesToUnstake"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"TriesToUnstake"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"TxExecutionError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"TxExecutionError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"ActionError"</span>,
+        <span class="hljs-string">"InvalidTxError"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"Closed"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Closed"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"ServerError"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ServerError"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [
+        <span class="hljs-string">"TxExecutionError"</span>,
+        <span class="hljs-string">"Timeout"</span>,
+        <span class="hljs-string">"Closed"</span>
+      ],
+      <span class="hljs-attr">"props"</span>: {}
+    },
+    <span class="hljs-attr">"Timeout"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Timeout"</span>,
+      <span class="hljs-attr">"subtypes"</span>: [],
+      <span class="hljs-attr">"props"</span>: {}
+    }
+  }
+}
+</code></pre>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 11/23/2020 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/roles/integrator/errors/introduction"><span
+                class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button"
+              href="/docs/roles/integrator/token-loss"><span>Token Loss</span><span class="arrow-next"> →</span></a>
+          </div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#runtimeerror-and-subtypes">RuntimeError and subtypes</a>
+            <ul class="toc-headings">
+              <li><a href="#runtimeerror">RuntimeError</a></li>
+              <li><a href="#invalidtxerror">InvalidTxError</a></li>
+              <li><a href="#storageerror">StorageError</a></li>
+              <li><a href="#balancemismatcherror">BalanceMismatchError</a></li>
+              <li><a href="#invalidaccesskeyerror">InvalidAccessKeyError</a></li>
+              <li><a href="#actionsvalidationerror">ActionsValidationError</a></li>
+            </ul>
+          </li>
+          <li><a href="#txexecutionerror-and-subtypes">TxExecutionError and subtypes</a>
+            <ul class="toc-headings">
+              <li><a href="#txexecutionerror">TxExecutionError</a></li>
+              <li><a href="#actionerror">ActionError</a></li>
+              <li><a href="#actionerrorkind">ActionErrorKind</a></li>
+              <li><a href="#receiptvalidationerror">ReceiptValidationError</a></li>
+            </ul>
+          </li>
+          <li><a href="#vmerror-and-subtypes">VMError and subtypes</a>
+            <ul class="toc-headings">
+              <li><a href="#vmerror">VMError</a></li>
+              <li><a href="#functioncallerror">FunctionCallError</a></li>
+              <li><a href="#methodresolveerror">MethodResolveError</a></li>
+              <li><a href="#compilationerror">CompilationError</a></li>
+              <li><a href="#prepareerror">PrepareError</a></li>
+              <li><a href="#hosterror">HostError</a></li>
+              <li><a href="#vmlogicerror">VMLogicError</a></li>
+              <li><a href="#inconsistentstateerror">InconsistentStateError</a></li>
+            </ul>
+          </li>
+          <li><a href="#rpc-interface">RPC interface</a>
+            <ul class="toc-headings">
+              <li><a href="#error-schema">Error Schema</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/figment",
+  "id": "tutorials/figment",
+  "isDocsHomePage": false,
+  "title": "Figment Tutorials",
+  "description": "Figment.io has created some wonderful tutorials on their learning platform where they provide you step by step instructions to get started interacting with NEAR. You can even earn tokens for your participation!",
+  "source": "@site/../docs/tutorials/figment.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/figment",
+  "permalink": "/docs/tutorials/figment",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/figment.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Figment Tutorials",
+  "frontMatter": {
+    "id": "figment",
+    "title": "Figment Tutorials",
+    "sidebar_label": "Figment Tutorials"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Using a Ledger device w/ NEAR",
+    "permalink": "/docs/tutorials/ledger"
+  },
+  "next": {
+    "title": "Examples Using near-api-js",
+    "permalink": "/docs/tutorials/front-end/naj-examples"
+  }
+}

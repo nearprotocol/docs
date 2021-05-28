@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A simple EVM script and NEAR CLI interaction · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="*TODO: This page still refers to the precompiled EVM on BetaNet (on the" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="A simple EVM script and NEAR CLI interaction · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="*TODO: This page still refers to the precompiled EVM on BetaNet (on the" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/develop/evm/evm-simple.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">A simple EVM script and NEAR CLI interaction</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p><em />TODO: This page still refers to the precompiled EVM on BetaNet (on the
+                    <code>.evm</code> account) and needs to be updated for the contract-based EVM on TestNet
+                    (on the <code>.aurora</code> account)!</em>
+                  </p>
+                  <h3><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Contents:</h3>
+                  <ol>
+                    <li>The <a href="#evm-simple"><code>evm-simple</code> example</a></li>
+                    <li>Using <a href="#near-cli">NEAR CLI to interact</a> with an EVM contract</li>
+                  </ol>
+                  <hr>
+                  <p>
+                  <h3 id="evm-simple"><code>evm-simple</code> example</h3>
+                  </p>
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WWR_Xi7cJYY"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe><br />
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HE5N-aFe6ek"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe><br />
+                  <p>The following example uses an existing smart contract deployed to the EVM on betanet, and makes
+                    simple read and write operations. Feel free to follow along <a
+                      href="https://github.com/near-examples/evm-simple" target="_blank">with this repository</a>. It
+                    uses two existing NEAR betanet accounts, so you don't have to create one. An upcoming section covers
+                    building and deploying a contract from Solidity and deploying from your own betanet account, but
+                    we'll keep it simple for now. For this <code>evm-simple</code> example, we'll interact with a
+                    version of the NEAR Pet Shop, which is a dApp based on the <a
+                      href="https://www.trufflesuite.com/tutorials/pet-shop" target="_blank">Truffle starter
+                      project</a>. In this application, there are two functions:</p>
+                  <ol>
+                    <li><code>getAdopters()</code> — returns an array of 16 Ethereum addresses corresponding to 16 pets
+                      that are either adopted or need to be adopted. For example, when a user adopts the first pet, we
+                      can expect the value returned from this function to have their Ethereum address as the first of 16
+                      items in the array returned. If a pet has not been adopted, the <a
+                        href="https://ethereum.org/en/glossary/#zero-address" target="_blank">zero address</a> is used.
+                      This function is read-only.</li>
+                    <li><code>adopt(uint petId)</code> — this assigns the adoption of a pet to the Ethereum address that
+                      sent the transaction, mutating (modifying) state.</li>
+                  </ol>
+                  <p>This project uses two npm packages: <a href="https://www.npmjs.com/package/web3-eth-contract"
+                      target="_blank">web3-eth-contract</a> and <a
+                      href="https://www.npmjs.com/package/near-web3-provider" target="_blank">near-web3-provider</a>.
+                    The former is a common dependency in the Web3 world, which plays nicely with the latter package
+                    described <a href="/docs/develop/evm/near-web3-provider">in detail here</a>.</p>
+                  <p>The entire file is 42 lines and newcomer-friendly. In the below screenshot, the function
+                    <code>callEvm</code> is collapsed for readability. The last line of the file calls
+                    <code>start</code>, which will send two NEAR betanet account names to <code>callEvm</code>.
+                  </p>
+                  <p><a
+                      href="https://github.com/near-examples/evm-simple/blob/0bef42aab9f7386269a9a5c17860d37530fc42da/index.js#L4-L9"
+                      target="_blank"><img loading="lazy" src="/img/evm/evm-simple-callEvm-collapsed-1024x482.jpg"
+                        alt="EVM Simple example showing that mike.betanet and josh.betanet will be calling the same function back-to-back"
+                        width="1024" height="482"
+                        srcset="/img/evm/evm-simple-callEvm-collapsed-1024x482.jpg 1024w, /img/evm/evm-simple-callEvm-collapsed-300x141.jpg 300w, /img/evm/evm-simple-callEvm-collapsed-768x362.jpg 768w, /img/evm/evm-simple-callEvm-collapsed-1536x723.jpg 1536w, /img/evm/evm-simple-callEvm-collapsed-2048x964.jpg 2048w"
+                        sizes="(max-width: 1024px) 100vw, 1024px"></a></p />
+                  <p>✋ <strong>Quick note</strong>: all code screenshots on this page link to GitHub projects at the
+                    latest commit when this was written.</p>
+                  <p>Now let's look at the expanded <code>callEvm</code> function and discuss the highlighted sections:
+                  </p>
+                  <p><a
+                      href="https://github.com/near-examples/evm-simple/blob/0bef42aab9f7386269a9a5c17860d37530fc42da/index.js#L11-L41"
+                      target="_blank"><img loading="lazy"
+                        src="/img/evm/evm-simple-with-sections-numbers-improved-1024x978.jpg"
+                        alt="The evm-simple example highlighting various sections" width="1024" height="978"
+                        srcset="/img/evm/evm-simple-with-sections-numbers-improved-1024x978.jpg 1024w, /img/evm/evm-simple-with-sections-numbers-improved-300x286.jpg 300w, /img/evm/evm-simple-with-sections-numbers-improved-768x733.jpg 768w, /img/evm/evm-simple-with-sections-numbers-improved-1536x1467.jpg 1536w, /img/evm/evm-simple-with-sections-numbers-improved-2048x1956.jpg 2048w"
+                        sizes="(max-width: 1024px) 100vw, 1024px"></a></p />
+                  <p>Breaking down each step:</p>
+                  <ol>
+                    <li>Instantiate the <code>NearProvider</code> — passing it the:
+                      <ul>
+                        <li><code>networkId</code> associated with the NEAR network you wish to interact with. (See a
+                          list of networks and reasonable defaults in NEAR Web3 Provider's <a
+                            href="https://github.com/near/near-web3-provider/blob/88a62702aea31bffa372ffc450cfb78ffb0b0082/src/network-config.js"
+                            target="_blank"><code>network-config.js</code> file</a>.)</li>
+                        <li>For signed transactions, the <code>masterAccountId</code>, which is the name of the NEAR
+                          account on that network that'll be signing the transaction. If the provider only needs to read
+                          state, a <code>masterAccountId</code> should be omitted, adding <code>isReadOnly: true</code>
+                          instead. (We cover an example of this in the <a href="/docs/develop/evm/near-pet-shop">Pet
+                            Shop documentation</a>.) More on this <a
+                            href="/docs/develop/evm/near-web3-provider#instantiating-read-only" target="_blank">in the
+                            docs</a>.</li>
+                        <li><code>keyStore</code> for the location of the private key. As per the comment above that
+                          line of code, NEAR's library <a href="https://github.com/near/near-api-js"
+                            target="_blank">near-api-js</a> (used by the NEAR Web3 Provider) has different types of key
+                          stores. In this example there are keys located in the project's <code>private-keys</code>
+                          directory. For more information on that, please see the <a
+                            href="https://github.com/near-examples/evm-simple#private-keys"
+                            target="_blank">corresponding README</a>. (Note: in the <a
+                            href="/docs/develop/evm/near-pet-shop">NEAR Pet Shop documentation</a>, the front-end will
+                          use a different type of key store for the browser.)</li>
+                      </ul>
+                    </li>
+                    <li>Instantiate the smart contract and set the provider.</li>
+                    <li>Derive the Ethereum address associated with the NEAR account. This uses a small helper function
+                      <code>nearAccountToEvmAddress</code> which simply takes 20 bytes of the hashed NEAR account name,
+                      <a href="https://github.com/near/near-web3-provider/blob/88a62702aea31bffa372ffc450cfb78ffb0b0082/src/utils.js#L298"
+                        target="_blank">shown here</a>.
+                    </li>
+                    <li>Send a transaction using Web3 as one normally would. Here we're calling the function
+                      <code>adopt</code> from the derived Ethereum address, indicating to adopt the first pet, hence the
+                      <code>0</code> argument for that index in the array.
+                    </li>
+                    <li>Call the contract's read-only function <code>getAdopters</code>. The provider instantiated in
+                      Step 1 can sign transactions as well as call read-only functions.</li>
+                  </ol>
+                  <p>Finally, run this project following the instructions <a
+                      href="https://github.com/near-examples/evm-simple" target="_blank">in the README</a>. You'll see
+                    this simple NodeJS app setting the adopter of the first pet to be <code>mike.betanet</code>, show
+                    the list of adopted pets, then have <code>josh.betanet</code> adopt the first pet and show the
+                    results again.</p>
+                  <p>
+                  <h3 id="near-cli">NEAR CLI commands</h3>
+                  </p>
+                  <p>Let's show how to interact with the same contract from before using only your Terminal or Command
+                    Prompt.</p>
+                  <p>NEAR CLI is a command-line interface tool written in JavaScript. It uses <a
+                      href="https://github.com/near/near-api-js" target="_blank">near-api-js</a> to make RPC calls,
+                    offer utility functions, and generally simplifies the experience of deploying and interacting with
+                    contracts and NEAR accounts. There's more information in the <a
+                      href="/docs/tools/near-cli">documentation for this tool</a>, but assuming you <a
+                      href="https://nodejs.org/en/download/package-manager/" target="_blank">have Node 12+</a> you may
+                    install it globally with:</p>
+                  <pre><code class="hljs">npm install -g near-cli
+</code></pre>
+                  <p>In the previous <code>evm-simple</code> example, there was an artifact for the Adoption contract.
+                    This was created when the contract was compiled, and lives in the directory
+                    <code>build/contracts</code>. It contains application binary interface (ABI) information necessary
+                    to call functions and handle their returned values, contract data, and other details including where
+                    this contract was deployed. Let's peek at the bottom of the artifact file, <a
+                      href="https://github.com/near-examples/evm-simple/blob/0bef42aab9f7386269a9a5c17860d37530fc42da/build/contracts/Adoption.json"
+                      target="_blank">Adoption.json</a>:
+                  </p>
+                  <p><a
+                      href="https://github.com/near-examples/evm-simple/blob/0bef42aab9f7386269a9a5c17860d37530fc42da/build/contracts/Adoption.json#L1193-L1200"
+                      target="_blank"><img loading="lazy" src="/img/evm/adoption-artifact-improved-1024x257.jpg"
+                        alt="Code snippet of the networks key showing where the Adoption smart contract has been deployed to: what chain id and what Ethereum address"
+                        width="1024" height="257"
+                        srcset="/img/evm/adoption-artifact-improved-1024x257.jpg 1024w, /img/evm/adoption-artifact-improved-300x75.jpg 300w, /img/evm/adoption-artifact-improved-768x193.jpg 768w, /img/evm/adoption-artifact-improved-1536x385.jpg 1536w, /img/evm/adoption-artifact-improved-2048x514.jpg 2048w"
+                        sizes="(max-width: 1024px) 100vw, 1024px"></a></p />
+                  <p>Two key things to note here:</p>
+                  <ol>
+                    <li>The chain ID is <code>1313161554</code>. This has been registered for NEAR at <a
+                        href="https://chainid.network/" target="_blank">https://chainid.network</a> (Minor changes are
+                      currently needed to differentiate testnet and mainnet chain IDs.)</li>
+                    <li>The <code>address</code> key contains the Ethereum address of the deployed Adoption contract:
+                      <code>0xAdf11a39283CEB00DEB90a5cE9220F89c6C27E67</code>
+                    </li>
+                  </ol>
+                  <p>Let's use NEAR CLI to call the read-only function <code>getAdopters</code>:</p>
+                  <pre><code class="hljs">NEAR_ENV=betanet near evm-view evm 0xAdf11a39283CEB00DEB90a5cE9220F89c6C27E67 getAdopters '[]' --abi /path/to/build/contracts/Adoption.json --accountId mike.betanet
+</code></pre>
+                  <p>If this command were translated to English it would say,</p>
+                  <p>&quot;Hey NEAR CLI, use the command <code>evm-view</code> on the EVM contract deployed to the
+                    account <code>evm</code>, calling the Ethereum smart contract located at address
+                    <code>0xAdf…E67</code> giving empty parameters to the function <code>getAdopters</code>. And oh
+                    yeah, here's where you can find the artifact containing the ABI.”
+                  </p>
+                  <p>After running the command you'll see something like this:</p>
+                  <p><img loading="lazy" src="/img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM-1024x1016.png"
+                      alt="The result returned from calling the Adoption smart contract's getAdopters() function in Terminal"
+                      width="504" height="500"
+                      srcset="/img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM-1024x1016.png 1024w, /img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM-300x298.png 300w, /img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM-150x150.png 150w, /img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM-768x762.png 768w, /img/evm/Screen-Shot-2021-01-01-at-11.07.17-AM.png 1522w"
+                      sizes="(max-width: 504px) 100vw, 504px"></p />
+                  <p>The item in the array contains the address <code>0x5d60a489b2f457cb351b0faabf5f9746d6bd4a8c</code>.
+                    This is the Ethereum address derived from the NEAR account <code>josh.betanet</code>, as
+                    demonstrated by a quick NodeJS <a
+                      href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" target="_blank">REPL</a>
+                    trick:</p>
+                  <p><img loading="lazy" src="/img/evm/josh.betanet-eth-address-1024x442.jpg"
+                      alt="Use NodeJS's REPL, we show that josh.betanet is the Ethereum address of 0x5d60a489b2f457cb351b0faabf5f9746d6bd4a8c"
+                      width="813" height="351"
+                      srcset="/img/evm/josh.betanet-eth-address-1024x442.jpg 1024w, /img/evm/josh.betanet-eth-address-300x130.jpg 300w, /img/evm/josh.betanet-eth-address-768x332.jpg 768w, /img/evm/josh.betanet-eth-address-1536x663.jpg 1536w, /img/evm/josh.betanet-eth-address.jpg 1556w"
+                      sizes="(max-width: 813px) 100vw, 813px"></p />
+                  <p>(A Quick reminder that Ethereum addresses are not case sensitive, so don't be confused by the two
+                    addresses ending in <code>…4A8C</code> vs. <code>…4a8c</code> as shown here. Capitalization is only
+                    used <a href="https://eips.ethereum.org/EIPS/eip-55" target="_blank">as a nifty checksum</a>,
+                    helping users make less mistakes.)</p>
+                  <p>The second item in the array is all zeroes, meaning this &quot;pet” hasn't been adopted yet, so
+                    let's use NEAR CLI to send a signed transaction from the NEAR account <code>mike.betanet</code> and
+                    manually adopt this pet without a web interface. We can do this because the private key to
+                    <code>mike.betanet</code> is a special, function-call access key, meaning NEAR tokens (Ⓝ) cannot be
+                    transferred, or the account deleted, etc.
+                  </p>
+                  <pre><code class="hljs">NEAR_ENV=betanet near evm-call evm 0xAdf11a39283CEB00DEB90a5cE9220F89c6C27E67 adopt '[&quot;1&quot;]' --abi /path/to/build/contracts/Adoption.json --accountId mike.betanet
+</code></pre>
+                  <p>After running that command, we'll rerun the previous <code>evm-view</code> command for
+                    <code>getAdopters</code> to see the second item in the array has updated to the Ethereum address of
+                    <code>mike.betanet</code>:
+                  </p>
+                  <p><img loading="lazy" src="/img/evm/Screen-Shot-2021-01-01-at-2.57.49-PM-1024x318.png"
+                      alt="Screenshot showing output highlighting the second pet ID is now adopted by the Ethereum address for mike.betanet"
+                      width="1024" height="318"
+                      srcset="/img/evm/Screen-Shot-2021-01-01-at-2.57.49-PM-1024x318.png 1024w, /img/evm/Screen-Shot-2021-01-01-at-2.57.49-PM-300x93.png 300w, /img/evm/Screen-Shot-2021-01-01-at-2.57.49-PM-768x238.png 768w, /img/evm/Screen-Shot-2021-01-01-at-2.57.49-PM.png 1528w"
+                      sizes="(max-width: 1024px) 100vw, 1024px"></p />
+                  <p>We've demonstrated how to access and mutate state using NEAR CLI. The three new commands added
+                    related to the EVM are:</p>
+                  <ol>
+                    <li><a href="/docs/tools/near-cli#near-evm-view">near evm-view</a></li>
+                    <li><a href="/docs/tools/near-cli#near-evm-call">near evm-call</a></li>
+                    <li><a href="/docs/tools/near-cli#near-evm-dev-init">near evm-init-dev</a> — this is discussed in
+                      the <a href="/docs/develop/evm/evm-testing">EVM testing section</a>.</li>
+                  </ol>
+                  <p><em>TODO: The above needs to be changed to use the
+                      <a href="https://github.com/aurora-is-near/aurora-cli">Aurora Engine CLI</a>.</em></p>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 4/1/2021 by Frank Braun</em></div>
+          <div class="docs-prevnext"></div>
+        </div>
+      </div>
+      <nav class="onPageNav"></nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

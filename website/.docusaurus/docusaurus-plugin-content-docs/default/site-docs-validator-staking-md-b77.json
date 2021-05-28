@@ -1,0 +1,31 @@
+{
+  "unversionedId": "validator/staking",
+  "id": "validator/staking",
+  "isDocsHomePage": false,
+  "title": "Running a Validator Node",
+  "description": "Staking on NEAR",
+  "source": "@site/../docs/validator/staking.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/staking",
+  "permalink": "/docs/validator/staking",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Running the Node",
+  "frontMatter": {
+    "id": "staking",
+    "title": "Running a Validator Node",
+    "sidebar_label": "Running the Node"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Hardware Requirements",
+    "permalink": "/docs/roles/validator/hardware"
+  },
+  "next": {
+    "title": "Keys on the NEAR Platform",
+    "permalink": "/docs/validator/keys"
+  }
+}

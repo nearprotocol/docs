@@ -1,0 +1,423 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "concepts/new-to-near",
+          "docs": [
+            {
+              "id": "api/naj-cookbook",
+              "path": "/docs/api/naj-cookbook",
+              "sidebar": "API"
+            },
+            {
+              "id": "api/naj-overview",
+              "path": "/docs/api/naj-overview",
+              "sidebar": "API"
+            },
+            {
+              "id": "api/naj-quick-reference",
+              "path": "/docs/api/naj-quick-reference",
+              "sidebar": "API"
+            },
+            {
+              "id": "api/near-api-rest-server",
+              "path": "/docs/api/near-api-rest-server",
+              "sidebar": "API"
+            },
+            {
+              "id": "api/rpc",
+              "path": "/docs/api/rpc",
+              "sidebar": "API"
+            },
+            {
+              "id": "community/community-channels",
+              "path": "/docs/community/community-channels",
+              "sidebar": "community"
+            },
+            {
+              "id": "community/community-faq",
+              "path": "/docs/community/community-faq",
+              "sidebar": "community"
+            },
+            {
+              "id": "community/contribute/bounties",
+              "path": "/docs/community/contribute/bounties"
+            },
+            {
+              "id": "community/contribute/contribute-faq",
+              "path": "/docs/community/contribute/contribute-faq",
+              "sidebar": "community"
+            },
+            {
+              "id": "community/contribute/contribute-nearcore",
+              "path": "/docs/community/contribute/contribute-nearcore",
+              "sidebar": "community"
+            },
+            {
+              "id": "community/contribute/contribute-overview",
+              "path": "/docs/community/contribute/contribute-overview",
+              "sidebar": "community"
+            },
+            {
+              "id": "community/contribute/how-to-contribute",
+              "path": "/docs/community/contribute/how-to-contribute",
+              "sidebar": "community"
+            },
+            {
+              "id": "concepts/account",
+              "path": "/docs/concepts/account",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/architecture/papers",
+              "path": "/docs/concepts/architecture/papers",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/architecture/specification",
+              "path": "/docs/concepts/architecture/specification",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/data-storage",
+              "path": "/docs/concepts/data-storage",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/epoch",
+              "path": "/docs/concepts/epoch",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/gas",
+              "path": "/docs/concepts/gas",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/indexer",
+              "path": "/docs/concepts/indexer",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/networks",
+              "path": "/docs/concepts/networks",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/new-to-near",
+              "path": "/docs/concepts/new-to-near",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/overview",
+              "path": "/docs/concepts/overview"
+            },
+            {
+              "id": "concepts/storage-staking",
+              "path": "/docs/concepts/storage-staking",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "concepts/transaction",
+              "path": "/docs/concepts/transaction",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "develop/basics/create-account",
+              "path": "/docs/develop/basics/create-account",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/basics/getting-started",
+              "path": "/docs/develop/basics/getting-started",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/basics/hackathon-startup-guide",
+              "path": "/docs/develop/basics/hackathon-startup-guide",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/as/intro",
+              "path": "/docs/develop/contracts/as/intro",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/as/near-sdk-as",
+              "path": "/docs/develop/contracts/as/near-sdk-as",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/as/testing-as-contracts",
+              "path": "/docs/develop/contracts/as/testing-as-contracts",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/overview",
+              "path": "/docs/develop/contracts/overview",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/rust/intro",
+              "path": "/docs/develop/contracts/rust/intro",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/rust/near-sdk-rs",
+              "path": "/docs/develop/contracts/rust/near-sdk-rs",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/contracts/rust/testing-rust-contracts",
+              "path": "/docs/develop/contracts/rust/testing-rust-contracts",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/front-end/calling-smart-contracts",
+              "path": "/docs/develop/front-end/calling-smart-contracts"
+            },
+            {
+              "id": "develop/front-end/introduction",
+              "path": "/docs/develop/front-end/introduction",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/front-end/near-api-js",
+              "path": "/docs/develop/front-end/near-api-js",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/node/compile-and-run-a-node",
+              "path": "/docs/develop/node/compile-and-run-a-node",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/node/running-a-node",
+              "path": "/docs/develop/node/running-a-node",
+              "sidebar": "develop"
+            },
+            {
+              "id": "develop/node/running-a-node-windows",
+              "path": "/docs/develop/node/running-a-node-windows",
+              "sidebar": "develop"
+            },
+            {
+              "id": "faq/developer-faq",
+              "path": "/docs/faq/developer-faq"
+            },
+            {
+              "id": "faq/economics-faq",
+              "path": "/docs/faq/economics-faq",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "faq/general-faq",
+              "path": "/docs/faq/general-faq",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "faq/naj-faq",
+              "path": "/docs/faq/naj-faq",
+              "sidebar": "API"
+            },
+            {
+              "id": "faq/technical-faq",
+              "path": "/docs/faq/technical-faq",
+              "sidebar": "concepts"
+            },
+            {
+              "id": "roles/integrator/errors/error-implementation",
+              "path": "/docs/roles/integrator/errors/error-implementation",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/integrator/errors/introduction",
+              "path": "/docs/roles/integrator/errors/introduction",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/integrator/exchange-integration",
+              "path": "/docs/roles/integrator/exchange-integration",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/integrator/faq",
+              "path": "/docs/roles/integrator/faq",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/integrator/implicit-accounts",
+              "path": "/docs/roles/integrator/implicit-accounts",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/integrator/token-loss",
+              "path": "/docs/roles/integrator/token-loss",
+              "sidebar": "integrate"
+            },
+            {
+              "id": "roles/validator/hardware",
+              "path": "/docs/roles/validator/hardware",
+              "sidebar": "stake"
+            },
+            {
+              "id": "tokens/lockup",
+              "path": "/docs/tokens/lockup",
+              "sidebar": "tokens"
+            },
+            {
+              "id": "tokens/token-custody",
+              "path": "/docs/tokens/token-custody",
+              "sidebar": "tokens"
+            },
+            {
+              "id": "tools/near-cli",
+              "path": "/docs/tools/near-cli",
+              "sidebar": "tools"
+            },
+            {
+              "id": "tools/near-explorer",
+              "path": "/docs/tools/near-explorer",
+              "sidebar": "tools"
+            },
+            {
+              "id": "tools/near-indexer",
+              "path": "/docs/tools/near-indexer",
+              "sidebar": "tools"
+            },
+            {
+              "id": "tools/near-wallet",
+              "path": "/docs/tools/near-wallet",
+              "sidebar": "tools"
+            },
+            {
+              "id": "tutorials/contracts/as-workshop",
+              "path": "/docs/tutorials/contracts/as-workshop",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/contracts/cross-contract-calls",
+              "path": "/docs/tutorials/contracts/cross-contract-calls",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/contracts/intro-to-rust",
+              "path": "/docs/tutorials/contracts/intro-to-rust",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/contracts/token",
+              "path": "/docs/tutorials/contracts/token",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/create-transactions",
+              "path": "/docs/tutorials/create-transactions",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/figment",
+              "path": "/docs/tutorials/figment",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/front-end/naj-examples",
+              "path": "/docs/tutorials/front-end/naj-examples",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/front-end/naj-workshop",
+              "path": "/docs/tutorials/front-end/naj-workshop",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/ledger",
+              "path": "/docs/tutorials/ledger",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/rainbow-bridge-frontend-mainnet",
+              "path": "/docs/tutorials/rainbow-bridge-frontend-mainnet",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "tutorials/rainbow-bridge-frontend-testnet",
+              "path": "/docs/tutorials/rainbow-bridge-frontend-testnet",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "validator/delegation",
+              "path": "/docs/validator/delegation",
+              "sidebar": "tokens"
+            },
+            {
+              "id": "validator/deploy-on-mainnet",
+              "path": "/docs/validator/deploy-on-mainnet",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/economics",
+              "path": "/docs/validator/economics",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/keys",
+              "path": "/docs/validator/keys",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/maintenance",
+              "path": "/docs/validator/maintenance",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/staking",
+              "path": "/docs/validator/staking",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/staking-faq",
+              "path": "/docs/validator/staking-faq",
+              "sidebar": "stake"
+            },
+            {
+              "id": "validator/staking-kr",
+              "path": "/docs/validator/staking-kr"
+            },
+            {
+              "id": "validator/staking-overview",
+              "path": "/docs/validator/staking-overview",
+              "sidebar": "stake"
+            },
+            {
+              "id": "videos/accounts-keys",
+              "path": "/docs/videos/accounts-keys",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "videos/collections-u128-etc",
+              "path": "/docs/videos/collections-u128-etc",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "videos/contract-reviews",
+              "path": "/docs/videos/contract-reviews",
+              "sidebar": "tutorials"
+            },
+            {
+              "id": "videos/live-app-review",
+              "path": "/docs/videos/live-app-review",
+              "sidebar": "tutorials"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

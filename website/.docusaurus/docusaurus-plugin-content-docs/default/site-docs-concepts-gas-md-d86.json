@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/gas",
+  "id": "concepts/gas",
+  "isDocsHomePage": false,
+  "title": "Gas",
+  "description": "When you make calls to the NEAR blockchain to update or change data, the people running the infrastructure of the blockchain incur some cost. At the end of the day, some computers somewhere process your request, and the validators running these computers spend significant capital to keep these computers running.",
+  "source": "@site/../docs/concepts/gas.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/gas",
+  "permalink": "/docs/concepts/gas",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/gas.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Gas",
+  "frontMatter": {
+    "id": "gas",
+    "title": "Gas",
+    "sidebar_label": "Gas"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "Epoch",
+    "permalink": "/docs/concepts/epoch"
+  },
+  "next": {
+    "title": "NEAR Indexer",
+    "permalink": "/docs/concepts/indexer"
+  }
+}

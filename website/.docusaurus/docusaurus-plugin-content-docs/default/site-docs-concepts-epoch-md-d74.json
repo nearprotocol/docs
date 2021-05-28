@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/epoch",
+  "id": "concepts/epoch",
+  "isDocsHomePage": false,
+  "title": "Epoch",
+  "description": "An epoch is a unit of time when validators of the network remain constant.",
+  "source": "@site/../docs/concepts/epoch.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/epoch",
+  "permalink": "/docs/concepts/epoch",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/epoch.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Epoch",
+  "frontMatter": {
+    "id": "epoch",
+    "title": "Epoch",
+    "sidebar_label": "Epoch"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "Storage Staking",
+    "permalink": "/docs/concepts/storage-staking"
+  },
+  "next": {
+    "title": "Gas",
+    "permalink": "/docs/concepts/gas"
+  }
+}

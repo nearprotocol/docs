@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Gas · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description"
+    content="When you make calls to the NEAR blockchain to update or change data, the people running the infrastructure of the blockchain incur some cost. At the end of the day, some computers somewhere process your request, and the [validators](/docs/validator/staking-overview) running these computers spend significant capital to keep these computers running." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Gas · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="When you make calls to the NEAR blockchain to update or change data, the people running the infrastructure of the blockchain incur some cost. At the end of the day, some computers somewhere process your request, and the [validators](/docs/validator/staking-overview) running these computers spend significant capital to keep these computers running." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class="siteNavGroupActive"><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Basics</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Overview</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/new-to-near">New to NEAR?</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Basics</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/account">Account</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/data-storage">Data Storage</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/storage-staking">Storage Staking</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/epoch">Epoch</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem" href="/docs/concepts/gas">Gas</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/indexer">Indexer</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/networks">Networks</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/transaction">Transaction</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Architecture</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/concepts/architecture/specification">Specification</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/architecture/papers">Papers</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/general-faq">General FAQ</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/technical-faq">Technical FAQ</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/economics-faq">Economics FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/concepts/gas.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Gas</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p>When you make calls to the NEAR blockchain to update or change data, the people running the
+                    infrastructure of the blockchain incur some cost. At the end of the day, some computers somewhere
+                    process your request, and the <a href="/docs/validator/staking-overview">validators</a> running
+                    these computers spend significant capital to keep these computers running.</p>
+                  <p>Like other programmable blockchains, NEAR compensates these people by charging <em>transaction
+                      fees</em>, also called <em>gas fees</em>.</p>
+                  <p>If you're familiar with web2 cloud service providers (Amazon Web Services, Google Cloud, etc), a
+                    big difference with blockchains is that <em>users</em> get charged immediately when they make a call
+                    to an app, rather than developers fronting the cost of using all that infrastructure. This creates
+                    new possibilities, such as apps that have no long-term risk of going away due to developer/company
+                    funds running out. However, it also comes with some usability speed bumps. To help with this, NEAR
+                    also provides the ability for developers to <a href="#what-about-prepaid-gas">cover gas costs for
+                      users</a>, to create a more familiar experience to those coming from web2.</p>
+                  <p>When thinking about gas, keep two concepts in mind:</p>
+                  <ul>
+                    <li>
+                      <p><strong>Gas units</strong>: internally, transaction fees are not calculated directly in NEAR
+                        tokens, but instead go through an in-between phase of &quot;gas units&quot;. The benefit of gas
+                        units is that they are deterministic – the same transaction will always cost the same number of
+                        gas units.</p>
+                    </li>
+                    <li>
+                      <p><strong>Gas price</strong>: gas units are then multiplied by a <em>gas price</em> to determine
+                        how much to charge users. This price is automatically recalculated each block depending on
+                        network demand (if previous block is more than half full the price goes up, otherwise it goes
+                        down, and it won't change by more than 1% each block), and bottoms out at a price that's
+                        configured by the network, currently 100 million <a
+                          href="https://www.nanotech-now.com/metric-prefix-table.htm">yocto</a>NEAR.</p>
+                    </li>
+                  </ul>
+                  <p>Note that the gas price can differ between NEAR's mainnet &amp; testnet. <a
+                      href="#whats-the-price-of-gas-right-now">Check the gas price</a> before relying on the numbers
+                    below.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="thinking-in-gas"></a><a href="#thinking-in-gas"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Thinking in gas</h2>
+                  <p>NEAR has a more-or-less one second block time, accomplished by <a
+                      href="https://github.com/near/nearcore/blob/49b4fcdc297a609d8bb38858fdbf71e7d821f1f5/neard/res/genesis_config.json#L189">limiting</a>
+                    the amount of gas per block. The gas units have been carefully calculated to work out to some
+                    easy-to-think-in numbers:</p>
+                  <ul>
+                    <li>10¹² gas units, or <strong>1 TGas</strong> (<em><a
+                          href="https://www.nanotech-now.com/metric-prefix-table.htm">Tera</a>Gas</em>)...</li>
+                    <li>≈ <strong>1 millisecond</strong> of &quot;compute&quot; time</li>
+                    <li>...which, at a minimum gas price of 100 million yoctoNEAR, equals a <strong>0.1
+                        milliNEAR</strong> charge</li>
+                  </ul>
+                  <p>This <code>1ms</code> is a rough but useful approximation, and is the current goal of how gas units
+                    are set within NEAR. Gas units encapsulate not only compute/CPU time but also bandwidth/network time
+                    and storage/IO time. Via a governance mechanism, system parameters can be tweaked, shifting the
+                    mapping between TGas and milliseconds in the future, but the above is still a good starting point
+                    for thinking about what gas units mean and where they come from.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="the-cost-of-common-actions"></a><a
+                      href="#the-cost-of-common-actions" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>The cost of common actions</h2>
+                  <p>To give you a starting point for what to expect for costs on NEAR, the table below lists some
+                    common actions and how much TGas they currently require, and what the fee would be, in milliNEAR, at
+                    the minimum gas price of 100 million yN.</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Operation</th>
+                        <th>TGas</th>
+                        <th>fee (mN)</th>
+                        <th>fee (Ⓝ)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Create Account</td>
+                        <td>0.42</td>
+                        <td>0.042</td>
+                        <td>4.2⨉10⁻⁵</td>
+                      </tr>
+                      <tr>
+                        <td>Send Funds</td>
+                        <td>0.45</td>
+                        <td>0.045</td>
+                        <td>4.5⨉10⁻⁵</td>
+                      </tr>
+                      <tr>
+                        <td>Stake</td>
+                        <td>0.50</td>
+                        <td>0.050</td>
+                        <td>5.0⨉10⁻⁵</td>
+                      </tr>
+                      <tr>
+                        <td>Add Full Access Key</td>
+                        <td>0.42</td>
+                        <td>0.042</td>
+                        <td>4.2⨉10⁻⁵</td>
+                      </tr>
+                      <tr>
+                        <td>Delete Key</td>
+                        <td>0.41</td>
+                        <td>0.041</td>
+                        <td>4.1⨉10⁻⁵</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <blockquote class="info">
+                    <strong>Dig Deeper</strong><br /><br />
+                    <p>Where do these numbers come from?</p>
+                    <p>NEAR is <a
+                        href="https://github.com/near/nearcore/blob/49b4fcdc297a609d8bb38858fdbf71e7d821f1f5/neard/res/genesis_config.json#L57-L120">configured</a>
+                      with base costs. An example:</p>
+                    <pre><code class="hljs">create_account_cost: {
+  send_sir:     99607375000,
+  send_not_sir: 99607375000,
+  execution:    99607375000
+}
+</code></pre>
+                    <p>The &quot;sir&quot; here stands for &quot;sender is receiver&quot;. Yes, these are all identical,
+                      but that could change in the future.</p>
+                    <p>When you make a request to create a new account, NEAR immediately deducts the appropriate
+                      <code>send</code> amount from your account. Then it creates a <em>receipt</em>, an internal
+                      book-keeping mechanism to facilitate NEAR's asynchronous, sharded design (if you're coming from
+                      Ethereum, forget what you know about Ethereum's receipts, as they're completely different).
+                      Creating a receipt has its own <a
+                        href="https://github.com/near/nearcore/blob/49b4fcdc297a609d8bb38858fdbf71e7d821f1f5/neard/res/genesis_config.json#L40-L44">associated
+                        costs</a>:</p>
+                    <pre><code class="hljs">action_receipt_creation_config: {
+  send_sir:     108059500000,
+  send_not_sir: 108059500000,
+  execution:    108059500000
+}
+</code></pre>
+                    <p>The appropriate <code>send</code> amount for creating this receipt is also immediately deducted
+                      from your account.</p>
+                    <p>The &quot;create account&quot; action won't be finalized until the next block. At this point, the
+                      <code>execution</code> amount for each of these actions will be deducted from your account
+                      (something subtle: the gas units on this next block could be multiplied by a gas price that's up
+                      to 1% different, since gas price is recalculated on each block). Adding it all up to find the
+                      total transaction fee:</p>
+                    <pre><code class="hljs">(create_account_cost.send_sir  + action_receipt_creation_config.send_sir ) * gas_price_at_block_1 +
+(create_account_cost.execution + action_receipt_creation_config.execution) * gas_price_at_block_2
+</code></pre>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="costs-of-complex-actions"></a><a
+                      href="#costs-of-complex-actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Costs of complex actions</h2>
+                  <p>The numbers above should give you the sense that transactions on NEAR are cheap! But they don't
+                    give you much sense of how much it will cost to use a more complex app or operate a NEAR-based
+                    business. Let's cover some more complex gas calculations: deploying contracts and function calls.
+                  </p>
+                  <h3><a class="anchor" aria-hidden="true" id="deploying-contracts"></a><a href="#deploying-contracts"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Deploying Contracts</h3>
+                  <p>The <a
+                      href="https://github.com/near/nearcore/blob/49b4fcdc297a609d8bb38858fdbf71e7d821f1f5/neard/res/genesis_config.json#L57-L120">basic
+                      action costs</a> include two different values for deploying contracts. Simplified, these are:</p>
+                  <pre><code class="hljs">deploy_contract_cost: 184765750000,
+deploy_contract_cost_per_byte: 6812999,
+</code></pre>
+                  <p>The first is a baseline cost, no matter the contract size. Keeping in mind that each need to be
+                    multiplied by two, for both <code>send</code> and <code>execute</code> costs, and will also require
+                    sending &amp; executing a receipt (see blue box above), the gas units comes to:</p>
+                  <pre><code class="hljs">2 * 184765750000 +
+2 * contract_size_in_bytes * 6812999 +
+2 * 108059500000
+</code></pre>
+                  <p>(Divide the resulting number by 10¹² to get to TGas!)</p>
+                  <p>Note that this covers the cost of uploading and writing bytes to storage, but does <em>not</em>
+                    cover the cost of holding these bytes in storage. Long-term storage is compensated via <a
+                      href="./storage-staking">storage staking</a>, a recoverable cost-per-byte amount that will also be
+                    deducted from your account during contract deployment.</p>
+                  <p>The AssemblyScript contract in <a href="https://github.com/near-examples/FT/pull/42">this example
+                      Fungible Token</a> compiles to just over 16kb (the Rust contract is much larger, but this <a
+                      href="https://github.com/near/near-sdk-rs/issues/167">will be optimized</a>). Using the
+                    calculation above, we find that it requires <strong>0.81 TGas</strong> (and thus 0.081mN at minimum
+                    gas price) for the transaction fee to deploy the contract, while 1.5N will be locked up for storage
+                    staking.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="function-calls"></a><a href="#function-calls"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Function calls</h3>
+                  <p>Given the general-purpose nature of NEAR, function calls win the award for most complex gas
+                    calculations. A given function call will use a hard-to-predict amount of CPU, network, and IO, and
+                    the amount of each can even change based on the amount of data already stored in the contract!</p>
+                  <p>With this level of complexity, it's no longer useful to walk through an example, <a
+                      href="https://github.com/near/nearcore/blob/f816d09ad634071aff20ad1c71aaf0f6886742d5/neard/res/genesis_config.json#L135-L185">enumerating
+                      each</a> of the gas calculations as we go (you can research this yourself, <a
+                      href="https://github.com/near/nearcore/pull/3038">if you want</a>). Instead, let's approach this
+                    from two other angles: ballpark comparisons to Ethereum, and getting accurate estimates with
+                    automated tests.</p>
+                  <h4><a class="anchor" aria-hidden="true" id="ballpark-comparisons-to-ethereum"></a><a
+                      href="#ballpark-comparisons-to-ethereum" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Ballpark Comparisons to Ethereum</h4>
+                  <p>Like NEAR, Ethereum uses gas units to model computational complexity of an operation. Unlike NEAR,
+                    rather than using a predictable gas price, Ethereum uses a dynamic, auction-based marketplace. This
+                    makes a comparison to Ethereum's gas prices a little tricky, but we'll do our best.</p>
+                  <p>Etherscan gives a <a href="https://etherscan.io/chart/gasprice">historic Ethereum gas price
+                      chart</a>. These prices are given in &quot;Gwei&quot;, or Gigawei, where a wei is the smallest
+                    possible amount of ETH, 10⁻¹⁸. From November 2017 through July 2020, average gas price was 21Gwei.
+                    Let's call this the &quot;average&quot; gas price. In July 2020, average gas price went up to
+                    57Gwei. Let's use this as a &quot;high&quot; Ethereum gas fee.</p>
+                  <p>Multiplying Ethereum's gas units by gas price usually results in an amount that's easy to show in
+                    milliETH (mE), the same way we've been converting NEAR's TGas to milliNEAR. Let's look at some
+                    common operations side-by-side, comparing ETH's gas units to NEAR's, as well as converting to both
+                    the above &quot;average&quot; &amp; &quot;high&quot; gas prices.</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Operation</th>
+                        <th>ETH gas units</th>
+                        <th>avg mE</th>
+                        <th>high mE</th>
+                        <th>NEAR TGas</th>
+                        <th>mN</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Transfer native token (ETH or NEAR)</td>
+                        <td>21k</td>
+                        <td>0.441</td>
+                        <td>1.197</td>
+                        <td>0.45</td>
+                        <td>0.045</td>
+                      </tr>
+                      <tr>
+                        <td>Deploy &amp; initialize a <a href="https://github.com/near-examples/FT/pull/42">fungible
+                            token</a> contract</td>
+                        <td><a href="https://github.com/chadoh/erc20-test">1.1M</a></td>
+                        <td>23.3</td>
+                        <td>63.1</td>
+                        <td><a
+                            href="https://explorer.testnet.near.org/transactions/GsgH2KoxLZoL8eoutM2NkHe5tBPnRfyhcDMZaBEsC7Sm">9</a>
+                          <super>†</super>
+                        </td>
+                        <td>0.9 (plus 1.5Ⓝ in <a href="./storage-staking">storage staking</a>)</td>
+                      </tr>
+                      <tr>
+                        <td>Transfer a fungible token</td>
+                        <td><a href="https://ethereum.stackexchange.com/a/72573/57498">~45k</a></td>
+                        <td>0.945</td>
+                        <td>2.565</td>
+                        <td><a
+                            href="https://explorer.testnet.near.org/transactions/5joKRvsmpEXzhVShsPDdV8z5EG9bGMWeuM9e9apLJhLe">14</a>
+                        </td>
+                        <td>1.4</td>
+                      </tr>
+                      <tr>
+                        <td>Setting an escrow for a fungible token</td>
+                        <td><a href="https://github.com/chadoh/erc20-test">44k</a></td>
+                        <td>0.926</td>
+                        <td>2.51</td>
+                        <td><a
+                            href="https://explorer.testnet.near.org/transactions/34pW67zsotFsD1DY8GktNhZT9yP5KHHeWAmhKaYvvma6">8</a>
+                        </td>
+                        <td>0.8</td>
+                      </tr>
+                      <tr>
+                        <td>Checking a balance for a fungible token</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    <super>†</super> Function calls require spinning up a VM and loading all compiled Wasm bytes into
+                    memory, hence the increased cost over base operations; this is <a
+                      href="https://github.com/near/nearcore/issues/3094">being optimized</a>.
+                  </p>
+                  <p>While some of these operations on their surface appear to only be about a 10x improvement over
+                    Ethereum, something else to note is that the total supply of NEAR is more than 1 billion, while
+                    total supply of Ethereum is more like 100 million. So as fraction of total supply, NEAR's gas fees
+                    are approximately another 10x lower than Ethereum's. Additionally, if the price of NEAR goes up
+                    significantly, then the minimum gas fee set by the network can be lowered.</p>
+                  <p>You can expect the network to sit at the minimum gas price most of the time; learn more in the <a
+                      href="https://near.org/papers/economics-in-sharded-blockchain/#transaction-and-storage-fees">Economics
+                      whitepaper</a>.</p>
+                  <h4><a class="anchor" aria-hidden="true" id="accurate-estimates-with-automated-tests"></a><a
+                      href="#accurate-estimates-with-automated-tests" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Accurate Estimates with Automated Tests</h4>
+                  <p>We will have a demonstration of how to do in-depth gas cost estimation soon; <a
+                      href="https://github.com/near/devx/issues/253">subscribe to this issue</a> for updates. Until
+                    then, you may want to look at this <a
+                      href="https://github.com/near-examples/simulation-testing">example of how to do simulation
+                      testing</a>, a powerful way to test your contracts and inspect every aspect of their execution.
+                  </p>
+                  <p>If you're using NEAR's AssemblyScript SDK, you can use <a
+                      href="https://github.com/near/near-sdk-as/blob/741956d8a9a44e4252f8441dcd0ba3c19743590a/assembly/runtime/contract.ts#L68-L81">two
+                      methods</a>, <code>context.prepaidGas</code> and <code>context.usedGas</code>. These can be used
+                    with or without tests to report what the virtual machine knows about attached gas and its
+                    consumption at the moment your contract method is being executed:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">/**
+* Get the number of gas units attached to the call
+*/</span>
+<span class="hljs-keyword">get</span> prepaidGas(): u64 {
+ <span class="hljs-keyword">return</span> env.prepaid_gas();
+}
+
+<span class="hljs-comment">/**
+* Get the number of gas units that was already burnt during the contract execution and
+* attached to promises (cannot exceed prepaid gas).
+*/</span>
+<span class="hljs-keyword">get</span> usedGas(): u64 {
+ <span class="hljs-keyword">return</span> env.used_gas();
+}
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="how-do-i-buy-gas"></a><a href="#how-do-i-buy-gas"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How do I buy gas?</h2>
+                  <p>You don't directly buy gas; you attach tokens to transactions.</p>
+                  <p>Calls to NEAR to read data are always free. But when you make a call to add or update data, you
+                    have to do so from an account that has some amount of NEAR tokens available in its balance, and
+                    these tokens will be attached to pay the gas fee.</p>
+                  <p>If you're coming from Ethereum, you may be used to the idea of paying a higher gas price to get
+                    your transaction processed faster. In NEAR, gas costs are deterministic, and you can't pay extra.
+                  </p>
+                  <p>For basic operations like &quot;transfer funds,&quot; you can't specify an amount to attach. The
+                    gas needed is easy to calculate ahead of time, so it's automatically attached for you. (Check it: <a
+                      href="https://github.com/near/near-cli"><code>near-cli</code></a> has a <code>send</code> command,
+                    which accepts no <code>gas</code> parameter; <a
+                      href="https://github.com/near/near-api-js"><code>near-api-js</code></a> has a <a
+                      href="https://near.github.io/near-api-js/classes/near.near-1.html#sendtokens"><code>sendTokens</code></a>
+                    function which accepts no <code>gas</code> argument.) As shown in the tables above, these operations
+                    are cheap, so you probably won't even notice the slight reduction in your account's balance.</p>
+                  <p>Function calls are more complex, and you can attach an explicit amount of gas to these
+                    transactions, up to a <a
+                      href="https://github.com/near/nearcore/blob/c162dc3ffc8ccb871324994e58bf50fe084b980d/neard/res/mainnet_genesis.json#L193">maximum
+                      value</a> of 3⨉10¹⁴ gas units. Here's how you would override the default attached gas with <a
+                      href="https://github.com/near/near-cli"><code>near-cli</code></a>:</p>
+                  <pre><code class="hljs">near call myContract.testnet myFunction &quot;{ \&quot;arg1\&quot;: \&quot;val1\&quot; }&quot; --gas=300000000000000
+</code></pre>
+                  <p>And in <a href="https://github.com/near/near-api-js"><code>near-api-js</code></a>, you can also
+                    specify an explicit amount of gas units to attach when calling a change method; see <a
+                      href="https://github.com/near-examples/guest-book/blob/ceb2a39e53351b4ffc21d01987e2b0b21d633fa7/src/App.js#L29">example
+                      here</a>.</p>
+                  <p>The telltale error that calls for this solution looks like this:</p>
+                  <pre><code class="hljs css language-text">Error:
+  Transaction A9BzFKmgNNUmEx9Ue9ARC2rbWeiMnq6LpcXh53xPhSN6 failed.
+  Exceeded the prepaid gas
+</code></pre>
+                  <blockquote class="warning">
+                    <strong>How many tokens will these units cost?</strong><br /><br />
+                    <p>Note that you are greenlighting a maximum number of gas <em>units</em>, not a number of NEAR
+                      tokens or yoctoNEAR.</p>
+                    <p>These units will be multiplied by the gas price at the block in which they're processed. If the
+                      function call makes cross-contract calls, then separate parts of the function will be processed in
+                      different blocks, and could use different gas prices. At a minimum, the function will take two
+                      blocks to complete, as explained in <a href="#the-cost-of-common-actions">the blue box above</a>.
+                    </p>
+                    <p>Assuming the system rests at minimum gas price of 100 million yoctoNEAR during the total
+                      operation, a maximum attached gas of 3⨉10¹⁴ would seem to allow a maximum expenditure of 3⨉10²²
+                      yN. However, there's also a pessimistic multiplier of about 6.4 to <a
+                        href="https://github.com/nearprotocol/NEPs/issues/67">prevent shard congestion</a>.</p>
+                    <p>Multiplying all three of these numbers, we find that maximum attached gas units allow about 0.2Ⓝ
+                      to be spent on the operation if gas prices stay at their minimum. If gas prices are above the
+                      minimum, this charge could be higher.</p>
+                    <p>What if the gas price is at the minimum during the starting block, but the operation takes
+                      several blocks to complete, and subsequent blocks have higher gas prices? Could the charge be more
+                      than ~0.2Ⓝ? No. The pessimistic multiplier accounts for this possibility.</p>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="attach-extra-gas-get-refunded"></a><a
+                      href="#attach-extra-gas-get-refunded" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Attach extra gas; get refunded!</h2>
+                  <p>How can you know the exact right amount to attach when you call a function? You can't!</p>
+                  <p>Gas units are based on computational complexity for a given operation, which can be affected by a
+                    smart contract's state. This is hard to predict ahead of time. And gas price is adjusted each block
+                    based on how busy the network was during the previous block, which is also hard to predict ahead of
+                    time.</p>
+                  <p>But good news!</p>
+                  <ul>
+                    <li>Gas doesn't cost much on NEAR</li>
+                    <li>If you attach more gas than needed, you'll get refunded</li>
+                  </ul>
+                  <p>This is also true for basic operations. In the previous section we mentioned that these are
+                    automatically calculated and attached. In fact, given that the gas price could be adjusted slightly
+                    while these operations are being applied (see blue box <a
+                      href="#the-cost-of-common-actions">above</a>), a slight amount extra is attached, and any beyond
+                    what's necessary gets refunded.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="what-about-prepaid-gas"></a><a
+                      href="#what-about-prepaid-gas" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What about Prepaid Gas?</h2>
+                  <p>The Near Team understands that developers want to provide their users with the best possible
+                    onboarding experience. To realize this vision, developers can design their applications in a way
+                    that first-time users can draw funds for purchasing gas directly from an account maintained by the
+                    developer. Once onboarded, users can then transition to paying for their own platform use.</p>
+                  <p>In this sense, prepaid gas can be realized using a funded account and related contract(s) for
+                    onboarding new users.</p>
+                  <p><em>So how can a developer pay the gas fee for their users on NEAR?</em></p>
+                  <p>A user can use the funds directly from the developers account suitable only for the gas fees on
+                    this dApp. Then the developer has to distinguish users based on the signers' keys instead of the
+                    account names.</p>
+                  <p>Check out <a href="/docs/concepts/account">Key Concept: Account</a> &quot;Did you know?&quot;
+                    section, item <code>#2</code>.</p>
+                  <p>NEAR Protocol does not provide any limiting feature on the usage of developer funds. Developers can
+                    set allowances on access keys that correspond to specific users -- one <code>FunctionCall</code>
+                    access key per new user with a specific allowance.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="whats-the-price-of-gas-right-now"></a><a
+                      href="#whats-the-price-of-gas-right-now" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What's the price of gas right now?</h2>
+                  <p>You can directly query the NEAR platform for the price of gas on a specific block using the RPC
+                    method <code>gas_price</code>. This price may change depending on network load. The price is
+                    denominated in yoctoNEAR (10^-24 NEAR)</p>
+                  <ol>
+                    <li>
+                      <p>Take any recent block hash from the blockchain using <a
+                          href="https://explorer.testnet.near.org/blocks">NEAR Explorer</a></p>
+                      <p><em>At time of writing, <code>SqNPYxdgspCT3dXK93uVvYZh18yPmekirUaXpoXshHv</code> was the latest
+                          block hash</em></p>
+                    </li>
+                    <li>
+                      <p>Issue an RPC request for the price of gas on this block using the method <code>gas_price</code>
+                        <a href="/docs/api/rpc">documented here</a></p>
+                      <pre><code class="hljs css language-bash">http post https://rpc.testnet.near.org jsonrpc=2.0 method=gas_price params:=<span class="hljs-string">'["SqNPYxdgspCT3dXK93uVvYZh18yPmekirUaXpoXshHv"]'</span> id=dontcare
+</code></pre>
+                    </li>
+                    <li>
+                      <p>Observe the results</p>
+                      <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"dontcare"</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"5000"</span>
+  }
+}
+</code></pre>
+                    </li>
+                  </ol>
+                  <p>The price of 1 unit of gas at this block was 5000 yoctoNEAR (10^-24 NEAR).</p>
+                  <h2><a class="anchor" aria-hidden="true" id="some-closing-thoughts-from-the-whitepaper"></a><a
+                      href="#some-closing-thoughts-from-the-whitepaper" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Some closing thoughts from the whitepaper</h2>
+                  <blockquote class="info">
+                    Fundamentally, the NEAR platform is a marketplace between willing participants. On the supply side,
+                    operators of the validator nodes and other fundamental infrastructure need to be incentivized to
+                    provide these services which make up the “community cloud.” On the demand side, the developers and
+                    end-users of the platform who are paying for its use need to be able to do so in a way which is
+                    simple, clear and consistent so it helps them.
+                    <p>A blockchain-based cloud provides several specific resources to the applications which run atop
+                      it:</p>
+                    <ul>
+                      <li><strong>Compute (CPU)</strong>: This is the actual computer processing (and immediately
+                        available RAM) which run the code in a contract.</li>
+                      <li><strong>Bandwidth (&quot;Network&quot;)</strong>: This is the network traffic between
+                        participants and users, including messages which submit transactions and those which propagate
+                        blocks.</li>
+                      <li><strong>Storage</strong>: Permanent data storage on the chain, typically expressed as a
+                        function of both storage space and time.</li>
+                    </ul>
+                    <p>Existing blockchains like Ethereum account for all of these in a single up front transaction fee
+                      which represents a separate accounting for each of them but ultimately charges developers or users
+                      for them only once in a single fee. This is a high volatility fee commonly denominated in “gas”.
+                    </p>
+                    <p>Developers prefer predictable pricing so they can budget and provide prices for their end users.
+                      The pricing for the above-mentioned resources on NEAR is an amount which is slowly adjusted based
+                      on system usage (and subject to the smoothing effect of resharding for extreme usage) rather than
+                      being fully auction-based. This means that a developer can more predictably know that the cost of
+                      running transactions or maintaining their storage.</p>
+                  </blockquote>
+                  <p>To dig deeper into how and why gas works the way it does on NEAR, check out the <a
+                      href="https://near.org/papers/the-official-near-white-paper/#economics">Economics</a> section of
+                    the main whitepaper and the <a
+                      href="https://near.org/papers/economics-in-sharded-blockchain/#transaction-and-storage-fees">Transaction
+                      and Storage Fees</a> section of the economics whitepaper.</p>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/24/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/concepts/epoch"><span class="arrow-prev">←
+              </span><span>Epoch</span></a><a class="docs-next button"
+              href="/docs/concepts/indexer"><span>Indexer</span><span class="arrow-next"> →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#thinking-in-gas">Thinking in gas</a></li>
+          <li><a href="#the-cost-of-common-actions">The cost of common actions</a></li>
+          <li><a href="#costs-of-complex-actions">Costs of complex actions</a>
+            <ul class="toc-headings">
+              <li><a href="#deploying-contracts">Deploying Contracts</a></li>
+              <li><a href="#function-calls">Function calls</a></li>
+            </ul>
+          </li>
+          <li><a href="#how-do-i-buy-gas">How do I buy gas?</a></li>
+          <li><a href="#attach-extra-gas-get-refunded">Attach extra gas; get refunded!</a></li>
+          <li><a href="#what-about-prepaid-gas">What about Prepaid Gas?</a></li>
+          <li><a href="#whats-the-price-of-gas-right-now">What's the price of gas right now?</a></li>
+          <li><a href="#some-closing-thoughts-from-the-whitepaper">Some closing thoughts from the whitepaper</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

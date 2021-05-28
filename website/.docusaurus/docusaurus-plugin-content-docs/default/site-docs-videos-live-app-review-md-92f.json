@@ -1,0 +1,31 @@
+{
+  "unversionedId": "videos/live-app-review",
+  "id": "videos/live-app-review",
+  "isDocsHomePage": false,
+  "title": "NEAR Application Reviews",
+  "description": "Get insights and explanations directly from NEAR Core team members as they talk through the intricacies of dApp development.",
+  "source": "@site/../docs/videos/live-app-review.md",
+  "sourceDirName": "videos",
+  "slug": "/videos/live-app-review",
+  "permalink": "/docs/videos/live-app-review",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/live-app-review.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Application Reviews",
+  "frontMatter": {
+    "id": "live-app-review",
+    "title": "NEAR Application Reviews",
+    "sidebar_label": "Application Reviews"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "NEAR Smart Contract Reviews",
+    "permalink": "/docs/videos/contract-reviews"
+  },
+  "next": {
+    "title": "Miscellaneous video concept",
+    "permalink": "/docs/videos/collections-u128-etc"
+  }
+}

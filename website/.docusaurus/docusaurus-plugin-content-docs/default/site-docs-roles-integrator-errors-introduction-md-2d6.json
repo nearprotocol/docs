@@ -1,0 +1,31 @@
+{
+  "unversionedId": "roles/integrator/errors/introduction",
+  "id": "roles/integrator/errors/introduction",
+  "isDocsHomePage": false,
+  "title": "Introduction",
+  "description": "did you know?",
+  "source": "@site/../docs/roles/integrator/errors/introduction.md",
+  "sourceDirName": "roles/integrator/errors",
+  "slug": "/roles/integrator/errors/introduction",
+  "permalink": "/docs/roles/integrator/errors/introduction",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/errors/introduction.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Introduction",
+  "frontMatter": {
+    "id": "introduction",
+    "title": "Introduction",
+    "sidebar_label": "Introduction"
+  },
+  "sidebar": "integrate",
+  "previous": {
+    "title": "Implicit Accounts",
+    "permalink": "/docs/roles/integrator/implicit-accounts"
+  },
+  "next": {
+    "title": "Source Code Survey",
+    "permalink": "/docs/roles/integrator/errors/error-implementation"
+  }
+}

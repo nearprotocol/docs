@@ -1,0 +1,27 @@
+{
+  "unversionedId": "tools/near-cli",
+  "id": "tools/near-cli",
+  "isDocsHomePage": false,
+  "title": "NEAR CLI",
+  "description": "near-cli is a NodeJS command line interface that utilizes near-api-js to connect to and interact with the NEAR blockchain.",
+  "source": "@site/../docs/tools/near-cli.md",
+  "sourceDirName": "tools",
+  "slug": "/tools/near-cli",
+  "permalink": "/docs/tools/near-cli",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-cli.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "NEAR CLI",
+  "frontMatter": {
+    "id": "near-cli",
+    "title": "NEAR CLI",
+    "sidebar_label": "NEAR CLI"
+  },
+  "sidebar": "tools",
+  "next": {
+    "title": "NEAR Explorer",
+    "permalink": "/docs/tools/near-explorer"
+  }
+}

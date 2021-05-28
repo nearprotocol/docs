@@ -27,7 +27,7 @@ In the absence of `cargo run` and the entry point, unit tests may become the pri
 
 This slide demonstrates a possible approach to a newcomer to Rust and smart contracts:
 
-![Take an example, modify it, write tests, fix errors, iterate](/docs/assets/rust-testing-iterate.png)
+![Take an example, modify it, write tests, fix errors, iterate](/img/rust-testing-iterate.png)
 
 Let's take a look at a sample of code that may appear in a simple Rust smart contract. (This code is taken from the <a href="https://github.com/near-examples/NFT/blob/4c55057523b2c5370fa3f23101e89927c35e0c18/contracts/rust/src/lib.rs#L179-L243" target="_blank">non-fungible token contract</a>.)
 

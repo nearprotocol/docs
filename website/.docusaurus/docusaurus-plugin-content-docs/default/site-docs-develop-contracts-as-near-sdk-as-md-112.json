@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/as/near-sdk-as",
+  "id": "develop/contracts/as/near-sdk-as",
+  "isDocsHomePage": false,
+  "title": "near-sdk-as",
+  "description": "https://near.github.io/near-sdk-as",
+  "source": "@site/../docs/develop/contracts/as/near-sdk-as.md",
+  "sourceDirName": "develop/contracts/as",
+  "slug": "/develop/contracts/as/near-sdk-as",
+  "permalink": "/docs/develop/contracts/as/near-sdk-as",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/near-sdk-as.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "AS SDK",
+  "frontMatter": {
+    "id": "near-sdk-as",
+    "title": "near-sdk-as",
+    "sidebar_label": "AS SDK"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "AssemblyScript",
+    "permalink": "/docs/develop/contracts/as/intro"
+  },
+  "next": {
+    "title": "Testing AssemblyScript Contracts",
+    "permalink": "/docs/develop/contracts/as/testing-as-contracts"
+  }
+}

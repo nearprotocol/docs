@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Integrator FAQ · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Orientation" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Integrator FAQ · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Orientation" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/roles/integrator/exchange-integration"
+                  target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>FAQ</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Integration</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/exchange-integration">Exchange Integration</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/implicit-accounts">Implicit
+                        Accounts</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Understanding Errors</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/errors/introduction">Introduction</a></li>
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/errors/error-implementation">Source Code Survey</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/token-loss">Token Loss</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/roles/integrator/faq">Integrator FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/roles/integrator/faq.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Integrator FAQ</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="orientation"></a><a href="#orientation"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Orientation</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="what-is-a-good-project-summary-for-near"></a><a
+                      href="#what-is-a-good-project-summary-for-near" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is a good project summary for NEAR?</h3>
+                  <p>NEAR is a sharded, public, proof-of-stake blockchain and smart contract platform. It is built in
+                    Rust and contracts compile to WASM. It is conceptually similar to Ethereum 2.0.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="whats-special-about-near"></a><a
+                      href="#whats-special-about-near" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What's special about NEAR?</h3>
+                  <p>NEAR is the blockchain for builders.</p>
+                  <p>If you understand the basics of web development, you can write, test and deploy scalable
+                    decentralized applications in minutes on the most developer-friendly blockchain without having to
+                    learn new tools or languages.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="is-near-open-source"></a><a href="#is-near-open-source"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Is NEAR open source?</h3>
+                  <p>Yes. Have look at our <a href="https://github.com/near">GitHub organization</a>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-are-cryptographic-functions-used"></a><a
+                      href="#how-are-cryptographic-functions-used" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How are cryptographic functions used?</h3>
+                  <p>We support both <code>secp256k1</code> and <code>ed25519</code> for account keys and
+                    <code>ed25519</code> for signing transactions. We currently use the <code>ed25519_dalek</code> and
+                    <code>sha2</code> libraries for crypto.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="do-you-have-any-on-chain-governance-mechanisms"></a><a
+                      href="#do-you-have-any-on-chain-governance-mechanisms" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Do you have any on-chain governance mechanisms?</h3>
+                  <p>NEAR does not have any on-chain governance at the moment. Any changes to state or state transition
+                    function must be done through a hard fork.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="do-you-have-a-bug-bounty-program"></a><a
+                      href="#do-you-have-a-bug-bounty-program" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Do you have a bug-bounty program?</h3>
+                  <p>Our plan is to have a transparent Bug Bounty program with clear guidelines for paying out to those
+                    reporting issues. Payments will likely be based on publicly available rankings provided by protocol
+                    developers based on issue severity.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="what-contracts-should-we-be-aware-of-right-now"></a><a
+                      href="#what-contracts-should-we-be-aware-of-right-now" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What contracts should we be aware of right now?</h3>
+                  <p>We have developed a number of <a href="https://github.com/near/initial-contracts">initial
+                      contracts</a> with <strong>ones in bold</strong> being most mature at time of writing</p>
+                  <ul>
+                    <li><strong>Staking Pool / Delegation contract</strong></li>
+                    <li><strong>Lockup / Vesting contract</strong></li>
+                    <li>Whitelist Contract</li>
+                    <li>Staking Pool Factory</li>
+                    <li>Multisig contract</li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="do-you-have-a-cold-wallet-implementation-ie-ledger"></a><a
+                      href="#do-you-have-a-cold-wallet-implementation-ie-ledger" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Do you have a cold wallet implementation (ie. Ledger)?</h3>
+                  <p><a href="https://github.com/near/near-ledger-app">https://github.com/near/near-ledger-app</a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="validators"></a><a href="#validators" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Validators</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="what-is-the-process-for-becoming-a-validator"></a><a
+                      href="#what-is-the-process-for-becoming-a-validator" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the process for becoming a validator?</h3>
+                  <p>Validation is permissionless and determined via auction. Parties who want to become a validator
+                    submit a special transaction to the chain one day ahead which indicates how many tokens they want to
+                    stake. An auction is run which determines the minimum necessary stake to get a validation seat
+                    during the next epoch and, if the amount submitted is greater than the minimum threshold, the
+                    submitter will validate at least one shard during the next epoch.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-long-does-a-validator-remain-a-validator"></a><a
+                      href="#how-long-does-a-validator-remain-a-validator" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How long does a validator remain a validator?</h3>
+                  <p>A validator will stop being a validator for the following reasons:</p>
+                  <ul>
+                    <li>Not producing enough blocks or chunks.</li>
+                    <li>Not getting elected in the auction for next epoch because their stake is not large enough.</li>
+                    <li>Getting slashed.
+                      Otherwise a validator will remain a validator indefinitely.</li>
+                  </ul>
+                  <p>Validator election happens in epochs. The <a
+                      href="https://near.org/downloads/Nightshade.pdf">Nightshade whitepaper</a> introduces epochs this
+                    way: &quot;the maintenance of the network is done in epochs&quot; where an epoch is a period of time
+                    on the order of half a day.</p>
+                  <p>At the beginning of each epoch, some computation produces a list of validators for the <em>very
+                      next epoch</em>.
+                    The input to this computation includes all accounts that have &quot;raised their hand to be a
+                    validator&quot;
+                    by submitting a special transaction (<a
+                      href="https://nomicon.io/RuntimeSpec/Actions.html#stakeaction"><code>StakeAction</code></a>)
+                    expressing the committment of some amount of tokens over the system's staking threshold,
+                    as well as validators from the previous epoch.
+                    The output of this computation is a list of the validators for the very next epoch.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="what-is-the-penalty-for-misbehaving-validators"></a><a
+                      href="#what-is-the-penalty-for-misbehaving-validators" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the penalty for misbehaving validators?</h3>
+                  <p>Validators are not slashed for being offline but they do miss out on the rewards of validating.
+                    Validators who miss too many blocks or chunks will be removed from the validation set in the next
+                    auction and not get any reward (but, again, without slashing).</p>
+                  <p>Any foul play on the part of the validator that is detected by the system may result is a
+                    &quot;slashing event&quot; where the validator is marked as out of integrity and forfeit their stake
+                    (according to some formula of progressive severity). The slashed stake is burnt.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="what-is-the-mechanism-for-for-delegating-stake-to-validators"></a><a
+                      href="#what-is-the-mechanism-for-for-delegating-stake-to-validators" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the mechanism for for delegating stake to validators?</h3>
+                  <p>NEAR supports separate validation keys that can be used in smart contracts to delegate stake.
+                    Delegation is done via smart contract which allows for a validator to define a custom way to collect
+                    stake, manage it and split rewards. This also allows validators to provide leverage or derivatives
+                    on stake. Delegated stake will be slashed like any other stake if the node misbehaves.</p>
+                  <p>If a validator misbehaves the funds of the delegators are also slashed. There is no waiting period
+                    for delegators to withdraw their stake.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="does-a-validator-control-funds-that-have-been-delegated-to-them"></a><a
+                      href="#does-a-validator-control-funds-that-have-been-delegated-to-them" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Does a validator control funds that have been delegated to them?</h3>
+                  <p>Delegation is custodial (you are transferring funds to a different account, the smart contract that
+                    implements staking pool). We provide a reference implementation being security reviewed and tested
+                    by 100 validators at time of writing.</p>
+                  <p>We allow validators to write and deploy new contracts but it is up to users to decide if they want
+                    to delegate. Validators can compete for delegation by choosing different logic and conditions around
+                    tax optimization, etc.</p>
+                  <p>Currently no slashing but will be added as we add shards into the system. At some point validators
+                    will be able to add an option to shield delegators from slashing (similar to Tezos model).</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="how-do-we-get-the-balance-of-an-account-after-it-has-delegated-funds"></a><a
+                      href="#how-do-we-get-the-balance-of-an-account-after-it-has-delegated-funds" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How do we get the balance of an account after it has delegated funds?</h3>
+                  <p>One would need to query the staking pool contract to get balance.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="nodes"></a><a href="#nodes" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Nodes</h2>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="can-a-node-be-configured-to-archive-all-blockchain-data-since-genesis"></a><a
+                      href="#can-a-node-be-configured-to-archive-all-blockchain-data-since-genesis" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Can a node be configured to archive all blockchain data since genesis?</h3>
+                  <p>v
+                    Yes. Start the node using the following command:</p>
+                  <pre><code class="hljs css language-sh">./target/release/near run --archive
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="can-a-node-be-configured-to-expose-an-rpc-ex-http-interface"></a><a
+                      href="#can-a-node-be-configured-to-expose-an-rpc-ex-http-interface" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Can a node be configured to expose an RPC (ex: HTTP) interface?</h3>
+                  <p>Yes. All nodes expose this interface by default which can be configured by setting the value of
+                    <code>listen_addr:port</code> in the node's <code>config.json</code> file.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="can-a-node-be-gracefully-terminated-and-restarted-using-archived-data-on-disk-to-continue-syncing"></a><a
+                      href="#can-a-node-be-gracefully-terminated-and-restarted-using-archived-data-on-disk-to-continue-syncing"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Can a node be gracefully terminated and restarted (using archived data on disk to
+                    continue syncing)?</h3>
+                  <p>Yes.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="does-a-node-expose-an-interface-for-retrieving-health-telemetry-in-a-structured-format-ex-json-over-rpc"></a><a
+                      href="#does-a-node-expose-an-interface-for-retrieving-health-telemetry-in-a-structured-format-ex-json-over-rpc"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Does a node expose an interface for retrieving health telemetry in a structured format
+                    (ex: JSON) over RPC?</h3>
+                  <p>Yes. <code>GET /status</code> and <code>GET /health</code> provide this interface.</p>
+                  <ul>
+                    <li><code>/status</code>: block height, syncing status, peer count, etc</li>
+                    <li><code>/health</code>: success/failure if node is up running &amp; progressing</li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="can-a-node-can-be-started-using-a-dockerfile-without-human-supervision"></a><a
+                      href="#can-a-node-can-be-started-using-a-dockerfile-without-human-supervision" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Can a node can be started using a Dockerfile without human supervision?</h3>
+                  <p>Yes.</p>
+                  <pre><code class="hljs css language-sh">docker run &lt;port mapping&gt; &lt;mount data folder&gt; &lt;ENV vars&gt; nearprotocol/nearcore:latest
+</code></pre>
+                  <p>See <code>nearcore/scripts/nodelib.py</code> for different examples of configuration.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="what-is-the-source-of-truth-for-current-block-height-exposed-via-api"></a><a
+                      href="#what-is-the-source-of-truth-for-current-block-height-exposed-via-api" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the source of truth for current block height exposed via API?</h3>
+                  <ul>
+                    <li>MainNet
+                      <ul>
+                        <li><a href="https://explorer.mainnet.near.org">https://explorer.mainnet.near.org</a> (also <a
+                            href="https://explorer.near.org">https://explorer.near.org</a>)</li>
+                        <li><a href="https://rpc.mainnet.near.org/status">https://rpc.mainnet.near.org/status</a></li>
+                      </ul>
+                    </li>
+                    <li>TestNet
+                      <ul>
+                        <li><a href="https://explorer.testnet.near.org">https://explorer.testnet.near.org</a></li>
+                        <li><a href="https://rpc.testnet.near.org/status">https://rpc.testnet.near.org/status</a></li>
+                      </ul>
+                    </li>
+                    <li>BetaNet
+                      <ul>
+                        <li><a href="https://explorer.betanet.near.org">https://explorer.betanet.near.org</a></li>
+                        <li><a href="https://rpc.betanet.near.org/status">https://rpc.betanet.near.org/status</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="how-old-can-the-referenced-block-hash-be-before-its-invalid"></a><a
+                      href="#how-old-can-the-referenced-block-hash-be-before-its-invalid" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How old can the referenced block hash be before it's invalid?</h3>
+                  <p>There is a genesis parameter which can be discovered for any network using:</p>
+                  <pre><code class="hljs css language-sh">http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=EXPERIMENTAL_genesis_config
+<span class="hljs-comment"># in the line above, testnet may be replaced with mainnet or betanet</span>
+</code></pre>
+                  <p>It's <code>86400</code> blocks or <code>~24</code> hours: <a
+                      href="https://github.com/near/nearcore/blob/master/neard/res/mainnet_genesis.json#L212">https://github.com/near/nearcore/blob/master/neard/res/mainnet_genesis.json#L212</a>
+                  </p>
+                  <p>In the response we find <code>transaction_validity_period&quot;: 86400</code> (and since it takes
+                    about 1 second to produce a block, this period is about 24 hrs)</p>
+                  <h2><a class="anchor" aria-hidden="true" id="blockchain"></a><a href="#blockchain" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Blockchain</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="how-will-the-network-will-be-bootstrapped"></a><a
+                      href="#how-will-the-network-will-be-bootstrapped" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How will the network will be bootstrapped?</h3>
+                  <p>Distribution at genesis will be spread among the NEAR team, our contributors, project partners (ie.
+                    contributor, beta applications, infrastructure developers, etc.) and the NEAR foundation (with many
+                    portions of that segregated for post-MainNet distribution activity and unavailable to stake so the
+                    foundation isn’t able to control the network).</p>
+                  <p>There will be auctions occurring on the platform after launch which will allocate large amounts of
+                    tokens over the next 2 years. Additionally we are planning to run TestNet where any validator who
+                    participates will receive rewards in real tokens. We are planning to onboard at least 50 separate
+                    entities to be validators at launch.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="what-is-the-network-upgrade-process"></a><a
+                      href="#what-is-the-network-upgrade-process" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the network upgrade process?</h3>
+                  <p>We are currently upgrading via restarting with a new genesis block.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="which-consensus-algorithm-does-near-use"></a><a
+                      href="#which-consensus-algorithm-does-near-use" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Which consensus algorithm does NEAR use?</h3>
+                  <p>NEAR is a sharded <strong>proof-of-stake</strong> blockchain.</p>
+                  <p><em>You can read more in our <a href="https://near.org/downloads/Nightshade.pdf">Nightshade
+                        whitepaper</a>.</em></p>
+                  <blockquote>
+                    <p><em>A few relevant details have been extracted here for convenience:</em></p>
+                    <p>[Since NEAR is a sharded blockchain, there are challenges that need to be overcome] including
+                      state validity and data
+                      availability problems. <em>Nightshade</em> is the solution Near Protocol is built upon that
+                      addresses these issues.</p>
+                    <p>Nightshade uses the heaviest chain consensus. Specifically when a block producer produces a block
+                      (see section 3.3), they can collect signatures from other block producers and validators attesting
+                      to the previous block. The weight of a block is then the cumulative stake of all the signers whose
+                      signatures are included in the block. The weight of a chain is the sum of the block weights.</p>
+                    <p>On top of the heaviest chain consensus we use a finality gadget that uses the attestations to
+                      finalize the blocks. To reduce the complexity of the system, we use a finality gadget that doesn’t
+                      influence the fork choice rule in any way, and instead only introduces extra slashing conditions,
+                      such that once a block is finalized by the finality gadget, a fork is impossible unless a very
+                      large percentage of the total stake is slashed.</p>
+                  </blockquote>
+                  <h3><a class="anchor" aria-hidden="true" id="how-does-on-chain-transaction-finality-work"></a><a
+                      href="#how-does-on-chain-transaction-finality-work" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How does on-chain transaction finality work?</h3>
+                  <p>Finality is deterministic, and requires at least 3 blocks as well as (2/3 +1) signatures of the
+                    current validator set.</p>
+                  <p>In a normal operation, we expect this to happen right at 3 blocks but it is not guaranteed.</p>
+                  <p>Finality will be exposed via RPC when querying block or transaction.</p>
+                  <p>Our definition of finality is BOTH:</p>
+                  <ul>
+                    <li>Block has quorum pre-commit from the finality gadget. See details of the finality gadget <a
+                        href="https://near.org/downloads/PoST.pdf">[here]</a></li>
+                    <li>At least 120 blocks (2-3 minutes) built on top of the block of interest. This is relevant in
+                      case of invalid state transition in some shard and provides enough time for state change
+                      challenges. In case all shards are tracked and some mechanics to pause across nodes is employed,
+                      this is not needed. We recommend exchanges track all shards.</li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="accounts"></a><a href="#accounts" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Accounts</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="how-are-addresses-generated"></a><a
+                      href="#how-are-addresses-generated" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How are addresses generated?</h3>
+                  <p>Please check out the spec here on accounts <a
+                      href="https://nomicon.io/DataStructures/Account.html">https://nomicon.io/DataStructures/Account.html</a>.
+                  </p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="what-is-the-balance-record-keeping-model-on-the-near-platform"></a><a
+                      href="#what-is-the-balance-record-keeping-model-on-the-near-platform" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the balance record-keeping model on the NEAR platform?</h3>
+                  <p>NEAR uses an <code>Account</code>-based model. All users and contracts are associated with at least
+                    1 account. Each account lives on a single shard. Each account can have multiple keys for signing
+                    transactions.</p>
+                  <p><em>You can read <a href="https://nomicon.io/DataStructures/Account.html">more about NEAR accounts
+                        here</a></em></p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-are-user-accounts-represented-on-chain"></a><a
+                      href="#how-are-user-accounts-represented-on-chain" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How are user accounts represented on-chain?</h3>
+                  <p>Users create accounts with human-readable names (eg <code>alice</code>) which can contain multiple
+                    keypairs with individual permissions. Accounts can be atomically and securely transferred between
+                    parties as a native transaction on the network. Permissions are programmable with smart contracts as
+                    well. For example, a lock up contract is just an account with permission on the key that does not
+                    allow to transfer funds greater than those unlocked.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="is-there-a-minimum-account-balance"></a><a
+                      href="#is-there-a-minimum-account-balance" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Is there a minimum account balance?</h3>
+                  <p>To limit on-chain &quot;dust&quot;, accounts (and contracts) are charged rent for storing data on
+                    the chain. This means that if the balance of the account goes below some
+                    <code>threshold * rent_on_block</code> then account can be removed by anyone. Also any user can
+                    remove their own account and transfer left over balance to another (beneficiary) account.</p>
+                  <p>There will be a restoration mechanism for accounts removed (or slept) in this way implemented in
+                    the future.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-many-keys-are-used"></a><a
+                      href="#how-many-keys-are-used" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How many keys are used?</h3>
+                  <p>An account can have arbitrarily many keys, as long as it has enough tokens for their storage.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="which-balance-look-ups-exists-what-is-required"></a><a
+                      href="#which-balance-look-ups-exists-what-is-required" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Which balance look-ups exists? What is required?</h3>
+                  <p>We have an <a href="/docs/api/rpc#view_account">RPC method for viewing account</a>.</p>
+                  <p>The <a
+                      href="https://github.com/near/near-api-js/blob/d7f0cb87ec320b723734045a4ee9d17d94574a19/src/providers/json-rpc-provider.ts#L73">JS
+                      implementation is here</a>. Note that in this RPC interface you can specify the finality
+                    requirement (whether to query the latest state or finalized state).</p>
+                  <p>For custody purposes, it is recommended not to rely on latest state but only what is finfalized.
+                  </p>
+                  <h2><a class="anchor" aria-hidden="true" id="fees"></a><a href="#fees" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Fees</h2>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="what-is-the-fee-structure-for-on-chain-transactions"></a><a
+                      href="#what-is-the-fee-structure-for-on-chain-transactions" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>What is the fee structure for on-chain transactions?</h3>
+                  <p>NEAR uses a gas-based model where prices are generally deterministically adjusted based on
+                    congestion of the network.</p>
+                  <p>We avoid making changes that are too large through re-sharding by changing number of available
+                    shards (and thus throughput).</p>
+                  <p>Accounts don’t have associated resources. Gas amount is predetermined for all transactions except
+                    function calls. For function call transactions the user (or more likely the developer) attaches the
+                    required amount of gas. If some gas is left over after the function call, it is converted back to
+                    Near and refunded to the original funding account.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="how-do-we-know-how-much-gas-to-add-to-a-transaction"></a><a
+                      href="#how-do-we-know-how-much-gas-to-add-to-a-transaction" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How do we know how much gas to add to a transaction?</h3>
+                  <ul>
+                    <li>See reference documentation here: <a
+                        href="https://nomicon.io/Economics/README.html">https://nomicon.io/Economics/README.html</a>
+                    </li>
+                    <li>See API documentation for <a href="/docs/api/rpc#gas-price">discovering gas price via RPC
+                        here</a>.</li>
+                  </ul>
+                  <p>The issuer of a transaction should attach some amount of gas by taking a guess at budget which will
+                    get the transaction processed. The contract knows how much to fund different cross contract calls.
+                    Gas price is calculated and fixed per block, but may change from block to block depending on how
+                    full / busy the block is. If blocks become more than half full then gas price increases.</p>
+                  <p>We're also considering adding a max gas price limit.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="transactions"></a><a href="#transactions"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Transactions</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="how-do-we-follow-tx-status"></a><a
+                      href="#how-do-we-follow-tx-status" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How do we follow Tx status?</h3>
+                  <p>See related <a href="/docs/api/rpc#transaction-status">RPC interface for fetching transaction
+                      status here</a>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-are-transactions-constructed-and-signed"></a><a
+                      href="#how-are-transactions-constructed-and-signed" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How are transactions constructed and signed?</h3>
+                  <p>Transactions are a collection of related data that is composed and cryptographically signed by the
+                    sender using their private key. The related public key is part of the transaction and used for
+                    signature verification. Only signed transactions may be sent to the network for processing.</p>
+                  <p>Transactions can be constructed and signed offline. Nodes are not required for signing. We are
+                    planning to add optional recent block hash to help prevent various replay attacks.</p>
+                  <p>See <a href="/docs/concepts/transaction">transactions</a> in the concepts section of our
+                    documentation.</p>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="how-is-the-hash-preimage-generated-which-fields-does-the-raw-transaction-consist-of"></a><a
+                      href="#how-is-the-hash-preimage-generated-which-fields-does-the-raw-transaction-consist-of"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How is the hash preimage generated? Which fields does the raw transaction consist of?
+                  </h3>
+                  <p>For a transaction, we sign the hash of the transaction. More specifically, what is signed is the
+                    <code>sha256</code> of the transaction object serialized in borsh (<a
+                      href="https://github.com/near/borsh">https://github.com/near/borsh</a>).</p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-do-transactions-work-on-the-near-platform"></a><a
+                      href="#how-do-transactions-work-on-the-near-platform" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How do transactions work on the NEAR platform?</h3>
+                  <p>A <code>Transaction</code> is made up of one of more <code>Action</code>s. An action can
+                    (currently) be one of 8 types: <code>CreateAccount</code>,
+                    <code>DeployContract</code>, <code>FunctionCall</code>, <code>Transfer</code>, <code>Stake</code>,
+                    <code>AddKey</code>, <code>DeleteKey</code> and <code>DeleteAccount</code>. Transactions are
+                    composed by a sender and then signed using the private keys of a valid NEAR account to create a
+                    <code>SignedTransaction</code>. This signed transaction is considered ready to send to the network
+                    for processing.
+                  </p>
+                  <p>Transactions are received via our JSON-RPC endpoint and routed to the shared where the
+                    <code>sender</code> account lives. This &quot;home shard&quot; for the sender account is then
+                    responsible for processing the transaction and generating related receipts to be applied across the
+                    network.</p>
+                  <p>Once received by the network, signed transactions are verified (using the embedded public key of
+                    the signer) and transformed into a collection of <code>Receipt</code>s, one per action. Receipts are
+                    of two types: <code>Action Receipt</code> is the most common and represents almost all actions on
+                    the network while <code>Data Receipt</code> handles the very special case of &quot;a
+                    <code>FunctionCallAction</code> which includes a Promise&quot;. These receipts are then propagated
+                    and applied across the network according to the &quot;home shard&quot; rule for all affected
+                    receiver accounts.</p>
+                  <p>These receipts are then propagated around the network using the receiver account's &quot;home
+                    shard&quot; since each account lives on one and only one shard. Once located on the correct shard,
+                    receipts are pulled from a nonce-based <a
+                      href="https://nomicon.io/ChainSpec/Transactions.html#pool-iterator">queue</a>.</p>
+                  <p>Receipts may generate other, new receipts which in turn are propagated around the network until all
+                    receipts have been applied. If any action within a transaction fails, the entire transaction is
+                    rolled back and any unburnt fees are refunded to the proper accounts.</p>
+                  <p>For more detail, see specs on <a
+                      href="https://nomicon.io/RuntimeSpec/Transactions.html"><code>Transactions</code></a>, <a
+                      href="https://nomicon.io/RuntimeSpec/Actions.html"><code>Actions</code></a>, <a
+                      href="https://nomicon.io/RuntimeSpec/Receipts.html"><code>Receipts</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="how-does-near-serialize-transactions"></a><a
+                      href="#how-does-near-serialize-transactions" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>How does NEAR serialize transactions?</h3>
+                  <p>We use a simple binary serialization format that's deterministic: <a
+                      href="https://borsh.io">https://borsh.io</a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="additional-resources"></a><a href="#additional-resources"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Additional Resources</h2>
+                  <ul>
+                    <li>
+                      <p>Whitepaper</p>
+                      <ul>
+                        <li>General overview at <a
+                            href="https://near.org/blog/the-beginners-guide-to-the-near-blockchain">The Beginner's Guide
+                            to the NEAR Blockchain</a></li>
+                        <li><a href="https://near.org/papers/the-official-near-white-paper/">NEAR Whitepaper</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>Github</p>
+                      <ul>
+                        <li><a href="https://www.github.com/near">https://www.github.com/near</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/23/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/roles/integrator/token-loss"><span
+                class="arrow-prev">← </span><span>Token Loss</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#orientation">Orientation</a>
+            <ul class="toc-headings">
+              <li><a href="#what-is-a-good-project-summary-for-near">What is a good project summary for NEAR?</a></li>
+              <li><a href="#whats-special-about-near">What's special about NEAR?</a></li>
+              <li><a href="#is-near-open-source">Is NEAR open source?</a></li>
+              <li><a href="#how-are-cryptographic-functions-used">How are cryptographic functions used?</a></li>
+              <li><a href="#do-you-have-any-on-chain-governance-mechanisms">Do you have any on-chain governance
+                  mechanisms?</a></li>
+              <li><a href="#do-you-have-a-bug-bounty-program">Do you have a bug-bounty program?</a></li>
+              <li><a href="#what-contracts-should-we-be-aware-of-right-now">What contracts should we be aware of right
+                  now?</a></li>
+              <li><a href="#do-you-have-a-cold-wallet-implementation-ie-ledger">Do you have a cold wallet implementation
+                  (ie. Ledger)?</a></li>
+            </ul>
+          </li>
+          <li><a href="#validators">Validators</a>
+            <ul class="toc-headings">
+              <li><a href="#what-is-the-process-for-becoming-a-validator">What is the process for becoming a
+                  validator?</a></li>
+              <li><a href="#how-long-does-a-validator-remain-a-validator">How long does a validator remain a
+                  validator?</a></li>
+              <li><a href="#what-is-the-penalty-for-misbehaving-validators">What is the penalty for misbehaving
+                  validators?</a></li>
+              <li><a href="#what-is-the-mechanism-for-for-delegating-stake-to-validators">What is the mechanism for for
+                  delegating stake to validators?</a></li>
+              <li><a href="#does-a-validator-control-funds-that-have-been-delegated-to-them">Does a validator control
+                  funds that have been delegated to them?</a></li>
+              <li><a href="#how-do-we-get-the-balance-of-an-account-after-it-has-delegated-funds">How do we get the
+                  balance of an account after it has delegated funds?</a></li>
+            </ul>
+          </li>
+          <li><a href="#nodes">Nodes</a>
+            <ul class="toc-headings">
+              <li><a href="#can-a-node-be-configured-to-archive-all-blockchain-data-since-genesis">Can a node be
+                  configured to archive all blockchain data since genesis?</a></li>
+              <li><a href="#can-a-node-be-configured-to-expose-an-rpc-ex-http-interface">Can a node be configured to
+                  expose an RPC (ex: HTTP) interface?</a></li>
+              <li><a
+                  href="#can-a-node-be-gracefully-terminated-and-restarted-using-archived-data-on-disk-to-continue-syncing">Can
+                  a node be gracefully terminated and restarted (using archived data on disk to continue syncing)?</a>
+              </li>
+              <li><a
+                  href="#does-a-node-expose-an-interface-for-retrieving-health-telemetry-in-a-structured-format-ex-json-over-rpc">Does
+                  a node expose an interface for retrieving health telemetry in a structured format (ex: JSON) over
+                  RPC?</a></li>
+              <li><a href="#can-a-node-can-be-started-using-a-dockerfile-without-human-supervision">Can a node can be
+                  started using a Dockerfile without human supervision?</a></li>
+              <li><a href="#what-is-the-source-of-truth-for-current-block-height-exposed-via-api">What is the source of
+                  truth for current block height exposed via API?</a></li>
+              <li><a href="#how-old-can-the-referenced-block-hash-be-before-its-invalid">How old can the referenced
+                  block hash be before it's invalid?</a></li>
+            </ul>
+          </li>
+          <li><a href="#blockchain">Blockchain</a>
+            <ul class="toc-headings">
+              <li><a href="#how-will-the-network-will-be-bootstrapped">How will the network will be bootstrapped?</a>
+              </li>
+              <li><a href="#what-is-the-network-upgrade-process">What is the network upgrade process?</a></li>
+              <li><a href="#which-consensus-algorithm-does-near-use">Which consensus algorithm does NEAR use?</a></li>
+              <li><a href="#how-does-on-chain-transaction-finality-work">How does on-chain transaction finality
+                  work?</a></li>
+            </ul>
+          </li>
+          <li><a href="#accounts">Accounts</a>
+            <ul class="toc-headings">
+              <li><a href="#how-are-addresses-generated">How are addresses generated?</a></li>
+              <li><a href="#what-is-the-balance-record-keeping-model-on-the-near-platform">What is the balance
+                  record-keeping model on the NEAR platform?</a></li>
+              <li><a href="#how-are-user-accounts-represented-on-chain">How are user accounts represented on-chain?</a>
+              </li>
+              <li><a href="#is-there-a-minimum-account-balance">Is there a minimum account balance?</a></li>
+              <li><a href="#how-many-keys-are-used">How many keys are used?</a></li>
+              <li><a href="#which-balance-look-ups-exists-what-is-required">Which balance look-ups exists? What is
+                  required?</a></li>
+            </ul>
+          </li>
+          <li><a href="#fees">Fees</a>
+            <ul class="toc-headings">
+              <li><a href="#what-is-the-fee-structure-for-on-chain-transactions">What is the fee structure for on-chain
+                  transactions?</a></li>
+              <li><a href="#how-do-we-know-how-much-gas-to-add-to-a-transaction">How do we know how much gas to add to a
+                  transaction?</a></li>
+            </ul>
+          </li>
+          <li><a href="#transactions">Transactions</a>
+            <ul class="toc-headings">
+              <li><a href="#how-do-we-follow-tx-status">How do we follow Tx status?</a></li>
+              <li><a href="#how-are-transactions-constructed-and-signed">How are transactions constructed and
+                  signed?</a></li>
+              <li><a href="#how-is-the-hash-preimage-generated-which-fields-does-the-raw-transaction-consist-of">How is
+                  the hash preimage generated? Which fields does the raw transaction consist of?</a></li>
+              <li><a href="#how-do-transactions-work-on-the-near-platform">How do transactions work on the NEAR
+                  platform?</a></li>
+              <li><a href="#how-does-near-serialize-transactions">How does NEAR serialize transactions?</a></li>
+            </ul>
+          </li>
+          <li><a href="#additional-resources">Additional Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Exchange Integration · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Transactions" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Exchange Integration · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Transactions" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class="siteNavGroupActive siteNavItemActive"><a href="/docs/roles/integrator/exchange-integration"
+                  target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Integration</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Integration</h3>
+                  <ul class="">
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/roles/integrator/exchange-integration">Exchange Integration</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/implicit-accounts">Implicit
+                        Accounts</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Understanding Errors</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/errors/introduction">Introduction</a></li>
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/roles/integrator/errors/error-implementation">Source Code Survey</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/token-loss">Token Loss</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/integrator/faq">Integrator FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/roles/integrator/exchange-integration.md"
+                target="_blank" rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Exchange Integration</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="transactions"></a><a href="#transactions"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Transactions</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="basicsdocsconceptstransaction"></a><a
+                      href="#basicsdocsconceptstransaction" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><a href="/docs/concepts/transaction">Basics</a></h3>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="specificationshttpsnomiconioruntimespectransactionshtml"></a><a
+                      href="#specificationshttpsnomiconioruntimespectransactionshtml" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><a href="https://nomicon.io/RuntimeSpec/Transactions.html">Specifications</a></h3>
+                  <h3><a class="anchor" aria-hidden="true"
+                      id="constructing-transactionsdocstutorialscreate-transactions"></a><a
+                      href="#constructing-transactionsdocstutorialscreate-transactions" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><a href="/docs/tutorials/create-transactions">Constructing Transactions</a></h3>
+                  <h2><a class="anchor" aria-hidden="true" id="balance-changes"></a><a href="#balance-changes"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Balance Changes</h2>
+                  <p>Balance changes on accounts can be tracked by using our <a href="/docs/api/rpc#changes">changes
+                      endpoint</a>. You can test this out by sending tokens to an account using <a
+                      href="/docs/tools/near-cli">`near-cli</a>.</p>
+                  <ul>
+                    <li>
+                      <p>First, make sure you have keys to your account locally.</p>
+                    </li>
+                    <li>
+                      <p>Then send tokens using the following format. (The number at the end represents the amount you
+                        are sending)</p>
+                      <pre><code class="hljs css language-bash">near send sender.testnet receiver.testnet 1
+</code></pre>
+                    </li>
+                    <li>
+                      <p>You should see a result in your terminal that looks something like this:</p>
+                      <p><img src="/img/token_transfer_result.png" alt="token transfer result"></p>
+                    </li />
+                    <li>
+                      <p>Go to the provided URL to view your transaction in <a
+                          href="https://explorer.testnet.near.org/">NEAR Explorer</a>.</p>
+                    </li>
+                    <li>
+                      <p>On this page in NEAR Explorer, note and copy the <code>BLOCK HASH</code> for this transaction.
+                      </p>
+                    </li>
+                    <li>
+                      <p>Now, go back to your terminal and run the following command using <a
+                          href="https://httpie.org/docs#installation">HTTPie</a>.</p>
+                      <pre><code class="hljs css language-bash">http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare \
+    method=EXPERIMENTAL_changes \
+    <span class="hljs-string">'params:={
+        "block_id": "CJ24svU3C9FaULVjcNVnWuVZjK6mNaQ8p6AMyUDMqB37",
+        "changes_type": "account_changes",
+        "account_ids": ["sender.testnet"]
+    }'</span>
+</code></pre>
+                      <p><strong>Note</strong> Make sure you replace the <code>block_id</code> with the
+                        <code>BLOCK HASH</code> you copied from explorer, as well as replacing the
+                        <code>account_ids</code> with the one you just sent tokens from.
+                      </p>
+                    </li>
+                    <li>
+                      <p>You should have a response that looks something like this:</p>
+                      <p><img src="/img/balance_changes_result.png" alt="balance changes result"></p>
+                    </li />
+                  </ul>
+                  <p>You can also view account balances by using the <code>query</code> method, which only requires an
+                    accountId.</p>
+                  <ul>
+                    <li>
+                      <p>In your terminal, run:</p>
+                      <pre><code class="hljs css language-bash">http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query \
+params:=<span class="hljs-string">'{
+  "request_type": "view_account",
+  "finality": "final",
+  "account_id": "sender.testnet"
+}'</span>
+</code></pre>
+                    </li>
+                  </ul>
+                  <p>Your response should look like this:</p>
+                  <p><img src="/img/account_balance_query.png" alt="account balance query"></p />
+                  <p><strong>Note:</strong> Gas prices can change between blocks. Even for transactions with
+                    deterministic gas cost, the cost in NEAR could also be different.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="account"></a><a href="#account" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Account</h2>
+                  <ul>
+                    <li>We support <a
+                        href="https://nomicon.io/DataStructures/Account.html#implicit-account-ids">implicit account</a>
+                      creation which allows exchanges to create accounts without paying for transactions.</li>
+                    <li>You can create an implicit account by following the steps in <a
+                        href="/docs/roles/integrator/implicit-accounts">this guide</a>.</li>
+                    <li>Accounts must have enough tokens cover its storage. Storage cost per byte is 0.0001 NEAR and an
+                      account with one
+                      access key must maintain a balance of at least 0.0182 NEAR. For more details, see <a
+                        href="https://near.org/papers/economics-in-sharded-blockchain/#transaction-and-storage-fees">this
+                        section of the economics paper</a></li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="transfer-from-function-call"></a><a
+                      href="#transfer-from-function-call" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Transfer from Function Call</h2>
+                  <p>NEAR allows transfer to happen within a function call. More importantly, when an account is
+                    deployed with some contract,
+                    it is possible that the only way to transfer tokens from that account is through a function call.
+                    Therefore, exchanges
+                    need to support transfer through function calls as well. We recommend the following approach:</p>
+                  <p>Exchange can <a href="/docs/api/rpc#block">query block by height</a> to get blocks on each height,
+                    and for every block,
+                    <a href="/docs/api/rpc#chunk">query its chunk</a> to obtain the transactions included in the block.
+                    For each transaction,
+                    <a href="/docs/api/rpc#transaction-status-with-receipts">query its status</a> to see the receipts
+                    generated from
+                    transactions. Since exchanges are only interested in transfers to their addresses, they only need to
+                    filter receipts that
+                    only contain <code>Transfer</code> action and whose <code>predecessor_id</code> is not
+                    <code>system</code> (receipts with <code>predecessor_id</code> equal to <code>system</code>
+                    are <a href="https://nomicon.io/RuntimeSpec/Refunds.html">refunds</a>). Then, to check whether the
+                    receipt succeeds, it is sufficient
+                    to look for the <code>receipt_id</code> in <code>receipts_outcome</code> and see if its status is
+                    <code>SuccessValue</code>.
+                  </p>
+                  <p>Alternatively, exchange can use <a
+                      href="https://github.com/near/nearcore/tree/master/chain/indexer">the indexer framework</a>
+                    to help index on-chain data which include receipts. An example usage of the indexer can be found <a
+                      href="https://github.com/near/nearcore/tree/master/tools/indexer/example">here</a>.</p>
+                  <p>Below we include examples from the contracts that are likely to be used to perform transfers
+                    through function calls.</p>
+                  <p><strong>Example of transfer from a lockup contract</strong></p>
+                  <p>A contract <code>evgeny.lockup.near</code> is deployed and we can check its owner by</p>
+                  <pre><code class="hljs css language-bash">&gt; near view evgeny.lockup.near get_owner_account_id
+View call: evgeny.lockup.near.get_owner_account_id()
+<span class="hljs-string">'evgeny.near'</span>
+</code></pre>
+                  <p>Now we want to transfer some unlocked tokens (1 NEAR) with the following call</p>
+                  <pre><code class="hljs css language-bash">near call evgeny.lockup.near transfer <span class="hljs-string">'{"amount":"1000000000000000000000000", "receiver_id": "evgeny.near"}'</span> --accountId=evgeny.near
+</code></pre>
+                  <p>The result can be seen through tx status query:</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"123"</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"receipts"</span>: [
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"FunctionCall"</span>: {
+                  <span class="hljs-attr">"args"</span>: <span class="hljs-string">"eyJhbW91bnQiOiIxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwicmVjZWl2ZXJfaWQiOiJldmdlbnkubmVhciJ9"</span>,
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"0"</span>,
+                  <span class="hljs-attr">"gas"</span>: <span class="hljs-number">100000000000000</span>,
+                  <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">"transfer"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"186029458"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"CyJL22SYqt26qgh2XVnk9MGfvzgyiiq5Lny7DdbTdTWU"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.lockup.near"</span>
+      },
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"evgeny.lockup.near"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"1000000000000000000000000"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"186029458"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.near"</span>
+      },
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"system"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"19200274886926125000"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"J1bBKH43nXHYg4NuS97R1PFzdZchrJboVAdRsK5NRrAv"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.near"</span>
+      },
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"system"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"18655658845681462514128"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"6PFaxnNvK5r6qxBq5WfV9uGjoNM6qjhHwLehLP1qak9d"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.near"</span>
+      }
+    ],
+    <span class="hljs-attr">"receipts_outcome"</span>: [
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"9boEKq9G1UFsEuzmuQrxh5dkRc8xsv8PSPGEkYiTyRLj"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"CyJL22SYqt26qgh2XVnk9MGfvzgyiiq5Lny7DdbTdTWU"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.lockup.near"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">3574640311481</span>,
+          <span class="hljs-attr">"logs"</span>: [
+            <span class="hljs-string">"Transferring 1000000000000000000000000 to account @evgeny.near"</span>
+          ],
+          <span class="hljs-attr">"receipt_ids"</span>: [
+            <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>,
+            <span class="hljs-string">"6PFaxnNvK5r6qxBq5WfV9uGjoNM6qjhHwLehLP1qak9d"</span>
+          ],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"357464031148100000000"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: []
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"7qn4BjmMD4QbyVvMa8QEzm7h5YuhoGTFTgLeNMUp85UQ"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">223182562500</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"J1bBKH43nXHYg4NuS97R1PFzdZchrJboVAdRsK5NRrAv"</span>],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"22318256250000000000"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"AwHdk5dushTSXHFBt3R5MiexjiXybwdnEaB7L9iJ5F6t"</span>
+          }
+        ]
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"46788Ay85YGnQaH5tfbboQNWJs3gyXsPbcWzRyxqw56K"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"J1bBKH43nXHYg4NuS97R1PFzdZchrJboVAdRsK5NRrAv"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: []
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"7qn4BjmMD4QbyVvMa8QEzm7h5YuhoGTFTgLeNMUp85UQ"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"6PFaxnNvK5r6qxBq5WfV9uGjoNM6qjhHwLehLP1qak9d"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"9RRJpH5VdDxsHpp323EshcAauV5wUNDyW9FpEJBRXXq8"</span>
+          }
+        ]
+      }
+    ],
+    <span class="hljs-attr">"status"</span>: {
+      <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+    },
+    <span class="hljs-attr">"transaction"</span>: {
+      <span class="hljs-attr">"actions"</span>: [
+        {
+          <span class="hljs-attr">"FunctionCall"</span>: {
+            <span class="hljs-attr">"args"</span>: <span class="hljs-string">"eyJhbW91bnQiOiIxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwicmVjZWl2ZXJfaWQiOiJldmdlbnkubmVhciJ9"</span>,
+            <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"gas"</span>: <span class="hljs-number">100000000000000</span>,
+            <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">"transfer"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"GXP8YaSonoN2eBY6dB3FbMN2NyYD2JeJJvKdvbL4Jmb2"</span>,
+      <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">6</span>,
+      <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>,
+      <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.lockup.near"</span>,
+      <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"ed25519:4nfzTMpQJKCY3KaqUTFig4Xy9uxwbMeQpMJjtNKsXmwiVqgcVSWRguZEgZM8L2x1jvdpZHsYjLCxc9cSBamXuXPH"</span>,
+      <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>
+    },
+    <span class="hljs-attr">"transaction_outcome"</span>: {
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"4u7maz2U43W4DPxqQE8KoRNi5dTRHrAsKsFk2qDQsQEw"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"GXP8YaSonoN2eBY6dB3FbMN2NyYD2JeJJvKdvbL4Jmb2"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">2428086459116</span>,
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"CyJL22SYqt26qgh2XVnk9MGfvzgyiiq5Lny7DdbTdTWU"</span>],
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"CyJL22SYqt26qgh2XVnk9MGfvzgyiiq5Lny7DdbTdTWU"</span>
+        },
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"242808645911600000000"</span>
+      },
+      <span class="hljs-attr">"proof"</span>: []
+    }
+  }
+}
+</code></pre>
+                  <p>As we can see, there are four receipts generated in this function call. If we apply the criteria
+                    mentioned above, we can
+                    find in <code>receipts</code> field this object</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"evgeny.lockup.near"</span>,
+  <span class="hljs-attr">"receipt"</span>: {
+    <span class="hljs-attr">"Action"</span>: {
+      <span class="hljs-attr">"actions"</span>: [
+        {
+          <span class="hljs-attr">"Transfer"</span>: {
+            <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"1000000000000000000000000"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"186029458"</span>,
+      <span class="hljs-attr">"input_data_ids"</span>: [],
+      <span class="hljs-attr">"output_data_receivers"</span>: [],
+      <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+      <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BVRTxEEMx3gFceSgJtnvPFbSnPDwwUzHe6KGduRh5Byq"</span>
+    }
+  },
+  <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>,
+  <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"evgeny.near"</span>
+}
+</code></pre>
+                  <p>which contains only <code>Transfer</code> action and whose <code>predecessor_id</code> is not
+                    <code>system</code>. Now we can check the status of the
+                    execution by looking for the same receipt id
+                    <code>EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC</code> in <code>receipts_outcome</code> field
+                    of the rpc return result, this leads us to this execution outcome
+                  </p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"7qn4BjmMD4QbyVvMa8QEzm7h5YuhoGTFTgLeNMUp85UQ"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"EvHfj4fUyVuLBRKNdCZmFGr4WfqwYf7YCbzFsRGFTFJC"</span>,
+  <span class="hljs-attr">"outcome"</span>: {
+    <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"evgeny.near"</span>,
+    <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">223182562500</span>,
+    <span class="hljs-attr">"logs"</span>: [],
+    <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"J1bBKH43nXHYg4NuS97R1PFzdZchrJboVAdRsK5NRrAv"</span>],
+    <span class="hljs-attr">"status"</span>: {
+      <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+    },
+    <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"22318256250000000000"</span>
+  },
+  <span class="hljs-attr">"proof"</span>: [
+    {
+      <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+      <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"AwHdk5dushTSXHFBt3R5MiexjiXybwdnEaB7L9iJ5F6t"</span>
+    }
+  ]
+}
+</code></pre>
+                  <p>and its status contains <code>SuccessValue</code>, which indicates that the receipt has succeeded.
+                    Therefore we know that
+                    <code>1000000000000000000000000</code> yoctoNEAR, or 1 NEAR has been successfully transferred.
+                  </p>
+                  <p><strong>Example of transfer from a multisig contract</strong></p>
+                  <p>Mutisig contract, as the name suggests, uses multiple signatures to confirm a transaction and
+                    therefore, actions performed
+                    by the multisig contract involves multiple transactions. In the following example, we will show a
+                    how a transfer is done from
+                    a mutlisig contract that requires two confirmations.</p>
+                  <ul>
+                    <li>First step: <code>add_request_and_confirm</code>. This initiates the action that the multisig
+                      contract wants to perform with one
+                      confirmation. The multisig contract <code>multsigtest.testnet</code> wants to transfer 1 NEAR to
+                      <code>bowen</code> and it first
+                      sends a transaction that calls <code>add_request_and_confirm</code> with a request
+                    </li>
+                  </ul>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"bowen"</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Transfer"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"1000000000000000000000000"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+                  <p>that indicates it wants to transfer 1 NEAR to <code>bowen</code>. Notice that this transaction only
+                    records the action
+                    but does not perform the actual transfer. The transaction result is as follows:</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"123"</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"receipts"</span>: [
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"system"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"3069687780141648922140"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:JDewsbE7nz6orFD4zJ3mVzqhfcaoSD6Hmi5as3AHHiTt"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"4qgDptd7Wm6vswAhWMCsVpTjBEkmLJEUxSNVQS1wu3rD"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>
+      }
+    ],
+    <span class="hljs-attr">"receipts_outcome"</span>: [
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"6uJWHTvUrtFQAurUyfuAfy9EdoR9FhLodGh44aHJta6m"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"94LiYwKJEDherHMNg9fqLy9ShFTDiQiUN3nDaGmLZwth"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">8024094920263</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"4qgDptd7Wm6vswAhWMCsVpTjBEkmLJEUxSNVQS1wu3rD"</span>],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">"OA=="</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"802409492026300000000"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"GedzmwRkxA5VkT8GLBCnrPUmnEhWPXadPmiq4Ho1s9pH"</span>
+          },
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"GirkzdS9YpsAz5fXuL5T3rXd93aRcnXNAdXYi241qpWK"</span>
+          }
+        ]
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"4JyQ6guJKeWZxxXrKndLDuSa5URuirmBi6RzsbKYFsBE"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"4qgDptd7Wm6vswAhWMCsVpTjBEkmLJEUxSNVQS1wu3rD"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: []
+      }
+    ],
+    <span class="hljs-attr">"status"</span>: {
+      <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">"OA=="</span>
+    },
+    <span class="hljs-attr">"transaction"</span>: {
+      <span class="hljs-attr">"actions"</span>: [
+        {
+          <span class="hljs-attr">"FunctionCall"</span>: {
+            <span class="hljs-attr">"args"</span>: <span class="hljs-string">"eyJyZXF1ZXN0Ijp7InJlY2VpdmVyX2lkIjoiYm93ZW4iLCJhY3Rpb25zIjpbeyJ0eXBlIjoiVHJhbnNmZXIiLCJhbW91bnQiOiIxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIn1dfX0="</span>,
+            <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"gas"</span>: <span class="hljs-number">30000000000000</span>,
+            <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">"add_request_and_confirm"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"FGREJkC1e8y95Rc35iD1LVRiDy1WcAZhAxxkSinfb2mL"</span>,
+      <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">10</span>,
+      <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:JDewsbE7nz6orFD4zJ3mVzqhfcaoSD6Hmi5as3AHHiTt"</span>,
+      <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+      <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"ed25519:3NUKXd4uj2eEBqGQtRAxkTFW7UfG44tjvQNNHBDvN9ZswTTMRsDrMJSd1U3GqWF7QToqWQR9J8atNEVTemSWYw41"</span>,
+      <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>
+    },
+    <span class="hljs-attr">"transaction_outcome"</span>: {
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"6uJWHTvUrtFQAurUyfuAfy9EdoR9FhLodGh44aHJta6m"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"FGREJkC1e8y95Rc35iD1LVRiDy1WcAZhAxxkSinfb2mL"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">2428204963618</span>,
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"94LiYwKJEDherHMNg9fqLy9ShFTDiQiUN3nDaGmLZwth"</span>],
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"94LiYwKJEDherHMNg9fqLy9ShFTDiQiUN3nDaGmLZwth"</span>
+        },
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"242820496361800000000"</span>
+      },
+      <span class="hljs-attr">"proof"</span>: [
+        {
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"AsNAQabPFkmaugRGhCbzcEcR8Gnd22WXxPM2fb2cwHiv"</span>
+        },
+        {
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"GirkzdS9YpsAz5fXuL5T3rXd93aRcnXNAdXYi241qpWK"</span>
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+                  <ul>
+                    <li>Second step: <code>confirm</code>. A second transaction is sent to confirm the transfer. This
+                      transaction takes the request id
+                      returned by the first transaction and does the actual transfer. The transaction result is as
+                      follows</li>
+                  </ul>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"123"</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"receipts"</span>: [
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"1000000000000000000000000"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"451542320"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BmVX32jhvEd8d8outiQdjf66GGYV3pb7kaxrKTdNisCz"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"bowen"</span>
+      },
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"system"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"78458115804795000000"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BmVX32jhvEd8d8outiQdjf66GGYV3pb7kaxrKTdNisCz"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"6SxC9GfYdjqm7Ao5EAw51XUAjgoN8Lj2X9xJfxjDQYXd"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>
+      },
+      {
+        <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"system"</span>,
+        <span class="hljs-attr">"receipt"</span>: {
+          <span class="hljs-attr">"Action"</span>: {
+            <span class="hljs-attr">"actions"</span>: [
+              {
+                <span class="hljs-attr">"Transfer"</span>: {
+                  <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"112870156274913516718240"</span>
+                }
+              }
+            ],
+            <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"input_data_ids"</span>: [],
+            <span class="hljs-attr">"output_data_receivers"</span>: [],
+            <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+            <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BmVX32jhvEd8d8outiQdjf66GGYV3pb7kaxrKTdNisCz"</span>
+          }
+        },
+        <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"CHfzz6NLcQMyiLHBQoczhgm5BFjLVfv9B7eCyXKLhhcT"</span>,
+        <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>
+      }
+    ],
+    <span class="hljs-attr">"receipts_outcome"</span>: [
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"9JEiMrZ1SpAUEbQswde3Diptzwy35Vrvd41VZWG9hYVE"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"FfuhYhsgFL7sLC8pk1tuRnMHJdqycE6gEcfgZLW9fmFB"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">10109796553814</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [
+            <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>,
+            <span class="hljs-string">"CHfzz6NLcQMyiLHBQoczhgm5BFjLVfv9B7eCyXKLhhcT"</span>
+          ],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"1010979655381400000000"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"9e2UcG6qBRahBh3V2Z8bGJLh5c4jXfZdP3WBJkCpJCfj"</span>
+          }
+        ]
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"4LkVfqyhhrxDdVFmow6NxLf1jTaj6XVr7CVcUxxySd1R"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"bowen"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">223182562500</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"6SxC9GfYdjqm7Ao5EAw51XUAjgoN8Lj2X9xJfxjDQYXd"</span>],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"22318256250000000000"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"FFWaWUFt6sNx5XNHzGYsYBSYFWtGPoww5XQz1QmLVc8i"</span>
+          }
+        ]
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"G6LDdnAa2b38TB4KZ89HAyVgfgyiRPDDgSxoZypbUYpx"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"6SxC9GfYdjqm7Ao5EAw51XUAjgoN8Lj2X9xJfxjDQYXd"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: []
+      },
+      {
+        <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"4LkVfqyhhrxDdVFmow6NxLf1jTaj6XVr7CVcUxxySd1R"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"CHfzz6NLcQMyiLHBQoczhgm5BFjLVfv9B7eCyXKLhhcT"</span>,
+        <span class="hljs-attr">"outcome"</span>: {
+          <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+          <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"logs"</span>: [],
+          <span class="hljs-attr">"receipt_ids"</span>: [],
+          <span class="hljs-attr">"status"</span>: {
+            <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+          },
+          <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>
+        },
+        <span class="hljs-attr">"proof"</span>: [
+          {
+            <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>,
+            <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"DpDYAEKZTtSomgyeNcJ2i4qjvfqnCtf1CXa83Cz5wvEy"</span>
+          }
+        ]
+      }
+    ],
+    <span class="hljs-attr">"status"</span>: {
+      <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+    },
+    <span class="hljs-attr">"transaction"</span>: {
+      <span class="hljs-attr">"actions"</span>: [
+        {
+          <span class="hljs-attr">"FunctionCall"</span>: {
+            <span class="hljs-attr">"args"</span>: <span class="hljs-string">"eyJyZXF1ZXN0X2lkIjo4fQ=="</span>,
+            <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-attr">"gas"</span>: <span class="hljs-number">250000000000000</span>,
+            <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">"confirm"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"Fu39vwxC4mu9ks1DZA5Cib63RnBMHpFonk2DcbpioEYc"</span>,
+      <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">9</span>,
+      <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:BmVX32jhvEd8d8outiQdjf66GGYV3pb7kaxrKTdNisCz"</span>,
+      <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+      <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"ed25519:2raQq7t3cmzSL2krE2xaNqXhAw7cKMoXrBjT2ZhAGfCVtGwzbbQ8zkB17vrCSFZDbFmPWSJpoqsw8qPZZiorwSzS"</span>,
+      <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>
+    },
+    <span class="hljs-attr">"transaction_outcome"</span>: {
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"9JEiMrZ1SpAUEbQswde3Diptzwy35Vrvd41VZWG9hYVE"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"Fu39vwxC4mu9ks1DZA5Cib63RnBMHpFonk2DcbpioEYc"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">2427972426482</span>,
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"FfuhYhsgFL7sLC8pk1tuRnMHJdqycE6gEcfgZLW9fmFB"</span>],
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"FfuhYhsgFL7sLC8pk1tuRnMHJdqycE6gEcfgZLW9fmFB"</span>
+        },
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"242797242648200000000"</span>
+      },
+      <span class="hljs-attr">"proof"</span>: [
+        {
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"B6hN48qeVP8J3hP8XGcANShM264QkNjgJAfMtsuknqex"</span>
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+                  <p>Notice that similar to the transfer from lockup contract, there is also one receipt in the
+                    <code>receipts</code> field that meet
+                    our requirements:
+                  </p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"predecessor_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+  <span class="hljs-attr">"receipt"</span>: {
+    <span class="hljs-attr">"Action"</span>: {
+      <span class="hljs-attr">"actions"</span>: [
+        {
+          <span class="hljs-attr">"Transfer"</span>: {
+            <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"1000000000000000000000000"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"gas_price"</span>: <span class="hljs-string">"451542320"</span>,
+      <span class="hljs-attr">"input_data_ids"</span>: [],
+      <span class="hljs-attr">"output_data_receivers"</span>: [],
+      <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"multisigtest.testnet"</span>,
+      <span class="hljs-attr">"signer_public_key"</span>: <span class="hljs-string">"ed25519:BmVX32jhvEd8d8outiQdjf66GGYV3pb7kaxrKTdNisCz"</span>
+    }
+  },
+  <span class="hljs-attr">"receipt_id"</span>: <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>,
+  <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"bowen"</span>
+}
+</code></pre>
+                  <p>and we can find its outcome in <code>receipts_outcome</code>:</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"4LkVfqyhhrxDdVFmow6NxLf1jTaj6XVr7CVcUxxySd1R"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"DZbHTEf3i3XznK4oJHQfcrteoiCL6WykRiA8vsn4LmAy"</span>,
+  <span class="hljs-attr">"outcome"</span>: {
+    <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"bowen"</span>,
+    <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">223182562500</span>,
+    <span class="hljs-attr">"logs"</span>: [],
+    <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"6SxC9GfYdjqm7Ao5EAw51XUAjgoN8Lj2X9xJfxjDQYXd"</span>],
+    <span class="hljs-attr">"status"</span>: {
+      <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+    },
+    <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"22318256250000000000"</span>
+  },
+  <span class="hljs-attr">"proof"</span>: [
+    {
+      <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>,
+      <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"FFWaWUFt6sNx5XNHzGYsYBSYFWtGPoww5XQz1QmLVc8i"</span>
+    }
+  ]
+}
+</code></pre>
+                  <p>which indicates that the transaction is successful.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="block-and-finality"></a><a href="#block-and-finality"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Block and Finality</h2>
+                  <p>Some important pieces of information regarding block and finality include:</p>
+                  <ul>
+                    <li>Expected block time is around 1s and expected time to finality is around 2s. The last final
+                      block can be queried by
+                      specifying <code>{&quot;finality&quot;: &quot;final&quot;}</code> in the block query. For example,
+                      to get the latest final block on mainnet, one can run</li>
+                  </ul>
+                  <pre><code class="hljs css language-bash">http post https://rpc.mainnet.near.org method=block params:=<span class="hljs-string">'{"finality":"final"}'</span> id=123 jsonrpc=2.0
+</code></pre>
+                  <ul>
+                    <li>
+                      <p>Block height are not necessarily continuous and certain height may be skipped if for example
+                        block producer for that height
+                        is offline. For example, after a block at height 100 is produced, the block at height 101 may be
+                        skipped. When block at height
+                        102 is produced, its previous block is the block at height 100.</p>
+                    </li>
+                    <li>
+                      <p>Some blocks may not include new chunks if, for example, the previous chunk producer is offline.
+                        Even though in the rpc
+                        return result every block will have nonempty <code>chunks</code> field, it does not imply that
+                        there is a new chunk included in the block.
+                        The way to tell whether the chunk is included in the block is to check whether
+                        <code>height_included</code> in the chunk is the same
+                        as the height of the block.
+                      </p>
+                    </li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="running-an-archival-node"></a><a
+                      href="#running-an-archival-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Running an Archival Node</h2>
+                  <ul>
+                    <li>Setting up an archival node is the same as a <a href="/docs/develop/node/running-a-node">regular
+                        node</a>, but modifying your <code>config.json</code> by changing <code>archive</code> to
+                      <code>true</code> and specifying <code>tracked_shards</code>. Please make sure that the node is
+                      stopped while changing the config.
+                    </li>
+                  </ul>
+                  <p>The config should contain the following fields, currently NEAR testnet and mainnet have only 1
+                    (zero indexed) shard and that shard is tracked.</p>
+                  <pre><code class="hljs">{
+  ...
+  <span class="hljs-string">"archive"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"tracked_shards"</span>: [<span class="hljs-number">0</span>],
+  ...
+}
+</code></pre>
+                  <p>In the future there will be the possibility to track different or multiple shards.</p>
+                  <ul>
+                    <li>Once the config has been changed you can restart the node and the node will start syncing new
+                      archival data, in the case where you want the full archival history you can just delete the data
+                      dir and start the node from scratch syncing full history or use one of the latest backups
+                      containing the data directory snapshot which can be copied under the near home dir (default:
+                      ~/.near/data).</li>
+                  </ul>
+                  <p>All the backups can be downloaded from the public S3 bucket which contains latest daily snapshots:
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Network</th>
+                        <th>URL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mainnet</td>
+                        <td><a
+                            href="https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/mainnet/archive/data.tar">https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/mainnet/archive/data.tar</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Testnet</td>
+                        <td><a
+                            href="https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/testnet/archive/data.tar">https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/testnet/archive/data.tar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h4><a class="anchor" aria-hidden="true" id="steps-to-start-archive-node"></a><a
+                      href="#steps-to-start-archive-node" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Steps to start archive node</h4>
+                  <p>Make sure <a href="https://github.com/near/nearup">nearup</a> is installed.</p>
+                  <ol>
+                    <li>
+                      <code>wget -b https://near-protocol-public.s3.ca-central-1.amazonaws.com/backups/{testnet|mainnet}/archive/data.tar</code>
+                    </li>
+                    <li><code>nearup run testnet</code></li>
+                    <li>Wait until initialization finishes, use <code>nearup logs --follow</code></li>
+                    <li><code>nearup stop</code></li>
+                    <li><code>tar -xvf data.tar -C ~/.near/testnet/data</code></li>
+                    <li><code>nearup run testnet</code> - should start syncing headers at ~97%</li>
+                  </ol>
+                  <h2><a class="anchor" aria-hidden="true" id="staking-and-delegation"></a><a
+                      href="#staking-and-delegation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Staking and Delegation</h2>
+                  <ul>
+                    <li><a
+                        href="https://github.com/nearprotocol/stakewars">https://github.com/nearprotocol/stakewars</a>
+                    </li>
+                    <li><a href="https://github.com/near/core-contracts">https://github.com/near/core-contracts</a></li>
+                  </ul>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/23/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-next button"
+              href="/docs/roles/integrator/implicit-accounts"><span>Implicit Accounts</span><span class="arrow-next">
+                →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#transactions">Transactions</a>
+            <ul class="toc-headings">
+              <li><a href="#basicsdocsconceptstransaction"><a href="/docs/concepts/transaction">Basics</a></a></li>
+              <li><a href="#specificationshttpsnomiconioruntimespectransactionshtml"><a
+                    href="https://nomicon.io/RuntimeSpec/Transactions.html">Specifications</a></a></li>
+              <li><a href="#constructing-transactionsdocstutorialscreate-transactions"><a
+                    href="/docs/tutorials/create-transactions">Constructing Transactions</a></a></li>
+            </ul>
+          </li>
+          <li><a href="#balance-changes">Balance Changes</a></li>
+          <li><a href="#account">Account</a></li>
+          <li><a href="#transfer-from-function-call">Transfer from Function Call</a></li>
+          <li><a href="#block-and-finality">Block and Finality</a></li>
+          <li><a href="#running-an-archival-node">Running an Archival Node</a></li>
+          <li><a href="#staking-and-delegation">Staking and Delegation</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

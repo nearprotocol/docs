@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Token Delegation · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Overview" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Token Delegation · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Overview" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Token Basics</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Token Basics</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/tokens/token-custody">Token Custody</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tokens/lockup">Lockups Explained</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem" href="/docs/validator/delegation">Token
+                        Delegation</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/validator/delegation.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Token Delegation</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Overview</h2>
+                  <p>To learn more about what validation and delegation are, please see the <a
+                      href="/docs/validator/staking-overview">Validation docs</a> and <a
+                      href="/docs/validator/staking-faq">validation FAQ</a>. The current page will describe the
+                    mechanics of participating in delegation.</p>
+                  <p>At a high level, anyone can delegate their tokens to a staking pool which is run by a validator.
+                    This is usually just called &quot;Staking&quot;. This is possible even if your tokens are in a
+                    lockup contract (as most tokens are during the network's early release). Delegating to a staking
+                    pool allows you to receive some staking rewards (which will activate as part of the Phase II rollout
+                    and depend on the exact fees charged by the validator) and to participate in protocol governance by
+                    adding weight to the vote of the validator whose pool you have delegated to.</p>
+                  <p>You can participate in delegation by using a website (GUI), using the <code>view</code> and
+                    <code>call</code> methods of the command-line interface (CLI) or via sending RPC calls directly.
+                    These are described below.</p>
+                  <p>Reminder: If you haven't already, evaluate your token custody options from <a
+                      href="../tokens/token-custody">this documentation page</a>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="viewing-and-choosing-validators"></a><a
+                      href="#viewing-and-choosing-validators" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Viewing and Choosing Validators</h3>
+                  <p>During early days, the staking pool contracts (<a
+                      href="https://github.com/near/core-contracts/tree/master/staking-pool">code</a>) allow validators
+                    to select what fee they will charge on rewards earned by pools they run. In the future, updated
+                    versions of the staking pool contracts may include more parameters (which is one of the nice
+                    features enabled by NEAR's contract-based delegation).</p>
+                  <p>Several community-run lists of validators list who they are, how much stake they have, what their
+                    vote was <a href="https://near.org/blog/mainnet-phase-i/">for the Phase II transition</a> and more.
+                    These can be helpful for selecting where to delegate your tokens. As always, do your own diligence.
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Operator</th>
+                        <th>URL (to copy and paste)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>NEAR Explorer</td>
+                        <td><a
+                            href="https://explorer.near.org/nodes/validators">https://explorer.near.org/nodes/validators</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Zavodil</td>
+                        <td><a href="https://near.zavodil.ru/?pools=">https://near.zavodil.ru/?pools=</a></td>
+                      </tr>
+                      <tr>
+                        <td>DokiaCapital</td>
+                        <td><a
+                            href="https://staking.dokia.cloud/staking/near/validators">https://staking.dokia.cloud/staking/near/validators</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Stardust NEAR Pool</td>
+                        <td><a href="https://near-staking.com/">https://near-staking.com/</a></td>
+                      </tr>
+                      <tr>
+                        <td>add here</td>
+                        <td>your link</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2><a class="anchor" aria-hidden="true" id="gui-based-delegation-via-a-website-or-app"></a><a
+                      href="#gui-based-delegation-via-a-website-or-app" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>GUI-based delegation (via a website or app)</h2>
+                  <p>Disclaimer: the list below is community-maintained, and is not an endorsement by NEAR to use any of
+                    them. Do your own research before staking your funds with them!</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Provider</th>
+                        <th>URL (to copy and paste)</th>
+                        <th>Added on</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>NEAR Wallet</td>
+                        <td><a href="https://wallet.near.org">https://wallet.near.org</a></td>
+                        <td>Oct 11 2020</td>
+                      </tr>
+                      <tr>
+                        <td>DokiaCapital</td>
+                        <td><a href="https://staking.dokia.cloud">https://staking.dokia.cloud</a></td>
+                        <td>Sept 11 2020</td>
+                      </tr>
+                      <tr>
+                        <td>Moonlet Wallet</td>
+                        <td><a href="https://moonlet.io/near-staking">https://moonlet.io/near-staking</a></td>
+                        <td>15 Oct 2020</td>
+                      </tr>
+                      <tr>
+                        <td>add here</td>
+                        <td>your link</td>
+                        <td>first come, first serve</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2><a class="anchor" aria-hidden="true" id="cli-based-delegation"></a><a href="#cli-based-delegation"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>CLI-based delegation</h2>
+                  <p>Disclaimer: the documentation below refers to the Github repository <a
+                      href="https://github.com/near/core-contracts/">Core Contracts</a>. Always check the source of the
+                    smart contract before delegating your funds to it!</p>
+                  <p>You can use <code>near-cli</code> with NEAR Core Contracts to delegation via:</p>
+                  <ol>
+                    <li>Lockup Contract</li>
+                    <li>Staking Pool</li>
+                  </ol>
+                  <p>Before starting, make sure you are running the latest version of <a
+                      href="https://github.com/near/near-cli">near-cli</a>, you are familiar with <a
+                      href="../concepts/gas">gas fees</a> and you are sending transactions to the correct NEAR network.
+                    By default <code>near-cli</code> is configured to work with TestNet. You can change the network to
+                    MainNet by issuing the command</p>
+                  <pre><code class="hljs"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">NODE_ENV</span>=mainnet
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="1-lockup-contracts-delegation"></a><a
+                      href="#1-lockup-contracts-delegation" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>1. Lockup Contracts Delegation</h2>
+                  <p>The <a href="https://github.com/near/core-contracts/tree/master/lockup">Lockup Contract</a> is
+                    common among NEAR contributors and, essentially, anyone who didn't acquire tokens through an
+                    exchange. This contract acts as an escrow that locks and holds an owner's tokens for a lockup period
+                    (such as vesting). You can learn more about lockups and their implementation in the <a
+                      href="../tokens/lockup">this documentation page</a>.</p>
+                  <p>The owner may want to stake these tokens (including locked ones) to help secure the network and
+                    also earn staking rewards that are distributed to the validator. The lockup contract doesn't allow
+                    to directly stake from its account, so the owner delegates the tokens using the contract built-in
+                    functions.</p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    The commands below are tested with <a
+                      href="https://github.com/near/core-contracts/tree/877e2db699a02b81fc46f5034642a2ebd06d9f19">build
+                      877e2db</a> of the Core Contracts.
+                  </blockquote>
+                  <p>Before proceeding with the tutorial below, check that you have control of your lockup contract, by
+                    issuing the command</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> <span class="hljs-symbol">&lt;LOCKUP_ID&gt;</span> get_owner_account_id <span class="hljs-string">''</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near view meerkat<span class="hljs-selector-class">.stakewars</span><span class="hljs-selector-class">.testnet</span> get_owner_account_id <span class="hljs-string">''</span>
+View call: meerkat<span class="hljs-selector-class">.stakewars</span><span class="hljs-selector-class">.testnet</span>.get_owner_account_id()
+<span class="hljs-string">'meerkat.testnet'</span>
+
+</code></pre>
+                  <p>Where the <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>; and the result
+                    is <code>meerkat.testnet</code>. In the following examples, <code>&lt;OWNER_ID&gt;</code> is always
+                    the output of this command.</p>
+                  <p>You can stake with Lockup contracts in three steps:</p>
+                  <ol>
+                    <li>Set up the staking pool</li>
+                    <li>Deposit and stake the tokens</li>
+                    <li>Measure the rewards</li>
+                  </ol>
+                  <h3><a class="anchor" aria-hidden="true" id="a-set-the-staking-pool"></a><a
+                      href="#a-set-the-staking-pool" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>a. Set the staking pool</h3>
+                  <p>Lockup contracts can stake <strong>to one staking pool at a time</strong>, so this parameter can be
+                    changed only while no funds are staked.</p>
+                  <p>You can select the staking pool by calling the method <code>select_staking_pool</code> from the
+                    lockup contract:</p>
+                  <pre><code class="hljs">near call <span class="hljs-variable">&lt;LOCKUP_ID&gt;</span> select_staking_pool '{<span class="hljs-string">"staking_pool_account_id"</span>: <span class="hljs-string">"&lt;POOL_ID&gt;"</span>}' --accountId <span class="hljs-variable">&lt;OWNER_ID&gt;</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> meerkat.stakewars.testnet select_staking_pool <span class="hljs-string">'{"staking_pool_account_id": "zpool.pool.f863973.m0"}'</span> <span class="hljs-comment">--accountId meerkat.testnet</span>
+
+Scheduling a <span class="hljs-keyword">call</span>: meerkat.stakewars.testnet.select_staking_pool({<span class="hljs-string">"staking_pool_account_id"</span>: <span class="hljs-string">"zpool.pool.f863973.m0"</span>})
+Receipts: HEATt32tHqWdjkZoSxLhd43CYVBCUp1cFHexgWBEeKJg, EUP7tncJfKDPpKYdunx2qySZ6JmV3injBigyFBiuD96J, <span class="hljs-number">99</span>hdXWmaTQE7gR5vucxMWFNMw7ZLtzJ6WNMSVJHPGJxh
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Selecting staking pool @zpool.pool.f863973.m0. Going <span class="hljs-keyword">to</span> <span class="hljs-keyword">check</span> whitelist first.
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> <span class="hljs-number">4</span>Z2t1SeN2rdbJcPvfVGScpwyuGGKobZjT3eqvDu28sBk
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/<span class="hljs-number">4</span>Z2t1SeN2rdbJcPvfVGScpwyuGGKobZjT3eqvDu28sBk
+<span class="hljs-literal">true</span>
+</code></pre>
+                  <p>Where the <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>;
+                    <code>&lt;POOL_ID&gt;</code> is <code>zpool.pool.f863973.m0</code>; and
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>.
+                    The <code>true</code> statement means that your call was successful, and the lockup contract
+                    accepted the <code>&lt;POOL_ID&gt;</code> parameter.</p>
+                  <p>In case if the <code>&lt;OWNER_ID&gt;</code> account uses Ledger for signing transactions, the
+                    above calls should be accompanied with the <code>--useLedgerKey</code> parameter:</p>
+                  <pre><code class="hljs">near call <span class="hljs-variable">&lt;LOCKUP_ID&gt;</span> select_staking_pool '{<span class="hljs-string">"staking_pool_account_id"</span>: <span class="hljs-string">"&lt;POOL_ID&gt;"</span>}' --accountId <span class="hljs-variable">&lt;OWNER_ID&gt;</span> --useLedgerKey=<span class="hljs-string">"&lt;HD_PATH&gt;"</span>
+</code></pre>
+                  <p>Where <code>&lt;HD_PATH&gt;</code> is an HD path of the used key (by default
+                    <code>HD_PATH=44'/397'/0'/0'/1'</code>). Same flag should be used for all the other
+                    <code>call</code>-s (not <code>view</code>-s) below. See more info on using <code>near-cli</code>
+                    with Ledger <a href="/docs/tokens/token-custody#option-1-ledger-via-cli">here</a>.</p>
+                  <blockquote class="warning">
+                    <strong>Heads up</strong><br /><br />
+                    Signing the transaction with the wrong Ledger key can help clustering multiple accounts of the user,
+                    since even failed transactions are recorded to the blockchain and can be subsequently analyzed.
+                  </blockquote>
+                  <h3><a class="anchor" aria-hidden="true" id="b-deposit-and-stake-the-tokens"></a><a
+                      href="#b-deposit-and-stake-the-tokens" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>b. Deposit and stake the tokens</h3>
+                  <p>Lockup contracts can stake their balance, regardless of their vesting schedule. You can proceed in
+                    two steps:</p>
+                  <ol>
+                    <li>
+                      <p>check the lockup balance</p>
+                    </li>
+                    <li>
+                      <p>stake the balance</p>
+                    </li>
+                    <li>
+                      <p>To know how many tokens you can stake, use the view method <code>get_balance</code>:</p>
+                    </li>
+                  </ol>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> <span class="hljs-symbol">&lt;LOCKUP_ID&gt;</span> get_balance <span class="hljs-string">''</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near view meerkat<span class="hljs-selector-class">.stakewars</span><span class="hljs-selector-class">.testnet</span> get_balance <span class="hljs-string">''</span>
+View call: meerkat<span class="hljs-selector-class">.stakewars</span><span class="hljs-selector-class">.testnet</span>.get_balance()
+<span class="hljs-string">'100000499656128234500000000'</span>
+</code></pre>
+                  <p>Where the <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code> and the
+                    resulting balance (in Yocto) is <code>100000499656128234500000000</code> or 100 $near.</p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    You have to leave 35 $near in the lockup contract for the storage fees. If you have 100 tokens, you
+                    can stake up to 65 tokens. If you have 1000 tokens, you can stake up to 965 tokens.
+                  </blockquote>
+                  <ol start="2">
+                    <li>To stake the balance, use the call method <code>deposit_and_stake</code>:</li>
+                  </ol>
+                  <pre><code class="hljs">near call <span class="hljs-variable">&lt;LOCKUP_ID&gt;</span> deposit_and_stake '{<span class="hljs-string">"amount"</span>: <span class="hljs-string">"&lt;AMOUNT&gt;"</span>}' --accountId <span class="hljs-variable">&lt;OWNER_ID&gt;</span> --gas=200000000000000
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> meerkat.stakewars.testnet deposit_and_stake <span class="hljs-string">'{"amount": "65000000000000000000000000"}'</span> <span class="hljs-comment">--accountId meerkat.testnet --gas 200000000000000</span>
+Scheduling a <span class="hljs-keyword">call</span>: meerkat.stakewars.testnet.deposit_and_stake({<span class="hljs-string">"amount"</span>: <span class="hljs-string">"65000000000000000000000000"</span>})
+Receipts: BFJxgYMbPLpKy4jae3b5ZJfLuAmpcYCBG2oJniDgh1PA, <span class="hljs-number">9</span>sZSqdLvPXPzpRg9VLwaWjJaBUnXm42ntVCEK1UwmYTp, CMLdB4So6ZYPif8qq2s7zFvKw599HMBVcBfQg85AKNQm
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Depositing <span class="hljs-keyword">and</span> staking <span class="hljs-number">65000000000000000000000000</span> <span class="hljs-keyword">to</span> the staking pool @zpool.pool.f863973.m0
+Receipts: <span class="hljs-number">3</span>VpzWTG9Y2nbZmuJhmsub9bRLnwHCFtnW5NQqcMBWawF, <span class="hljs-number">4</span>BrEKDPmz3mAhnq5tTFYRQp8y9uRxGFwYffJFkPMdQ5P, HJPqqJDTajFfeEA8vFXTLDpxh4PYZCMJ2YLKpWVtwSMF
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Epoch <span class="hljs-number">105</span>: Contract received total rewards <span class="hljs-keyword">of</span> <span class="hljs-number">20383576173536987339742291104</span> tokens. <span class="hljs-keyword">New</span> total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">104251712242552700026473040909.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">77295581098329153455984430997</span>
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Total rewards fee <span class="hljs-keyword">is</span> <span class="hljs-number">1511304065231935217653387665</span> stake shares.
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: @meerkat.stakewars.testnet deposited <span class="hljs-number">65000000000000000000000000.</span> <span class="hljs-keyword">New</span> unstaked balance <span class="hljs-keyword">is</span> <span class="hljs-number">65000000000000000000000000</span>
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: @meerkat.stakewars.testnet staking <span class="hljs-number">64999999999999999999999999.</span> Received <span class="hljs-number">48193095953206307331949682</span> <span class="hljs-keyword">new</span> staking shares. Total <span class="hljs-number">1</span> unstaked balance <span class="hljs-keyword">and</span> <span class="hljs-number">48193095953206307331949682</span> staking shares
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Contract total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">104316712242552700026473040909.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">77343774194282359763316380679</span>
+Receipt: FsJLXXEa8Jp8UNyiyG3XQhyHHSWzZ2bCjgWr8kPVjGmG
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: The deposit <span class="hljs-keyword">and</span> stake <span class="hljs-keyword">of</span> <span class="hljs-number">65000000000000000000000000</span> <span class="hljs-keyword">to</span> @zpool.pool.f863973.m0 succeeded
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> AW9pFb5RjkCjsyu8ng56XVvckvd3drPBPtnqVo6bJhqh
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/AW9pFb5RjkCjsyu8ng56XVvckvd3drPBPtnqVo6bJhqh
+<span class="hljs-literal">true</span>
+</code></pre>
+                  <p>Where <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>;
+                    <code>&lt;AMOUNT&gt;</code> is <code>65000000000000000000000000</code> (the total available, minus
+                    35 $near for the minimum balance); and <code>&lt;OWNER_ID&gt;</code> is
+                    <code>meerkat.testnet</code>.
+                    The <code>true</code> statement at the end means the transaction was successful.</p>
+                  <blockquote class="warning">
+                    <strong>Heads up</strong><br /><br />
+                    In the example above the pre-paid gas parameter is set to 200000000000000 Yocto, as near-cli default
+                    allocation is too low.
+                  </blockquote>
+                  <h3><a class="anchor" aria-hidden="true" id="c-measure-the-rewards"></a><a
+                      href="#c-measure-the-rewards" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>c. Measure the rewards</h3>
+                  <p>Since NEAR automatically re-stakes every staking pool rewards, you have to update your staked
+                    balance to know the amount of tokens you earned with your validator.</p>
+                  <p>Use the call method <code>refresh_staking_pool_balance</code> to check your new balance:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">call</span> <span class="hljs-symbol">&lt;LOCKUP_ID&gt;</span> refresh_staking_pool_balance <span class="hljs-string">''</span> --accountId <span class="hljs-symbol">&lt;OWNER_ID&gt;</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near call meerkat.stakewars.testnet refresh_staking_pool_balance <span class="hljs-string">''</span> --accountId meerkat.testnet | grep <span class="hljs-string">"current total balance"</span>
+    Log [meerkat.stakewars.testnet]: The current total balance on the staking<span class="hljs-built_in"> pool </span>is 65000000000000000000000000
+</code></pre>
+                  <p>Where <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>, and
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>. In the example above, the result is
+                    passed to <code>| grep &quot;current total balance&quot;</code> to display only the relevant output.
+                  </p>
+                  <p>Please refer to the <a href="https://github.com/near/core-contracts/tree/master/lockup">Lockup
+                      Contract readme</a> if you need to know how to withdraw the staking rewards to your main wallet.
+                  </p>
+                  <h2><a class="anchor" aria-hidden="true" id="unstake-and-withdraw-your-lockup-tokens"></a><a
+                      href="#unstake-and-withdraw-your-lockup-tokens" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Unstake and withdraw your lockup tokens</h2>
+                  <p>NEAR Protocol automatically re-stakes all the rewards back to the staking pools, so your staked
+                    balance increases over time, accruing rewards.</p>
+                  <p>Before starting, it's highly recommended to read the <a href="../tokens/lockup">Lockup contracts
+                      documentation</a> to understand which portion of the tokens is liquid, and which one is still
+                    <em>locked</em> even after the three epochs.</p>
+                  <p>If you want to withdraw funds, you have to issue two separate commands:</p>
+                  <ol>
+                    <li>Manually unstake tokens from the staking pool, and wait three epochs</li>
+                    <li>Manually withdraw tokens back to your main account</li>
+                  </ol>
+                  <p>Both these command require the amount in <em>yoctoNEAR</em>, which is the smallest unit of account
+                    for NEAR tokens. You can use the table below for the conversion:</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>NEAR</th>
+                        <th>YoctoNEAR</th>
+                        <th>YoctoNEAR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>1</code></td>
+                        <td><code>1*10^24</code></td>
+                        <td><code>1000000000000000000000000</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>10</code></td>
+                        <td><code>1*10^25</code></td>
+                        <td><code>10000000000000000000000000</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>100</code></td>
+                        <td><code>1*10^26</code></td>
+                        <td><code>100000000000000000000000000</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>1,000</code></td>
+                        <td><code>1*10^27</code></td>
+                        <td><code>1000000000000000000000000000</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>10,000</code></td>
+                        <td><code>1*10^28</code></td>
+                        <td><code>10000000000000000000000000000</code></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>As an example, if you want to unstake <code>10</code> NEAR tokens from the staking pool, you have
+                    to call the method <code>unstake</code> with <code>10000000000000000000000000</code>
+                    (<code>1*10^24</code>, 10 power 24, or 10 with 24 zeros) as an argument.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="a-unstake-the-tokens"></a><a href="#a-unstake-the-tokens"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>a. Unstake the tokens</h3>
+                  <p>Before unstaking any tokens, use the the view method <code>get_account</code> introduced above to
+                    know what is the available balance:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> &lt;POOL_ID&gt; get_account '{<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"&lt;LOCKUP_ID&gt;"</span>}'
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near view zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span> get_account <span class="hljs-string">'{"account_id": "meerkat.stakewars.testnet"}'</span>
+View call: zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span>.get_account({<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"meerkat.stakewars.testnet"</span>})
+{
+  account_id: <span class="hljs-string">'meerkat.stakewars.testnet'</span>,
+  unstaked_balance: <span class="hljs-string">'5'</span>,
+  staked_balance: <span class="hljs-string">'86236099167204810592552675'</span>,
+  can_withdraw: false
+}
+</code></pre>
+                  <p>Where <code>&lt;POOL_ID&gt;</code> is <code>zpool.pool.f863973.m0</code>, and the
+                    <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>. The result of this method
+                    shows:</p>
+                  <ul>
+                    <li>An unstaked balance of <code>5</code> <em>yocto</em></li>
+                    <li>A staked balance of <code>86236099167204810592552675</code> <em>yocto</em>, or
+                      <code>86.23</code> NEAR tokens</li>
+                    <li><code>can_withdraw</code> is <code>false</code> (see below)</li>
+                  </ul>
+                  <blockquote class="info">
+                    <strong>Check your rewards</strong><br /><br />
+                    From the examples above, the initial stake of 65 NEAR tokens increased to 86.23 tokens, with 21.23
+                    tokens as a reward!
+                  </blockquote>
+                  <p>You can unstake an amount of funds that is equal or lower than your <code>staked_balance</code>, by
+                    calling the metod <code>unstake</code>:</p>
+                  <pre><code class="hljs">near call <span class="hljs-variable">&lt;LOCKUP_ID&gt;</span> unstake '{<span class="hljs-string">"amount"</span>: <span class="hljs-string">"&lt;YOCTO&gt;"</span>}' --accountId <span class="hljs-variable">&lt;OWNER_ID&gt;</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> meerkat.stakewars.testnet unstake <span class="hljs-string">'{"amount": "42000000000000000000000000"}'</span> <span class="hljs-comment">--accountId meerkat.testnet --useLedgerKey="44'/397'/0'/0'/1'" --gas 300000000000000</span>
+Make sure <span class="hljs-keyword">to</span> <span class="hljs-keyword">connect</span> your Ledger <span class="hljs-keyword">and</span> <span class="hljs-keyword">open</span> NEAR app
+Scheduling a <span class="hljs-keyword">call</span>: meerkat.stakewars.testnet.unstake({<span class="hljs-string">"amount"</span>: <span class="hljs-string">"42000000000000000000000000"</span>})
+Waiting <span class="hljs-keyword">for</span> confirmation <span class="hljs-keyword">on</span> Ledger...
+<span class="hljs-keyword">Using</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">key</span>: ed25519:<span class="hljs-number">5</span>JgsX9jWUTS5ttHeTjuDFgCmB5YX77f7GHxuQfaGVsyj
+Waiting <span class="hljs-keyword">for</span> confirmation <span class="hljs-keyword">on</span> Ledger...
+Ledger app <span class="hljs-keyword">version</span>: <span class="hljs-number">1.1</span><span class="hljs-number">.3</span>
+Receipts: D5fCCWa5b5N8X9VtxsbRvGhSSCQc56Jb312DEbG4YY8Z, <span class="hljs-number">72</span>rgHrMb1zkUU2RiEz2EMCAuMWFgRJTf8eovwAUkuo31, A2dvSgxpDXfNZUrDVdpewk1orVTVxCMiicjk7qyNq3dW
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Unstaking <span class="hljs-number">42000000000000000000000000</span> <span class="hljs-keyword">from</span> the staking pool @zpool.pool.f863973.m0
+Receipts: <span class="hljs-number">9</span>MbLXn28nQyL6BopMEUggBD9NA1QfVio9VB3LTNJ6P5b, <span class="hljs-number">5</span>g7F6HehoGZ2DHS7w54xHAjAeHCsHaAsKpVed76MFYru, BKbtF77i1WEqpuFLtEjWerM2LVZW1md9ecQ5UcBpMNXj
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Epoch <span class="hljs-number">162</span>: Contract received total rewards <span class="hljs-keyword">of</span> <span class="hljs-number">9488161121527521670023204339</span> tokens. <span class="hljs-keyword">New</span> total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">142388816229749953331375665038.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">79574075700231185032355056920</span>
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Total rewards fee <span class="hljs-keyword">is</span> <span class="hljs-number">530246455678218748147822292</span> stake shares.
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: @meerkat.stakewars.testnet unstaking <span class="hljs-number">42000000000000000000000001.</span> Spent <span class="hljs-number">23471725293488513736732361</span> staking shares. Total <span class="hljs-number">42000000000000000000000002</span> unstaked balance <span class="hljs-keyword">and</span> <span class="hljs-number">24721370659717793595217321</span> staking shares
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Contract total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">142346816229749953331375665038.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">79550603974937696518618324559</span>
+Receipt: <span class="hljs-number">3</span>DXSx8aMvhwtJUB6mhTueNbDiqz5wYu3xzzYkZrgjw1u
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Unstaking <span class="hljs-keyword">of</span> <span class="hljs-number">42000000000000000000000000</span> <span class="hljs-keyword">at</span> @zpool.pool.f863973.m0 succeeded
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> <span class="hljs-number">2</span>rRpdN8AAoySfWsgE7BRtRfz7VFnyFzRhssfaL87rXGf
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/<span class="hljs-number">2</span>rRpdN8AAoySfWsgE7BRtRfz7VFnyFzRhssfaL87rXGf
+<span class="hljs-literal">true</span>
+</code></pre>
+                  <p>Where <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>, the
+                    <code>&lt;YOCTO&gt;</code> is <code>42000000000000000000000000</code>, and the
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>.</p>
+                  <p><strong>Wait three epochs, or ~36 hours before using the withdraw command</strong></p>
+                  <p>For security reasons, NEAR Protocol keeps your unstaked funds locked for three more epochs (~36
+                    hours). Use again the view method <code>get_account</code> to verify if <code>can_withdraw</code> is
+                    <code>true</code>:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> &lt;POOL_ID&gt; get_account '{<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"&lt;LOCKUP_ID&gt;"</span>}'
+</code></pre>
+                  <p>The result should be as follows:</p>
+                  <pre><code class="hljs">$ near view zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span> get_account <span class="hljs-string">'{"account_id": "meerkat.stakewars.testnet"}'</span>
+View call: zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span>.get_account({<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"meerkat.stakewars.testnet"</span>})
+{
+  account_id: <span class="hljs-string">'meerkat.stakewars.testnet'</span>,
+  unstaked_balance: <span class="hljs-string">'42000000000000000000000006'</span>,
+  staked_balance: <span class="hljs-string">'44244760537191121230392104'</span>,
+  can_withdraw: true
+}
+</code></pre>
+                  <p>Where <code>&lt;POOL_ID&gt;</code> is <code>zpool.pool.f863973.m0</code>, the
+                    <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code> and the variable
+                    <code>can_withdraw</code> is <code>true</code>. This means that your
+                    <code>42000000000000000000000000</code> <em>Yocto</em> (42 NEAR tokens) are now available for
+                    withdraw.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="b-withdraw-the-tokens"></a><a
+                      href="#b-withdraw-the-tokens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>b. Withdraw the tokens</h3>
+                  <p>Funds can be withdrawn after three epochs (~36 hours) from the <code>unstake</code> command. It is
+                    highly recommended to read the <a href="../tokens/lockup">Lockup contracts documentation</a> to
+                    understand which portion of the unstaked tokens is available for transfers, and which is still
+                    vesting and unavailable (even after three epochs).</p>
+                  <p>Use the call method <code>withdraw_all_from_staking_pool</code>:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">call</span> <span class="hljs-symbol">&lt;LOCKUP_ID&gt;</span> withdraw_all_from_staking_pool <span class="hljs-string">''</span> --accountId <span class="hljs-symbol">&lt;OWNER_ID&gt;</span>
+</code></pre>
+                  <p>You should expect a result like this one:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> meerkat.stakewars.testnet withdraw_all_from_staking_pool <span class="hljs-string">''</span> <span class="hljs-comment">--accountId meerkat.testnet --useLedgerKey="44'/397'/0'/0'/1'" --gas 300000000000000</span>
+
+Make sure <span class="hljs-keyword">to</span> <span class="hljs-keyword">connect</span> your Ledger <span class="hljs-keyword">and</span> <span class="hljs-keyword">open</span> NEAR app
+Scheduling a <span class="hljs-keyword">call</span>: meerkat.stakewars.testnet.withdraw_all_from_staking_pool()
+Waiting <span class="hljs-keyword">for</span> confirmation <span class="hljs-keyword">on</span> Ledger...
+<span class="hljs-keyword">Using</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">key</span>: ed25519:<span class="hljs-number">5</span>JgsX9jWUTS5ttHeTjuDFgCmB5YX77f7GHxuQfaGVsyj
+Waiting <span class="hljs-keyword">for</span> confirmation <span class="hljs-keyword">on</span> Ledger...
+Ledger app <span class="hljs-keyword">version</span>: <span class="hljs-number">1.1</span><span class="hljs-number">.3</span>
+Receipts: <span class="hljs-number">6</span>dt3HNDrb7jM4F7cRtwgRSfRMWwFmE8BHeZSDghrpQtw, <span class="hljs-number">7</span>pNKTevct7Z4birAPec81LmnSpJSeJXbFq3cBdjFvsnM, A7yJXdaGcFyiBNQimFtHF479Jm6xiXHvfodTbtFf7Rww
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Going <span class="hljs-keyword">to</span> <span class="hljs-keyword">query</span> the unstaked balance <span class="hljs-keyword">at</span> the staking pool @zpool.pool.f863973.m0
+Receipts: <span class="hljs-number">2</span>ytgB57D6CJe3vkxdVTiVAytygpTteR4sDmpUNxo5Ltk, CZChcT1uDDxqojnZQq6r7zzx6FE3Z6E5fZ3F23Y1dnyM, GjrWhJgbCAAHUNyvw4QX5YKFpeUVNJ9GpuEdmUXFozeG
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Withdrawing <span class="hljs-number">42000000000000000000000006</span> <span class="hljs-keyword">from</span> the staking pool @zpool.pool.f863973.m0
+Receipts: <span class="hljs-number">9</span>nHoqnQygqKYyyR5KDofkYy5KiJxbu2eymoGUUc2tSR3, <span class="hljs-number">5</span>RvBSb4BuHxRhc5U6nLgsCjAvJ88hJ2jwkr1ramk37mE, <span class="hljs-number">5</span>PDN1EYXnCJrTSU7zzJtmAuj9vvGSVurh94nvfHDHXpa, GTTGm4sXcSWD2gnohMJzD7TQcQxuSe7AFABZKqxPLgau
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Epoch <span class="hljs-number">168</span>: Contract received total rewards <span class="hljs-keyword">of</span> <span class="hljs-number">514182787298700000000</span> tokens. <span class="hljs-keyword">New</span> total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">142377784876419564057032272059.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">79552334320822393318832070510</span>
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: Total rewards fee <span class="hljs-keyword">is</span> <span class="hljs-number">28729510739826825657</span> stake shares.
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: @meerkat.stakewars.testnet withdrawing <span class="hljs-number">42000000000000000000000006.</span> <span class="hljs-keyword">New</span> unstaked balance <span class="hljs-keyword">is</span> <span class="hljs-number">0</span>
+Receipt: rS5KjvzkbaxEH7aG8VXyd9EEEfY7PygdLzSZ3W9qf3w
+    <span class="hljs-keyword">Log</span> [meerkat.stakewars.testnet]: The withdrawal <span class="hljs-keyword">of</span> <span class="hljs-number">42000000000000000000000006</span> <span class="hljs-keyword">from</span> @zpool.pool.f863973.m0 succeeded
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> EjNpoU7BNfEQujckL8JiAP8kYDH1SMLw4wC32tL3uyaH
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/EjNpoU7BNfEQujckL8JiAP8kYDH1SMLw4wC32tL3uyaH
+<span class="hljs-literal">true</span>
+</code></pre>
+                  <p>Where <code>&lt;LOCKUP_ID&gt;</code> is <code>meerkat.stakewars.testnet</code>, the
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code> and the <code>true</code> statement
+                    confirms the successful withdrawal.</p>
+                  <p>By using again the view method <code></code></p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> &lt;POOL_ID&gt; get_account '{<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"&lt;LOCKUP_ID&gt;"</span>}'
+</code></pre>
+                  <p>The result should be as follows:</p>
+                  <pre><code class="hljs">$ near view zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span> get_account <span class="hljs-string">'{"account_id": "meerkat.stakewars.testnet"}'</span>
+View call: zpool<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span>.get_account({<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"meerkat.stakewars.testnet"</span>})
+{
+  account_id: <span class="hljs-string">'meerkat.stakewars.testnet'</span>,
+  unstaked_balance: <span class="hljs-string">'0'</span>,
+  staked_balance: <span class="hljs-string">'44244760947075774431066852'</span>,
+  can_withdraw: true
+}
+</code></pre>
+                  <p>At this point the <code>unstaked_balance</code> is <code>0</code>, and the funds are back in the
+                    lockup contract balance.</p>
+                  <blockquote class="warning">
+                    <strong>Heads up</strong><br /><br />
+                    Lockup contracts allow you to transfer only the unlocked portion of your funds. In the example
+                    above, out of the 42 NEAR unstaked, only 21.23 can be transferred to another wallet or exchange.
+                  </blockquote>
+                  <h3><a class="anchor" aria-hidden="true" id="c-change-staking-pools"></a><a
+                      href="#c-change-staking-pools" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>c. Change staking pools</h3>
+                  <p>To change from one staking pool to another, you must first withdraw all deposits in the currently
+                    selected staking pool. Then call <code>unselect_staking_pool</code> as follows (<a
+                      href="https://github.com/near/core-contracts/blob/215d4ed2edb563c47edd961555106b74275c4274/lockup/README.md">docs</a>):
+                  </p>
+                  <pre><code class="hljs">$ near call meerkat.stakewars.testnet unselect_staking_pool <span class="hljs-params">--accountId</span> meerkat.testnet <span class="hljs-params">--useLedgerKey=</span><span class="hljs-string">"44'/397'/0'/0'/1'"</span> <span class="hljs-params">--gas</span> 300000000000000
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="staking-pool-delegation"></a><a
+                      href="#staking-pool-delegation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Staking Pool Delegation</h2>
+                  <p>Any funds that are not stored inside lockup contracts can be directly delegated to a <a
+                      href="https://github.com/near/core-contracts/tree/master/staking-pool">staking pool</a> by using
+                    the call method <code>deposit_and_stake</code>:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">call</span> <span class="hljs-symbol">&lt;POOL_ID&gt;</span> deposit_and_stake <span class="hljs-string">''</span> --accountId <span class="hljs-symbol">&lt;OWNER_ID&gt;</span> --amount <span class="hljs-number">100</span>
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> valeraverim.pool.f863973.m0 deposit_and_stake <span class="hljs-string">''</span> <span class="hljs-comment">--accountId meerkat.testnet --amount 100</span>
+
+Scheduling a <span class="hljs-keyword">call</span>: valeraverim.pool.f863973.m0.deposit_and_stake() <span class="hljs-keyword">with</span> attached <span class="hljs-number">100</span> NEAR
+Receipts: FEfNuuCSttu7m4dKQPUSgpSFJSB86i6T2sYJWSv7PHPJ, GPYhZsyUuJgvr7gefxac4566DVQcyGs4wSFeydkmRX7D, <span class="hljs-number">8</span>hfcJuwsstnFQ1cgU5iUigvfrq1JcbaKURvKf5shaB4g
+    <span class="hljs-keyword">Log</span> [valeraverim.pool.f863973.m0]: Epoch <span class="hljs-number">106</span>: Contract received total rewards <span class="hljs-keyword">of</span> <span class="hljs-number">545371217890000000000</span> tokens. <span class="hljs-keyword">New</span> total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">75030000959768421358700000000.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">75029067713856889417103116457</span>
+    <span class="hljs-keyword">Log</span> [valeraverim.pool.f863973.m0]: Total rewards fee <span class="hljs-keyword">is</span> <span class="hljs-number">54536443439735902364</span> stake shares.
+    <span class="hljs-keyword">Log</span> [valeraverim.pool.f863973.m0]: @meerkat.testnet deposited <span class="hljs-number">100000000000000000000000000.</span> <span class="hljs-keyword">New</span> unstaked balance <span class="hljs-keyword">is</span> <span class="hljs-number">100000000000000000000000000</span>
+    <span class="hljs-keyword">Log</span> [valeraverim.pool.f863973.m0]: @meerkat.testnet staking <span class="hljs-number">99999999999999999999999999.</span> Received <span class="hljs-number">99998756169666008195607157</span> <span class="hljs-keyword">new</span> staking shares. Total <span class="hljs-number">1</span> unstaked balance <span class="hljs-keyword">and</span> <span class="hljs-number">99998756169666008195607157</span> staking shares
+    <span class="hljs-keyword">Log</span> [valeraverim.pool.f863973.m0]: Contract total staked balance <span class="hljs-keyword">is</span> <span class="hljs-number">75130000959768421358700000000.</span> Total <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> shares <span class="hljs-number">75129066470026555425298723614</span>
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> FDtzMmusJgFbryeVrdQyNvp6XU2xr11tecgqnnSsvyxv
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/FDtzMmusJgFbryeVrdQyNvp6XU2xr11tecgqnnSsvyxv
+<span class="hljs-string">''</span>
+
+</code></pre>
+                  <p>Where <code>&lt;POOL_ID&gt;</code> is <code>valeraverim.pool.f863973.m0</code>; and the
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>.</p>
+                  <p>If you want to check your staking rewards, use the view method <code>get_account</code>:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">view</span> &lt;POOL_ID&gt; get_account '{<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"&lt;OWNER_ID&gt;"</span>}'
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near view valeraverim<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span> get_account <span class="hljs-string">'{"account_id": "meerkat.testnet"}'</span>
+View call: valeraverim<span class="hljs-selector-class">.pool</span><span class="hljs-selector-class">.f863973</span><span class="hljs-selector-class">.m0</span>.get_account({<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"meerkat.testnet"</span>})
+{
+  account_id: <span class="hljs-string">'meerkat.testnet'</span>,
+  unstaked_balance: <span class="hljs-string">'1'</span>,
+  staked_balance: <span class="hljs-string">'100663740438210643632989745'</span>,
+  can_withdraw: true
+}
+</code></pre>
+                  <p>Where <code>&lt;POOL_ID&gt;</code> is <code>valeraverim.pool.f863973.m0</code> and
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>. The staked balance is
+                    <code>100663740438210643632989745</code>, or <code>100.66</code> tokens.</p>
+                  <p>A pool's rewards only compound if it has been &quot;pinged&quot;, which means either having a
+                    direct action performed on it (like someone delegating or undelegating) or if the <code>ping</code>
+                    method is called on it once within a particular epoch. This is important to do if you run a pool and
+                    want your delegators to see updated reward balances.</p>
+                  <p>Use the call method <code>ping</code> to re-calculate the rewards up to the previous epoch:</p>
+                  <pre><code class="hljs">near call &lt;POOL_ID&gt;<span class="hljs-built_in"> ping </span><span class="hljs-string">'{}'</span> --accountId &lt;OWNER_ID&gt;
+</code></pre>
+                  <p>You should expect a result like:</p>
+                  <pre><code class="hljs">$ near <span class="hljs-keyword">call</span> valeraverim.pool.f863973.m0 ping <span class="hljs-string">'{}'</span> <span class="hljs-comment">--accountId meerkat.testnet</span>
+Scheduling a <span class="hljs-keyword">call</span>: valeraverim.pool.f863973.m0.ping({})
+<span class="hljs-keyword">Transaction</span> <span class="hljs-keyword">Id</span> <span class="hljs-number">4</span>mTrz1hDBMTWZx251tX4M5CAo5j7LaxLiPtQrDvQgcZ9
+<span class="hljs-keyword">To</span> see the <span class="hljs-keyword">transaction</span> <span class="hljs-keyword">in</span> the <span class="hljs-keyword">transaction</span> explorer, please <span class="hljs-keyword">open</span> this <span class="hljs-keyword">url</span> <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/<span class="hljs-number">4</span>mTrz1hDBMTWZx251tX4M5CAo5j7LaxLiPtQrDvQgcZ9
+<span class="hljs-string">''</span>
+
+</code></pre>
+                  <p>Where <code>&lt;POOL_ID&gt;</code> is <code>valeraverim.pool.f863973.m0</code>; and the
+                    <code>&lt;OWNER_ID&gt;</code> is <code>meerkat.testnet</code>. The <code>''</code> result means that
+                    your call was successful, and the <code>get_account</code> view method will provide updated results.
+                  </p>
+                  <p>Note that you can ping any pool, not just one you own.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="additional-links"></a><a href="#additional-links"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Additional links</h2>
+                  <ul>
+                    <li><a href="../tokens/lockup">Lockup contracts explained</a></li>
+                    <li><a href="https://github.com/near/core-contracts">NEAR Core Contracts on Github</a></li>
+                    <li><a href="https://explorer.near.org">NEAR block explorer</a></li>
+                    <li><a href="https://github.com/near/near-cli">near-cli on Github</a></li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="fun-facts"></a><a href="#fun-facts" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Fun Facts</h2>
+                  <ol>
+                    <li><code>ping</code>ing a pool technically removes 2 epochs of future compounding but it's an
+                      extremely small amount -- without considering compounding effect of epochs with 9 hour epochs, the
+                      reward per epoch is 5% / (365 * 24 / 9) + 1 or 1.00005136986
+                      It means this reward on top of reward is what you’re losing, so that's about 1.00000000264 or
+                      0.000000264%... meaning for 10M stake it’s 0.02638862826 NEAR per epoch.</li>
+                  </ol>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 2/5/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/tokens/lockup"><span class="arrow-prev">←
+              </span><span>Lockups Explained</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#overview">Overview</a>
+            <ul class="toc-headings">
+              <li><a href="#viewing-and-choosing-validators">Viewing and Choosing Validators</a></li>
+            </ul>
+          </li>
+          <li><a href="#gui-based-delegation-via-a-website-or-app">GUI-based delegation (via a website or app)</a></li>
+          <li><a href="#cli-based-delegation">CLI-based delegation</a></li>
+          <li><a href="#1-lockup-contracts-delegation">1. Lockup Contracts Delegation</a>
+            <ul class="toc-headings">
+              <li><a href="#a-set-the-staking-pool">a. Set the staking pool</a></li>
+              <li><a href="#b-deposit-and-stake-the-tokens">b. Deposit and stake the tokens</a></li>
+              <li><a href="#c-measure-the-rewards">c. Measure the rewards</a></li>
+            </ul>
+          </li>
+          <li><a href="#unstake-and-withdraw-your-lockup-tokens">Unstake and withdraw your lockup tokens</a>
+            <ul class="toc-headings">
+              <li><a href="#a-unstake-the-tokens">a. Unstake the tokens</a></li>
+              <li><a href="#b-withdraw-the-tokens">b. Withdraw the tokens</a></li>
+              <li><a href="#c-change-staking-pools">c. Change staking pools</a></li>
+            </ul>
+          </li>
+          <li><a href="#staking-pool-delegation">Staking Pool Delegation</a></li>
+          <li><a href="#additional-links">Additional links</a></li>
+          <li><a href="#fun-facts">Fun Facts</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

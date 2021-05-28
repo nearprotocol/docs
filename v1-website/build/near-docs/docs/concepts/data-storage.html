@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Data Storage / Collections · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Overview" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Data Storage / Collections · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Overview" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class="siteNavGroupActive"><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Basics</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Overview</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/new-to-near">New to NEAR?</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Basics</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/account">Account</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem" href="/docs/concepts/data-storage">Data
+                        Storage</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/storage-staking">Storage Staking</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/epoch">Epoch</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/gas">Gas</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/indexer">Indexer</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/networks">Networks</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/transaction">Transaction</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Architecture</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/concepts/architecture/specification">Specification</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/concepts/architecture/papers">Papers</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/general-faq">General FAQ</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/technical-faq">Technical FAQ</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/economics-faq">Economics FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/concepts/data-collections.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Data Storage / Collections</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Overview</h2>
+                  <blockquote>
+                    <p>All data stored on the NEAR blockchain is done in key / value pairs. There are several collection
+                      methods in the SDKs we've created that will help you store your data on chain.</p>
+                    <ul>
+                      <li><a href="https://github.com/near/near-sdk-as"><code>near-sdk-as</code></a> for <a
+                          href="https://www.assemblyscript.org/">AssemblyScript</a> smart contracts</li>
+                      <li><a href="https://github.com/near/near-sdk-rs"><code>near-sdk-rs</code></a> for <a
+                          href="https://www.rust-lang.org/">Rust</a> smart contracts</li>
+                    </ul>
+                  </blockquote>
+                  <p>For information on storage costs, please see [ <strong><a
+                        href="/docs/concepts/storage-staking">storage staking</a></strong> ].</p>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="assemblyscript-collection-types"></a><a
+                      href="#assemblyscript-collection-types" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>AssemblyScript Collection Types</h2>
+                  <p><a
+                      href="https://github.com/near/near-sdk-as/tree/master/sdk-core/assembly/collections"><code>near-sdk-as</code></a>
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th style="text-align:center">Iterable</th>
+                        <th style="text-align:center">Clear All Values</th>
+                        <th style="text-align:center">Preserves Insertion Order</th>
+                        <th style="text-align:center">Range Selection</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentvector"><code>PersistentVector</code></a>
+                        </td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentset"><code>PersistentSet</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentmap"><code>PersistentMap</code></a></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                      </tr>
+                      <tr>
+                        <td><a
+                            href="/docs/concepts/data-storage#persistentunorderedmap"><code>PersistentUnorderedMap</code></a>
+                        </td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentdeque"><code>PersistentDeque</code></a></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#avltree"><code>AVLTree</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="big-o-notation"></a><a href="#big-o-notation"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Big-O Notation</h3>
+                  <blockquote>
+                    <p>The <a href="https://en.wikipedia.org/wiki/Big_O_notation">Big-O notation</a> values in the chart
+                      below describe the <a href="https://en.wikipedia.org/wiki/Time_complexity">time complexity</a> of
+                      the various collection methods found in <code>near-sdk-as</code>. These method complexities
+                      correlate with <a href="/docs/concepts/gas">gas</a> consumption on NEAR, helping you decide which
+                      collection to utilize in your project. There are three types found in our collection methods:</p>
+                  </blockquote>
+                  <ul>
+                    <li>O(1) - <em><a
+                          href="https://en.wikipedia.org/wiki/Time_complexity#Constant_time">constant</a></em></li>
+                    <li>O(n) - <em><a href="https://en.wikipedia.org/wiki/Time_complexity#Linear_time">linear</a></em>
+                    </li>
+                    <li>O(log n) - <em><a
+                          href="https://en.wikipedia.org/wiki/Time_complexity#Logarithmic_time">logarithmic</a></em>
+                    </li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th style="text-align:center">Access</th>
+                        <th style="text-align:center">Insert</th>
+                        <th style="text-align:center">Delete</th>
+                        <th style="text-align:center">Search</th>
+                        <th style="text-align:center">Traverse</th>
+                        <th style="text-align:center">Clear</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentvector"><code>PersistentVector</code></a>
+                        </td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)*</td>
+                        <td style="text-align:center">O(1)**</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentset"><code>PersistentSet</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentmap"><code>PersistentMap</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">N/A</td>
+                        <td style="text-align:center">N/A</td>
+                      </tr>
+                      <tr>
+                        <td><a
+                            href="/docs/concepts/data-storage#persistentunorderedmap"><code>PersistentUnorderedMap</code></a>
+                        </td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#persistentdeque"><code>PersistentDeque</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)*</td>
+                        <td style="text-align:center">O(1)**</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#avltree"><code>AVLTree</code></a></td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em>* - to insert at the end of the vector using <code>push_back</code> (or <code>push_front</code>
+                      for deque)</em></p>
+                  <p><em>** - to delete from the end of the vector using <code>pop</code> (or <code>pop_front</code> for
+                      deque), or delete using <code>swap_remove</code> which swaps the element with the last element of
+                      the vector and then removes it.</em></p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="gas-consumption-examples"></a><a
+                      href="#gas-consumption-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Gas Consumption Examples</h3>
+                  <blockquote>
+                    <p>The examples below show differences in gas burnt storing and retrieving key/value pairs using the
+                      above methods. Please note that the gas cost of spinning up the runtime environment on chain has
+                      been deducted to show just data read/writes.</p>
+                    <p>You can reproduce this and test out your own data set by visiting <a
+                        href="https://github.com/near-examples/collection-examples-rs">collection-examples-as</a>.</p>
+                  </blockquote>
+                  <p><img src="/img/as-setData-gasBurnt.png" alt="AssemblyScript Set Data Gas Chart"></p />
+                  <p><img src="/img/as-getData-gasBurnt.png" alt="AssemblyScript Get Data Gas Chart"></p />
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="persistentvector"></a><a href="#persistentvector"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>PersistentVector</code></h3>
+                  <blockquote>
+                    <p>Implements a <a href="https://en.wikipedia.org/wiki/Array_data_structure">vector</a> / persistent
+                      array built on top of the <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/storage.ts"><code>Storage</code></a>
+                      class.</p>
+                    <p>Uses the following map: index -&gt; element.</p>
+                  </blockquote>
+                  <ul>
+                    <li>To create:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { PersistentVector } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+<span class="hljs-keyword">let</span> vector = <span class="hljs-keyword">new</span> PersistentVector&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"v"</span>); <span class="hljs-comment">// choose a unique prefix per collection</span>
+</code></pre>
+                  <ul>
+                    <li>To use:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts">vector.push(value);
+vector.pop(value);
+vector.length;
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentVector.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="persistentset"></a><a href="#persistentset"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>PersistentSet</code></h3>
+                  <blockquote>
+                    <p>Built on top of the <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/storage.ts"><code>Storage</code></a>
+                      class, this implements a persistent set without iterators.</p>
+                    <ul>
+                      <li>is not iterable</li>
+                      <li>more efficient in the number of reads and writes</li>
+                    </ul>
+                  </blockquote>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentSet.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="persistentmap"></a><a href="#persistentmap"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>PersistentMap</code></h3>
+                  <blockquote>
+                    <p>Implements a map built on top of the <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/storage.ts"><code>Storage</code></a>.
+                    </p>
+                  </blockquote>
+                  <ul>
+                    <li>To create:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { PersistentMap } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+<span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> PersistentMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"pmap"</span>); <span class="hljs-comment">// choose a unique prefix per collection</span>
+</code></pre>
+                  <ul>
+                    <li>To use:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts">map.set(key, value);
+map.getSome(key);
+</code></pre>
+                  <p><strong>Note:</strong> The Map doesn't store keys, so if you need to retrieve them, include keys in
+                    the values.</p>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentMap.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="persistentunorderedmap"></a><a
+                      href="#persistentunorderedmap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>PersistentUnorderedMap</code></h3>
+                  <blockquote>
+                    <p>Implements an unordered map built on top of the <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentMap.ts"><code>PersistentMap</code></a>
+                      class and a <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentVector.ts"><code>PersistentVector</code></a>,
+                      which stores the keys of the map. These keys are initially in the order they are inserted,
+                      however, a deleted key is swapped with the last key.</p>
+                  </blockquote>
+                  <ul>
+                    <li>To create:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { PersistentUnorderedMap } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+<span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> PersistentUnorderedMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"umap"</span>); <span class="hljs-comment">// note the prefix must be unique per collection</span>
+</code></pre>
+                  <ul>
+                    <li>To use:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts">map.set(key, value);
+map.getSome(key);
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentUnorderedMap.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="persistentdeque"></a><a href="#persistentdeque"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>PersistentDeque</code></h3>
+                  <blockquote>
+                    <p>Built on top of the <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/storage.ts"><code>Storage</code></a>
+                      class, this implements a persistent bidirectional queue / double-ended queue / deque.</p>
+                  </blockquote>
+                  <ul>
+                    <li>To create:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { PersistentDeque } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+<span class="hljs-keyword">let</span> dq = <span class="hljs-keyword">new</span> PersistentDeque&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"deque"</span>); <span class="hljs-comment">// choose a unique prefix per collection</span>
+</code></pre>
+                  <ul>
+                    <li>To use:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts">dq.pushFront(value);
+dq.popBack();
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/persistentDeque.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="avltree"></a><a href="#avltree" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>AVLTree</code></h3>
+                  <blockquote>
+                    <p>Implements a Tree Map based on <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL-tree</a>
+                      Keys are ordered and iterable.</p>
+                  </blockquote>
+                  <ul>
+                    <li>To create:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { AVLTree } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+map = <span class="hljs-keyword">new</span> AVLTree&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"avl"</span>); <span class="hljs-comment">// choose a unique prefix per account</span>
+</code></pre>
+                  <ul>
+                    <li>To use:</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts">map.set(key, value);
+map.getSome(key)
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/collections/avlTree.ts">SDK
+                      source</a> ]</p>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="rust-collection-types"></a><a
+                      href="#rust-collection-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Rust Collection Types</h2>
+                  <p><a href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/"><code>near-sdk-rs</code> module
+                      documentation</a></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th style="text-align:center">Iterable</th>
+                        <th style="text-align:center">Clear All Values</th>
+                        <th style="text-align:center">Preserves Insertion Order</th>
+                        <th style="text-align:center">Range Selection</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#vector"><code>Vector</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#lookupset"><code>LookupSet</code></a></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#unorderedset"><code>UnorderedSet</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#lookupmap"><code>LookupMap</code></a></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#unorderedmap"><code>UnorderedMap</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#treemap"><code>TreeMap</code></a></td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center">✘</td>
+                        <td style="text-align:center"></td>
+                        <td style="text-align:center"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="big-o-notation-1"></a><a href="#big-o-notation-1"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Big-O Notation</h3>
+                  <blockquote>
+                    <p>The <a href="https://en.wikipedia.org/wiki/Big_O_notation">Big-O notation</a> values in the chart
+                      below describe the <a href="https://en.wikipedia.org/wiki/Time_complexity">time complexity</a> of
+                      the various collection methods found in <code>near-sdk-rs</code>. These method complexities
+                      correlate with <a href="/docs/concepts/gas">gas</a> consumption on NEAR, helping you decide which
+                      collection to utilize in your project. There are three types found in our collection methods:</p>
+                  </blockquote>
+                  <ul>
+                    <li>O(1) - <em><a
+                          href="https://en.wikipedia.org/wiki/Time_complexity#Constant_time">constant</a></em></li>
+                    <li>O(n) - <em><a href="https://en.wikipedia.org/wiki/Time_complexity#Linear_time">linear</a></em>
+                    </li>
+                    <li>O(log n) - <em><a
+                          href="https://en.wikipedia.org/wiki/Time_complexity#Logarithmic_time">logarithmic</a></em>
+                    </li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th style="text-align:center">Access</th>
+                        <th style="text-align:center">Insert</th>
+                        <th style="text-align:center">Delete</th>
+                        <th style="text-align:center">Search</th>
+                        <th style="text-align:center">Traverse</th>
+                        <th style="text-align:center">Clear</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#vector"><code>Vector</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)*</td>
+                        <td style="text-align:center">O(1)**</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#lookupset"><code>LookupSet</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">N/A</td>
+                        <td style="text-align:center">N/A</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#unorderedset"><code>UnorderedSet</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#lookupmap"><code>LookupMap</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">N/A</td>
+                        <td style="text-align:center">N/A</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#unorderedmap"><code>UnorderedMap</code></a></td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(1)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                      <tr>
+                        <td><a href="/docs/concepts/data-storage#treemap"><code>TreeMap</code></a></td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(log n)</td>
+                        <td style="text-align:center">O(n)</td>
+                        <td style="text-align:center">O(n)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em>* - to insert at the end of the vector using <code>push_back</code> (or <code>push_front</code>
+                      for deque)</em></p>
+                  <p><em>** - to delete from the end of the vector using <code>pop</code> (or <code>pop_front</code> for
+                      deque), or delete using <code>swap_remove</code> which swaps the element with the last element of
+                      the vector and then removes it.</em></p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="gas-consumption-examples-1"></a><a
+                      href="#gas-consumption-examples-1" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Gas Consumption Examples</h3>
+                  <blockquote>
+                    <p>The examples below show differences in gas burnt storing and retrieving key/value pairs using the
+                      above methods. Please note that the gas cost of spinning up the runtime environment on chain has
+                      been deducted to show just data read/writes.</p>
+                    <p>You can reproduce this and test out your own data set by visiting <a
+                        href="https://github.com/near-examples/collection-examples-rs">collection-examples-rs</a>.</p>
+                  </blockquote>
+                  <p><img src="/img/rust-setData-gasBurnt.png" alt="Rust Set Data Gas Chart"></p />
+                  <p><img src="/img/rust-getData-gasBurnt.png" alt="Rust Get Data Gas Chart"></p />
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="vector"></a><a href="#vector" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>Vector</code></h3>
+                  <blockquote>
+                    <p>Implements a <a href="https://en.wikipedia.org/wiki/Array_data_structure">vector</a> / persistent
+                      array.</p>
+                    <ul>
+                      <li>can iterate using index</li>
+                      <li>Uses the following map: index -&gt; element.</li>
+                    </ul>
+                  </blockquote>
+                  <p>[ <a href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/vector.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.Vector.html">Implementation</a> ]
+                  </p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="lookupset"></a><a href="#lookupset" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>LookupSet</code></h3>
+                  <blockquote>
+                    <p>Implements a persistent set <em>without</em> iterators.</p>
+                    <ul>
+                      <li>can not iterate over keys</li>
+                      <li>more efficient in reads / writes</li>
+                    </ul>
+                  </blockquote>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/lookup_set.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.LookupSet.html">Implementation</a>
+                    ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="unorderedset"></a><a href="#unorderedset"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>UnorderedSet</code></h3>
+                  <blockquote>
+                    <p>Implements a persistent set <em>with</em> iterators for keys, values, and entries.</p>
+                  </blockquote>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/unordered_set.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.UnorderedSet.html">Implementation
+                      Docs</a> ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="lookupmap"></a><a href="#lookupmap" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>LookupMap</code></h3>
+                  <blockquote>
+                    <p>Implements an persistent map.</p>
+                    <ul>
+                      <li>can not iterate over keys</li>
+                      <li>does not preserve order when removing and adding values</li>
+                      <li>efficient in number of reads and writes</li>
+                    </ul>
+                  </blockquote>
+                  <ul>
+                    <li>To add data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_lookup_map</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>, value: <span class="hljs-built_in">String</span>) {
+    <span class="hljs-keyword">self</span>.lookup_map.insert(&amp;key, &amp;value);
+}
+</code></pre>
+                  <ul>
+                    <li>To get data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_lookup_map</span></span>(&amp;<span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>) -&gt; <span class="hljs-built_in">String</span> {
+    <span class="hljs-keyword">match</span> <span class="hljs-keyword">self</span>.lookup_map.get(&amp;key) {
+        <span class="hljs-literal">Some</span>(value) =&gt; {
+            <span class="hljs-keyword">let</span> log_message = <span class="hljs-built_in">format!</span>(<span class="hljs-string">"Value from LookupMap is {:?}"</span>, value.clone());
+            env::log(log_message.as_bytes());
+            value
+        },
+        <span class="hljs-literal">None</span> =&gt; <span class="hljs-string">"not found"</span>.to_string()
+    }
+}
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/lookup_map.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.LookupMap.html">Implementation</a>
+                    ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="unorderedmap"></a><a href="#unorderedmap"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>UnorderedMap</code></h3>
+                  <blockquote>
+                    <p>Implements an unordered map.</p>
+                    <ul>
+                      <li>iterable</li>
+                      <li>does not preserve order when removing and adding values</li>
+                      <li>is able to clear all values</li>
+                    </ul>
+                  </blockquote>
+                  <ul>
+                    <li>To add data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_unordered_map</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>, value: <span class="hljs-built_in">String</span>) {
+    <span class="hljs-keyword">self</span>.unordered_map.insert(&amp;key, &amp;value);
+}
+</code></pre>
+                  <ul>
+                    <li>To get data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_unordered_map</span></span>(&amp;<span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>) -&gt; <span class="hljs-built_in">String</span> {
+    <span class="hljs-keyword">match</span> <span class="hljs-keyword">self</span>.unordered_map.get(&amp;key) {
+        <span class="hljs-literal">Some</span>(value) =&gt; {
+            <span class="hljs-keyword">let</span> log_message = <span class="hljs-built_in">format!</span>(<span class="hljs-string">"Value from UnorderedMap is {:?}"</span>, value.clone());
+            env::log(log_message.as_bytes());
+            value
+        },
+        <span class="hljs-comment">// None =&gt; "Didn't find that key.".to_string()</span>
+        <span class="hljs-literal">None</span> =&gt; <span class="hljs-string">"not found"</span>.to_string()
+    }
+}
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/unordered_map.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.LookupMap.html">Implementation</a>
+                    ]</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="treemap"></a><a href="#treemap" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>TreeMap</code></h3>
+                  <blockquote>
+                    <p>Implements a Tree Map based on <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL-tree</a>.</p>
+                    <ul>
+                      <li>iterable</li>
+                      <li>preserves order</li>
+                      <li>able to clear all values</li>
+                      <li>self balancing</li>
+                    </ul>
+                  </blockquote>
+                  <ul>
+                    <li>To add data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_tree_map</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>, value: <span class="hljs-built_in">String</span>) {
+    <span class="hljs-keyword">self</span>.tree_map.insert(&amp;key, &amp;value);
+}
+</code></pre>
+                  <ul>
+                    <li>To get data:</li>
+                  </ul>
+                  <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_tree_map</span></span>(&amp;<span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">String</span>) -&gt; <span class="hljs-built_in">String</span> {
+    <span class="hljs-keyword">match</span> <span class="hljs-keyword">self</span>.tree_map.get(&amp;key) {
+        <span class="hljs-literal">Some</span>(value) =&gt; {
+            <span class="hljs-keyword">let</span> log_message = <span class="hljs-built_in">format!</span>(<span class="hljs-string">"Value from TreeMap is {:?}"</span>, value.clone());
+            env::log(log_message.as_bytes());
+            <span class="hljs-comment">// Since we found it, return it (note implicit return)</span>
+            value
+        },
+        <span class="hljs-comment">// did not find the entry</span>
+        <span class="hljs-comment">// note: curly brackets after arrow are optional in simple cases, like other languages</span>
+        <span class="hljs-literal">None</span> =&gt; <span class="hljs-string">"not found"</span>.to_string()
+    }
+}
+</code></pre>
+                  <p>[ <a
+                      href="https://github.com/near/near-sdk-rs/blob/master/near-sdk/src/collections/tree_map.rs">SDK
+                      source</a> ]</p>
+                  <p>[ <a
+                      href="https://docs.rs/near-sdk/2.0.0/near_sdk/collections/struct.TreeMap.html">Implementation</a>
+                    ]</p>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 3/12/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/concepts/account"><span
+                class="arrow-prev">← </span><span>Account</span></a><a class="docs-next button"
+              href="/docs/concepts/storage-staking"><span>Storage Staking</span><span class="arrow-next"> →</span></a>
+          </div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#assemblyscript-collection-types">AssemblyScript Collection Types</a>
+            <ul class="toc-headings">
+              <li><a href="#big-o-notation">Big-O Notation</a></li>
+              <li><a href="#gas-consumption-examples">Gas Consumption Examples</a></li>
+              <li><a href="#persistentvector"><code>PersistentVector</code></a></li>
+              <li><a href="#persistentset"><code>PersistentSet</code></a></li>
+              <li><a href="#persistentmap"><code>PersistentMap</code></a></li>
+              <li><a href="#persistentunorderedmap"><code>PersistentUnorderedMap</code></a></li>
+              <li><a href="#persistentdeque"><code>PersistentDeque</code></a></li>
+              <li><a href="#avltree"><code>AVLTree</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#rust-collection-types">Rust Collection Types</a>
+            <ul class="toc-headings">
+              <li><a href="#big-o-notation-1">Big-O Notation</a></li>
+              <li><a href="#gas-consumption-examples-1">Gas Consumption Examples</a></li>
+              <li><a href="#vector"><code>Vector</code></a></li>
+              <li><a href="#lookupset"><code>LookupSet</code></a></li>
+              <li><a href="#unorderedset"><code>UnorderedSet</code></a></li>
+              <li><a href="#lookupmap"><code>LookupMap</code></a></li>
+              <li><a href="#unorderedmap"><code>UnorderedMap</code></a></li>
+              <li><a href="#treemap"><code>TreeMap</code></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

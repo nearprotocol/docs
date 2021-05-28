@@ -1,0 +1,707 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "isLast": true,
+  "docsSidebars": {
+    "concepts": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Overview",
+        "items": [
+          {
+            "type": "link",
+            "label": "New to NEAR?",
+            "href": "/docs/concepts/new-to-near"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Basics",
+        "items": [
+          {
+            "type": "link",
+            "label": "Account",
+            "href": "/docs/concepts/account"
+          },
+          {
+            "type": "link",
+            "label": "Data Storage",
+            "href": "/docs/concepts/data-storage"
+          },
+          {
+            "type": "link",
+            "label": "Storage Staking",
+            "href": "/docs/concepts/storage-staking"
+          },
+          {
+            "type": "link",
+            "label": "Epoch",
+            "href": "/docs/concepts/epoch"
+          },
+          {
+            "type": "link",
+            "label": "Gas",
+            "href": "/docs/concepts/gas"
+          },
+          {
+            "type": "link",
+            "label": "Indexer",
+            "href": "/docs/concepts/indexer"
+          },
+          {
+            "type": "link",
+            "label": "Networks",
+            "href": "/docs/concepts/networks"
+          },
+          {
+            "type": "link",
+            "label": "Transaction",
+            "href": "/docs/concepts/transaction"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Architecture",
+        "items": [
+          {
+            "type": "link",
+            "label": "Specification",
+            "href": "/docs/concepts/architecture/specification"
+          },
+          {
+            "type": "link",
+            "label": "Papers",
+            "href": "/docs/concepts/architecture/papers"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "FAQ",
+        "items": [
+          {
+            "type": "link",
+            "label": "General FAQ",
+            "href": "/docs/faq/general-faq"
+          },
+          {
+            "type": "link",
+            "label": "Technical FAQ",
+            "href": "/docs/faq/technical-faq"
+          },
+          {
+            "type": "link",
+            "label": "Economics FAQ",
+            "href": "/docs/faq/economics-faq"
+          }
+        ]
+      }
+    ],
+    "develop": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Basics",
+        "items": [
+          {
+            "type": "link",
+            "label": "Getting Started",
+            "href": "/docs/develop/basics/getting-started"
+          },
+          {
+            "type": "link",
+            "label": "Create Account",
+            "href": "/docs/develop/basics/create-account"
+          },
+          {
+            "type": "link",
+            "label": "Hackathon Guide",
+            "href": "/docs/develop/basics/hackathon-startup-guide"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Front-end",
+        "items": [
+          {
+            "type": "link",
+            "label": "Introduction",
+            "href": "/docs/develop/front-end/introduction"
+          },
+          {
+            "type": "link",
+            "label": "API JS Library",
+            "href": "/docs/develop/front-end/near-api-js"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Smart Contracts",
+        "items": [
+          {
+            "type": "link",
+            "label": "Overview",
+            "href": "/docs/develop/contracts/overview"
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "AssemblyScript",
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/develop/contracts/as/intro"
+              },
+              {
+                "type": "link",
+                "label": "AS SDK",
+                "href": "/docs/develop/contracts/as/near-sdk-as"
+              },
+              {
+                "type": "link",
+                "label": "Testing",
+                "href": "/docs/develop/contracts/as/testing-as-contracts"
+              }
+            ]
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Rust",
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/develop/contracts/rust/intro"
+              },
+              {
+                "type": "link",
+                "label": "Rust SDK",
+                "href": "/docs/develop/contracts/rust/near-sdk-rs"
+              },
+              {
+                "type": "link",
+                "label": "Testing",
+                "href": "/docs/develop/contracts/rust/testing-rust-contracts"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Running A Node",
+        "items": [
+          {
+            "type": "link",
+            "label": "Running a node",
+            "href": "/docs/develop/node/running-a-node"
+          },
+          {
+            "type": "link",
+            "label": "Running a node (Windows)",
+            "href": "/docs/develop/node/running-a-node-windows"
+          },
+          {
+            "type": "link",
+            "label": "Compile and run a node",
+            "href": "/docs/develop/node/compile-and-run-a-node"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Tools",
+        "items": [
+          {
+            "type": "link",
+            "label": "NEAR CLI",
+            "href": "/docs/tools/near-cli"
+          },
+          {
+            "type": "link",
+            "label": "NEAR Explorer",
+            "href": "/docs/tools/near-explorer"
+          },
+          {
+            "type": "link",
+            "label": "NEAR Wallet",
+            "href": "/docs/tools/near-wallet"
+          },
+          {
+            "type": "link",
+            "label": "NEAR Indexer",
+            "href": "/docs/tools/near-indexer"
+          }
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "General",
+        "items": [
+          {
+            "type": "link",
+            "label": "Create a Transaction",
+            "href": "/docs/tutorials/create-transactions"
+          },
+          {
+            "type": "link",
+            "label": "Using a Ledger",
+            "href": "/docs/tutorials/ledger"
+          },
+          {
+            "type": "link",
+            "label": "Figment Tutorials",
+            "href": "/docs/tutorials/figment"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Front-End",
+        "items": [
+          {
+            "type": "link",
+            "label": "API Examples",
+            "href": "/docs/tutorials/front-end/naj-examples"
+          },
+          {
+            "type": "link",
+            "label": "API Workshop",
+            "href": "/docs/tutorials/front-end/naj-workshop"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Smart Contracts",
+        "items": [
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "AssemblyScript",
+            "items": [
+              {
+                "type": "link",
+                "label": "AssemblyScript Workshop",
+                "href": "/docs/tutorials/contracts/as-workshop"
+              },
+              {
+                "type": "link",
+                "label": "Issue a Token",
+                "href": "/docs/tutorials/contracts/token"
+              },
+              {
+                "type": "link",
+                "label": "Cross Contract Calls",
+                "href": "/docs/tutorials/contracts/cross-contract-calls"
+              }
+            ]
+          },
+          {
+            "collapsed": true,
+            "type": "category",
+            "label": "Rust",
+            "items": [
+              {
+                "type": "link",
+                "label": "Intro to Rust",
+                "href": "/docs/tutorials/contracts/intro-to-rust"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Rainbow Bridge",
+        "items": [
+          {
+            "type": "link",
+            "label": "Using Mainnet Frontend",
+            "href": "/docs/tutorials/rainbow-bridge-frontend-mainnet"
+          },
+          {
+            "type": "link",
+            "label": "Using Testnet Frontend",
+            "href": "/docs/tutorials/rainbow-bridge-frontend-testnet"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Videos",
+        "items": [
+          {
+            "type": "link",
+            "label": "Accounts & keys",
+            "href": "/docs/videos/accounts-keys"
+          },
+          {
+            "type": "link",
+            "label": "Contract Reviews",
+            "href": "/docs/videos/contract-reviews"
+          },
+          {
+            "type": "link",
+            "label": "Application Reviews",
+            "href": "/docs/videos/live-app-review"
+          },
+          {
+            "type": "link",
+            "label": "Misc",
+            "href": "/docs/videos/collections-u128-etc"
+          }
+        ]
+      }
+    ],
+    "API": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "API",
+        "items": [
+          {
+            "type": "link",
+            "label": "RPC Endpoints",
+            "href": "/docs/api/rpc"
+          },
+          {
+            "type": "link",
+            "label": "REST API SERVER",
+            "href": "/docs/api/near-api-rest-server"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "JavaScript Library",
+        "items": [
+          {
+            "type": "link",
+            "label": "Overview",
+            "href": "/docs/api/naj-overview"
+          },
+          {
+            "type": "link",
+            "label": "Quick Reference",
+            "href": "/docs/api/naj-quick-reference"
+          },
+          {
+            "type": "link",
+            "label": "Cookbook",
+            "href": "/docs/api/naj-cookbook"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "FAQ",
+        "items": [
+          {
+            "type": "link",
+            "label": "JS Library FAQ",
+            "href": "/docs/faq/naj-faq"
+          }
+        ]
+      }
+    ],
+    "stake": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Quickstart",
+        "items": [
+          {
+            "type": "link",
+            "label": "Orientation",
+            "href": "/docs/validator/staking-overview"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Validator",
+        "items": [
+          {
+            "type": "link",
+            "label": "Choosing Hardware",
+            "href": "/docs/roles/validator/hardware"
+          },
+          {
+            "type": "link",
+            "label": "Running the Node",
+            "href": "/docs/validator/staking"
+          },
+          {
+            "type": "link",
+            "label": "Understanding Keys",
+            "href": "/docs/validator/keys"
+          },
+          {
+            "type": "link",
+            "label": "Node Maintenance",
+            "href": "/docs/validator/maintenance"
+          },
+          {
+            "type": "link",
+            "label": "Validator Economics",
+            "href": "/docs/validator/economics"
+          },
+          {
+            "type": "link",
+            "label": "Deploy on MainNet",
+            "href": "/docs/validator/deploy-on-mainnet"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "FAQ",
+        "items": [
+          {
+            "type": "link",
+            "label": "Staking FAQ",
+            "href": "/docs/validator/staking-faq"
+          }
+        ]
+      }
+    ],
+    "integrate": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Integration",
+        "items": [
+          {
+            "type": "link",
+            "label": "Exchange Integration",
+            "href": "/docs/roles/integrator/exchange-integration"
+          },
+          {
+            "type": "link",
+            "label": "Implicit Accounts",
+            "href": "/docs/roles/integrator/implicit-accounts"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Understanding Errors",
+        "items": [
+          {
+            "type": "link",
+            "label": "Introduction",
+            "href": "/docs/roles/integrator/errors/introduction"
+          },
+          {
+            "type": "link",
+            "label": "Source Code Survey",
+            "href": "/docs/roles/integrator/errors/error-implementation"
+          },
+          {
+            "type": "link",
+            "label": "Token Loss",
+            "href": "/docs/roles/integrator/token-loss"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "FAQ",
+        "items": [
+          {
+            "type": "link",
+            "label": "Integrator FAQ",
+            "href": "/docs/roles/integrator/faq"
+          }
+        ]
+      }
+    ],
+    "tokens": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Token Basics",
+        "items": [
+          {
+            "type": "link",
+            "label": "Token Custody",
+            "href": "/docs/tokens/token-custody"
+          },
+          {
+            "type": "link",
+            "label": "Lockups Explained",
+            "href": "/docs/tokens/lockup"
+          },
+          {
+            "type": "link",
+            "label": "Token Delegation",
+            "href": "/docs/validator/delegation"
+          }
+        ]
+      }
+    ],
+    "community": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Overview",
+        "items": [
+          {
+            "type": "link",
+            "label": "Community Channels",
+            "href": "/docs/community/community-channels"
+          },
+          {
+            "type": "link",
+            "label": "FAQ",
+            "href": "/docs/community/community-faq"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Contribute",
+        "items": [
+          {
+            "type": "link",
+            "label": "Overview",
+            "href": "/docs/community/contribute/contribute-overview"
+          },
+          {
+            "type": "link",
+            "label": "How to Contribute",
+            "href": "/docs/community/contribute/how-to-contribute"
+          },
+          {
+            "type": "link",
+            "label": "NearCore Contributions",
+            "href": "/docs/community/contribute/contribute-nearcore"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "FAQ",
+        "items": [
+          {
+            "type": "link",
+            "label": "FAQ",
+            "href": "/docs/community/contribute/contribute-faq"
+          }
+        ]
+      }
+    ]
+  },
+  "permalinkToSidebar": {
+    "/docs/api/naj-cookbook": "API",
+    "/docs/api/naj-overview": "API",
+    "/docs/api/naj-quick-reference": "API",
+    "/docs/api/near-api-rest-server": "API",
+    "/docs/api/rpc": "API",
+    "/docs/community/community-channels": "community",
+    "/docs/community/community-faq": "community",
+    "/docs/community/contribute/contribute-faq": "community",
+    "/docs/community/contribute/contribute-nearcore": "community",
+    "/docs/community/contribute/contribute-overview": "community",
+    "/docs/community/contribute/how-to-contribute": "community",
+    "/docs/concepts/account": "concepts",
+    "/docs/concepts/architecture/papers": "concepts",
+    "/docs/concepts/architecture/specification": "concepts",
+    "/docs/concepts/data-storage": "concepts",
+    "/docs/concepts/epoch": "concepts",
+    "/docs/concepts/gas": "concepts",
+    "/docs/concepts/indexer": "concepts",
+    "/docs/concepts/networks": "concepts",
+    "/docs/concepts/new-to-near": "concepts",
+    "/docs/concepts/storage-staking": "concepts",
+    "/docs/concepts/transaction": "concepts",
+    "/docs/develop/basics/create-account": "develop",
+    "/docs/develop/basics/getting-started": "develop",
+    "/docs/develop/basics/hackathon-startup-guide": "develop",
+    "/docs/develop/contracts/as/intro": "develop",
+    "/docs/develop/contracts/as/near-sdk-as": "develop",
+    "/docs/develop/contracts/as/testing-as-contracts": "develop",
+    "/docs/develop/contracts/overview": "develop",
+    "/docs/develop/contracts/rust/intro": "develop",
+    "/docs/develop/contracts/rust/near-sdk-rs": "develop",
+    "/docs/develop/contracts/rust/testing-rust-contracts": "develop",
+    "/docs/develop/front-end/introduction": "develop",
+    "/docs/develop/front-end/near-api-js": "develop",
+    "/docs/develop/node/compile-and-run-a-node": "develop",
+    "/docs/develop/node/running-a-node": "develop",
+    "/docs/develop/node/running-a-node-windows": "develop",
+    "/docs/faq/economics-faq": "concepts",
+    "/docs/faq/general-faq": "concepts",
+    "/docs/faq/naj-faq": "API",
+    "/docs/faq/technical-faq": "concepts",
+    "/docs/roles/integrator/errors/error-implementation": "integrate",
+    "/docs/roles/integrator/errors/introduction": "integrate",
+    "/docs/roles/integrator/exchange-integration": "integrate",
+    "/docs/roles/integrator/faq": "integrate",
+    "/docs/roles/integrator/implicit-accounts": "integrate",
+    "/docs/roles/integrator/token-loss": "integrate",
+    "/docs/roles/validator/hardware": "stake",
+    "/docs/tokens/lockup": "tokens",
+    "/docs/tokens/token-custody": "tokens",
+    "/docs/tools/near-cli": "tools",
+    "/docs/tools/near-explorer": "tools",
+    "/docs/tools/near-indexer": "tools",
+    "/docs/tools/near-wallet": "tools",
+    "/docs/tutorials/contracts/as-workshop": "tutorials",
+    "/docs/tutorials/contracts/cross-contract-calls": "tutorials",
+    "/docs/tutorials/contracts/intro-to-rust": "tutorials",
+    "/docs/tutorials/contracts/token": "tutorials",
+    "/docs/tutorials/create-transactions": "tutorials",
+    "/docs/tutorials/figment": "tutorials",
+    "/docs/tutorials/front-end/naj-examples": "tutorials",
+    "/docs/tutorials/front-end/naj-workshop": "tutorials",
+    "/docs/tutorials/ledger": "tutorials",
+    "/docs/tutorials/rainbow-bridge-frontend-mainnet": "tutorials",
+    "/docs/tutorials/rainbow-bridge-frontend-testnet": "tutorials",
+    "/docs/validator/delegation": "tokens",
+    "/docs/validator/deploy-on-mainnet": "stake",
+    "/docs/validator/economics": "stake",
+    "/docs/validator/keys": "stake",
+    "/docs/validator/maintenance": "stake",
+    "/docs/validator/staking": "stake",
+    "/docs/validator/staking-faq": "stake",
+    "/docs/validator/staking-overview": "stake",
+    "/docs/videos/accounts-keys": "tutorials",
+    "/docs/videos/collections-u128-etc": "tutorials",
+    "/docs/videos/contract-reviews": "tutorials",
+    "/docs/videos/live-app-review": "tutorials"
+  }
+}

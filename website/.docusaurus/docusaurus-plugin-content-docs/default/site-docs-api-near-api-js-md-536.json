@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api/naj-overview",
+  "id": "api/naj-overview",
+  "isDocsHomePage": false,
+  "title": "API JavaScript Library",
+  "description": "near-api-js is a JavaScript/TypeScript library for development of decentralized applications on the NEAR platform. It works in conjunction with our RPC endpoints to help you connect your application to the NEAR blockchain.",
+  "source": "@site/../docs/api/near-api-js.md",
+  "sourceDirName": "api",
+  "slug": "/api/naj-overview",
+  "permalink": "/docs/api/naj-overview",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/near-api-js.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Overview",
+  "frontMatter": {
+    "id": "naj-overview",
+    "title": "API JavaScript Library",
+    "sidebar_label": "Overview"
+  },
+  "sidebar": "API",
+  "previous": {
+    "title": "NEAR API REST SERVER",
+    "permalink": "/docs/api/near-api-rest-server"
+  },
+  "next": {
+    "title": "API JS Quick Reference",
+    "permalink": "/docs/api/naj-quick-reference"
+  }
+}

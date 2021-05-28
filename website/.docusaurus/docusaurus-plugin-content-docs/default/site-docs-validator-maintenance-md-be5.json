@@ -1,0 +1,31 @@
+{
+  "unversionedId": "validator/maintenance",
+  "id": "validator/maintenance",
+  "isDocsHomePage": false,
+  "title": "Validator Node Maintenance",
+  "description": "Updating a Validator Node",
+  "source": "@site/../docs/validator/maintenance.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/maintenance",
+  "permalink": "/docs/validator/maintenance",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/maintenance.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Node Maintenance",
+  "frontMatter": {
+    "id": "maintenance",
+    "title": "Validator Node Maintenance",
+    "sidebar_label": "Node Maintenance"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Keys on the NEAR Platform",
+    "permalink": "/docs/validator/keys"
+  },
+  "next": {
+    "title": "The Economics of a Validator",
+    "permalink": "/docs/validator/economics"
+  }
+}

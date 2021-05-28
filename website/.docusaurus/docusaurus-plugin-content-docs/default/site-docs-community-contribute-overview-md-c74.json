@@ -1,0 +1,31 @@
+{
+  "unversionedId": "community/contribute/contribute-overview",
+  "id": "community/contribute/contribute-overview",
+  "isDocsHomePage": false,
+  "title": "Contributor Overview",
+  "description": "Welcome! If you are in this repository, you are probably interested in contributing to NEAR's development.",
+  "source": "@site/../docs/community/contribute/overview.md",
+  "sourceDirName": "community/contribute",
+  "slug": "/community/contribute/contribute-overview",
+  "permalink": "/docs/community/contribute/contribute-overview",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/overview.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Overview",
+  "frontMatter": {
+    "id": "contribute-overview",
+    "title": "Contributor Overview",
+    "sidebar_label": "Overview"
+  },
+  "sidebar": "community",
+  "previous": {
+    "title": "Community FAQ",
+    "permalink": "/docs/community/community-faq"
+  },
+  "next": {
+    "title": "How to Contribute",
+    "permalink": "/docs/community/contribute/how-to-contribute"
+  }
+}

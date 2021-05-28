@@ -1,0 +1,27 @@
+{
+  "unversionedId": "community/contribute/contribute-faq",
+  "id": "community/contribute/contribute-faq",
+  "isDocsHomePage": false,
+  "title": "Contributor FAQ",
+  "description": "How can I get involved?",
+  "source": "@site/../docs/community/contribute/faq.md",
+  "sourceDirName": "community/contribute",
+  "slug": "/community/contribute/contribute-faq",
+  "permalink": "/docs/community/contribute/contribute-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "FAQ",
+  "frontMatter": {
+    "id": "contribute-faq",
+    "title": "Contributor FAQ",
+    "sidebar_label": "FAQ"
+  },
+  "sidebar": "community",
+  "previous": {
+    "title": "Contribute to NearCore",
+    "permalink": "/docs/community/contribute/contribute-nearcore"
+  }
+}

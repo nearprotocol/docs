@@ -1,0 +1,27 @@
+{
+  "unversionedId": "validator/delegation",
+  "id": "validator/delegation",
+  "isDocsHomePage": false,
+  "title": "Token Delegation",
+  "description": "Overview",
+  "source": "@site/../docs/validator/delegation.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/delegation",
+  "permalink": "/docs/validator/delegation",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/delegation.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Token Delegation",
+  "frontMatter": {
+    "id": "delegation",
+    "title": "Token Delegation",
+    "sidebar_label": "Token Delegation"
+  },
+  "sidebar": "tokens",
+  "previous": {
+    "title": "Lockups Explained",
+    "permalink": "/docs/tokens/lockup"
+  }
+}

@@ -78,18 +78,8 @@ overflow-checks = true
 
 <details>
   <summary>Full `src/lib.rs` file</summary>
-  
-```rust
-//! This contract implements simple counter backed by storage on blockchain.
-//!
-//! The contract provides methods to [increment] / [decrement] counter and
-//! [get it's current value][get_num] or [reset].
-//!
-//! [increment]: struct.Counter.html#method.increment
-//! [decrement]: struct.Counter.html#method.decrement
-//! [get_num]: struct.Counter.html#method.get_num
-//! [reset]: struct.Counter.html#method.reset
 
+```rust
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::{env, near_bindgen};
 
@@ -442,7 +432,7 @@ near call YOUR_ACCOUNT_HERE increment --accountId YOUR_ACCOUNT_HERE
 
 Note that in the above command, we use the account name twice. If we were to translate this into a sentence it would be:
 
->Please call the contract deployed to NEAR account X. On that contract is a method called "increment" that takes no additional arguments. Oh, and we happen to be calling this contract using keys from account X, too.
+> Please call the contract deployed to NEAR account X. On that contract is a method called "increment" that takes no additional arguments. Oh, and we happen to be calling this contract using keys from account X, too.
 
 Contract methods can be called from other NEAR accounts quite easily. Please see [the examples page](https://near.dev) for more information.
 
@@ -476,6 +466,7 @@ Follow the instructions to set up a simple Rust smart contract with a React fron
 
 If `near` commands return an error containing:
 
->Cannot deserialize the contract state.
+> Cannot deserialize the contract state.
 
 Please see this [StackOverflow post](https://stackoverflow.com/questions/60767120/getting-cannot-deserialize-the-contract-state-when-calling-rust-init-function).
+`

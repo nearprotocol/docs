@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/account",
+  "id": "concepts/account",
+  "isDocsHomePage": false,
+  "title": "Account",
+  "description": "NEAR uses human readable account IDs instead of a public key hash. For a 20-minute video explanation, see this Lunch and Learn on YouTube.",
+  "source": "@site/../docs/concepts/account.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/account",
+  "permalink": "/docs/concepts/account",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/account.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Account",
+  "frontMatter": {
+    "id": "account",
+    "title": "Account",
+    "sidebar_label": "Account"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "New to NEAR?",
+    "permalink": "/docs/concepts/new-to-near"
+  },
+  "next": {
+    "title": "Data Storage / Collections",
+    "permalink": "/docs/concepts/data-storage"
+  }
+}

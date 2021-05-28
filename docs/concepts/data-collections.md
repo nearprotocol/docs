@@ -1,6 +1,6 @@
 ---
 id: data-storage
-title: Data Storage / Collections
+title: "Data Storage / Collections"
 sidebar_label: Data Storage
 ---
 
@@ -59,9 +59,9 @@ For information on storage costs, please see [ **[storage staking](/docs/concept
 >
 > You can reproduce this and test out your own data set by visiting [collection-examples-as](https://github.com/near-examples/collection-examples-rs).
 
-![AssemblyScript Set Data Gas Chart](/docs/assets/as-setData-gasBurnt.png)
+![AssemblyScript Set Data Gas Chart](/img/as-setData-gasBurnt.png)
 
-![AssemblyScript Get Data Gas Chart](/docs/assets/as-getData-gasBurnt.png)
+![AssemblyScript Get Data Gas Chart](/img/as-getData-gasBurnt.png)
 
 ---
 
@@ -236,10 +236,10 @@ map.getSome(key)
 >
 > You can reproduce this and test out your own data set by visiting [collection-examples-rs](https://github.com/near-examples/collection-examples-rs).
 
-![Rust Set Data Gas Chart](/docs/assets/rust-setData-gasBurnt.png)
+![Rust Set Data Gas Chart](/img/rust-setData-gasBurnt.png)
 
 
-![Rust Get Data Gas Chart](/docs/assets/rust-getData-gasBurnt.png)
+![Rust Get Data Gas Chart](/img/rust-getData-gasBurnt.png)
 
 ---
 

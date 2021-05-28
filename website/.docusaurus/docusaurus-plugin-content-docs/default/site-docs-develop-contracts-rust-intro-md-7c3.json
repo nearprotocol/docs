@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/rust/intro",
+  "id": "develop/contracts/rust/intro",
+  "isDocsHomePage": false,
+  "title": "Rust",
+  "description": "Writing smart contracts is a paradigm shift. There are only a few new concepts (state, transfer, account/balance information…) used, but they go a long way toward building full-fledged applications on the blockchain. This way of thinking has its own learning curve. Currently, the preferred programming language for writing smart contracts on NEAR is Rust. On top of learning smart contracts, developers unfamiliar with the Rust programming language may have an additional barrier to entry. This page is meant to provide an easy onboarding to Rust and smart contract development.",
+  "source": "@site/../docs/develop/contracts/rust/intro.md",
+  "sourceDirName": "develop/contracts/rust",
+  "slug": "/develop/contracts/rust/intro",
+  "permalink": "/docs/develop/contracts/rust/intro",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/intro.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Introduction",
+  "frontMatter": {
+    "id": "intro",
+    "title": "Rust",
+    "sidebar_label": "Introduction"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Testing AssemblyScript Contracts",
+    "permalink": "/docs/develop/contracts/as/testing-as-contracts"
+  },
+  "next": {
+    "title": "near-sdk",
+    "permalink": "/docs/develop/contracts/rust/near-sdk-rs"
+  }
+}

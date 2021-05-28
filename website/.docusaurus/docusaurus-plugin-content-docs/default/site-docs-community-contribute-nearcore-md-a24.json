@@ -1,0 +1,31 @@
+{
+  "unversionedId": "community/contribute/contribute-nearcore",
+  "id": "community/contribute/contribute-nearcore",
+  "isDocsHomePage": false,
+  "title": "Contribute to NearCore",
+  "description": "Compile from source",
+  "source": "@site/../docs/community/contribute/nearcore.md",
+  "sourceDirName": "community/contribute",
+  "slug": "/community/contribute/contribute-nearcore",
+  "permalink": "/docs/community/contribute/contribute-nearcore",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/nearcore.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "NearCore Contributions",
+  "frontMatter": {
+    "id": "contribute-nearcore",
+    "title": "Contribute to NearCore",
+    "sidebar_label": "NearCore Contributions"
+  },
+  "sidebar": "community",
+  "previous": {
+    "title": "How to Contribute",
+    "permalink": "/docs/community/contribute/how-to-contribute"
+  },
+  "next": {
+    "title": "Contributor FAQ",
+    "permalink": "/docs/community/contribute/contribute-faq"
+  }
+}

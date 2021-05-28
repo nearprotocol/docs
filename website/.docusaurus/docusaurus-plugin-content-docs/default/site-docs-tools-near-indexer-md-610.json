@@ -1,0 +1,27 @@
+{
+  "unversionedId": "tools/near-indexer",
+  "id": "tools/near-indexer",
+  "isDocsHomePage": false,
+  "title": "NEAR Indexer",
+  "description": "The NEAR Indexer Framework allows you to run a network node that listens for targeted information on the blockchain. For more information see indexer under our \"Concepts\" section.",
+  "source": "@site/../docs/tools/near-indexer.md",
+  "sourceDirName": "tools",
+  "slug": "/tools/near-indexer",
+  "permalink": "/docs/tools/near-indexer",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-indexer.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "NEAR Indexer",
+  "frontMatter": {
+    "id": "near-indexer",
+    "title": "NEAR Indexer",
+    "sidebar_label": "NEAR Indexer"
+  },
+  "sidebar": "tools",
+  "previous": {
+    "title": "NEAR Wallet",
+    "permalink": "/docs/tools/near-wallet"
+  }
+}

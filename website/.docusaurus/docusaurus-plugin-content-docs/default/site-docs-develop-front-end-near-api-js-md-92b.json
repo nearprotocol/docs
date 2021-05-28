@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/front-end/near-api-js",
+  "id": "develop/front-end/near-api-js",
+  "isDocsHomePage": false,
+  "title": "near-api-js",
+  "description": "near-api-js is a JavaScript/TypeScript library for development of decentralized applications on the NEAR platform. It works in conjunction with our RPC endpoints to help you connect your application to the NEAR blockchain.",
+  "source": "@site/../docs/develop/front-end/near-api-js.md",
+  "sourceDirName": "develop/front-end",
+  "slug": "/develop/front-end/near-api-js",
+  "permalink": "/docs/develop/front-end/near-api-js",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/near-api-js.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "API JS Library",
+  "frontMatter": {
+    "id": "near-api-js",
+    "title": "near-api-js",
+    "sidebar_label": "API JS Library"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "front-end Introduction",
+    "permalink": "/docs/develop/front-end/introduction"
+  },
+  "next": {
+    "title": "Smart Contract Overview",
+    "permalink": "/docs/develop/contracts/overview"
+  }
+}

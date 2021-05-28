@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>EVM local setup · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description"
+    content="This section covers how to try the NEAR EVM on a local node. Note, this will take longer and require more resources from your computer than using Betanet. This is for those who prefer to develop everything locally. Please note that these instructions are raw at the moment. The goal would be to Dockerize this process, but it&#x27;s made available for intrepid builders." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="EVM local setup · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="This section covers how to try the NEAR EVM on a local node. Note, this will take longer and require more resources from your computer than using Betanet. This is for those who prefer to develop everything locally. Please note that these instructions are raw at the moment. The goal would be to Dockerize this process, but it&#x27;s made available for intrepid builders." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/develop/evm/evm-local-setup.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">EVM local setup</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p>This section covers how to try the NEAR EVM on a local node. Note, this will take longer and
+                    require more resources from your computer than using Betanet. This is for those who prefer to
+                    develop everything locally. Please note that these instructions are raw at the moment. The goal
+                    would be to Dockerize this process, but it's made available for intrepid builders.</p />
+                  <h2><a class="anchor" aria-hidden="true" id="table-of-contents"></a><a href="#table-of-contents"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Table of Contents</h2>
+                  <ul>
+                    <li><a href="#table-of-contents">Table of Contents</a>
+                      <ul>
+                        <li><a href="#prerequisites">Prerequisites</a></li>
+                        <li><a href="#get-rust">Get Rust</a></li>
+                        <li><a href="#set-up-near-node">Set up NEAR node</a></li>
+                        <li><a href="#postgres">Postgres</a></li>
+                        <li><a href="#near-contract-helper">NEAR Contract Helper</a></li>
+                        <li><a href="#near-cli">NEAR CLI</a></li>
+                        <li><a href="#near-linkdrop">NEAR Linkdrop</a></li>
+                        <li><a href="#near-wallet">NEAR Wallet</a></li>
+                        <li><a href="#near-explorer">NEAR Explorer</a></li>
+                        <li><a href="#copy-key-to-pet-shop">Copy key to Pet Shop</a></li>
+                        <li><a href="#localnet-migration">Localnet migration</a></li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Prerequisites</h3>
+                  <ul>
+                    <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></li>
+                    <li><a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
+                    <li>NodeJS version 12+. We recommend using <a
+                        href="https://nodejs.org/en/download/package-manager/">a version manager</a>.</li>
+                    <li><a href="https://www.python.org/download">Python 3</a> and the <a
+                        href="https://pip.pypa.io/en/stable/installing/">pip3 package</a></li>
+                    <li><a href="https://wiki.postgresql.org/wiki/Detailed_installation_guides">Postgres</a></li>
+                    <li>Rust (see instructions below)</li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true" id="get-rust"></a><a href="#get-rust" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get Rust</h3>
+                  <pre><code class="hljs">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+                  <p>Follow instructions that appear after that command, then:</p>
+                  <pre><code class="hljs">rustup target add wasm32-unknown-unknown
+</code></pre>
+                  <p><strong>Note</strong>: this custom target is not strictly needed for running a nearcore node, but
+                    is needed for building smart contracts in Rust. It will be needed later in this guide.</p>
+                  <p>Also, <a href="/docs/tutorials/contracts/intro-to-rust#3-step-rust-installation">see the docs</a>
+                    for more links and resources for installing Rust.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="set-up-near-node"></a><a href="#set-up-near-node"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Set up NEAR node</h3>
+                  <p>Clone the <a href="https://github.com/near/nearcore">nearcore repository</a> with:</p>
+                  <pre><code class="hljs">git clone https://github.com/near/nearcore.git
+</code></pre>
+                  <p>Navigate to the project root:</p>
+                  <pre><code class="hljs">cd nearcore
+</code></pre>
+                  <p>Build (this will take a while, feel free to move on to future steps while this is happening):</p>
+                  <pre><code class="hljs">cargo build -p neard --release --features protocol_feature_evm,nightly_protocol_features
+</code></pre>
+                  <p>When the build is complete, initialize with:</p>
+                  <pre><code class="hljs">./target/release/neard --home=$HOME/.near/local init
+</code></pre>
+                  <p>Then run:</p>
+                  <pre><code class="hljs">./target/release/neard --home=$HOME/.near/local run
+</code></pre>
+                  <p><strong>Note</strong>: hit Ctrl + C to stop the local node. If you want to pick up where you left
+                    off, just use this final &quot;run&quot; command again. If you'd like to start from scratch, remove
+                    the folder:</p>
+                  <pre><code class="hljs">rm -rf ~/.near/local
+</code></pre>
+                  <p>and then use the &quot;initialize&quot; and &quot;run&quot; commands.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="postgres"></a><a href="#postgres" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Postgres</h3>
+                  <p>Make sure Postgres is installed on your machine. The directions will vary per operating system and
+                    setup. As mentioned earlier, here is a link to <a
+                      href="https://wiki.postgresql.org/wiki/Detailed_installation_guides">detailed installation
+                      guides</a>.</p>
+                  <p>Mac users may consider:</p>
+                  <pre><code class="hljs">brew install postgresql
+</code></pre>
+                  <p>and/or getting the <a href="https://postgresapp.com/">Postgres app</a>.</p>
+                  <p><strong>Note</strong>: it's worth double-checking <a
+                      href="https://github.com/near/near-contract-helper#create-database">the README</a> for
+                    <code>near-contract-helper</code> if issues arise regarding the database.</p>
+                  <p>Once Postgres is installed, type:</p>
+                  <pre><code class="hljs">psql
+</code></pre>
+                  <p>Make sure it takes you to a prompt. If it does not, please follow the directions given on screen.
+                    Once the prompt appears as expected you may exit with:</p>
+                  <pre><code class="hljs">\q
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="near-contract-helper"></a><a href="#near-contract-helper"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR Contract Helper</h3>
+                  <p>Clone the <a href="https://github.com/near/near-contract-helper">NEAR Contract Helper
+                      repository</a></p>
+                  <pre><code class="hljs">git clone https://github.com/near/near-contract-helper.git
+cd near-contract-helper
+</code></pre>
+                  <p>On your terminal / command prompt:</p>
+                  <pre><code class="hljs">psql
+</code></pre>
+                  <p>at the Postgres prompt:</p>
+                  <pre><code class="hljs">create user helper with superuser password 'helper';
+create database accounts_development with owner=helper;
+</code></pre>
+                  <p>Then:</p>
+                  <pre><code class="hljs">yarn migrate
+# or
+npm run migrate
+</code></pre>
+                  <p>Add a file named <code>.env</code> in the project root with these contents. We'll modify them
+                    later:</p>
+                  <pre><code class="hljs css language-dotenv"><span class="hljs-attr">ACCOUNT_CREATOR_KEY</span>={<span class="hljs-string">"account_id"</span>:<span class="hljs-string">"test.near"</span>,<span class="hljs-string">"public_key"</span>:<span class="hljs-string">"ed25519:7PGseFbWxvYVgZ89K1uTJKYoKetWs7BJtbyXDzfbAcqX"</span>,<span class="hljs-string">"secret_key"</span>:<span class="hljs-string">"ed25519:3D4YudUQRE39Lc4JHghuB5WM8kbgDDa34mnrEP5DdTApVH81af7e2dWgNPEaiQfdJnZq1CNPp5im4Rg5b733oiMP"</span>}
+<span class="hljs-attr">MAIL_HOST</span>=smtp.ethereal.email
+<span class="hljs-attr">MAIL_PASSWORD</span>=
+<span class="hljs-attr">MAIL_PORT</span>=<span class="hljs-number">587</span>
+<span class="hljs-attr">MAIL_USER</span>=
+<span class="hljs-attr">NEW_ACCOUNT_AMOUNT</span>=<span class="hljs-number">10000000000000000000000000</span>
+<span class="hljs-attr">NODE_ENV</span>=development <span class="hljs-comment"># Node.js environment; either `development` or `production`</span>
+<span class="hljs-attr">NODE_URL</span>=http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">3030</span> <span class="hljs-comment"># from ~/.near/config.json#rpc.addr – for production, use https://rpc.testnet.near.org</span>
+<span class="hljs-attr">PORT</span>=<span class="hljs-number">3000</span> <span class="hljs-comment"># Used internally by the contract helper; does not have to correspond to the external IP or DNS name and can link to a host machine running the Docker container</span>
+<span class="hljs-attr">TWILIO_ACCOUNT_SID</span>= <span class="hljs-comment"># account SID from Twilio (used to send security code)</span>
+<span class="hljs-attr">TWILIO_AUTH_TOKEN</span>= <span class="hljs-comment"># auth token from Twilio (used to send security code)</span>
+<span class="hljs-attr">TWILIO_FROM_PHONE</span>=+<span class="hljs-number">15553455</span> <span class="hljs-comment"># phone number from which to send SMS with security code (international format, starting with `+`)</span>
+<span class="hljs-attr">WALLET_URL</span>=http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">4000</span>
+<span class="hljs-attr">INDEXER_DB_CONNECTION</span>=postgres://helper:helper@<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>/near_indexer_for_wallet_localnet?ssl=require
+</code></pre>
+                  <p>We will be changing the first key in the list of environment variables
+                    (<code>ACCOUNT_CREATOR_KEY</code>) to be unique to your set up. Note that there are no spaces in
+                    that key, even after colons and commas. This is important to remember as we add in your local node's
+                    private key.</p>
+                  <p>As mentioned earlier in the <code>nearup</code> section, we have the private key for the localnet
+                    account <strong>test.near</strong>. With your preferred editor, open the file:</p>
+                  <pre><code class="hljs">~/.near/local/validator_key.json
+</code></pre>
+                  <p>Remove all spaces and line breaks such that the private key exists on one line. (Also, see the
+                    example from the code block above.) Now replace the value for the key
+                    <code>ACCOUNT_CREATOR_KEY</code> with your private key.</p>
+                  <p>Finally, start the NEAR Contract Helper with:</p>
+                  <pre><code class="hljs">npm run start
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="near-cli"></a><a href="#near-cli" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR CLI</h3>
+                  <p>Future steps will use the NEAR command-line interface tool to deploy and send NEAR tokens (Ⓝ) to an
+                    account. The CLI is capable of much more than that, as <a href="/docs/tools/near-cli">documented
+                      here</a>.</p>
+                  <p>Install with:</p>
+                  <pre><code class="hljs">npm i -g near-cli
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="near-linkdrop"></a><a href="#near-linkdrop"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR Linkdrop</h3>
+                  <p>There's a smart contract called Linkdrop that will need to be deployed to the
+                    <code>test.near</code> account that was created automatically after starting the node in previous
+                    steps.</p>
+                  <p>Clone the <a href="https://github.com/near/near-linkdrop">NEAR Linkdrop</a> repository:</p>
+                  <pre><code class="hljs">git clone https://github.com/near/near-linkdrop.git
+cd near-linkdrop
+./build.sh
+</code></pre>
+                  <p>We can see that there is no contract deployed to <code>test.near</code> by observing the output of
+                    this command:</p>
+                  <pre><code class="hljs">NEAR_ENV=local near state test.near
+</code></pre>
+                  <pre><code class="hljs">…
+Account test.near
+{
+  …
+  code_hash: '<span class="hljs-number">11111111111111</span><span class="hljs-number">11111111111111</span><span class="hljs-number">1111</span>',
+  …
+}
+</code></pre>
+                  <p>The <code>code_hash</code> here of all 1's signals that there is no smart contract deployed to it.
+                  </p>
+                  <p>Deploy the linkdrop contract with:</p>
+                  <pre><code class="hljs">NEAR_ENV=local near deploy --accountId test.near --wasmFile res/linkdrop.wasm --keyPath ~/.near/local/validator_key.json
+</code></pre>
+                  <p>Now the contract has been deployed. Checking the state of the account (using the same command from
+                    before) will show the <code>code_hash</code> is now the has of the contract code.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="near-wallet"></a><a href="#near-wallet"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR Wallet</h3>
+                  <p>Clone the <a href="https://github.com/near/near-wallet">NEAR Wallet</a> repository.</p>
+                  <pre><code class="hljs">git clone https://github.com/near/near-wallet.git
+cd near-wallet
+</code></pre>
+                  <p>Create a file in the project root called <code>.env.local</code> and paste the contents:</p>
+                  <pre><code class="hljs css language-dotenv"><span class="hljs-attr">REACT_APP_ACCOUNT_HELPER_URL</span>=http://localhost:<span class="hljs-number">3000</span>
+<span class="hljs-attr">REACT_APP_ACCOUNT_ID_SUFFIX</span>=test.near
+<span class="hljs-attr">REACT_APP_IS_MAINNET</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attr">REACT_APP_NODE_URL</span>=http://localhost:<span class="hljs-number">3030</span>
+<span class="hljs-attr">REACT_APP_ACCESS_KEY_FUNDING_AMOUNT</span>=<span class="hljs-string">"3000000000000000000000000"</span>
+</code></pre>
+                  <p>Then run this command:</p>
+                  <pre><code class="hljs">npm run update:static &amp;&amp; node --max-http-header-size=16000 ./node_modules/.bin/parcel -p 4000 src/index.html
+</code></pre>
+                  <p>Open up the Wallet at <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a></p>
+                  <p>Follow the instructions in the interface to create an account. When asked to choose a recovery
+                    option, choose the <strong>Email Recovery</strong> option. When it asks for an email, enter this
+                    mock email:</p>
+                  <pre><code class="hljs">near@example.com
+</code></pre>
+                  <p>An email has not been sent, but it will appear in the logs of our Terminal tab running NEAR
+                    Contract Helper. Navigate to that tab and search for the email address. There will be a line close
+                    to that vicinity that says:</p>
+                  <blockquote>
+                    <p>Confirm your activation code to finish creating your account</p>
+                  </blockquote>
+                  <p>Below there will appear a message like this:</p>
+                  <pre><code class="hljs">…
+<span class="hljs-comment">'1. Confirm your activation code to finish creating your account:\n' +</span>
+    <span class="hljs-comment">'154005\n' +</span>
+…
+</code></pre>
+                  <p>Copy the code (it's several digits, in the snippet above it would be <code>154005</code>) and use
+                    that to answer the prompt in Wallet for the activation code.</p>
+                  <p>The next screen asks to fund an implicit account with at least 3 Ⓝ. Copy the address and
+                    fund the account with NEAR CLI, replacing the long implicit account below with yours:</p>
+                  <pre><code class="hljs">NEAR_ENV=local near send test.near f81247b9492b80284fa2d90dc498153258a6f08e39db6cfa3356abb43a515432 500 --keyPath ~/.near/local/validator_key.json
+</code></pre>
+                  <p>Expect to see your user &quot;logged in&quot; in the upper right part of the interface. A screen
+                    may ask if you'd like to enable two-factor authentication, but we'll leave the contract as-is.</p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="near-explorer"></a><a href="#near-explorer"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR Explorer</h3>
+                  <p>Prerequisite: <a href="https://docs.docker.com/get-docker/">Docker</a>.</p>
+                  <p>Clone the <a href="https://github.com/near/near-explorer">NEAR Explorer</a> repository with:</p>
+                  <pre><code class="hljs">git clone https://github.com/near/near-explorer.git
+cd near-explorer
+</code></pre>
+                  <p>We'll use Docker to run WAMP routing:</p>
+                  <pre><code class="hljs">docker-compose build wamp
+docker-compose up -d wamp
+</code></pre>
+                  <p>Then go into the <code>back-end</code> directory and create a <code>db</code> subdirectory.</p>
+                  <pre><code class="hljs">cd back-end
+npm install
+mkdir db
+</code></pre>
+                  <p>Start the back-end with:</p>
+                  <pre><code class="hljs">env NEAR_RPC_URL=http://127.0.0.1:3030 WAMP_NEAR_EXPLORER_URL=ws://localhost:8080/ws WAMP_NEAR_EXPLORER_BACKEND_SECRET=back npm run start
+</code></pre>
+                  <p>You can expect to see your screen show logs repeating these type of messages:</p>
+                  <pre><code class="hljs">…
+Starting regular data stats<span class="hljs-built_in"> check </span>from LEGACY_SYNC_BACKEND...
+Regular data stats<span class="hljs-built_in"> check </span>from LEGACY_SYNC_BACKEND is completed.
+Starting regular<span class="hljs-keyword"> final</span> timestamp check...
+Regular<span class="hljs-keyword"> final</span> timestamp<span class="hljs-built_in"> check </span>is completed.
+Starting regular node status check...
+Regular node status<span class="hljs-built_in"> check </span>is completed.
+…
+</code></pre>
+                  <p>Go into the <code>front-end</code> directory:</p>
+                  <pre><code class="hljs">cd ..
+cd front-end
+npm install
+</code></pre>
+                  <p>Start the front-end on port 3019:</p>
+                  <pre><code class="hljs">env WAMP_NEAR_EXPLORER_URL=ws://localhost:8080/ws ./node_modules/.bin/next -p 3019
+</code></pre>
+                  <p>Then visit the front-end at <a href="http://127.0.0.1:3019">http://127.0.0.1:3019</a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="copy-key-to-pet-shop"></a><a href="#copy-key-to-pet-shop"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Copy key to Pet Shop</h3>
+                  <p>Lastly, we'll migrate (build and deploy) the Pet Shop to our local node and be able to use the
+                    various services we now have running. Navigate your terminal or command prompt back to the Pet Shop
+                    directory.</p>
+                  <p>Each localnet will have its own unique key for the account <code>test.near</code> which is created.
+                    Copy that file into the project following the keystore naming convention:</p>
+                  <pre><code class="hljs">cp ~/.near/local/validator_key.json ./neardev/local/test.near.json
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="localnet-migration"></a><a href="#localnet-migration"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Localnet migration</h3>
+                  <pre><code class="hljs">npx truffle migrate --network near_local
+</code></pre>
+                  <p>Start web app:</p>
+                  <pre><code class="hljs">npm run local
+</code></pre>
+                  <p>Open the local site at: <a href="http://localhost:1234">http://localhost:1234</a> and begin
+                    interacting and adopting pets.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="notes"></a><a href="#notes" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Notes</h3>
+                  <p>This repository tries to maintain as much similarity as possible to the original Pet Shop. The
+                    primary goal is to demonstrate that the Pet Shop Solidity contracts can be compiled and migrated
+                    using Truffle without having to rewrite into a more native smart contract language for NEAR.</p>
+                  <p>It's also worth noting that some JavaScript files (like <code>./src/js/app.js</code>) will be very
+                    similar to the Pet Shop files. This has resulted in a mix of jQuery and other dependencies, but
+                    serves as a way for developers to compare this code quite easily.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Troubleshooting</h3>
+                  <p>During development while changing the Solidity code, if unexpected behavior continues, consider
+                    removing the <code>build</code> folder and migrating again.</p>
+                  <p>If you are running into issues with your localnet, you may consider deleting the
+                    <code>~/.near/local</code> directory and running the nearcore build command again.</p>
+                  <p>If you're running into issues while running Explorer with messages seem to be database related, try
+                    running the command a couple more times or until the same log messages appear after each run.</p>
+                  <p>If Wallet seems to be acting up, and the console log shows messages about old accounts, you may try
+                    to clear the local storage. In the browser's developer console:</p>
+                  <pre><code class="hljs">localStorage.clear()
+</code></pre>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 12/17/2020 by Mike Purvis</em></div>
+          <div class="docs-prevnext"></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#table-of-contents">Table of Contents</a>
+            <ul class="toc-headings">
+              <li><a href="#prerequisites">Prerequisites</a></li>
+              <li><a href="#get-rust">Get Rust</a></li>
+              <li><a href="#set-up-near-node">Set up NEAR node</a></li>
+              <li><a href="#postgres">Postgres</a></li>
+              <li><a href="#near-contract-helper">NEAR Contract Helper</a></li>
+              <li><a href="#near-cli">NEAR CLI</a></li>
+              <li><a href="#near-linkdrop">NEAR Linkdrop</a></li>
+              <li><a href="#near-wallet">NEAR Wallet</a></li>
+              <li><a href="#near-explorer">NEAR Explorer</a></li>
+              <li><a href="#copy-key-to-pet-shop">Copy key to Pet Shop</a></li>
+              <li><a href="#localnet-migration">Localnet migration</a></li>
+              <li><a href="#notes">Notes</a></li>
+              <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

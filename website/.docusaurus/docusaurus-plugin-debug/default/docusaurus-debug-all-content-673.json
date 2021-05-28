@@ -1,0 +1,3088 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "versionLabel": "Next",
+          "versionPath": "/docs",
+          "versionEditUrl": "https://github.com/near/docs/tree/master/docs/../docs",
+          "versionEditUrlLocalized": "https://github.com/near/docs/tree/master/docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/home/ryan/code/near/docs/website/sidebars.json",
+          "contentPath": "/home/ryan/code/near/docs/docs",
+          "contentPathLocalized": "/home/ryan/code/near/docs/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "mainDocId": "concepts/new-to-near",
+          "sidebars": {
+            "concepts": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Overview",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "concepts/new-to-near"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Basics",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "concepts/account"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/data-storage"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/storage-staking"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/epoch"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/gas"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/indexer"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/networks"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/transaction"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Architecture",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "concepts/architecture/specification"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/architecture/papers"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "FAQ",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "faq/general-faq"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "faq/technical-faq"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "faq/economics-faq"
+                  }
+                ]
+              }
+            ],
+            "develop": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Basics",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "develop/basics/getting-started"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "develop/basics/create-account"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "develop/basics/hackathon-startup-guide"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Front-end",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "develop/front-end/introduction"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "develop/front-end/near-api-js"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Smart Contracts",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "develop/contracts/overview"
+                  },
+                  {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "AssemblyScript",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/as/intro"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/as/near-sdk-as"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/as/testing-as-contracts"
+                      }
+                    ]
+                  },
+                  {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Rust",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/rust/intro"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/rust/near-sdk-rs"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "develop/contracts/rust/testing-rust-contracts"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Running A Node",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "develop/node/running-a-node"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "develop/node/running-a-node-windows"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "develop/node/compile-and-run-a-node"
+                  }
+                ]
+              }
+            ],
+            "tools": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Tools",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tools/near-cli"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tools/near-explorer"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tools/near-wallet"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tools/near-indexer"
+                  }
+                ]
+              }
+            ],
+            "tutorials": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "General",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/create-transactions"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/ledger"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/figment"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Front-End",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/front-end/naj-examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/front-end/naj-workshop"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Smart Contracts",
+                "items": [
+                  {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "AssemblyScript",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "tutorials/contracts/as-workshop"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "tutorials/contracts/token"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "tutorials/contracts/cross-contract-calls"
+                      }
+                    ]
+                  },
+                  {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Rust",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "tutorials/contracts/intro-to-rust"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Rainbow Bridge",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorials/rainbow-bridge-frontend-mainnet"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorials/rainbow-bridge-frontend-testnet"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Videos",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "videos/accounts-keys"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "videos/contract-reviews"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "videos/live-app-review"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "videos/collections-u128-etc"
+                  }
+                ]
+              }
+            ],
+            "API": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "API",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/rpc"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/near-api-rest-server"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "JavaScript Library",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "api/naj-overview"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/naj-quick-reference"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "api/naj-cookbook"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "FAQ",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "faq/naj-faq"
+                  }
+                ]
+              }
+            ],
+            "stake": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Quickstart",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "validator/staking-overview"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Validator",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "roles/validator/hardware"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/staking"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/keys"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/maintenance"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/economics"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/deploy-on-mainnet"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "FAQ",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "validator/staking-faq"
+                  }
+                ]
+              }
+            ],
+            "integrate": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Integration",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/exchange-integration"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/implicit-accounts"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Understanding Errors",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/errors/introduction"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/errors/error-implementation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/token-loss"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "FAQ",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "roles/integrator/faq"
+                  }
+                ]
+              }
+            ],
+            "tokens": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Token Basics",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tokens/token-custody"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tokens/lockup"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "validator/delegation"
+                  }
+                ]
+              }
+            ],
+            "community": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Overview",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/community-channels"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/community-faq"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Contribute",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/contribute/contribute-overview"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/contribute/how-to-contribute"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/contribute/contribute-nearcore"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "FAQ",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/contribute/contribute-faq"
+                  }
+                ]
+              }
+            ]
+          },
+          "permalinkToSidebar": {
+            "/docs/api/naj-cookbook": "API",
+            "/docs/api/naj-overview": "API",
+            "/docs/api/naj-quick-reference": "API",
+            "/docs/api/near-api-rest-server": "API",
+            "/docs/api/rpc": "API",
+            "/docs/community/community-channels": "community",
+            "/docs/community/community-faq": "community",
+            "/docs/community/contribute/contribute-faq": "community",
+            "/docs/community/contribute/contribute-nearcore": "community",
+            "/docs/community/contribute/contribute-overview": "community",
+            "/docs/community/contribute/how-to-contribute": "community",
+            "/docs/concepts/account": "concepts",
+            "/docs/concepts/architecture/papers": "concepts",
+            "/docs/concepts/architecture/specification": "concepts",
+            "/docs/concepts/data-storage": "concepts",
+            "/docs/concepts/epoch": "concepts",
+            "/docs/concepts/gas": "concepts",
+            "/docs/concepts/indexer": "concepts",
+            "/docs/concepts/networks": "concepts",
+            "/docs/concepts/new-to-near": "concepts",
+            "/docs/concepts/storage-staking": "concepts",
+            "/docs/concepts/transaction": "concepts",
+            "/docs/develop/basics/create-account": "develop",
+            "/docs/develop/basics/getting-started": "develop",
+            "/docs/develop/basics/hackathon-startup-guide": "develop",
+            "/docs/develop/contracts/as/intro": "develop",
+            "/docs/develop/contracts/as/near-sdk-as": "develop",
+            "/docs/develop/contracts/as/testing-as-contracts": "develop",
+            "/docs/develop/contracts/overview": "develop",
+            "/docs/develop/contracts/rust/intro": "develop",
+            "/docs/develop/contracts/rust/near-sdk-rs": "develop",
+            "/docs/develop/contracts/rust/testing-rust-contracts": "develop",
+            "/docs/develop/front-end/introduction": "develop",
+            "/docs/develop/front-end/near-api-js": "develop",
+            "/docs/develop/node/compile-and-run-a-node": "develop",
+            "/docs/develop/node/running-a-node": "develop",
+            "/docs/develop/node/running-a-node-windows": "develop",
+            "/docs/faq/economics-faq": "concepts",
+            "/docs/faq/general-faq": "concepts",
+            "/docs/faq/naj-faq": "API",
+            "/docs/faq/technical-faq": "concepts",
+            "/docs/roles/integrator/errors/error-implementation": "integrate",
+            "/docs/roles/integrator/errors/introduction": "integrate",
+            "/docs/roles/integrator/exchange-integration": "integrate",
+            "/docs/roles/integrator/faq": "integrate",
+            "/docs/roles/integrator/implicit-accounts": "integrate",
+            "/docs/roles/integrator/token-loss": "integrate",
+            "/docs/roles/validator/hardware": "stake",
+            "/docs/tokens/lockup": "tokens",
+            "/docs/tokens/token-custody": "tokens",
+            "/docs/tools/near-cli": "tools",
+            "/docs/tools/near-explorer": "tools",
+            "/docs/tools/near-indexer": "tools",
+            "/docs/tools/near-wallet": "tools",
+            "/docs/tutorials/contracts/as-workshop": "tutorials",
+            "/docs/tutorials/contracts/cross-contract-calls": "tutorials",
+            "/docs/tutorials/contracts/intro-to-rust": "tutorials",
+            "/docs/tutorials/contracts/token": "tutorials",
+            "/docs/tutorials/create-transactions": "tutorials",
+            "/docs/tutorials/figment": "tutorials",
+            "/docs/tutorials/front-end/naj-examples": "tutorials",
+            "/docs/tutorials/front-end/naj-workshop": "tutorials",
+            "/docs/tutorials/ledger": "tutorials",
+            "/docs/tutorials/rainbow-bridge-frontend-mainnet": "tutorials",
+            "/docs/tutorials/rainbow-bridge-frontend-testnet": "tutorials",
+            "/docs/validator/delegation": "tokens",
+            "/docs/validator/deploy-on-mainnet": "stake",
+            "/docs/validator/economics": "stake",
+            "/docs/validator/keys": "stake",
+            "/docs/validator/maintenance": "stake",
+            "/docs/validator/staking": "stake",
+            "/docs/validator/staking-faq": "stake",
+            "/docs/validator/staking-overview": "stake",
+            "/docs/videos/accounts-keys": "tutorials",
+            "/docs/videos/collections-u128-etc": "tutorials",
+            "/docs/videos/contract-reviews": "tutorials",
+            "/docs/videos/live-app-review": "tutorials"
+          },
+          "docs": [
+            {
+              "unversionedId": "api/naj-cookbook",
+              "id": "api/naj-cookbook",
+              "isDocsHomePage": false,
+              "title": "NEAR-API-JS Cookbook",
+              "description": "Common use cases for near-api-js.",
+              "source": "@site/../docs/api/naj-cookbook.md",
+              "sourceDirName": "api",
+              "slug": "/api/naj-cookbook",
+              "permalink": "/docs/api/naj-cookbook",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/naj-cookbook.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Cookbook",
+              "frontMatter": {
+                "id": "naj-cookbook",
+                "title": "NEAR-API-JS Cookbook",
+                "sidebar_label": "Cookbook"
+              },
+              "sidebar": "API",
+              "previous": {
+                "title": "API JS Quick Reference",
+                "permalink": "/docs/api/naj-quick-reference"
+              },
+              "next": {
+                "title": "FAQs for NEAR-API-JS",
+                "permalink": "/docs/faq/naj-faq"
+              }
+            },
+            {
+              "unversionedId": "api/naj-overview",
+              "id": "api/naj-overview",
+              "isDocsHomePage": false,
+              "title": "API JavaScript Library",
+              "description": "near-api-js is a JavaScript/TypeScript library for development of decentralized applications on the NEAR platform. It works in conjunction with our RPC endpoints to help you connect your application to the NEAR blockchain.",
+              "source": "@site/../docs/api/near-api-js.md",
+              "sourceDirName": "api",
+              "slug": "/api/naj-overview",
+              "permalink": "/docs/api/naj-overview",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/near-api-js.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Overview",
+              "frontMatter": {
+                "id": "naj-overview",
+                "title": "API JavaScript Library",
+                "sidebar_label": "Overview"
+              },
+              "sidebar": "API",
+              "previous": {
+                "title": "NEAR API REST SERVER",
+                "permalink": "/docs/api/near-api-rest-server"
+              },
+              "next": {
+                "title": "API JS Quick Reference",
+                "permalink": "/docs/api/naj-quick-reference"
+              }
+            },
+            {
+              "unversionedId": "api/naj-quick-reference",
+              "id": "api/naj-quick-reference",
+              "isDocsHomePage": false,
+              "title": "API JS Quick Reference",
+              "description": "Here is a collection of the most commonly used methods within near-api-js. For more in-depth look into this library, please reference the TypeDocs.",
+              "source": "@site/../docs/api/naj-quick-reference.md",
+              "sourceDirName": "api",
+              "slug": "/api/naj-quick-reference",
+              "permalink": "/docs/api/naj-quick-reference",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/naj-quick-reference.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Quick Reference",
+              "frontMatter": {
+                "id": "naj-quick-reference",
+                "title": "API JS Quick Reference",
+                "sidebar_label": "Quick Reference"
+              },
+              "sidebar": "API",
+              "previous": {
+                "title": "API JavaScript Library",
+                "permalink": "/docs/api/naj-overview"
+              },
+              "next": {
+                "title": "NEAR-API-JS Cookbook",
+                "permalink": "/docs/api/naj-cookbook"
+              }
+            },
+            {
+              "unversionedId": "api/near-api-rest-server",
+              "id": "api/near-api-rest-server",
+              "isDocsHomePage": false,
+              "title": "NEAR API REST SERVER",
+              "description": "NEAR REST API Server is a project that allows you create your own simple REST API server that interacts with the NEAR blockchain.",
+              "source": "@site/../docs/api/near-rest-api-server.md",
+              "sourceDirName": "api",
+              "slug": "/api/near-api-rest-server",
+              "permalink": "/docs/api/near-api-rest-server",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/near-rest-api-server.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "REST API SERVER",
+              "frontMatter": {
+                "id": "near-api-rest-server",
+                "title": "NEAR API REST SERVER",
+                "sidebar_label": "REST API SERVER"
+              },
+              "sidebar": "API",
+              "previous": {
+                "title": "RPC Endpoints",
+                "permalink": "/docs/api/rpc"
+              },
+              "next": {
+                "title": "API JavaScript Library",
+                "permalink": "/docs/api/naj-overview"
+              }
+            },
+            {
+              "unversionedId": "api/rpc",
+              "id": "api/rpc",
+              "isDocsHomePage": false,
+              "title": "RPC Endpoints",
+              "description": "Setup",
+              "source": "@site/../docs/api/rpc.md",
+              "sourceDirName": "api",
+              "slug": "/api/rpc",
+              "permalink": "/docs/api/rpc",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/rpc.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "RPC Endpoints",
+              "frontMatter": {
+                "id": "rpc",
+                "title": "RPC Endpoints",
+                "sidebar_label": "RPC Endpoints"
+              },
+              "sidebar": "API",
+              "next": {
+                "title": "NEAR API REST SERVER",
+                "permalink": "/docs/api/near-api-rest-server"
+              }
+            },
+            {
+              "unversionedId": "community/community-channels",
+              "id": "community/community-channels",
+              "isDocsHomePage": false,
+              "title": "Community Channels",
+              "description": "Overview",
+              "source": "@site/../docs/community/channels.md",
+              "sourceDirName": "community",
+              "slug": "/community/community-channels",
+              "permalink": "/docs/community/community-channels",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/channels.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Community Channels",
+              "frontMatter": {
+                "id": "community-channels",
+                "title": "Community Channels",
+                "sidebar_label": "Community Channels"
+              },
+              "sidebar": "community",
+              "next": {
+                "title": "Community FAQ",
+                "permalink": "/docs/community/community-faq"
+              }
+            },
+            {
+              "unversionedId": "community/community-faq",
+              "id": "community/community-faq",
+              "isDocsHomePage": false,
+              "title": "Community FAQ",
+              "description": "What is NEAR?",
+              "source": "@site/../docs/community/faq.md",
+              "sourceDirName": "community",
+              "slug": "/community/community-faq",
+              "permalink": "/docs/community/community-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "FAQ",
+              "frontMatter": {
+                "id": "community-faq",
+                "title": "Community FAQ",
+                "sidebar_label": "FAQ"
+              },
+              "sidebar": "community",
+              "previous": {
+                "title": "Community Channels",
+                "permalink": "/docs/community/community-channels"
+              },
+              "next": {
+                "title": "Contributor Overview",
+                "permalink": "/docs/community/contribute/contribute-overview"
+              }
+            },
+            {
+              "unversionedId": "community/contribute/bounties",
+              "id": "community/contribute/bounties",
+              "isDocsHomePage": false,
+              "title": "bounties",
+              "description": "NEAR Bounties",
+              "source": "@site/../docs/community/contribute/bounties.md",
+              "sourceDirName": "community/contribute",
+              "slug": "/community/contribute/bounties",
+              "permalink": "/docs/community/contribute/bounties",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/bounties.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {}
+            },
+            {
+              "unversionedId": "community/contribute/contribute-faq",
+              "id": "community/contribute/contribute-faq",
+              "isDocsHomePage": false,
+              "title": "Contributor FAQ",
+              "description": "How can I get involved?",
+              "source": "@site/../docs/community/contribute/faq.md",
+              "sourceDirName": "community/contribute",
+              "slug": "/community/contribute/contribute-faq",
+              "permalink": "/docs/community/contribute/contribute-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "FAQ",
+              "frontMatter": {
+                "id": "contribute-faq",
+                "title": "Contributor FAQ",
+                "sidebar_label": "FAQ"
+              },
+              "sidebar": "community",
+              "previous": {
+                "title": "Contribute to NearCore",
+                "permalink": "/docs/community/contribute/contribute-nearcore"
+              }
+            },
+            {
+              "unversionedId": "community/contribute/contribute-nearcore",
+              "id": "community/contribute/contribute-nearcore",
+              "isDocsHomePage": false,
+              "title": "Contribute to NearCore",
+              "description": "Compile from source",
+              "source": "@site/../docs/community/contribute/nearcore.md",
+              "sourceDirName": "community/contribute",
+              "slug": "/community/contribute/contribute-nearcore",
+              "permalink": "/docs/community/contribute/contribute-nearcore",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/nearcore.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "NearCore Contributions",
+              "frontMatter": {
+                "id": "contribute-nearcore",
+                "title": "Contribute to NearCore",
+                "sidebar_label": "NearCore Contributions"
+              },
+              "sidebar": "community",
+              "previous": {
+                "title": "How to Contribute",
+                "permalink": "/docs/community/contribute/how-to-contribute"
+              },
+              "next": {
+                "title": "Contributor FAQ",
+                "permalink": "/docs/community/contribute/contribute-faq"
+              }
+            },
+            {
+              "unversionedId": "community/contribute/contribute-overview",
+              "id": "community/contribute/contribute-overview",
+              "isDocsHomePage": false,
+              "title": "Contributor Overview",
+              "description": "Welcome! If you are in this repository, you are probably interested in contributing to NEAR's development.",
+              "source": "@site/../docs/community/contribute/overview.md",
+              "sourceDirName": "community/contribute",
+              "slug": "/community/contribute/contribute-overview",
+              "permalink": "/docs/community/contribute/contribute-overview",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/overview.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Overview",
+              "frontMatter": {
+                "id": "contribute-overview",
+                "title": "Contributor Overview",
+                "sidebar_label": "Overview"
+              },
+              "sidebar": "community",
+              "previous": {
+                "title": "Community FAQ",
+                "permalink": "/docs/community/community-faq"
+              },
+              "next": {
+                "title": "How to Contribute",
+                "permalink": "/docs/community/contribute/how-to-contribute"
+              }
+            },
+            {
+              "unversionedId": "community/contribute/how-to-contribute",
+              "id": "community/contribute/how-to-contribute",
+              "isDocsHomePage": false,
+              "title": "How to Contribute",
+              "description": "Ways to Contribute to the code",
+              "source": "@site/../docs/community/contribute/how-to-contribute.md",
+              "sourceDirName": "community/contribute",
+              "slug": "/community/contribute/how-to-contribute",
+              "permalink": "/docs/community/contribute/how-to-contribute",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/how-to-contribute.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "How to Contribute",
+              "frontMatter": {
+                "id": "how-to-contribute",
+                "title": "How to Contribute",
+                "sidebar_label": "How to Contribute"
+              },
+              "sidebar": "community",
+              "previous": {
+                "title": "Contributor Overview",
+                "permalink": "/docs/community/contribute/contribute-overview"
+              },
+              "next": {
+                "title": "Contribute to NearCore",
+                "permalink": "/docs/community/contribute/contribute-nearcore"
+              }
+            },
+            {
+              "unversionedId": "concepts/account",
+              "id": "concepts/account",
+              "isDocsHomePage": false,
+              "title": "Account",
+              "description": "NEAR uses human readable account IDs instead of a public key hash. For a 20-minute video explanation, see this Lunch and Learn on YouTube.",
+              "source": "@site/../docs/concepts/account.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/account",
+              "permalink": "/docs/concepts/account",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/account.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Account",
+              "frontMatter": {
+                "id": "account",
+                "title": "Account",
+                "sidebar_label": "Account"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "New to NEAR?",
+                "permalink": "/docs/concepts/new-to-near"
+              },
+              "next": {
+                "title": "Data Storage / Collections",
+                "permalink": "/docs/concepts/data-storage"
+              }
+            },
+            {
+              "unversionedId": "concepts/architecture/papers",
+              "id": "concepts/architecture/papers",
+              "isDocsHomePage": false,
+              "title": "Papers",
+              "description": "Join us as we dive deep into our technology.",
+              "source": "@site/../docs/concepts/architecture/papers.md",
+              "sourceDirName": "concepts/architecture",
+              "slug": "/concepts/architecture/papers",
+              "permalink": "/docs/concepts/architecture/papers",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/architecture/papers.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Papers",
+              "frontMatter": {
+                "id": "papers",
+                "title": "Papers",
+                "sidebar_label": "Papers"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "NEAR Protocol Specification",
+                "permalink": "/docs/concepts/architecture/specification"
+              },
+              "next": {
+                "title": "General FAQ",
+                "permalink": "/docs/faq/general-faq"
+              }
+            },
+            {
+              "unversionedId": "concepts/architecture/specification",
+              "id": "concepts/architecture/specification",
+              "isDocsHomePage": false,
+              "title": "NEAR Protocol Specification",
+              "description": "NEAR Protocol Specifications and Standards are tracked in two places:",
+              "source": "@site/../docs/concepts/architecture/specification.md",
+              "sourceDirName": "concepts/architecture",
+              "slug": "/concepts/architecture/specification",
+              "permalink": "/docs/concepts/architecture/specification",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/architecture/specification.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Specification",
+              "frontMatter": {
+                "id": "specification",
+                "title": "NEAR Protocol Specification",
+                "sidebar_label": "Specification"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Transaction",
+                "permalink": "/docs/concepts/transaction"
+              },
+              "next": {
+                "title": "Papers",
+                "permalink": "/docs/concepts/architecture/papers"
+              }
+            },
+            {
+              "unversionedId": "concepts/data-storage",
+              "id": "concepts/data-storage",
+              "isDocsHomePage": false,
+              "title": "Data Storage / Collections",
+              "description": "Overview",
+              "source": "@site/../docs/concepts/data-collections.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/data-storage",
+              "permalink": "/docs/concepts/data-storage",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/data-collections.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Data Storage",
+              "frontMatter": {
+                "id": "data-storage",
+                "title": "Data Storage / Collections",
+                "sidebar_label": "Data Storage"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Account",
+                "permalink": "/docs/concepts/account"
+              },
+              "next": {
+                "title": "Storage Staking",
+                "permalink": "/docs/concepts/storage-staking"
+              }
+            },
+            {
+              "unversionedId": "concepts/epoch",
+              "id": "concepts/epoch",
+              "isDocsHomePage": false,
+              "title": "Epoch",
+              "description": "An epoch is a unit of time when validators of the network remain constant.",
+              "source": "@site/../docs/concepts/epoch.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/epoch",
+              "permalink": "/docs/concepts/epoch",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/epoch.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Epoch",
+              "frontMatter": {
+                "id": "epoch",
+                "title": "Epoch",
+                "sidebar_label": "Epoch"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Storage Staking",
+                "permalink": "/docs/concepts/storage-staking"
+              },
+              "next": {
+                "title": "Gas",
+                "permalink": "/docs/concepts/gas"
+              }
+            },
+            {
+              "unversionedId": "concepts/gas",
+              "id": "concepts/gas",
+              "isDocsHomePage": false,
+              "title": "Gas",
+              "description": "When you make calls to the NEAR blockchain to update or change data, the people running the infrastructure of the blockchain incur some cost. At the end of the day, some computers somewhere process your request, and the validators running these computers spend significant capital to keep these computers running.",
+              "source": "@site/../docs/concepts/gas.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/gas",
+              "permalink": "/docs/concepts/gas",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/gas.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Gas",
+              "frontMatter": {
+                "id": "gas",
+                "title": "Gas",
+                "sidebar_label": "Gas"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Epoch",
+                "permalink": "/docs/concepts/epoch"
+              },
+              "next": {
+                "title": "NEAR Indexer",
+                "permalink": "/docs/concepts/indexer"
+              }
+            },
+            {
+              "unversionedId": "concepts/indexer",
+              "id": "concepts/indexer",
+              "isDocsHomePage": false,
+              "title": "NEAR Indexer",
+              "description": "NEAR Indexer is a library included with nearcore that allows you to run a node on the network which listens for targeted information on the blockchain. The NEAR Indexer Framework provides the logic of polling a node for blocks produced in a network then aggregating and streaming these blocks to a listener.",
+              "source": "@site/../docs/concepts/indexer.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/indexer",
+              "permalink": "/docs/concepts/indexer",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/indexer.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Indexer",
+              "frontMatter": {
+                "id": "indexer",
+                "title": "NEAR Indexer",
+                "sidebar_label": "Indexer"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Gas",
+                "permalink": "/docs/concepts/gas"
+              },
+              "next": {
+                "title": "NEAR Networks",
+                "permalink": "/docs/concepts/networks"
+              }
+            },
+            {
+              "unversionedId": "concepts/networks",
+              "id": "concepts/networks",
+              "isDocsHomePage": false,
+              "title": "NEAR Networks",
+              "description": "NEAR Protocol operates on several networks each operating with their own independent validators and unique state. These networks are as follows:",
+              "source": "@site/../docs/concepts/networks.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/networks",
+              "permalink": "/docs/concepts/networks",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/networks.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Networks",
+              "frontMatter": {
+                "id": "networks",
+                "title": "NEAR Networks",
+                "sidebar_label": "Networks"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "NEAR Indexer",
+                "permalink": "/docs/concepts/indexer"
+              },
+              "next": {
+                "title": "Transaction",
+                "permalink": "/docs/concepts/transaction"
+              }
+            },
+            {
+              "unversionedId": "concepts/new-to-near",
+              "id": "concepts/new-to-near",
+              "isDocsHomePage": false,
+              "title": "New to NEAR?",
+              "description": "Welcome! This page is your map for getting to know the NEAR platform.",
+              "source": "@site/../docs/concepts/new-to-near.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/new-to-near",
+              "permalink": "/docs/concepts/new-to-near",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/new-to-near.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "New to NEAR?",
+              "frontMatter": {
+                "id": "new-to-near",
+                "title": "New to NEAR?",
+                "sidebar_label": "New to NEAR?"
+              },
+              "sidebar": "concepts",
+              "next": {
+                "title": "Account",
+                "permalink": "/docs/concepts/account"
+              }
+            },
+            {
+              "unversionedId": "concepts/overview",
+              "id": "concepts/overview",
+              "isDocsHomePage": false,
+              "title": "Overview",
+              "description": "NEAR terminology",
+              "source": "@site/../docs/concepts/overview.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/overview",
+              "permalink": "/docs/concepts/overview",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/overview.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Overview",
+              "frontMatter": {
+                "id": "overview",
+                "title": "Overview",
+                "sidebar_label": "Overview"
+              }
+            },
+            {
+              "unversionedId": "concepts/storage-staking",
+              "id": "concepts/storage-staking",
+              "isDocsHomePage": false,
+              "title": "Storage Staking",
+              "description": "When you deploy a smart contract to NEAR, you pay for the storage that this contract requires using a mechanism called storage staking.",
+              "source": "@site/../docs/concepts/storage-staking.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/storage-staking",
+              "permalink": "/docs/concepts/storage-staking",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/storage-staking.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Storage Staking",
+              "frontMatter": {
+                "id": "storage-staking",
+                "title": "Storage Staking",
+                "sidebar_label": "Storage Staking"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Data Storage / Collections",
+                "permalink": "/docs/concepts/data-storage"
+              },
+              "next": {
+                "title": "Epoch",
+                "permalink": "/docs/concepts/epoch"
+              }
+            },
+            {
+              "unversionedId": "concepts/transaction",
+              "id": "concepts/transaction",
+              "isDocsHomePage": false,
+              "title": "Transaction",
+              "description": "Overview",
+              "source": "@site/../docs/concepts/transaction.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/transaction",
+              "permalink": "/docs/concepts/transaction",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/transaction.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Transaction",
+              "frontMatter": {
+                "id": "transaction",
+                "title": "Transaction",
+                "sidebar_label": "Transaction"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "NEAR Networks",
+                "permalink": "/docs/concepts/networks"
+              },
+              "next": {
+                "title": "NEAR Protocol Specification",
+                "permalink": "/docs/concepts/architecture/specification"
+              }
+            },
+            {
+              "unversionedId": "develop/basics/create-account",
+              "id": "develop/basics/create-account",
+              "isDocsHomePage": false,
+              "title": "Creating a NEAR Account",
+              "description": "The easiest way to create an account on NEAR is with NEAR Wallet. NEAR has several development networks operating independently of each other with their own accountIDs. Below we have guides for creating account for two of these networks:",
+              "source": "@site/../docs/develop/basics/create-account.md",
+              "sourceDirName": "develop/basics",
+              "slug": "/develop/basics/create-account",
+              "permalink": "/docs/develop/basics/create-account",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/create-account.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Create Account",
+              "frontMatter": {
+                "id": "create-account",
+                "title": "Creating a NEAR Account",
+                "sidebar_label": "Create Account"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Getting Started",
+                "permalink": "/docs/develop/basics/getting-started"
+              },
+              "next": {
+                "title": "Hackathon Startup Guide",
+                "permalink": "/docs/develop/basics/hackathon-startup-guide"
+              }
+            },
+            {
+              "unversionedId": "develop/basics/getting-started",
+              "id": "develop/basics/getting-started",
+              "isDocsHomePage": false,
+              "title": "Getting Started",
+              "description": "---",
+              "source": "@site/../docs/develop/basics/getting-started.md",
+              "sourceDirName": "develop/basics",
+              "slug": "/develop/basics/getting-started",
+              "permalink": "/docs/develop/basics/getting-started",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/getting-started.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Getting Started",
+              "frontMatter": {
+                "id": "getting-started",
+                "title": "Getting Started",
+                "sidebar_label": "Getting Started"
+              },
+              "sidebar": "develop",
+              "next": {
+                "title": "Creating a NEAR Account",
+                "permalink": "/docs/develop/basics/create-account"
+              }
+            },
+            {
+              "unversionedId": "develop/basics/hackathon-startup-guide",
+              "id": "develop/basics/hackathon-startup-guide",
+              "isDocsHomePage": false,
+              "title": "Hackathon Startup Guide",
+              "description": "Welcome to hacking on NEAR! We're glad you're here. Let's jump right in:",
+              "source": "@site/../docs/develop/basics/hackathon-guide.md",
+              "sourceDirName": "develop/basics",
+              "slug": "/develop/basics/hackathon-startup-guide",
+              "permalink": "/docs/develop/basics/hackathon-startup-guide",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/hackathon-guide.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Hackathon Guide",
+              "frontMatter": {
+                "id": "hackathon-startup-guide",
+                "title": "Hackathon Startup Guide",
+                "sidebar_label": "Hackathon Guide"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Creating a NEAR Account",
+                "permalink": "/docs/develop/basics/create-account"
+              },
+              "next": {
+                "title": "front-end Introduction",
+                "permalink": "/docs/develop/front-end/introduction"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/as/intro",
+              "id": "develop/contracts/as/intro",
+              "isDocsHomePage": false,
+              "title": "AssemblyScript",
+              "description": "The NEAR platform supports writing contracts in Rust and AssemblyScript.",
+              "source": "@site/../docs/develop/contracts/as/intro.md",
+              "sourceDirName": "develop/contracts/as",
+              "slug": "/develop/contracts/as/intro",
+              "permalink": "/docs/develop/contracts/as/intro",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/intro.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Introduction",
+              "frontMatter": {
+                "id": "intro",
+                "title": "AssemblyScript",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Smart Contract Overview",
+                "permalink": "/docs/develop/contracts/overview"
+              },
+              "next": {
+                "title": "near-sdk-as",
+                "permalink": "/docs/develop/contracts/as/near-sdk-as"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/as/near-sdk-as",
+              "id": "develop/contracts/as/near-sdk-as",
+              "isDocsHomePage": false,
+              "title": "near-sdk-as",
+              "description": "https://near.github.io/near-sdk-as",
+              "source": "@site/../docs/develop/contracts/as/near-sdk-as.md",
+              "sourceDirName": "develop/contracts/as",
+              "slug": "/develop/contracts/as/near-sdk-as",
+              "permalink": "/docs/develop/contracts/as/near-sdk-as",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/near-sdk-as.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "AS SDK",
+              "frontMatter": {
+                "id": "near-sdk-as",
+                "title": "near-sdk-as",
+                "sidebar_label": "AS SDK"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "AssemblyScript",
+                "permalink": "/docs/develop/contracts/as/intro"
+              },
+              "next": {
+                "title": "Testing AssemblyScript Contracts",
+                "permalink": "/docs/develop/contracts/as/testing-as-contracts"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/as/testing-as-contracts",
+              "id": "develop/contracts/as/testing-as-contracts",
+              "isDocsHomePage": false,
+              "title": "Testing AssemblyScript Contracts",
+              "description": "A multiplayer \"Place\" game with shared world state.",
+              "source": "@site/../docs/develop/contracts/as/testing.md",
+              "sourceDirName": "develop/contracts/as",
+              "slug": "/develop/contracts/as/testing-as-contracts",
+              "permalink": "/docs/develop/contracts/as/testing-as-contracts",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/as/testing.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Testing",
+              "frontMatter": {
+                "id": "testing-as-contracts",
+                "title": "Testing AssemblyScript Contracts",
+                "sidebar_label": "Testing"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "near-sdk-as",
+                "permalink": "/docs/develop/contracts/as/near-sdk-as"
+              },
+              "next": {
+                "title": "Rust",
+                "permalink": "/docs/develop/contracts/rust/intro"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/overview",
+              "id": "develop/contracts/overview",
+              "isDocsHomePage": false,
+              "title": "Smart Contract Overview",
+              "description": "Smart Contracts are the back-end of your application that runs code and stores data on the blockchain. All smart contracts on NEAR must be compiled to WebAssembly or simply WASM. Currently, we support two languages AssemblyScript and Rust with custom software development kits (SDKs) to assist in their creation.",
+              "source": "@site/../docs/develop/contracts/overview.md",
+              "sourceDirName": "develop/contracts",
+              "slug": "/develop/contracts/overview",
+              "permalink": "/docs/develop/contracts/overview",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/overview.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Overview",
+              "frontMatter": {
+                "id": "overview",
+                "title": "Smart Contract Overview",
+                "sidebar_label": "Overview"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "near-api-js",
+                "permalink": "/docs/develop/front-end/near-api-js"
+              },
+              "next": {
+                "title": "AssemblyScript",
+                "permalink": "/docs/develop/contracts/as/intro"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/rust/intro",
+              "id": "develop/contracts/rust/intro",
+              "isDocsHomePage": false,
+              "title": "Rust",
+              "description": "Writing smart contracts is a paradigm shift. There are only a few new concepts (state, transfer, account/balance information…) used, but they go a long way toward building full-fledged applications on the blockchain. This way of thinking has its own learning curve. Currently, the preferred programming language for writing smart contracts on NEAR is Rust. On top of learning smart contracts, developers unfamiliar with the Rust programming language may have an additional barrier to entry. This page is meant to provide an easy onboarding to Rust and smart contract development.",
+              "source": "@site/../docs/develop/contracts/rust/intro.md",
+              "sourceDirName": "develop/contracts/rust",
+              "slug": "/develop/contracts/rust/intro",
+              "permalink": "/docs/develop/contracts/rust/intro",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/intro.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Introduction",
+              "frontMatter": {
+                "id": "intro",
+                "title": "Rust",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Testing AssemblyScript Contracts",
+                "permalink": "/docs/develop/contracts/as/testing-as-contracts"
+              },
+              "next": {
+                "title": "near-sdk",
+                "permalink": "/docs/develop/contracts/rust/near-sdk-rs"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/rust/near-sdk-rs",
+              "id": "develop/contracts/rust/near-sdk-rs",
+              "isDocsHomePage": false,
+              "title": "near-sdk",
+              "description": "https://docs.rs/near-sdk",
+              "source": "@site/../docs/develop/contracts/rust/near-sdk-rs.md",
+              "sourceDirName": "develop/contracts/rust",
+              "slug": "/develop/contracts/rust/near-sdk-rs",
+              "permalink": "/docs/develop/contracts/rust/near-sdk-rs",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/near-sdk-rs.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Rust SDK",
+              "frontMatter": {
+                "id": "near-sdk-rs",
+                "title": "near-sdk",
+                "sidebar_label": "Rust SDK"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Rust",
+                "permalink": "/docs/develop/contracts/rust/intro"
+              },
+              "next": {
+                "title": "Testing Rust Contracts",
+                "permalink": "/docs/develop/contracts/rust/testing-rust-contracts"
+              }
+            },
+            {
+              "unversionedId": "develop/contracts/rust/testing-rust-contracts",
+              "id": "develop/contracts/rust/testing-rust-contracts",
+              "isDocsHomePage": false,
+              "title": "Testing Rust Contracts",
+              "description": "There are a couple of ways to test Rust smart contracts in NEAR.",
+              "source": "@site/../docs/develop/contracts/rust/testing.md",
+              "sourceDirName": "develop/contracts/rust",
+              "slug": "/develop/contracts/rust/testing-rust-contracts",
+              "permalink": "/docs/develop/contracts/rust/testing-rust-contracts",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/testing.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Testing",
+              "frontMatter": {
+                "id": "testing-rust-contracts",
+                "title": "Testing Rust Contracts",
+                "sidebar_label": "Testing"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "near-sdk",
+                "permalink": "/docs/develop/contracts/rust/near-sdk-rs"
+              },
+              "next": {
+                "title": "Running a node",
+                "permalink": "/docs/develop/node/running-a-node"
+              }
+            },
+            {
+              "unversionedId": "develop/front-end/calling-smart-contracts",
+              "id": "develop/front-end/calling-smart-contracts",
+              "isDocsHomePage": false,
+              "title": "JavaScript",
+              "description": "What follows is a brief overview of how to invoke contracts from a client-side JavaScript context.  near-api-js supports both client and server-side JavaScript.",
+              "source": "@site/../docs/develop/front-end/calling-smart-contracts.md",
+              "sourceDirName": "develop/front-end",
+              "slug": "/develop/front-end/calling-smart-contracts",
+              "permalink": "/docs/develop/front-end/calling-smart-contracts",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/calling-smart-contracts.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "JavaScript",
+              "frontMatter": {
+                "id": "calling-smart-contracts",
+                "title": "JavaScript",
+                "sidebar_label": "JavaScript"
+              }
+            },
+            {
+              "unversionedId": "develop/front-end/introduction",
+              "id": "develop/front-end/introduction",
+              "isDocsHomePage": false,
+              "title": "front-end Introduction",
+              "description": "Overview",
+              "source": "@site/../docs/develop/front-end/introduction.md",
+              "sourceDirName": "develop/front-end",
+              "slug": "/develop/front-end/introduction",
+              "permalink": "/docs/develop/front-end/introduction",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/introduction.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Introduction",
+              "frontMatter": {
+                "id": "introduction",
+                "title": "front-end Introduction",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Hackathon Startup Guide",
+                "permalink": "/docs/develop/basics/hackathon-startup-guide"
+              },
+              "next": {
+                "title": "near-api-js",
+                "permalink": "/docs/develop/front-end/near-api-js"
+              }
+            },
+            {
+              "unversionedId": "develop/front-end/near-api-js",
+              "id": "develop/front-end/near-api-js",
+              "isDocsHomePage": false,
+              "title": "near-api-js",
+              "description": "near-api-js is a JavaScript/TypeScript library for development of decentralized applications on the NEAR platform. It works in conjunction with our RPC endpoints to help you connect your application to the NEAR blockchain.",
+              "source": "@site/../docs/develop/front-end/near-api-js.md",
+              "sourceDirName": "develop/front-end",
+              "slug": "/develop/front-end/near-api-js",
+              "permalink": "/docs/develop/front-end/near-api-js",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/near-api-js.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "API JS Library",
+              "frontMatter": {
+                "id": "near-api-js",
+                "title": "near-api-js",
+                "sidebar_label": "API JS Library"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "front-end Introduction",
+                "permalink": "/docs/develop/front-end/introduction"
+              },
+              "next": {
+                "title": "Smart Contract Overview",
+                "permalink": "/docs/develop/contracts/overview"
+              }
+            },
+            {
+              "unversionedId": "develop/node/compile-and-run-a-node",
+              "id": "develop/node/compile-and-run-a-node",
+              "isDocsHomePage": false,
+              "title": "How to compile and run nearcore",
+              "description": "This doc is written for developers, sysadmins, DevOps, or curious people who want to know how to compile and run a regular NEAR node natively (without containerization) for one of the following networks:",
+              "source": "@site/../docs/develop/node/compile-and-run-a-node.md",
+              "sourceDirName": "develop/node",
+              "slug": "/develop/node/compile-and-run-a-node",
+              "permalink": "/docs/develop/node/compile-and-run-a-node",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/compile-and-run-a-node.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Compile and run a node",
+              "frontMatter": {
+                "id": "compile-and-run-a-node",
+                "title": "Compile and run a node",
+                "sidebar_label": "Compile and run a node"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Running a Node on Windows",
+                "permalink": "/docs/develop/node/running-a-node-windows"
+              }
+            },
+            {
+              "unversionedId": "develop/node/running-a-node",
+              "id": "develop/node/running-a-node",
+              "isDocsHomePage": false,
+              "title": "Running a node",
+              "description": "Why?",
+              "source": "@site/../docs/develop/node/running-a-node.md",
+              "sourceDirName": "develop/node",
+              "slug": "/develop/node/running-a-node",
+              "permalink": "/docs/develop/node/running-a-node",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/running-a-node.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Running a node",
+              "frontMatter": {
+                "id": "running-a-node",
+                "title": "Running a node",
+                "sidebar_label": "Running a node"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Testing Rust Contracts",
+                "permalink": "/docs/develop/contracts/rust/testing-rust-contracts"
+              },
+              "next": {
+                "title": "Running a Node on Windows",
+                "permalink": "/docs/develop/node/running-a-node-windows"
+              }
+            },
+            {
+              "unversionedId": "develop/node/running-a-node-windows",
+              "id": "develop/node/running-a-node-windows",
+              "isDocsHomePage": false,
+              "title": "Running a Node on Windows",
+              "description": "1.  If Windows Subsystem for Linux is not enabled, open PowerShell as administrator and run:",
+              "source": "@site/../docs/develop/node/running-a-node-windows.md",
+              "sourceDirName": "develop/node",
+              "slug": "/develop/node/running-a-node-windows",
+              "permalink": "/docs/develop/node/running-a-node-windows",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/running-a-node-windows.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Running a node (Windows)",
+              "frontMatter": {
+                "id": "running-a-node-windows",
+                "title": "Running a Node on Windows",
+                "sidebar_label": "Running a node (Windows)"
+              },
+              "sidebar": "develop",
+              "previous": {
+                "title": "Running a node",
+                "permalink": "/docs/develop/node/running-a-node"
+              },
+              "next": {
+                "title": "How to compile and run nearcore",
+                "permalink": "/docs/develop/node/compile-and-run-a-node"
+              }
+            },
+            {
+              "unversionedId": "faq/developer-faq",
+              "id": "faq/developer-faq",
+              "isDocsHomePage": false,
+              "title": "Developer FAQ",
+              "description": "Working with Contracts",
+              "source": "@site/../docs/faq/developer-faq.md",
+              "sourceDirName": "faq",
+              "slug": "/faq/developer-faq",
+              "permalink": "/docs/faq/developer-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/developer-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Developer FAQ",
+              "frontMatter": {
+                "id": "developer-faq",
+                "title": "Developer FAQ",
+                "sidebar_label": "Developer FAQ"
+              }
+            },
+            {
+              "unversionedId": "faq/economics-faq",
+              "id": "faq/economics-faq",
+              "isDocsHomePage": false,
+              "title": "Economics FAQ",
+              "description": "Welcome to the Frequently Asked Questions. To contribute, use the Edit button on the right.",
+              "source": "@site/../docs/faq/economics-faq.md",
+              "sourceDirName": "faq",
+              "slug": "/faq/economics-faq",
+              "permalink": "/docs/faq/economics-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/economics-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Economics FAQ",
+              "frontMatter": {
+                "id": "economics-faq",
+                "title": "Economics FAQ",
+                "sidebar_label": "Economics FAQ"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Technical FAQ",
+                "permalink": "/docs/faq/technical-faq"
+              }
+            },
+            {
+              "unversionedId": "faq/general-faq",
+              "id": "faq/general-faq",
+              "isDocsHomePage": false,
+              "title": "General FAQ",
+              "description": "Welcome to the Frequently Asked Questions. To contribute, use the Edit button on the right.",
+              "source": "@site/../docs/faq/general-faq.md",
+              "sourceDirName": "faq",
+              "slug": "/faq/general-faq",
+              "permalink": "/docs/faq/general-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/general-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "General FAQ",
+              "frontMatter": {
+                "id": "general-faq",
+                "title": "General FAQ",
+                "sidebar_label": "General FAQ"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "Papers",
+                "permalink": "/docs/concepts/architecture/papers"
+              },
+              "next": {
+                "title": "Technical FAQ",
+                "permalink": "/docs/faq/technical-faq"
+              }
+            },
+            {
+              "unversionedId": "faq/naj-faq",
+              "id": "faq/naj-faq",
+              "isDocsHomePage": false,
+              "title": "FAQs for NEAR-API-JS",
+              "description": "General",
+              "source": "@site/../docs/faq/naj-faq.md",
+              "sourceDirName": "faq",
+              "slug": "/faq/naj-faq",
+              "permalink": "/docs/faq/naj-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/naj-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "JS Library FAQ",
+              "frontMatter": {
+                "id": "naj-faq",
+                "title": "FAQs for NEAR-API-JS",
+                "sidebar_label": "JS Library FAQ"
+              },
+              "sidebar": "API",
+              "previous": {
+                "title": "NEAR-API-JS Cookbook",
+                "permalink": "/docs/api/naj-cookbook"
+              }
+            },
+            {
+              "unversionedId": "faq/technical-faq",
+              "id": "faq/technical-faq",
+              "isDocsHomePage": false,
+              "title": "Technical FAQ",
+              "description": "Welcome to the Frequently Asked Questions. To contribute, use the Edit button on the right.",
+              "source": "@site/../docs/faq/technical-faq.md",
+              "sourceDirName": "faq",
+              "slug": "/faq/technical-faq",
+              "permalink": "/docs/faq/technical-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/technical-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Technical FAQ",
+              "frontMatter": {
+                "id": "technical-faq",
+                "title": "Technical FAQ",
+                "sidebar_label": "Technical FAQ"
+              },
+              "sidebar": "concepts",
+              "previous": {
+                "title": "General FAQ",
+                "permalink": "/docs/faq/general-faq"
+              },
+              "next": {
+                "title": "Economics FAQ",
+                "permalink": "/docs/faq/economics-faq"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/errors/error-implementation",
+              "id": "roles/integrator/errors/error-implementation",
+              "isDocsHomePage": false,
+              "title": "Source Code Survey",
+              "description": "This page provides a very high level, sometimes \"pseudocode\", view of error types and related messages as implemented by the NEAR platform.",
+              "source": "@site/../docs/roles/integrator/errors/error-implementation.md",
+              "sourceDirName": "roles/integrator/errors",
+              "slug": "/roles/integrator/errors/error-implementation",
+              "permalink": "/docs/roles/integrator/errors/error-implementation",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/errors/error-implementation.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Source Code Survey",
+              "frontMatter": {
+                "id": "error-implementation",
+                "title": "Source Code Survey",
+                "sidebar_label": "Source Code Survey"
+              },
+              "sidebar": "integrate",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/roles/integrator/errors/introduction"
+              },
+              "next": {
+                "title": "Token Loss",
+                "permalink": "/docs/roles/integrator/token-loss"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/errors/introduction",
+              "id": "roles/integrator/errors/introduction",
+              "isDocsHomePage": false,
+              "title": "Introduction",
+              "description": "did you know?",
+              "source": "@site/../docs/roles/integrator/errors/introduction.md",
+              "sourceDirName": "roles/integrator/errors",
+              "slug": "/roles/integrator/errors/introduction",
+              "permalink": "/docs/roles/integrator/errors/introduction",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/errors/introduction.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Introduction",
+              "frontMatter": {
+                "id": "introduction",
+                "title": "Introduction",
+                "sidebar_label": "Introduction"
+              },
+              "sidebar": "integrate",
+              "previous": {
+                "title": "Implicit Accounts",
+                "permalink": "/docs/roles/integrator/implicit-accounts"
+              },
+              "next": {
+                "title": "Source Code Survey",
+                "permalink": "/docs/roles/integrator/errors/error-implementation"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/exchange-integration",
+              "id": "roles/integrator/exchange-integration",
+              "isDocsHomePage": false,
+              "title": "Exchange Integration",
+              "description": "Transactions",
+              "source": "@site/../docs/roles/integrator/exchange-integration.md",
+              "sourceDirName": "roles/integrator",
+              "slug": "/roles/integrator/exchange-integration",
+              "permalink": "/docs/roles/integrator/exchange-integration",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/exchange-integration.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Exchange Integration",
+              "frontMatter": {
+                "id": "exchange-integration",
+                "title": "Exchange Integration",
+                "sidebar_label": "Exchange Integration"
+              },
+              "sidebar": "integrate",
+              "next": {
+                "title": "Implicit Accounts",
+                "permalink": "/docs/roles/integrator/implicit-accounts"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/faq",
+              "id": "roles/integrator/faq",
+              "isDocsHomePage": false,
+              "title": "Integrator FAQ",
+              "description": "Orientation",
+              "source": "@site/../docs/roles/integrator/faq.md",
+              "sourceDirName": "roles/integrator",
+              "slug": "/roles/integrator/faq",
+              "permalink": "/docs/roles/integrator/faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Integrator FAQ",
+              "frontMatter": {
+                "id": "faq",
+                "title": "Integrator FAQ",
+                "sidebar_label": "Integrator FAQ"
+              },
+              "sidebar": "integrate",
+              "previous": {
+                "title": "Token Loss",
+                "permalink": "/docs/roles/integrator/token-loss"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/implicit-accounts",
+              "id": "roles/integrator/implicit-accounts",
+              "isDocsHomePage": false,
+              "title": "Implicit Accounts",
+              "description": "Background",
+              "source": "@site/../docs/roles/integrator/implicit-accounts.md",
+              "sourceDirName": "roles/integrator",
+              "slug": "/roles/integrator/implicit-accounts",
+              "permalink": "/docs/roles/integrator/implicit-accounts",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/implicit-accounts.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Implicit Accounts",
+              "frontMatter": {
+                "id": "implicit-accounts",
+                "title": "Implicit Accounts",
+                "sidebar_label": "Implicit Accounts"
+              },
+              "sidebar": "integrate",
+              "previous": {
+                "title": "Exchange Integration",
+                "permalink": "/docs/roles/integrator/exchange-integration"
+              },
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/roles/integrator/errors/introduction"
+              }
+            },
+            {
+              "unversionedId": "roles/integrator/token-loss",
+              "id": "roles/integrator/token-loss",
+              "isDocsHomePage": false,
+              "title": "Token Loss",
+              "description": "Token loss is possible under multiple scenarios. These scenarios can be grouped into a few related classes:",
+              "source": "@site/../docs/roles/integrator/token-loss.md",
+              "sourceDirName": "roles/integrator",
+              "slug": "/roles/integrator/token-loss",
+              "permalink": "/docs/roles/integrator/token-loss",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/token-loss.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Token Loss",
+              "frontMatter": {
+                "id": "token-loss",
+                "title": "Token Loss",
+                "sidebar_label": "Token Loss"
+              },
+              "sidebar": "integrate",
+              "previous": {
+                "title": "Source Code Survey",
+                "permalink": "/docs/roles/integrator/errors/error-implementation"
+              },
+              "next": {
+                "title": "Integrator FAQ",
+                "permalink": "/docs/roles/integrator/faq"
+              }
+            },
+            {
+              "unversionedId": "roles/validator/hardware",
+              "id": "roles/validator/hardware",
+              "isDocsHomePage": false,
+              "title": "Hardware Requirements",
+              "description": "This page covers the minimum and recommended hardware requirements for engaging with the NEAR platform as an application developer, validator, integrator or core contributor.",
+              "source": "@site/../docs/roles/validator/hardware.md",
+              "sourceDirName": "roles/validator",
+              "slug": "/roles/validator/hardware",
+              "permalink": "/docs/roles/validator/hardware",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/validator/hardware.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Choosing Hardware",
+              "frontMatter": {
+                "id": "hardware",
+                "title": "Hardware Requirements",
+                "sidebar_label": "Choosing Hardware"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Staking Orientation",
+                "permalink": "/docs/validator/staking-overview"
+              },
+              "next": {
+                "title": "Running a Validator Node",
+                "permalink": "/docs/validator/staking"
+              }
+            },
+            {
+              "unversionedId": "tokens/lockup",
+              "id": "tokens/lockup",
+              "isDocsHomePage": false,
+              "title": "Lockups Explained",
+              "description": "These docs include information about lockups in general, how they are implemented on NEAR, some of the challenges this causes and how you can delegate your locked tokens.",
+              "source": "@site/../docs/tokens/lockup.md",
+              "sourceDirName": "tokens",
+              "slug": "/tokens/lockup",
+              "permalink": "/docs/tokens/lockup",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tokens/lockup.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Lockups Explained",
+              "frontMatter": {
+                "id": "lockup",
+                "title": "Lockups Explained",
+                "sidebar_label": "Lockups Explained"
+              },
+              "sidebar": "tokens",
+              "previous": {
+                "title": "Token Custody Options",
+                "permalink": "/docs/tokens/token-custody"
+              },
+              "next": {
+                "title": "Token Delegation",
+                "permalink": "/docs/validator/delegation"
+              }
+            },
+            {
+              "unversionedId": "tokens/token-custody",
+              "id": "tokens/token-custody",
+              "isDocsHomePage": false,
+              "title": "Token Custody Options",
+              "description": "There are several options available to manage your NEAR and NEAR-based assets.",
+              "source": "@site/../docs/tokens/token-custody.md",
+              "sourceDirName": "tokens",
+              "slug": "/tokens/token-custody",
+              "permalink": "/docs/tokens/token-custody",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tokens/token-custody.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Token Custody",
+              "frontMatter": {
+                "id": "token-custody",
+                "title": "Token Custody Options",
+                "sidebar_label": "Token Custody"
+              },
+              "sidebar": "tokens",
+              "next": {
+                "title": "Lockups Explained",
+                "permalink": "/docs/tokens/lockup"
+              }
+            },
+            {
+              "unversionedId": "tools/near-cli",
+              "id": "tools/near-cli",
+              "isDocsHomePage": false,
+              "title": "NEAR CLI",
+              "description": "near-cli is a NodeJS command line interface that utilizes near-api-js to connect to and interact with the NEAR blockchain.",
+              "source": "@site/../docs/tools/near-cli.md",
+              "sourceDirName": "tools",
+              "slug": "/tools/near-cli",
+              "permalink": "/docs/tools/near-cli",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-cli.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "NEAR CLI",
+              "frontMatter": {
+                "id": "near-cli",
+                "title": "NEAR CLI",
+                "sidebar_label": "NEAR CLI"
+              },
+              "sidebar": "tools",
+              "next": {
+                "title": "NEAR Explorer",
+                "permalink": "/docs/tools/near-explorer"
+              }
+            },
+            {
+              "unversionedId": "tools/near-explorer",
+              "id": "tools/near-explorer",
+              "isDocsHomePage": false,
+              "title": "NEAR Explorer",
+              "description": "NEAR Explorer allows you to view block creations in real time! This useful tool allows you to search for transactions and accounts allowing you to view all interactions between users and smart contracts.",
+              "source": "@site/../docs/tools/near-explorer.md",
+              "sourceDirName": "tools",
+              "slug": "/tools/near-explorer",
+              "permalink": "/docs/tools/near-explorer",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-explorer.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "NEAR Explorer",
+              "frontMatter": {
+                "id": "near-explorer",
+                "title": "NEAR Explorer",
+                "sidebar_label": "NEAR Explorer"
+              },
+              "sidebar": "tools",
+              "previous": {
+                "title": "NEAR CLI",
+                "permalink": "/docs/tools/near-cli"
+              },
+              "next": {
+                "title": "NEAR Wallet",
+                "permalink": "/docs/tools/near-wallet"
+              }
+            },
+            {
+              "unversionedId": "tools/near-indexer",
+              "id": "tools/near-indexer",
+              "isDocsHomePage": false,
+              "title": "NEAR Indexer",
+              "description": "The NEAR Indexer Framework allows you to run a network node that listens for targeted information on the blockchain. For more information see indexer under our \"Concepts\" section.",
+              "source": "@site/../docs/tools/near-indexer.md",
+              "sourceDirName": "tools",
+              "slug": "/tools/near-indexer",
+              "permalink": "/docs/tools/near-indexer",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-indexer.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "NEAR Indexer",
+              "frontMatter": {
+                "id": "near-indexer",
+                "title": "NEAR Indexer",
+                "sidebar_label": "NEAR Indexer"
+              },
+              "sidebar": "tools",
+              "previous": {
+                "title": "NEAR Wallet",
+                "permalink": "/docs/tools/near-wallet"
+              }
+            },
+            {
+              "unversionedId": "tools/near-wallet",
+              "id": "tools/near-wallet",
+              "isDocsHomePage": false,
+              "title": "NEAR Wallet",
+              "description": "NEAR Wallet is an in-browser, web-based wallet for creating and interacting with NEAR accounts. This wallet stores account keys in the browser's localStorage.",
+              "source": "@site/../docs/tools/near-wallet.md",
+              "sourceDirName": "tools",
+              "slug": "/tools/near-wallet",
+              "permalink": "/docs/tools/near-wallet",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-wallet.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "NEAR Wallet",
+              "frontMatter": {
+                "id": "near-wallet",
+                "title": "NEAR Wallet",
+                "sidebar_label": "NEAR Wallet"
+              },
+              "sidebar": "tools",
+              "previous": {
+                "title": "NEAR Explorer",
+                "permalink": "/docs/tools/near-explorer"
+              },
+              "next": {
+                "title": "NEAR Indexer",
+                "permalink": "/docs/tools/near-indexer"
+              }
+            },
+            {
+              "unversionedId": "tutorials/contracts/as-workshop",
+              "id": "tutorials/contracts/as-workshop",
+              "isDocsHomePage": false,
+              "title": "AssemblyScript Workshop",
+              "description": "[This workshop ] includes several activities:",
+              "source": "@site/../docs/tutorials/contracts/assemblyscript-workshop.md",
+              "sourceDirName": "tutorials/contracts",
+              "slug": "/tutorials/contracts/as-workshop",
+              "permalink": "/docs/tutorials/contracts/as-workshop",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/assemblyscript-workshop.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "AssemblyScript Workshop",
+              "frontMatter": {
+                "id": "as-workshop",
+                "title": "AssemblyScript Workshop",
+                "sidebar_label": "AssemblyScript Workshop"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Exploring NEAR Protocol APIs",
+                "permalink": "/docs/tutorials/front-end/naj-workshop"
+              },
+              "next": {
+                "title": "Issue your own token (ERC20)",
+                "permalink": "/docs/tutorials/contracts/token"
+              }
+            },
+            {
+              "unversionedId": "tutorials/contracts/cross-contract-calls",
+              "id": "tutorials/contracts/cross-contract-calls",
+              "isDocsHomePage": false,
+              "title": "Guide to Cross Contract Calls",
+              "description": "Introduction",
+              "source": "@site/../docs/tutorials/contracts/cross-contract-calls.md",
+              "sourceDirName": "tutorials/contracts",
+              "slug": "/tutorials/contracts/cross-contract-calls",
+              "permalink": "/docs/tutorials/contracts/cross-contract-calls",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/cross-contract-calls.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Cross Contract Calls",
+              "frontMatter": {
+                "id": "cross-contract-calls",
+                "title": "Guide to Cross Contract Calls",
+                "sidebar_label": "Cross Contract Calls"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Issue your own token (ERC20)",
+                "permalink": "/docs/tutorials/contracts/token"
+              },
+              "next": {
+                "title": "An Introduction to Rust Smart Contracts",
+                "permalink": "/docs/tutorials/contracts/intro-to-rust"
+              }
+            },
+            {
+              "unversionedId": "tutorials/contracts/intro-to-rust",
+              "id": "tutorials/contracts/intro-to-rust",
+              "isDocsHomePage": false,
+              "title": "An Introduction to Rust Smart Contracts",
+              "description": "Writing smart contracts is a paradigm shift. There are only a few new concepts (state, transfer, account/balance information…) used, but they go a long way toward building full-fledged applications on the blockchain. This way of thinking has its own learning curve. Currently, the preferred programming language for writing smart contracts on NEAR is Rust. On top of learning smart contracts, developers unfamiliar with the Rust programming language may have an additional barrier to entry. This page is meant to provide an easy onboarding to Rust and smart contract development.",
+              "source": "@site/../docs/tutorials/contracts/intro-to-rust.md",
+              "sourceDirName": "tutorials/contracts",
+              "slug": "/tutorials/contracts/intro-to-rust",
+              "permalink": "/docs/tutorials/contracts/intro-to-rust",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/intro-to-rust.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Intro to Rust",
+              "frontMatter": {
+                "id": "intro-to-rust",
+                "title": "An Introduction to Rust Smart Contracts",
+                "sidebar_label": "Intro to Rust"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Guide to Cross Contract Calls",
+                "permalink": "/docs/tutorials/contracts/cross-contract-calls"
+              },
+              "next": {
+                "title": "Using the Rainbow Bridge (MainNet)",
+                "permalink": "/docs/tutorials/rainbow-bridge-frontend-mainnet"
+              }
+            },
+            {
+              "unversionedId": "tutorials/contracts/token",
+              "id": "tutorials/contracts/token",
+              "isDocsHomePage": false,
+              "title": "Issue your own token (ERC20)",
+              "description": "We have pre-built a template for this tutorial hosted on near.dev called \"Token Contract in AssemblyScript\". You can try running the application right away to see the code interacting with the blockchain -- just click Open in Gitpod.",
+              "source": "@site/../docs/tutorials/contracts/token.md",
+              "sourceDirName": "tutorials/contracts",
+              "slug": "/tutorials/contracts/token",
+              "permalink": "/docs/tutorials/contracts/token",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/token.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Issue a Token",
+              "frontMatter": {
+                "id": "token",
+                "title": "Issue your own token (ERC20)",
+                "sidebar_label": "Issue a Token"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "AssemblyScript Workshop",
+                "permalink": "/docs/tutorials/contracts/as-workshop"
+              },
+              "next": {
+                "title": "Guide to Cross Contract Calls",
+                "permalink": "/docs/tutorials/contracts/cross-contract-calls"
+              }
+            },
+            {
+              "unversionedId": "tutorials/create-transactions",
+              "id": "tutorials/create-transactions",
+              "isDocsHomePage": false,
+              "title": "Create Transactions",
+              "description": "To construct & process transactions you will need our API JavaScript library: near-api-js. There are many ways to create transactions but for this example we'll show you two ways to create a simple token transfer transaction.",
+              "source": "@site/../docs/tutorials/create-transactions.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/create-transactions",
+              "permalink": "/docs/tutorials/create-transactions",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/create-transactions.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Create a Transaction",
+              "frontMatter": {
+                "id": "create-transactions",
+                "title": "Create Transactions",
+                "sidebar_label": "Create a Transaction"
+              },
+              "sidebar": "tutorials",
+              "next": {
+                "title": "Using a Ledger device w/ NEAR",
+                "permalink": "/docs/tutorials/ledger"
+              }
+            },
+            {
+              "unversionedId": "tutorials/figment",
+              "id": "tutorials/figment",
+              "isDocsHomePage": false,
+              "title": "Figment Tutorials",
+              "description": "Figment.io has created some wonderful tutorials on their learning platform where they provide you step by step instructions to get started interacting with NEAR. You can even earn tokens for your participation!",
+              "source": "@site/../docs/tutorials/figment.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/figment",
+              "permalink": "/docs/tutorials/figment",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/figment.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Figment Tutorials",
+              "frontMatter": {
+                "id": "figment",
+                "title": "Figment Tutorials",
+                "sidebar_label": "Figment Tutorials"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Using a Ledger device w/ NEAR",
+                "permalink": "/docs/tutorials/ledger"
+              },
+              "next": {
+                "title": "Examples Using near-api-js",
+                "permalink": "/docs/tutorials/front-end/naj-examples"
+              }
+            },
+            {
+              "unversionedId": "tutorials/front-end/naj-examples",
+              "id": "tutorials/front-end/naj-examples",
+              "isDocsHomePage": false,
+              "title": "Examples Using near-api-js",
+              "description": "Overview",
+              "source": "@site/../docs/tutorials/front-end/naj-examples.md",
+              "sourceDirName": "tutorials/front-end",
+              "slug": "/tutorials/front-end/naj-examples",
+              "permalink": "/docs/tutorials/front-end/naj-examples",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/front-end/naj-examples.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "API Examples",
+              "frontMatter": {
+                "id": "naj-examples",
+                "title": "Examples Using near-api-js",
+                "sidebar_label": "API Examples"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Figment Tutorials",
+                "permalink": "/docs/tutorials/figment"
+              },
+              "next": {
+                "title": "Exploring NEAR Protocol APIs",
+                "permalink": "/docs/tutorials/front-end/naj-workshop"
+              }
+            },
+            {
+              "unversionedId": "tutorials/front-end/naj-workshop",
+              "id": "tutorials/front-end/naj-workshop",
+              "isDocsHomePage": false,
+              "title": "Exploring NEAR Protocol APIs",
+              "description": "[This workshop ] includes several activities:",
+              "source": "@site/../docs/tutorials/front-end/naj-workshop.md",
+              "sourceDirName": "tutorials/front-end",
+              "slug": "/tutorials/front-end/naj-workshop",
+              "permalink": "/docs/tutorials/front-end/naj-workshop",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/front-end/naj-workshop.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "API Workshop",
+              "frontMatter": {
+                "id": "naj-workshop",
+                "title": "Exploring NEAR Protocol APIs",
+                "sidebar_label": "API Workshop"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Examples Using near-api-js",
+                "permalink": "/docs/tutorials/front-end/naj-examples"
+              },
+              "next": {
+                "title": "AssemblyScript Workshop",
+                "permalink": "/docs/tutorials/contracts/as-workshop"
+              }
+            },
+            {
+              "unversionedId": "tutorials/ledger",
+              "id": "tutorials/ledger",
+              "isDocsHomePage": false,
+              "title": "Using a Ledger device w/ NEAR",
+              "description": "A Ledger device is a physical wallet, or hardware wallet, that stores your private keys used to sign transactions. This device offers an extra layer of security as its an isolated device from your computer or smartphone. The NEAR App on Ledger allows you to manage your NEAR accounts and NEAR tokens that have Ledger security enabled.",
+              "source": "@site/../docs/tutorials/ledger.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/ledger",
+              "permalink": "/docs/tutorials/ledger",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/ledger.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Using a Ledger",
+              "frontMatter": {
+                "id": "ledger",
+                "title": "Using a Ledger device w/ NEAR",
+                "sidebar_label": "Using a Ledger"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Create Transactions",
+                "permalink": "/docs/tutorials/create-transactions"
+              },
+              "next": {
+                "title": "Figment Tutorials",
+                "permalink": "/docs/tutorials/figment"
+              }
+            },
+            {
+              "unversionedId": "tutorials/rainbow-bridge-frontend-mainnet",
+              "id": "tutorials/rainbow-bridge-frontend-mainnet",
+              "isDocsHomePage": false,
+              "title": "Using the Rainbow Bridge (MainNet)",
+              "description": "Tutorial Prerequisites",
+              "source": "@site/../docs/tutorials/rainbow-bridge-frontend.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/rainbow-bridge-frontend-mainnet",
+              "permalink": "/docs/tutorials/rainbow-bridge-frontend-mainnet",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/rainbow-bridge-frontend.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Using Mainnet Frontend",
+              "frontMatter": {
+                "id": "rainbow-bridge-frontend-mainnet",
+                "title": "Using the Rainbow Bridge (MainNet)",
+                "sidebar_label": "Using Mainnet Frontend"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "An Introduction to Rust Smart Contracts",
+                "permalink": "/docs/tutorials/contracts/intro-to-rust"
+              },
+              "next": {
+                "title": "Experimenting with the Rainbow Bridge (TestNet)",
+                "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet"
+              }
+            },
+            {
+              "unversionedId": "tutorials/rainbow-bridge-frontend-testnet",
+              "id": "tutorials/rainbow-bridge-frontend-testnet",
+              "isDocsHomePage": false,
+              "title": "Experimenting with the Rainbow Bridge (TestNet)",
+              "description": "Step 1 - Create a MetaMask and NEAR Wallet account",
+              "source": "@site/../docs/tutorials/rainbow-frontend-dev-tutorial.md",
+              "sourceDirName": "tutorials",
+              "slug": "/tutorials/rainbow-bridge-frontend-testnet",
+              "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/rainbow-frontend-dev-tutorial.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Using Testnet Frontend",
+              "frontMatter": {
+                "id": "rainbow-bridge-frontend-testnet",
+                "title": "Experimenting with the Rainbow Bridge (TestNet)",
+                "sidebar_label": "Using Testnet Frontend"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Using the Rainbow Bridge (MainNet)",
+                "permalink": "/docs/tutorials/rainbow-bridge-frontend-mainnet"
+              },
+              "next": {
+                "title": "NEAR accounts and access keys",
+                "permalink": "/docs/videos/accounts-keys"
+              }
+            },
+            {
+              "unversionedId": "validator/delegation",
+              "id": "validator/delegation",
+              "isDocsHomePage": false,
+              "title": "Token Delegation",
+              "description": "Overview",
+              "source": "@site/../docs/validator/delegation.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/delegation",
+              "permalink": "/docs/validator/delegation",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/delegation.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Token Delegation",
+              "frontMatter": {
+                "id": "delegation",
+                "title": "Token Delegation",
+                "sidebar_label": "Token Delegation"
+              },
+              "sidebar": "tokens",
+              "previous": {
+                "title": "Lockups Explained",
+                "permalink": "/docs/tokens/lockup"
+              }
+            },
+            {
+              "unversionedId": "validator/deploy-on-mainnet",
+              "id": "validator/deploy-on-mainnet",
+              "isDocsHomePage": false,
+              "title": "Deploy a Validator Node on MainNet",
+              "description": "Step-by-Step guide",
+              "source": "@site/../docs/validator/mainnet-phase-one.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/deploy-on-mainnet",
+              "permalink": "/docs/validator/deploy-on-mainnet",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/mainnet-phase-one.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Deploy on MainNet",
+              "frontMatter": {
+                "id": "deploy-on-mainnet",
+                "title": "Deploy a Validator Node on MainNet",
+                "sidebar_label": "Deploy on MainNet"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "The Economics of a Validator",
+                "permalink": "/docs/validator/economics"
+              },
+              "next": {
+                "title": "Staking FAQ",
+                "permalink": "/docs/validator/staking-faq"
+              }
+            },
+            {
+              "unversionedId": "validator/economics",
+              "id": "validator/economics",
+              "isDocsHomePage": false,
+              "title": "The Economics of a Validator",
+              "description": "Overview",
+              "source": "@site/../docs/validator/economics.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/economics",
+              "permalink": "/docs/validator/economics",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/economics.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Validator Economics",
+              "frontMatter": {
+                "id": "economics",
+                "title": "The Economics of a Validator",
+                "sidebar_label": "Validator Economics"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Validator Node Maintenance",
+                "permalink": "/docs/validator/maintenance"
+              },
+              "next": {
+                "title": "Deploy a Validator Node on MainNet",
+                "permalink": "/docs/validator/deploy-on-mainnet"
+              }
+            },
+            {
+              "unversionedId": "validator/keys",
+              "id": "validator/keys",
+              "isDocsHomePage": false,
+              "title": "Keys on the NEAR Platform",
+              "description": "what are keys?",
+              "source": "@site/../docs/validator/keys.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/keys",
+              "permalink": "/docs/validator/keys",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/keys.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Understanding Keys",
+              "frontMatter": {
+                "id": "keys",
+                "title": "Keys on the NEAR Platform",
+                "sidebar_label": "Understanding Keys"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Running a Validator Node",
+                "permalink": "/docs/validator/staking"
+              },
+              "next": {
+                "title": "Validator Node Maintenance",
+                "permalink": "/docs/validator/maintenance"
+              }
+            },
+            {
+              "unversionedId": "validator/maintenance",
+              "id": "validator/maintenance",
+              "isDocsHomePage": false,
+              "title": "Validator Node Maintenance",
+              "description": "Updating a Validator Node",
+              "source": "@site/../docs/validator/maintenance.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/maintenance",
+              "permalink": "/docs/validator/maintenance",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/maintenance.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Node Maintenance",
+              "frontMatter": {
+                "id": "maintenance",
+                "title": "Validator Node Maintenance",
+                "sidebar_label": "Node Maintenance"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Keys on the NEAR Platform",
+                "permalink": "/docs/validator/keys"
+              },
+              "next": {
+                "title": "The Economics of a Validator",
+                "permalink": "/docs/validator/economics"
+              }
+            },
+            {
+              "unversionedId": "validator/staking",
+              "id": "validator/staking",
+              "isDocsHomePage": false,
+              "title": "Running a Validator Node",
+              "description": "Staking on NEAR",
+              "source": "@site/../docs/validator/staking.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/staking",
+              "permalink": "/docs/validator/staking",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Running the Node",
+              "frontMatter": {
+                "id": "staking",
+                "title": "Running a Validator Node",
+                "sidebar_label": "Running the Node"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Hardware Requirements",
+                "permalink": "/docs/roles/validator/hardware"
+              },
+              "next": {
+                "title": "Keys on the NEAR Platform",
+                "permalink": "/docs/validator/keys"
+              }
+            },
+            {
+              "unversionedId": "validator/staking-faq",
+              "id": "validator/staking-faq",
+              "isDocsHomePage": false,
+              "title": "Staking FAQ",
+              "description": "What is a validator?",
+              "source": "@site/../docs/validator/staking-faq.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/staking-faq",
+              "permalink": "/docs/validator/staking-faq",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-faq.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Staking FAQ",
+              "frontMatter": {
+                "id": "staking-faq",
+                "title": "Staking FAQ",
+                "sidebar_label": "Staking FAQ"
+              },
+              "sidebar": "stake",
+              "previous": {
+                "title": "Deploy a Validator Node on MainNet",
+                "permalink": "/docs/validator/deploy-on-mainnet"
+              }
+            },
+            {
+              "unversionedId": "validator/staking-kr",
+              "id": "validator/staking-kr",
+              "isDocsHomePage": false,
+              "title": "검증인 노드운영",
+              "description": "공식 배타넷에 스테이킹하기",
+              "source": "@site/../docs/validator/staking-kr.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/staking-kr",
+              "permalink": "/docs/validator/staking-kr",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-kr.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Running the Node",
+              "frontMatter": {
+                "id": "staking-kr",
+                "title": "검증인 노드운영",
+                "sidebar_label": "Running the Node"
+              }
+            },
+            {
+              "unversionedId": "validator/staking-overview",
+              "id": "validator/staking-overview",
+              "isDocsHomePage": false,
+              "title": "Staking Orientation",
+              "description": "Welcome",
+              "source": "@site/../docs/validator/staking-overview.md",
+              "sourceDirName": "validator",
+              "slug": "/validator/staking-overview",
+              "permalink": "/docs/validator/staking-overview",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-overview.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Orientation",
+              "frontMatter": {
+                "id": "staking-overview",
+                "title": "Staking Orientation",
+                "sidebar_label": "Orientation"
+              },
+              "sidebar": "stake",
+              "next": {
+                "title": "Hardware Requirements",
+                "permalink": "/docs/roles/validator/hardware"
+              }
+            },
+            {
+              "unversionedId": "videos/accounts-keys",
+              "id": "videos/accounts-keys",
+              "isDocsHomePage": false,
+              "title": "NEAR accounts and access keys",
+              "description": "Part 1 - account creation, key examination, key addition/removal, and more…",
+              "source": "@site/../docs/videos/accounts-keys.md",
+              "sourceDirName": "videos",
+              "slug": "/videos/accounts-keys",
+              "permalink": "/docs/videos/accounts-keys",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/accounts-keys.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Accounts & keys",
+              "frontMatter": {
+                "id": "accounts-keys",
+                "title": "NEAR accounts and access keys",
+                "sidebar_label": "Accounts & keys"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "Experimenting with the Rainbow Bridge (TestNet)",
+                "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet"
+              },
+              "next": {
+                "title": "NEAR Smart Contract Reviews",
+                "permalink": "/docs/videos/contract-reviews"
+              }
+            },
+            {
+              "unversionedId": "videos/collections-u128-etc",
+              "id": "videos/collections-u128-etc",
+              "isDocsHomePage": false,
+              "title": "Miscellaneous video concept",
+              "description": "This page contains videos that explore miscellaneous concepts of smart contract development on NEAR.",
+              "source": "@site/../docs/videos/collections-u128-etc.md",
+              "sourceDirName": "videos",
+              "slug": "/videos/collections-u128-etc",
+              "permalink": "/docs/videos/collections-u128-etc",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/collections-u128-etc.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Misc",
+              "frontMatter": {
+                "id": "collections-u128-etc",
+                "title": "Miscellaneous video concept",
+                "sidebar_label": "Misc"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "NEAR Application Reviews",
+                "permalink": "/docs/videos/live-app-review"
+              }
+            },
+            {
+              "unversionedId": "videos/contract-reviews",
+              "id": "videos/contract-reviews",
+              "isDocsHomePage": false,
+              "title": "NEAR Smart Contract Reviews",
+              "description": "Get insights and explanations directly from NEAR Core team members as they talk through the intricacies of smart contracts.",
+              "source": "@site/../docs/videos/contract-reviews.md",
+              "sourceDirName": "videos",
+              "slug": "/videos/contract-reviews",
+              "permalink": "/docs/videos/contract-reviews",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/contract-reviews.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Contract Reviews",
+              "frontMatter": {
+                "id": "contract-reviews",
+                "title": "NEAR Smart Contract Reviews",
+                "sidebar_label": "Contract Reviews"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "NEAR accounts and access keys",
+                "permalink": "/docs/videos/accounts-keys"
+              },
+              "next": {
+                "title": "NEAR Application Reviews",
+                "permalink": "/docs/videos/live-app-review"
+              }
+            },
+            {
+              "unversionedId": "videos/live-app-review",
+              "id": "videos/live-app-review",
+              "isDocsHomePage": false,
+              "title": "NEAR Application Reviews",
+              "description": "Get insights and explanations directly from NEAR Core team members as they talk through the intricacies of dApp development.",
+              "source": "@site/../docs/videos/live-app-review.md",
+              "sourceDirName": "videos",
+              "slug": "/videos/live-app-review",
+              "permalink": "/docs/videos/live-app-review",
+              "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/live-app-review.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "sidebar_label": "Application Reviews",
+              "frontMatter": {
+                "id": "live-app-review",
+                "title": "NEAR Application Reviews",
+                "sidebar_label": "Application Reviews"
+              },
+              "sidebar": "tutorials",
+              "previous": {
+                "title": "NEAR Smart Contract Reviews",
+                "permalink": "/docs/videos/contract-reviews"
+              },
+              "next": {
+                "title": "Miscellaneous video concept",
+                "permalink": "/docs/videos/collections-u128-etc"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": null
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {
+    "default": null
+  },
+  "docusaurus-theme-classic": {
+    "default": null
+  },
+  "docusaurus-theme-search-algolia": {
+    "default": null
+  }
+}

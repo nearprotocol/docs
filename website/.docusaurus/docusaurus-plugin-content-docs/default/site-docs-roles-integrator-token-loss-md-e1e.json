@@ -1,0 +1,31 @@
+{
+  "unversionedId": "roles/integrator/token-loss",
+  "id": "roles/integrator/token-loss",
+  "isDocsHomePage": false,
+  "title": "Token Loss",
+  "description": "Token loss is possible under multiple scenarios. These scenarios can be grouped into a few related classes:",
+  "source": "@site/../docs/roles/integrator/token-loss.md",
+  "sourceDirName": "roles/integrator",
+  "slug": "/roles/integrator/token-loss",
+  "permalink": "/docs/roles/integrator/token-loss",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/token-loss.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Token Loss",
+  "frontMatter": {
+    "id": "token-loss",
+    "title": "Token Loss",
+    "sidebar_label": "Token Loss"
+  },
+  "sidebar": "integrate",
+  "previous": {
+    "title": "Source Code Survey",
+    "permalink": "/docs/roles/integrator/errors/error-implementation"
+  },
+  "next": {
+    "title": "Integrator FAQ",
+    "permalink": "/docs/roles/integrator/faq"
+  }
+}

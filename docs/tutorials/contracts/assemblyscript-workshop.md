@@ -1,5 +1,5 @@
 ---
-id: as-workshop  
+id: as-workshop
 title: AssemblyScript Workshop
 sidebar_label: AssemblyScript Workshop
 ---

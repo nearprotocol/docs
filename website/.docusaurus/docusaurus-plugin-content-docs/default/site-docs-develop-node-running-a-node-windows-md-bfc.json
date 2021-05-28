@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/node/running-a-node-windows",
+  "id": "develop/node/running-a-node-windows",
+  "isDocsHomePage": false,
+  "title": "Running a Node on Windows",
+  "description": "1.  If Windows Subsystem for Linux is not enabled, open PowerShell as administrator and run:",
+  "source": "@site/../docs/develop/node/running-a-node-windows.md",
+  "sourceDirName": "develop/node",
+  "slug": "/develop/node/running-a-node-windows",
+  "permalink": "/docs/develop/node/running-a-node-windows",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/running-a-node-windows.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Running a node (Windows)",
+  "frontMatter": {
+    "id": "running-a-node-windows",
+    "title": "Running a Node on Windows",
+    "sidebar_label": "Running a node (Windows)"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Running a node",
+    "permalink": "/docs/develop/node/running-a-node"
+  },
+  "next": {
+    "title": "How to compile and run nearcore",
+    "permalink": "/docs/develop/node/compile-and-run-a-node"
+  }
+}

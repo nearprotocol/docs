@@ -1,0 +1,31 @@
+{
+  "unversionedId": "faq/technical-faq",
+  "id": "faq/technical-faq",
+  "isDocsHomePage": false,
+  "title": "Technical FAQ",
+  "description": "Welcome to the Frequently Asked Questions. To contribute, use the Edit button on the right.",
+  "source": "@site/../docs/faq/technical-faq.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/technical-faq",
+  "permalink": "/docs/faq/technical-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/technical-faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Technical FAQ",
+  "frontMatter": {
+    "id": "technical-faq",
+    "title": "Technical FAQ",
+    "sidebar_label": "Technical FAQ"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "General FAQ",
+    "permalink": "/docs/faq/general-faq"
+  },
+  "next": {
+    "title": "Economics FAQ",
+    "permalink": "/docs/faq/economics-faq"
+  }
+}

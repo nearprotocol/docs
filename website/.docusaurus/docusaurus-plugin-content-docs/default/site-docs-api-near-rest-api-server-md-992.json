@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api/near-api-rest-server",
+  "id": "api/near-api-rest-server",
+  "isDocsHomePage": false,
+  "title": "NEAR API REST SERVER",
+  "description": "NEAR REST API Server is a project that allows you create your own simple REST API server that interacts with the NEAR blockchain.",
+  "source": "@site/../docs/api/near-rest-api-server.md",
+  "sourceDirName": "api",
+  "slug": "/api/near-api-rest-server",
+  "permalink": "/docs/api/near-api-rest-server",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/near-rest-api-server.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "REST API SERVER",
+  "frontMatter": {
+    "id": "near-api-rest-server",
+    "title": "NEAR API REST SERVER",
+    "sidebar_label": "REST API SERVER"
+  },
+  "sidebar": "API",
+  "previous": {
+    "title": "RPC Endpoints",
+    "permalink": "/docs/api/rpc"
+  },
+  "next": {
+    "title": "API JavaScript Library",
+    "permalink": "/docs/api/naj-overview"
+  }
+}

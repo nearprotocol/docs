@@ -1,0 +1,31 @@
+{
+  "unversionedId": "videos/accounts-keys",
+  "id": "videos/accounts-keys",
+  "isDocsHomePage": false,
+  "title": "NEAR accounts and access keys",
+  "description": "Part 1 - account creation, key examination, key addition/removal, and more…",
+  "source": "@site/../docs/videos/accounts-keys.md",
+  "sourceDirName": "videos",
+  "slug": "/videos/accounts-keys",
+  "permalink": "/docs/videos/accounts-keys",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/accounts-keys.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Accounts & keys",
+  "frontMatter": {
+    "id": "accounts-keys",
+    "title": "NEAR accounts and access keys",
+    "sidebar_label": "Accounts & keys"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Experimenting with the Rainbow Bridge (TestNet)",
+    "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet"
+  },
+  "next": {
+    "title": "NEAR Smart Contract Reviews",
+    "permalink": "/docs/videos/contract-reviews"
+  }
+}

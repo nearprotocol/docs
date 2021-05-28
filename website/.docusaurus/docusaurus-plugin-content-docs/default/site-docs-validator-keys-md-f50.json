@@ -1,0 +1,31 @@
+{
+  "unversionedId": "validator/keys",
+  "id": "validator/keys",
+  "isDocsHomePage": false,
+  "title": "Keys on the NEAR Platform",
+  "description": "what are keys?",
+  "source": "@site/../docs/validator/keys.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/keys",
+  "permalink": "/docs/validator/keys",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/keys.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Understanding Keys",
+  "frontMatter": {
+    "id": "keys",
+    "title": "Keys on the NEAR Platform",
+    "sidebar_label": "Understanding Keys"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Running a Validator Node",
+    "permalink": "/docs/validator/staking"
+  },
+  "next": {
+    "title": "Validator Node Maintenance",
+    "permalink": "/docs/validator/maintenance"
+  }
+}

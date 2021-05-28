@@ -36,18 +36,18 @@
     "Smart Contracts": [
       "develop/contracts/overview",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "AssemblyScript",
-        "ids": [
+        "items": [
           "develop/contracts/as/intro",
           "develop/contracts/as/near-sdk-as",
           "develop/contracts/as/testing-as-contracts"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Rust",
-        "ids": [
+        "items": [
           "develop/contracts/rust/intro",
           "develop/contracts/rust/near-sdk-rs",
           "develop/contracts/rust/testing-rust-contracts"
@@ -81,18 +81,18 @@
     "Smart Contracts": [
       
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "AssemblyScript",
-        "ids": [
+        "items": [
           "tutorials/contracts/as-workshop",
           "tutorials/contracts/token",
           "tutorials/contracts/cross-contract-calls"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Rust",
-        "ids": [
+        "items": [
           "tutorials/contracts/intro-to-rust"
         ]
       }

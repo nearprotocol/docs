@@ -14,7 +14,7 @@ In this tutorial we will write a very simple game with a shared world state. The
 
 Below is an example of a large scale version to which many people contributed.
 
-![space shuttle against starry sky](/docs/assets/spaceship-2.png)
+![space shuttle against starry sky](/img/spaceship-2.png)
 
 ### <center>Let's get started!</center>
 
@@ -55,15 +55,15 @@ Go ahead and explore the code in these tests to get a better understanding of th
 Once the testing suites are complete, your test results should look like this:
 
 **AS-pect Test**
-![Token Contract AS-pect test](/docs/assets/token-contract-aspect-test.png)
+![Token Contract AS-pect test](/img/token-contract-aspect-test.png)
 
 **Jest Test**
-![Default Token Contract Test ](/docs/assets/default-token-contract-test.png)
+![Default Token Contract Test ](/img/default-token-contract-test.png)
 
 Note that `test-account-tTIMESTAMP-XXXXXXX` is an automatically generated NEAR account for this particular project. Try not to be distracted by these details, but compare the developer log output with the statements in the file `src/test.js`.
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 We are not going to keep any of the code from this template. It's just there as a starting point.
 
@@ -178,7 +178,7 @@ The "getMap" test simply invokes the `getMap` function of the contract and retur
 
 Once finished, you should see passing tests that look like the following:
 
-![AS-pect tests for smart contract game](/docs/assets/token-contract-aspect-game-test.png)
+![AS-pect tests for smart contract game](/img/token-contract-aspect-game-test.png)
 
 Now that we know our code is executing as intended, our newly created smart contract can be deployed with confidence to the blockchain. 
 
@@ -355,7 +355,7 @@ All we have left to do is update our HTML file to render everything as expected.
         </canvas>
       </div>
       <div align="center">
-        <input class="jscolor" id="picker" value="ab2567"/><br>
+        <input class="jscolor" id="picker" value="ab2567"/><br />
         <label>Select Color &uarr;<label>
       </div>
     </div>
@@ -382,15 +382,15 @@ All we have left to do is update our HTML file to render everything as expected.
 
 This is what the app should look like as soon as it launches:
 
-![NEAR Place webpage on launch](/docs/assets/near-place-webpage-on-launch.png)
+![NEAR Place webpage on launch](/img/near-place-webpage-on-launch.png)
 
 **Note:** If you open your JavaScript developer console (open before the page loads, or refresh the page afterwards) you should see a table that looks like this: 
 
-![NEAR Place JavaScript developer console on launch](/docs/assets/near-place-console-on-launch.png)
+![NEAR Place JavaScript developer console on launch](/img/near-place-console-on-launch.png)
 
 Go ahead and click **Sign In** to connect this app to your NEAR Wallet. After you log in, you will be redirected back to your app and a small black canvas should appear. Select a color and start creating art on the blockchain! 
 
-![NEAR Place drawing after sign in](/docs/assets/near-place-painting.png)
+![NEAR Place drawing after sign in](/img/near-place-painting.png)
 
 Each time you click a coordinate and change the color in your canvas we are interacting with the blockchain. The smart contract we wrote earlier gets called, executes the transaction (recording and storing it in state), and logs our signature. Not only will your painting live forever on the network, but so will every brush stroke of its creation!
 

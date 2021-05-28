@@ -1,0 +1,31 @@
+{
+  "unversionedId": "validator/economics",
+  "id": "validator/economics",
+  "isDocsHomePage": false,
+  "title": "The Economics of a Validator",
+  "description": "Overview",
+  "source": "@site/../docs/validator/economics.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/economics",
+  "permalink": "/docs/validator/economics",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/economics.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Validator Economics",
+  "frontMatter": {
+    "id": "economics",
+    "title": "The Economics of a Validator",
+    "sidebar_label": "Validator Economics"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Validator Node Maintenance",
+    "permalink": "/docs/validator/maintenance"
+  },
+  "next": {
+    "title": "Deploy a Validator Node on MainNet",
+    "permalink": "/docs/validator/deploy-on-mainnet"
+  }
+}

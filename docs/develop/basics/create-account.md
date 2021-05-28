@@ -19,11 +19,11 @@ The following guide with walk you through `testnet` account creation using [NEAR
 
 > * Navigate to https://wallet.testnet.near.org and click on "Create Account".
 
-![mainnet wallet landing](/docs/assets/create-account/mainnet-wallet-landing.jpg)
+![mainnet wallet landing](/img/create-account/mainnet-wallet-landing.jpg)
 
 > * Next, enter your desired account name.
   
-![mainnet create account](/docs/assets/create-account/testnet-create-account.jpg)
+![mainnet create account](/img/create-account/testnet-create-account.jpg)
 
 ---
 
@@ -35,9 +35,9 @@ The following guide with walk you through `testnet` account creation using [NEAR
 
 > * When selecting a recovery phrase / [seed phrase](https://en.bitcoin.it/wiki/Seed_phrase) it is **extremely  important** to write down your words **IN ORDER** and keep them in a safe place! We will not have a backup and will not be able to help you recover your account without it.
 
-![recovery method selection](/docs/assets/create-account/security-method.jpg)
+![recovery method selection](/img/create-account/security-method.jpg)
 
-![setup seed phrase](/docs/assets/create-account/seed-phrase.jpg)
+![setup seed phrase](/img/create-account/seed-phrase.jpg)
 
 #### E-mail / Phone Number Account Recovery
 
@@ -45,7 +45,7 @@ The following guide with walk you through `testnet` account creation using [NEAR
 >
 > * **DO NOT DELETE THIS MESSAGE!** We are unable to resend this link to you. If you loose access to this it will result in the loss of your account unless you have another recovery method enabled.
 
-![e-mail recovery](/docs/assets/create-account/email-text-recovery.jpg)
+![e-mail recovery](/img/create-account/email-text-recovery.jpg)
 
 ---
 
@@ -53,7 +53,7 @@ The following guide with walk you through `testnet` account creation using [NEAR
 
 > You just created a `testnet` account and received 200 Ⓝ! Upon recovery method confirmation you should be directed to your account dashboard similar to the one below:
 
-![testnet success](/docs/assets/create-account/testnet-success.jpg)
+![testnet success](/img/create-account/testnet-success.jpg)
 
 > * Here you can view your total balance, available balance, and minimum balance needed for on-chain storage costs. Also, you can view and rotate your [Access Keys](/docs/concepts/account#access-keys) by enabling _(add)_ or disabling _(delete)_ them.
 
@@ -67,11 +67,11 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 
 > * Navigate to https://wallet.near.org and click on "Create Account".
 
-![mainnet wallet landing](/docs/assets/create-account/mainnet-wallet-landing.jpg)
+![mainnet wallet landing](/img/create-account/mainnet-wallet-landing.jpg)
 
 > * Next, enter your desired account name.
   
-![mainnet create account](/docs/assets/create-account/mainnet-create-account.jpg)
+![mainnet create account](/img/create-account/mainnet-create-account.jpg)
 
 ---
 
@@ -83,9 +83,9 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 
 > * When selecting a recovery phrase / [seed phrase](https://en.bitcoin.it/wiki/Seed_phrase) it is **extremely  important** to write down your words **IN ORDER** and keep them in a safe place! We will not have a backup and will not be able to help you recover your account without it.
 
-![recovery method selection](/docs/assets/create-account/security-method.jpg)
+![recovery method selection](/img/create-account/security-method.jpg)
 
-![setup seed phrase](/docs/assets/create-account/seed-phrase.jpg)
+![setup seed phrase](/img/create-account/seed-phrase.jpg)
 
 #### E-mail / Phone Number Account Recovery
 
@@ -93,7 +93,7 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 >
 > * **DO NOT DELETE THIS MESSAGE!** We are unable to resend this link to you. If you loose access to this it will result in the loss of your account unless you have another recovery method enabled.
 
-![e-mail recovery](/docs/assets/create-account/email-text-recovery.jpg)
+![e-mail recovery](/img/create-account/email-text-recovery.jpg)
 
 ---
 
@@ -101,19 +101,19 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 
 > * An initial funding of 1.1 Ⓝ will be required to create the account and pay for a small amount of initial storage. You will receive a temporary funding account address similar to the one below.
 
-![fund your account](/docs/assets/create-account/fund-your-account.jpg)
+![fund your account](/img/create-account/fund-your-account.jpg)
 
 > * Copy this funding account address and **OPEN A NEW TAB** to fund the account. It is important to leave this page open while funding the account creation. If it accidentally gets closed, you can reconstruct the link by following this format: **wallet.near.org/fund-create-account/YOUR_ACCOUNT.near/FUNDING_ACCOUNT_ADDRESS**
 
-![image](/docs/assets/create-account/url-breakdown.png)
+![image](/img/create-account/url-breakdown.png)
 
 > * To fund the account, have an existing NEAR account send >= 1.1 Ⓝ to the funding account address, or click on "Where can I purchase NEAR" to go to an exchange and purchase some. You will then need to provide them with the funding account address.
 
-![purchase near](/docs/assets/create-account/purchase_near.jpg)
+![purchase near](/img/create-account/purchase_near.jpg)
 
 > * Once your account is funded, navigate back to the "Fund Your Account" tab you left open earlier. This page should be automatically updated notifying you that your account has been funded. To complete the process, check the box that acknowledges your one-time funding address will now be deleted and any further assets sent to this address will be lost.
 
-![image](/docs/assets/create-account/account-funded.png)
+![image](/img/create-account/account-funded.png)
 
 > * If you are using a Ledger device, two pop-ups will appear: the first one asking you to sign the account creation transaction, and a second one to sign deletion of the one-time funding account address. This second [transaction](https://nomicon.io/RuntimeSpec/Actions.html#deleteaccountaction) will also transfer remaining funds in your one-time address to your new named account.
 
@@ -123,11 +123,11 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 
 > * You have now created a NEAR account on `mainnet`!
 
-![image](/docs/assets/create-account/mainnet-success.jpg)
+![image](/img/create-account/mainnet-success.jpg)
 
 > * You should now be directed to your account dashboard where you can view your total balance, available balance, and minimum balance needed for on-chain storage costs. Also, you can view and rotate your [Access Keys](/docs/concepts/account#access-keys) by enabling _(add)_ or disabling _(delete)_ them.
 
-![image](/docs/assets/create-account/mainnet-wallet-dashboard.jpg)
+![image](/img/create-account/mainnet-wallet-dashboard.jpg)
 
 ## Creating an Account w/ Ledger
 
@@ -150,7 +150,7 @@ Creating an account on `mainnet` is _almost_ identical to `testnet` but will req
 >
 > You'll notice that there is not a "sign out" option available with NEAR Wallet. This is due to your [access key](/docs/concepts/account#access-keys) being stored in your browser's local storage. If it is imperative that you disable the ability of your browser to access your account, open your browser's dev tools and clear the key/value line of the account you wish to remove.
 
-![local storage access key](/docs/assets/create-account/local-storage.png)
+![local storage access key](/img/create-account/local-storage.png)
 
 > Alternatively, if you would like to save an [access key](/docs/concepts/account#access-keys) to your hard-drive, you can use the [`near-cli`](/docs/tools/near-cli) command [`near login`](/docs/tools/near-cli#near-login).
 

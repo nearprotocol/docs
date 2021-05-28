@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tools/near-wallet",
+  "id": "tools/near-wallet",
+  "isDocsHomePage": false,
+  "title": "NEAR Wallet",
+  "description": "NEAR Wallet is an in-browser, web-based wallet for creating and interacting with NEAR accounts. This wallet stores account keys in the browser's localStorage.",
+  "source": "@site/../docs/tools/near-wallet.md",
+  "sourceDirName": "tools",
+  "slug": "/tools/near-wallet",
+  "permalink": "/docs/tools/near-wallet",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tools/near-wallet.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "NEAR Wallet",
+  "frontMatter": {
+    "id": "near-wallet",
+    "title": "NEAR Wallet",
+    "sidebar_label": "NEAR Wallet"
+  },
+  "sidebar": "tools",
+  "previous": {
+    "title": "NEAR Explorer",
+    "permalink": "/docs/tools/near-explorer"
+  },
+  "next": {
+    "title": "NEAR Indexer",
+    "permalink": "/docs/tools/near-indexer"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/contracts/token",
+  "id": "tutorials/contracts/token",
+  "isDocsHomePage": false,
+  "title": "Issue your own token (ERC20)",
+  "description": "We have pre-built a template for this tutorial hosted on near.dev called \"Token Contract in AssemblyScript\". You can try running the application right away to see the code interacting with the blockchain -- just click Open in Gitpod.",
+  "source": "@site/../docs/tutorials/contracts/token.md",
+  "sourceDirName": "tutorials/contracts",
+  "slug": "/tutorials/contracts/token",
+  "permalink": "/docs/tutorials/contracts/token",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/token.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Issue a Token",
+  "frontMatter": {
+    "id": "token",
+    "title": "Issue your own token (ERC20)",
+    "sidebar_label": "Issue a Token"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "AssemblyScript Workshop",
+    "permalink": "/docs/tutorials/contracts/as-workshop"
+  },
+  "next": {
+    "title": "Guide to Cross Contract Calls",
+    "permalink": "/docs/tutorials/contracts/cross-contract-calls"
+  }
+}

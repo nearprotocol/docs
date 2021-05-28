@@ -23,7 +23,7 @@ _( †† ) `LocalNet` would be the right choice if you prefer to avoid leaking 
 You can install `nearup` by following the instructions at https://github.com/near/nearup.
 
 <blockquote class="info">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 The README for `nearup` (linked above) may be **all you need to get a node running**.
 
@@ -69,7 +69,7 @@ A node will then start in the background with Docker.
 
 To check the logs inside Docker, run `docker logs --follow nearcore`.
 
-![text-alt](assets/docker-logs.png)
+![text-alt](/img/docker-logs.png)
 
 
 | Legend   |                                                            |

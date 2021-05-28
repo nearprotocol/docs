@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Guide to Cross Contract Calls · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Introduction" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Guide to Cross Contract Calls · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Introduction" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a>
+              </li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>AssemblyScript</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">General</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/create-transactions">Create a
+                        Transaction</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/ledger">Using a Ledger</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/figment">Figment Tutorials</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Front-End</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/front-end/naj-examples">API
+                        Examples</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/front-end/naj-workshop">API
+                        Workshop</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Smart Contracts</h3>
+                  <ul class="">
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">AssemblyScript</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/tutorials/contracts/as-workshop">AssemblyScript Workshop</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/tutorials/contracts/token">Issue a
+                            Token</a></li>
+                        <li class="navListItem navListItemActive"><a class="navItem"
+                            href="/docs/tutorials/contracts/cross-contract-calls">Cross Contract Calls</a></li>
+                      </ul>
+                    </div>
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">Rust</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem" href="/docs/tutorials/contracts/intro-to-rust">Intro
+                            to Rust</a></li>
+                      </ul>
+                    </div>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Rainbow Bridge</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/tutorials/rainbow-bridge-frontend-mainnet">Using Mainnet Frontend</a></li>
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/tutorials/rainbow-bridge-frontend-testnet">Using Testnet Frontend</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Videos</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/accounts-keys">Accounts &amp; keys</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/contract-reviews">Contract Reviews</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/live-app-review">Application
+                        Reviews</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/collections-u128-etc">Misc</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/tutorials/contracts/cross-contract-calls.md"
+                target="_blank" rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Guide to Cross Contract Calls</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Introduction</h2>
+                  <p>At some point you might want to call functions on existing contracts. This is called a <em>cross
+                      contract call</em>. There are plenty of reasons to do this:</p>
+                  <ul>
+                    <li>You want to leverage a code library that others have written and released</li>
+                    <li>You want your app to integrate with other contracts that have some transferable state (For
+                      instance, a game that has transferable inventory)</li>
+                    <li>You want to build a bot that interacts with existing contracts in some way</li>
+                  </ul>
+                  <p>Cross contract calls are really similar to calling an external API in the web 2.0 context.</p>
+                  <p>In this tutorial we will build a very simple example to get you up and running with cross contract
+                    calls.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Description</h2>
+                  <p>We're going to create two simple contracts:</p>
+                  <ul>
+                    <li><code>Calculator</code> this contract will have the calculation that we want to write for anyone
+                      to call</li>
+                    <li><code>Calculator Caller</code> this contract (no surprise) will call the calculation available
+                      in the other contract</li>
+                  </ul>
+                  <p>For this example, we'll only implement the <code>add</code> functionality, but already we've got a
+                    problem! The accounting department at Super Evil Mega Corp sent all these numbers as strings. To
+                    make things worse, we don't know how long these strings are going to be. Why this is a problem: the
+                    largest integer that JavaScript can deal with is <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER">9007199254740991</a>.
+                    To help out everyone who wants to add long numbers together, we're going to deploy a contract that
+                    people can incorporate into their own calculators.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="lets-get-started"></a><a href="#lets-get-started"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Let's get started!</h3>
+                  <h2><a class="anchor" aria-hidden="true"
+                      id="step-1---create-a-new-token-contract-project-in-gitpod"></a><a
+                      href="#step-1---create-a-new-token-contract-project-in-gitpod" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 1 - Create a new Token Contract Project in Gitpod</h2>
+                  <blockquote>
+                    <p>In a new browser tab or window</p>
+                    <ul>
+                      <li>Open a new Token Contract Project in <a
+                          href="https://gitpod.io/#https://github.com/near-examples/token-contract-as">Gitpod</a></li>
+                    </ul>
+                  </blockquote>
+                  <p>When this opens in GitPod, the code will generate a unique NEAR account for this project and build
+                    then deploy the template files. You can take a look at what we're starting with by clicking
+                    &quot;Open Browser&quot; to see the token example running.</p>
+                  <p>This sample project has a token smart contract and also some JavaScript tests that invoke smart
+                    contract functions. You can try running these tests right away to see the code interacting with the
+                    blockchain.</p>
+                  <blockquote>
+                    <p>In Gitpod</p>
+                    <ul>
+                      <li>click <strong>Terminal</strong> &gt;&gt; <strong>New Terminal</strong></li>
+                    </ul>
+                    <p>In the new tab that opens at the bottom of Gitpod</p>
+                    <ul>
+                      <li>type <code>yarn jest</code> in the command prompt</li>
+                    </ul>
+                  </blockquote>
+                  <p>Once finished, the tests running in your terminal will appear like this:</p>
+                  <p><img src="/img/default-token-contract-test.png" alt="Default Token Contract Test "></p />
+                  <p>Note that <code>test-account-XXXXXXXXX_tTIMESTAMP-XXXXXXX</code> here is an automatically generated
+                    NEAR account for this particular project. Don't be distracted by these details, just compare the
+                    developer log output with the statements in the file <code>src/test.js</code>.</p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>We are not going to keep any of the code from this template. It's just there as a starting point.
+                    </p>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="step-2---write-the-calculator-contract"></a><a
+                      href="#step-2---write-the-calculator-contract" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 2 - Write the <code>Calculator</code> contract</h2>
+                  <p>We're interested in writing only one function for this example. A function that takes in two
+                    strings <code>a</code> and <code>b</code> and returns the result of adding them together as a
+                    string.</p>
+                  <blockquote>
+                    <p>In the file <code>assembly/main.ts</code></p>
+                    <ul>
+                      <li>Replace the <strong>entire contents of the file</strong> with the code below <br />
+                        <em>(note: this code implements addition of two large numbers as we do on paper)</em>
+                      </li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { context, storage, logging } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLongNumbers</span>(<span class="hljs-params">a: <span class="hljs-built_in">string</span>, b: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-comment">// sends logs to the terminal of the contract placing call and the Near Explorer</span>
+  logging.log(<span class="hljs-string">"-------------------------------------------------------"</span>)
+  logging.log(<span class="hljs-string">'Contract Called : '</span> + context.contractName)
+  logging.log(<span class="hljs-string">'Contract Signer : '</span> + context.predecessor)
+  logging.log(<span class="hljs-string">"- - - - - - - - - - - - - - - - - - - - - - - - - - - -"</span>)
+  logging.log(<span class="hljs-string">"Caculating : "</span> + a + <span class="hljs-string">" + "</span> + b)
+  <span class="hljs-comment">// Similar to long addition by hand, we start with the least significant digits first</span>
+  <span class="hljs-keyword">const</span> aReversed = a.split(<span class="hljs-string">""</span>).reverse();
+  <span class="hljs-keyword">const</span> bReversed = b.split(<span class="hljs-string">""</span>).reverse();
+
+  <span class="hljs-comment">// We initialize our resultant variable to be one more than the largest number's length</span>
+  <span class="hljs-keyword">const</span> maxLength = max(a.length, b.length);
+  <span class="hljs-keyword">let</span> resultArray = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">String</span> | <span class="hljs-literal">null</span>&gt;(maxLength + <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">let</span> result = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">let</span> carry = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Loop through each digit adding the value to the other number, if it exists</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; maxLength; ++i) {
+    <span class="hljs-keyword">let</span> aDigit = (i &lt; a.length) ? U32.parseInt(aReversed[i]) : <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> bDigit = (i &lt; b.length) ? U32.parseInt(bReversed[i]) : <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> digitSum = aDigit + bDigit + carry;
+
+    <span class="hljs-comment">// Keep track of the carry amount</span>
+    <span class="hljs-keyword">if</span> (digitSum &gt;= <span class="hljs-number">10</span>) {
+      carry = <span class="hljs-number">1</span>;
+      digitSum -= <span class="hljs-number">10</span>;
+    } <span class="hljs-keyword">else</span> {
+      carry = <span class="hljs-number">0</span>;
+    }
+
+    resultArray[i] = digitSum.toString();
+  }
+
+  <span class="hljs-comment">// If the final addition has a carry, add it to the extra slot we initialized for it</span>
+  <span class="hljs-keyword">if</span> (carry &gt; <span class="hljs-number">0</span>) {
+    resultArray[maxLength] = carry.toString();
+  }
+
+  <span class="hljs-comment">// Reverse again and combine the values for the final result</span>
+  <span class="hljs-keyword">let</span> reversedResultArray = resultArray.reverse();
+
+  <span class="hljs-comment">// More terminal / Near Explorer logs</span>
+  logging.log(<span class="hljs-string">"&gt;&gt;&gt; RESULT : "</span> + reversedResultArray.join(<span class="hljs-string">""</span>))
+  logging.log(<span class="hljs-string">"-------------------------------------------------------"</span>)
+  <span class="hljs-keyword">return</span> reversedResultArray.join(<span class="hljs-string">""</span>);
+}
+
+</code></pre>
+                  <p>Now that we've modified files in our assembly folder we will need to re-deploy the contract.</p>
+                  <blockquote>
+                    <p>In your terminal windows</p>
+                    <ul>
+                      <li>Select the first terminal tab on the left that has localhost server running</li>
+                      <li>Hold <code>CTRL + C</code> to stop the server and display the command prompt</li>
+                      <li>Type <code>yarn dev</code> to rebuild and redeploy your modified contract</li>
+                    </ul>
+                  </blockquote>
+                  <p>That's it for our <code>Calculator</code> for now.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="step-3---write-some-tests-for-the-contract"></a><a
+                      href="#step-3---write-some-tests-for-the-contract" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 3 - Write some tests for the contract</h2>
+                  <p>It's a good habit to test code as soon as we've finished writing it, so that's exactly what we're
+                    going to do.</p>
+                  <blockquote>
+                    <p>In the file <code>src/test.js</code></p>
+                    <ul>
+                      <li>Replace <strong>everything in the file</strong> with the code below</li>
+                    </ul>
+                    <p>After that is complete</p>
+                    <ul>
+                      <li>Click <strong>File</strong> &gt;&gt; <strong>Save All</strong> to save your changes</li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-js">describe(<span class="hljs-string">"Calculator"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> near;
+  <span class="hljs-keyword">let</span> contract;
+  <span class="hljs-keyword">let</span> alice;
+  <span class="hljs-keyword">let</span> bob = <span class="hljs-string">"bob.near"</span>;
+  <span class="hljs-keyword">let</span> eve = <span class="hljs-string">"eve.near"</span>;
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = <span class="hljs-number">10000</span>;
+
+  <span class="hljs-comment">// Common setup below</span>
+  beforeAll(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    near = <span class="hljs-keyword">await</span> nearAPI.connect(nearConfig);
+    accountId = nearConfig.contractName;
+    contract = <span class="hljs-keyword">await</span> near.loadContract(accountId, {
+      <span class="hljs-comment">// View methods are read only. They don't modify the state, but usually return some value.</span>
+      <span class="hljs-attr">viewMethods</span>: [],
+      <span class="hljs-comment">// Change methods can modify the state. But you don't receive the returned value when called.</span>
+      <span class="hljs-attr">changeMethods</span>: [<span class="hljs-string">"addLongNumbers"</span>],
+      <span class="hljs-attr">sender</span>: nearConfig.contractName
+    });
+    <span class="hljs-built_in">window</span>.near = near;
+  });
+
+  <span class="hljs-comment">// Multiple tests can be described below. Search Jasmine JS for documentation.</span>
+  describe(<span class="hljs-string">"simple"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    beforeAll(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// There can be some common setup for each test.</span>
+    });
+
+    it(<span class="hljs-string">"adds one digit"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"3"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"4"</span>);
+    });
+
+    it(<span class="hljs-string">"should work with first string longer"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"10"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"3"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"13"</span>);
+    });
+
+    it(<span class="hljs-string">"should work with second string longer"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"4"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"15"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"19"</span>);
+    });
+
+    it(<span class="hljs-string">"should work with carry"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"19"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"22"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"41"</span>);
+    });
+
+    it(<span class="hljs-string">"should work when result is one digit longer than largest input"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"91"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"22"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"113"</span>);
+    });
+
+    it(<span class="hljs-string">"should work with really large input"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        <span class="hljs-attr">a</span>: <span class="hljs-string">"29348756231984613809465238956138947136497182364018246710289467102946710289467198046"</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-string">"1"</span>
+      };
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.addLongNumbers(params);
+      expect(result).toBe(<span class="hljs-string">"29348756231984613809465238956138947136497182364018246710289467102946710289467198047"</span>);
+    });
+  });
+});
+
+</code></pre>
+                  <blockquote>
+                    <p>Now lets run your new tests!</p>
+                    <ul>
+                      <li>type <code>yarn jest</code> in the command prompt</li>
+                    </ul>
+                  </blockquote>
+                  <p>Once finished, the completed test in your terminal will appear like this:</p>
+                  <p><img src="/img/jest-tests-for-calculator-contract.png"
+                      alt="Jest tests running for Calculator Contract"></p />
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    Just make a mental note that the in the logs, "Contract Called" and the "Contract Signer" are the
+                    same. This will be important later.
+                  </blockquote>
+                  <p>Normally, we would create a UI at this point, but since we're calling this from elsewhere, let's
+                    move on the the second contract.</p>
+                  <h2><a class="anchor" aria-hidden="true"
+                      id="step-4---create-a-new-contract-for-calculator-caller"></a><a
+                      href="#step-4---create-a-new-contract-for-calculator-caller" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 4 - Create a new contract for <code>Calculator Caller</code></h2>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>Keep the tab open that you've been working on, you're going to need the ID of the contract you
+                      just created later.</p>
+                    <p>The rest of the ID is the prefix &quot;dev-&quot; to be something like
+                      <code>dev-159372XXXX-XXXXXXX</code>. In fact the ID of the contract is just the NEAR account
+                      created for the contract by Gitpod automatically.
+                    </p>
+                    <p>You can read more about <a href="/docs/concepts/account">accounts on the NEAR platform here</a>.
+                    </p>
+                  </blockquote>
+                  <p>So let's make another smart contract. Following the same steps as before in a <em>new</em> tab or
+                    window...</p>
+                  <blockquote>
+                    <p>In a new browser tab or window</p>
+                    <ul>
+                      <li>Open another new Token Contract Project in <a
+                          href="https://gitpod.io/#https://github.com/near-examples/token-contract-as">Gitpod</a></li>
+                      <li>You should see a <strong>Create Fresh Workspace</strong> box at the top of your window</li>
+                      <li>click <strong>Create</strong> in the upper right hand corner</li>
+                    </ul>
+                  </blockquote>
+                  <p><img src="/img/gitpod-create-fresh-workspace.png" alt="Create fresh workspace"></p />
+                  <p>We're doing this because we need to create an entirely separate contract deployed at a different
+                    address to demonstrate the capabilities of cross contract calls.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="step-5---write-the-calculator-caller-code"></a><a
+                      href="#step-5---write-the-calculator-caller-code" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 5 - Write the <code>Calculator Caller</code> code</h2>
+                  <p>We want to implement code that actually passes the numbers over to the contract we're calling. Here
+                    we're going to do this by creating a single <code>callAddNumbers</code> function and add the piping
+                    which allows us to make this function work.</p>
+                  <p>We're going to need a few things to make this happen:</p>
+                  <ul>
+                    <li>
+                      <p>To send two pieces of data (the two numbers we want to add) from one contract to another, we'll
+                        create a new <em>model</em> for our contract to use. <code>AddArgs</code> will be a class that
+                        we use to encode the arguments we're sending.</p>
+                    </li>
+                    <li>
+                      <p>Cross contract calls are always asynchronous so, to capture the return value from the other
+                        contract, we'll take advantage of the native <code>ContractPromise</code> class from
+                        <code>near-sdk-as</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>To <code>CalculatorAPI</code>, a class we'll create that will send the numbers we want to add
+                        to the other contract through an <code>add</code> method</p>
+                    </li>
+                    <li>
+                      <p><code>callAddNumbers</code>, function which will call the <code>CalculatorAPI</code> method we
+                        create to add the numbers</p>
+                    </li>
+                  </ul>
+                  <p>Let's start by creating the model first.</p>
+                  <blockquote>
+                    <p>Create a new file <code>assembly/model.ts</code></p>
+                    <ul>
+                      <li>Click on the <code>assembly</code> folder on the left hand side in your explorer</li>
+                      <li>Then click <strong>File</strong> &gt;&gt; <strong>New File</strong></li>
+                      <li>Enter <code>model.ts</code> and then click <strong>OK</strong></li>
+                      <li><strong>Copy/Paste</strong> the code below into this new file</li>
+                      <li>Click <strong>File</strong> &gt;&gt; <strong>Save</strong></li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-meta">@nearBindgen</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AddArgs {
+  a: <span class="hljs-built_in">string</span>;
+  b: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+                  <p>This will allow us to encode arguments to send between contracts as a single value.</p>
+                  <p>Next we'll create the API that we can use to call the contract we've previously deployed.</p>
+                  <blockquote>
+                    <p>In the file <code>assembly/main.ts</code></p>
+                    <ul>
+                      <li>Replace the <strong>entire contents of the file</strong> with the following code</li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { context, storage, logging, ContractPromise } <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+<span class="hljs-keyword">import</span> { AddArgs } <span class="hljs-keyword">from</span> <span class="hljs-string">"./model"</span>;
+</code></pre>
+                  <p>Notice that we're importing <code>AddArgs</code> from the model we just created using the syntax
+                    <code>&quot;./model&quot;</code> AND we're importing <code>ContractPromise</code> from
+                    <code>near-sdk-as</code>.
+                  </p>
+                  <p>Here, we're creating a single method <code>add</code> that takes the strings we want to add and
+                    returns a <code>ContractPromise</code>.</p>
+                  <p>We're also using the <code>AddArgs</code> model we created to package the strings we want to send
+                    to the other contract. When we call <code>args.encode()</code> it's a lot like something like
+                    <code>JSON.stringify(args)</code> to allow us to send this data.
+                  </p>
+                  <blockquote>
+                    <p>In the file <code>assembly/main.ts</code></p>
+                    <ul>
+                      <li>Append the following code to the file</li>
+                    </ul>
+                    <p><em>In order to create this <code>ContractPromise</code>, we need to know:</em></p>
+                    <ul>
+                      <li>The ID of the contract that we created before. <strong>You'll need to replace this with your
+                          own.</strong></li>
+                      <li>Whatever function we're trying to call on the <code>Calculator</code> contract.</li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> OTHER_CONTRACT = <span class="hljs-string">"dev-REPLACE_THIS_IDENTIFIER"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CalculatorApi {
+  add(a: <span class="hljs-built_in">string</span>, b: <span class="hljs-built_in">string</span>): ContractPromise {
+    <span class="hljs-keyword">let</span> args: AddArgs = { a, b };
+    <span class="hljs-keyword">let</span> promise = ContractPromise.create(OTHER_CONTRACT, <span class="hljs-string">"addLongNumbers"</span>, args.encode(), <span class="hljs-number">100000000000000</span>);
+    logging.log(<span class="hljs-string">"OTHER_CONTRACT: "</span> + <span class="hljs-string">"("</span> + OTHER_CONTRACT + <span class="hljs-string">")"</span>)
+    <span class="hljs-keyword">return</span> promise;
+  }
+}
+
+</code></pre>
+                  <p><em>(For more info on making cross-contract calls using <code>ContractPromise</code>, check out <a
+                        href="https://near.github.io/near-sdk-as/classes/_sdk_core_assembly_contract_.contractpromise.html">ContractPromise</a>
+                      and <a
+                        href="https://near.github.io/near-sdk-as/classes/_sdk_core_assembly_contract_.contractpromiseresult.html">ContractPromiseResult</a></em>
+                  </p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p><strong>As a reminder</strong>, using the previous contract (the tab you kept open earlier), find
+                      the ID of the contract. You will use this to replace <code>dev-REPLACE_THIS_IDENTIFIER</code>.</p>
+                    <p>You can find your contract ID stored in <code>neardev/dev-account.env</code>. In addition, you
+                      will see your contract ID displayed in the first terminal window with the running server. Towards
+                      the bottom there will be a line that stats: &quot;Done deploying to
+                      dev-1594333XXXXXX-XXXXXXX&quot;.</p>
+                  </blockquote>
+                  <p>Next, we're going to use the <code>CalculatorApi</code> we just created.</p>
+                  <blockquote>
+                    <p>In the file <code>assembly/main.ts</code></p>
+                    <ul>
+                      <li>Append the following code to the file</li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">a: <span class="hljs-built_in">string</span> , b: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">void</span> </span>{
+  <span class="hljs-keyword">let</span> calculator = <span class="hljs-keyword">new</span> CalculatorApi();
+  <span class="hljs-keyword">let</span> promise = calculator.add(a, b);
+  promise.returnAsResult();
+}
+</code></pre>
+                  <p>You may notice this function returns <code>void</code>, which is a bit confusing because the
+                    contract is returning a promise. This is because it's calling a function elsewhere and the compiler
+                    thinks it's void.</p>
+                  <p>(In future releases this will be changed.)</p>
+                  <blockquote>
+                    <p>Now save your changes and redeploy the contract</p>
+                    <ul>
+                      <li>Click <strong>File</strong> &gt;&gt; <strong>Save</strong></li>
+                    </ul>
+                    <p>Then navigate to your terminal windows</p>
+                    <ul>
+                      <li>Select the first terminal tab on the left that has localhost server running</li>
+                      <li>Hold <code>CTRL + C</code> to stop the server and display the command prompt</li>
+                      <li>Type <code>yarn dev</code> to rebuild and redeploy your modified contract</li>
+                    </ul>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="step-6---more-tests"></a><a href="#step-6---more-tests"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Step 6 - More Tests!</h2>
+                  <p>Let's make sure things are working as expected.</p>
+                  <blockquote>
+                    <p>In the file <code>src/test.js</code></p>
+                    <ul>
+                      <li>Replace the <strong>entire contents of the file</strong> with the code below</li>
+                    </ul>
+                  </blockquote>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> getConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config'</span>);
+<span class="hljs-keyword">let</span> nearConfig = getConfig(<span class="hljs-string">"development"</span>);
+<span class="hljs-built_in">require</span>(<span class="hljs-string">'dotenv'</span>).config({ path: <span class="hljs-string">'/workspace/token-contract-as/neardev/dev-account.env'</span> })
+
+describe(<span class="hljs-string">"CalculatorAPI"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> near;
+  <span class="hljs-keyword">let</span> contract;
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = <span class="hljs-number">10000</span>;
+
+  <span class="hljs-comment">// Common setup below</span>
+  beforeAll(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    near = <span class="hljs-keyword">await</span> nearAPI.connect({
+    deps: {
+     keyStore: <span class="hljs-keyword">new</span> nearAPI.keyStores.UnencryptedFileSystemKeyStore(<span class="hljs-string">'../../../home/gitpod/.near-credentials'</span>)
+    },
+    ...nearConfig
+  })
+    accountId = process.env.CONTRACT_NAME;
+    contract = <span class="hljs-keyword">await</span> near.loadContract(accountId, {
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> This configuration only needed while NEAR is still in development</span>
+    <span class="hljs-comment">// View methods are read only. They don't modify the state, but usually return some value.</span>
+    viewMethods: [],
+    <span class="hljs-comment">// Change methods can modify the state. But you don't receive the returned value when called.</span>
+    changeMethods: [<span class="hljs-string">"calculate"</span>, <span class="hljs-string">"addLongNumbers"</span>],
+    sender: process.env.CONTRACT_NAME
+    });
+  });
+
+  <span class="hljs-comment">// Multiple tests can be described below. Search Jasmine JS for documentation.</span>
+  describe(<span class="hljs-string">"simple"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    beforeAll(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// There can be some common setup for each test.</span>
+    });
+
+    it(<span class="hljs-string">"add one digit"</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> params = {
+        a: <span class="hljs-string">"1"</span>,
+        b: <span class="hljs-string">"99"</span>
+      };
+
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> contract.calculate(params);
+      expect(result).toBe(<span class="hljs-string">"100"</span>);
+    });
+  });
+});
+
+</code></pre>
+                  <blockquote>
+                    <p>After that is complete</p>
+                    <ul>
+                      <li>Click <strong>File</strong> &gt;&gt; <strong>Save All</strong> to save your changes</li>
+                    </ul>
+                  </blockquote>
+                  <p>Now let's test it out!</p>
+                  <blockquote>
+                    <p>In Gitpod</p>
+                    <ul>
+                      <li>click <strong>Terminal</strong> &gt;&gt; <strong>New Terminal</strong></li>
+                    </ul>
+                    <p>In the new tab that opens at the bottom of Gitpod</p>
+                    <ul>
+                      <li>type <code>yarn jest</code> in the command prompt</li>
+                    </ul>
+                  </blockquote>
+                  <p>You should see a successful test that looks something like this:</p>
+                  <p><img src="/img/cross-contract-call-jest-test.png" alt="Cross contract call Jest test">
+                  </p />
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>Remember when we took a note that the 'Contract Called' and the 'Contract Signer' were the same
+                      in the test environment? Notice that they are different now! Can you figure out what this means?
+                    </p>
+                  </blockquote>
+                  <p>And we're done!</p>
+                  <p>You can also view the details of your account &amp; transactions by using the <a
+                      href="https://explorer.testnet.near.org/">Near Explorer</a>.</p>
+                  <p>This is a simple example of a contract that calls another contract, but this opens up a lot of
+                    opportunities.</p>
+                  <p>You're ready to cross as many contracts as you want! Happy coding! 🚀</p>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/23/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/tutorials/contracts/token"><span
+                class="arrow-prev">← </span><span>Issue a Token</span></a><a class="docs-next button"
+              href="/docs/tutorials/contracts/intro-to-rust"><span>Intro to Rust</span><span class="arrow-next">
+                →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#description">Description</a>
+            <ul class="toc-headings">
+              <li><a href="#lets-get-started">Let's get started!</a></li>
+            </ul>
+          </li>
+          <li><a href="#step-1---create-a-new-token-contract-project-in-gitpod">Step 1 - Create a new Token Contract
+              Project in Gitpod</a></li>
+          <li><a href="#step-2---write-the-calculator-contract">Step 2 - Write the <code>Calculator</code> contract</a>
+          </li>
+          <li><a href="#step-3---write-some-tests-for-the-contract">Step 3 - Write some tests for the contract</a></li>
+          <li><a href="#step-4---create-a-new-contract-for-calculator-caller">Step 4 - Create a new contract for
+              <code>Calculator Caller</code></a></li>
+          <li><a href="#step-5---write-the-calculator-caller-code">Step 5 - Write the <code>Calculator Caller</code>
+              code</a></li>
+          <li><a href="#step-6---more-tests">Step 6 - More Tests!</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

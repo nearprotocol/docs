@@ -1,0 +1,22 @@
+{
+  "unversionedId": "validator/staking-kr",
+  "id": "validator/staking-kr",
+  "isDocsHomePage": false,
+  "title": "검증인 노드운영",
+  "description": "공식 배타넷에 스테이킹하기",
+  "source": "@site/../docs/validator/staking-kr.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/staking-kr",
+  "permalink": "/docs/validator/staking-kr",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-kr.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Running the Node",
+  "frontMatter": {
+    "id": "staking-kr",
+    "title": "검증인 노드운영",
+    "sidebar_label": "Running the Node"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/basics/hackathon-startup-guide",
+  "id": "develop/basics/hackathon-startup-guide",
+  "isDocsHomePage": false,
+  "title": "Hackathon Startup Guide",
+  "description": "Welcome to hacking on NEAR! We're glad you're here. Let's jump right in:",
+  "source": "@site/../docs/develop/basics/hackathon-guide.md",
+  "sourceDirName": "develop/basics",
+  "slug": "/develop/basics/hackathon-startup-guide",
+  "permalink": "/docs/develop/basics/hackathon-startup-guide",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/hackathon-guide.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Hackathon Guide",
+  "frontMatter": {
+    "id": "hackathon-startup-guide",
+    "title": "Hackathon Startup Guide",
+    "sidebar_label": "Hackathon Guide"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Creating a NEAR Account",
+    "permalink": "/docs/develop/basics/create-account"
+  },
+  "next": {
+    "title": "front-end Introduction",
+    "permalink": "/docs/develop/front-end/introduction"
+  }
+}

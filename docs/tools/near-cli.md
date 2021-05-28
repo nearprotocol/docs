@@ -97,14 +97,14 @@ npm install -g near-cli
 ```
 
 <blockquote class="info">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 Copy/pasting can be a bit odd using `WSL`.
 
 - "Quick Edit Mode" will allow right-click pasting.
 - Depending on your version there may be another checkbox allowing `Ctrl` + `V` pasting as well.
 
-![Windows option called Quick Edit allow right-click pasting in WSL](/docs/assets/windows-quickedit-mode.png)
+![Windows option called Quick Edit allow right-click pasting in WSL](/img/windows-quickedit-mode.png)
 
 </blockquote>
 
@@ -114,7 +114,7 @@ Copy/pasting can be a bit odd using `WSL`.
 
 > If a `near-cli` update is available, you will be notified in the terminal after running any command. _(see example below)_
 
-![NEAR CLI detects a new version](/docs/assets/update_near-cli.png)
+![NEAR CLI detects a new version](/img/update_near-cli.png)
 
 - Follow the instructions to update by running:
 

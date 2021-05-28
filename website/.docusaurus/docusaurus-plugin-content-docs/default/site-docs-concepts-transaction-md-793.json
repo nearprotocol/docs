@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/transaction",
+  "id": "concepts/transaction",
+  "isDocsHomePage": false,
+  "title": "Transaction",
+  "description": "Overview",
+  "source": "@site/../docs/concepts/transaction.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/transaction",
+  "permalink": "/docs/concepts/transaction",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/transaction.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Transaction",
+  "frontMatter": {
+    "id": "transaction",
+    "title": "Transaction",
+    "sidebar_label": "Transaction"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "NEAR Networks",
+    "permalink": "/docs/concepts/networks"
+  },
+  "next": {
+    "title": "NEAR Protocol Specification",
+    "permalink": "/docs/concepts/architecture/specification"
+  }
+}

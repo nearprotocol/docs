@@ -1,6 +1,6 @@
 ---
 id: ledger
-title: Using a Ledger device w/ NEAR
+title: "Using a Ledger device w/ NEAR"
 sidebar_label: Using a Ledger
 ---
 
@@ -19,11 +19,11 @@ sidebar_label: Using a Ledger
 1. Open your Ledger Live app.
 2. Click on `Settings` > `Experimental features` > and turn on `Developer mode`
   
-![Ledger Developer mode](/docs/assets/ledger/ledger-developer-mode.jpg)
+![Ledger Developer mode](/img/ledger/ledger-developer-mode.jpg)
 
 1. In the left hand column select `Manager` > search for `NEAR` > click on `Install`
 
-![Ledger Developer mode](/docs/assets/ledger/ledger-install-near-app.jpg)
+![Ledger Developer mode](/img/ledger/ledger-install-near-app.jpg)
 
 ## Account Creation w/ Ledger
 This two minute video walkthrough will guide you on the account creation process and viewing account information using a Ledger device.

@@ -1,0 +1,363 @@
+{
+  "/-deb": {
+    "component": "component---site-src-pages-index-jsc-4-f-f99",
+    "config": "config---5-e-9-4f3"
+  },
+  "/__docusaurus/debug-3d6": {
+    "component": "component---theme-debug-config-23-a-2ff"
+  },
+  "/__docusaurus/debug/config-914": {
+    "component": "component---theme-debug-config-23-a-2ff"
+  },
+  "/__docusaurus/debug/content-c28": {
+    "component": "component---theme-debug-contentba-8-ce7",
+    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+  },
+  "/__docusaurus/debug/globalData-3cf": {
+    "component": "component---theme-debug-global-dataede-0fa"
+  },
+  "/__docusaurus/debug/metadata-31b": {
+    "component": "component---theme-debug-site-metadata-68-e-3d4"
+  },
+  "/__docusaurus/debug/registry-0da": {
+    "component": "component---theme-debug-registry-679-501"
+  },
+  "/__docusaurus/debug/routes-244": {
+    "component": "component---theme-debug-routes-946-699"
+  },
+  "/search-070": {
+    "component": "component---home-ryan-code-near-docs-website-node-modules-docusaurus-theme-search-algolia-src-theme-search-page-index-js-5-cc-018"
+  },
+  "/docs-2d6": {
+    "component": "component---theme-doc-page-1-be-9be",
+    "versionMetadata": "versionMetadata---docs-935-398"
+  },
+  "/docs/api/naj-cookbook-5e5": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-api-naj-cookbookd-91-935"
+  },
+  "/docs/api/naj-overview-49b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-api-naj-overview-536-c65"
+  },
+  "/docs/api/naj-quick-reference-e03": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-api-naj-quick-reference-99-d-e16"
+  },
+  "/docs/api/near-api-rest-server-5e6": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-api-near-api-rest-server-992-d86"
+  },
+  "/docs/api/rpc-4bd": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-api-rpcdff-b6c"
+  },
+  "/docs/community/community-channels-8e4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-community-channelsaee-d98"
+  },
+  "/docs/community/community-faq-9cc": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-community-faq-008-5a2"
+  },
+  "/docs/community/contribute/bounties-10c": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-bountiesf-58-f75"
+  },
+  "/docs/community/contribute/contribute-faq-b81": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-contribute-faq-48-a-d97"
+  },
+  "/docs/community/contribute/contribute-nearcore-2f9": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-contribute-nearcorea-24-706"
+  },
+  "/docs/community/contribute/contribute-overview-5e5": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-contribute-overviewc-74-d87"
+  },
+  "/docs/community/contribute/how-to-contribute-bf9": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contribute-how-to-contributef-0-f-d4f"
+  },
+  "/docs/concepts/account-bc4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-accountb-42-9d6"
+  },
+  "/docs/concepts/architecture/papers-08d": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-architecture-papers-470-d14"
+  },
+  "/docs/concepts/architecture/specification-098": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-architecture-specification-311-468"
+  },
+  "/docs/concepts/data-storage-e5f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-data-storage-8-b-4-b1f"
+  },
+  "/docs/concepts/epoch-120": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-epochd-74-6ff"
+  },
+  "/docs/concepts/gas-901": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-gasd-86-aa7"
+  },
+  "/docs/concepts/indexer-6e9": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-indexer-062-3af"
+  },
+  "/docs/concepts/networks-9f7": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-networks-2-b-9-ec5"
+  },
+  "/docs/concepts/new-to-near-3d0": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-new-to-nearf-38-6fd"
+  },
+  "/docs/concepts/overview-1d5": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-overview-94-e-d42"
+  },
+  "/docs/concepts/storage-staking-37c": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-storage-staking-8-d-2-38f"
+  },
+  "/docs/concepts/transaction-a80": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-concepts-transaction-793-283"
+  },
+  "/docs/develop/basics/create-account-73b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-basics-create-account-739-2ca"
+  },
+  "/docs/develop/basics/getting-started-916": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-basics-getting-started-687-cac"
+  },
+  "/docs/develop/basics/hackathon-startup-guide-fbe": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-basics-hackathon-startup-guide-525-186"
+  },
+  "/docs/develop/contracts/as/intro-7d0": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-as-intro-43-f-daa"
+  },
+  "/docs/develop/contracts/as/near-sdk-as-165": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-as-near-sdk-as-112-518"
+  },
+  "/docs/develop/contracts/as/testing-as-contracts-504": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-as-testing-as-contracts-117-3d2"
+  },
+  "/docs/develop/contracts/overview-8f6": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-overview-6-ec-c69"
+  },
+  "/docs/develop/contracts/rust/intro-5cb": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-rust-intro-7-c-3-2ff"
+  },
+  "/docs/develop/contracts/rust/near-sdk-rs-429": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-rust-near-sdk-rs-6-a-7-85b"
+  },
+  "/docs/develop/contracts/rust/testing-rust-contracts-e83": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-contracts-rust-testing-rust-contractsfc-6-fdb"
+  },
+  "/docs/develop/front-end/calling-smart-contracts-a63": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-front-end-calling-smart-contractsb-3-a-8ef"
+  },
+  "/docs/develop/front-end/introduction-ff5": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-front-end-introduction-7-e-4-e8d"
+  },
+  "/docs/develop/front-end/near-api-js-30b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-front-end-near-api-js-92-b-c3e"
+  },
+  "/docs/develop/node/compile-and-run-a-node-7d0": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-node-compile-and-run-a-nodee-49-911"
+  },
+  "/docs/develop/node/running-a-node-4b0": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-node-running-a-nodea-95-d08"
+  },
+  "/docs/develop/node/running-a-node-windows-bad": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-develop-node-running-a-node-windowsbfc-8ae"
+  },
+  "/docs/faq/developer-faq-148": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-faq-developer-faq-4-a-3-532"
+  },
+  "/docs/faq/economics-faq-c91": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-faq-economics-faq-303-009"
+  },
+  "/docs/faq/general-faq-5a8": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-faq-general-faqda-2-b6e"
+  },
+  "/docs/faq/naj-faq-750": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-faq-naj-faqaf-6-c20"
+  },
+  "/docs/faq/technical-faq-8c4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-faq-technical-faq-34-b-413"
+  },
+  "/docs/roles/integrator/errors/error-implementation-55b": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-errors-error-implementation-42-f-6b4"
+  },
+  "/docs/roles/integrator/errors/introduction-17f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-errors-introduction-2-d-6-465"
+  },
+  "/docs/roles/integrator/exchange-integration-c96": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-exchange-integratione-8-a-49e"
+  },
+  "/docs/roles/integrator/faq-767": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-faqf-82-d5a"
+  },
+  "/docs/roles/integrator/implicit-accounts-07e": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-implicit-accounts-8-cb-973"
+  },
+  "/docs/roles/integrator/token-loss-b56": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-integrator-token-losse-1-e-c7d"
+  },
+  "/docs/roles/validator/hardware-e22": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-roles-validator-hardware-833-765"
+  },
+  "/docs/tokens/lockup-ffd": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tokens-lockup-798-db3"
+  },
+  "/docs/tokens/token-custody-4b1": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tokens-token-custodya-8-e-730"
+  },
+  "/docs/tools/near-cli-7b7": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tools-near-cli-7-a-5-930"
+  },
+  "/docs/tools/near-explorer-d7e": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tools-near-explorerae-8-661"
+  },
+  "/docs/tools/near-indexer-3fe": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tools-near-indexer-610-43f"
+  },
+  "/docs/tools/near-wallet-2ee": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tools-near-wallet-95-c-b67"
+  },
+  "/docs/tutorials/contracts/as-workshop-692": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-contracts-as-workshop-370-a2a"
+  },
+  "/docs/tutorials/contracts/cross-contract-calls-a1f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-contracts-cross-contract-calls-71-d-93d"
+  },
+  "/docs/tutorials/contracts/intro-to-rust-083": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-contracts-intro-to-rust-903-496"
+  },
+  "/docs/tutorials/contracts/token-92f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-contracts-tokenb-24-a06"
+  },
+  "/docs/tutorials/create-transactions-795": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-create-transactionsc-0-a-243"
+  },
+  "/docs/tutorials/figment-5db": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-figment-90-c-0d2"
+  },
+  "/docs/tutorials/front-end/naj-examples-a6f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-front-end-naj-examplesaa-4-3fd"
+  },
+  "/docs/tutorials/front-end/naj-workshop-d5f": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-front-end-naj-workshopca-5-02e"
+  },
+  "/docs/tutorials/ledger-368": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-ledger-6-b-2-8c5"
+  },
+  "/docs/tutorials/rainbow-bridge-frontend-mainnet-411": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-rainbow-bridge-frontend-mainnet-350-547"
+  },
+  "/docs/tutorials/rainbow-bridge-frontend-testnet-1e9": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-tutorials-rainbow-bridge-frontend-testnete-9-c-dd4"
+  },
+  "/docs/validator/delegation-0b4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-delegation-0-df-722"
+  },
+  "/docs/validator/deploy-on-mainnet-688": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-deploy-on-mainnet-56-b-ea9"
+  },
+  "/docs/validator/economics-380": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-economicsbd-7-071"
+  },
+  "/docs/validator/keys-303": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-keysf-50-3f5"
+  },
+  "/docs/validator/maintenance-e57": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-maintenancebe-5-18c"
+  },
+  "/docs/validator/staking-bcc": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-stakingb-77-a37"
+  },
+  "/docs/validator/staking-faq-9c4": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-staking-faqcb-5-030"
+  },
+  "/docs/validator/staking-kr-655": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-staking-kr-2-f-3-63f"
+  },
+  "/docs/validator/staking-overview-e7a": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-validator-staking-overview-535-d13"
+  },
+  "/docs/videos/accounts-keys-b13": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-videos-accounts-keysa-69-dbe"
+  },
+  "/docs/videos/collections-u128-etc-e98": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-videos-collections-u-128-etc-5-f-0-0f4"
+  },
+  "/docs/videos/contract-reviews-9d1": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-videos-contract-reviewsa-4-d-a84"
+  },
+  "/docs/videos/live-app-review-ffc": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-videos-live-app-review-92-f-7cb"
+  }
+}

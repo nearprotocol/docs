@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/rainbow-bridge-frontend-testnet",
+  "id": "tutorials/rainbow-bridge-frontend-testnet",
+  "isDocsHomePage": false,
+  "title": "Experimenting with the Rainbow Bridge (TestNet)",
+  "description": "Step 1 - Create a MetaMask and NEAR Wallet account",
+  "source": "@site/../docs/tutorials/rainbow-frontend-dev-tutorial.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/rainbow-bridge-frontend-testnet",
+  "permalink": "/docs/tutorials/rainbow-bridge-frontend-testnet",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/rainbow-frontend-dev-tutorial.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Using Testnet Frontend",
+  "frontMatter": {
+    "id": "rainbow-bridge-frontend-testnet",
+    "title": "Experimenting with the Rainbow Bridge (TestNet)",
+    "sidebar_label": "Using Testnet Frontend"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Using the Rainbow Bridge (MainNet)",
+    "permalink": "/docs/tutorials/rainbow-bridge-frontend-mainnet"
+  },
+  "next": {
+    "title": "NEAR accounts and access keys",
+    "permalink": "/docs/videos/accounts-keys"
+  }
+}

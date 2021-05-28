@@ -1,0 +1,27 @@
+{
+  "unversionedId": "roles/integrator/faq",
+  "id": "roles/integrator/faq",
+  "isDocsHomePage": false,
+  "title": "Integrator FAQ",
+  "description": "Orientation",
+  "source": "@site/../docs/roles/integrator/faq.md",
+  "sourceDirName": "roles/integrator",
+  "slug": "/roles/integrator/faq",
+  "permalink": "/docs/roles/integrator/faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Integrator FAQ",
+  "frontMatter": {
+    "id": "faq",
+    "title": "Integrator FAQ",
+    "sidebar_label": "Integrator FAQ"
+  },
+  "sidebar": "integrate",
+  "previous": {
+    "title": "Token Loss",
+    "permalink": "/docs/roles/integrator/token-loss"
+  }
+}

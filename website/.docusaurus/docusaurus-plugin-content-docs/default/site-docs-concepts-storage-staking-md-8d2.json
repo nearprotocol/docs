@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/storage-staking",
+  "id": "concepts/storage-staking",
+  "isDocsHomePage": false,
+  "title": "Storage Staking",
+  "description": "When you deploy a smart contract to NEAR, you pay for the storage that this contract requires using a mechanism called storage staking.",
+  "source": "@site/../docs/concepts/storage-staking.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/storage-staking",
+  "permalink": "/docs/concepts/storage-staking",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/storage-staking.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Storage Staking",
+  "frontMatter": {
+    "id": "storage-staking",
+    "title": "Storage Staking",
+    "sidebar_label": "Storage Staking"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "Data Storage / Collections",
+    "permalink": "/docs/concepts/data-storage"
+  },
+  "next": {
+    "title": "Epoch",
+    "permalink": "/docs/concepts/epoch"
+  }
+}

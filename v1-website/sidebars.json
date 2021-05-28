@@ -1,0 +1,177 @@
+{
+  "concepts": {
+    "Overview": [
+      "concepts/new-to-near"
+    ],
+    "Basics": [
+      "concepts/account",
+      "concepts/data-storage",
+      "concepts/storage-staking",
+      "concepts/epoch",
+      "concepts/gas",
+      "concepts/indexer",
+      "concepts/networks",
+      "concepts/transaction"
+    ],
+    "Architecture": [
+      "concepts/architecture/specification",
+      "concepts/architecture/papers"
+    ],
+    "FAQ": [
+      "faq/general-faq",
+      "faq/technical-faq",
+      "faq/economics-faq"
+    ]
+  },
+  "develop": {
+    "Basics": [
+      "develop/basics/getting-started",
+      "develop/basics/create-account",
+      "develop/basics/hackathon-startup-guide"
+    ],
+    "Front-end": [
+      "develop/front-end/introduction",
+      "develop/front-end/near-api-js"
+    ],
+    "Smart Contracts": [
+      "develop/contracts/overview",
+      {
+        "type": "subcategory",
+        "label": "AssemblyScript",
+        "ids": [
+          "develop/contracts/as/intro",
+          "develop/contracts/as/near-sdk-as",
+          "develop/contracts/as/testing-as-contracts"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Rust",
+        "ids": [
+          "develop/contracts/rust/intro",
+          "develop/contracts/rust/near-sdk-rs",
+          "develop/contracts/rust/testing-rust-contracts"
+        ]
+      }
+    ],
+    "Running A Node": [
+      "develop/node/running-a-node",
+      "develop/node/running-a-node-windows",
+      "develop/node/compile-and-run-a-node"
+    ]
+  },
+  "tools": {
+    "Tools": [
+      "tools/near-cli",
+      "tools/near-explorer",
+      "tools/near-wallet",
+      "tools/near-indexer"
+    ]
+  },
+  "tutorials": {
+    "General": [
+      "tutorials/create-transactions",
+      "tutorials/ledger",
+      "tutorials/figment"
+    ],
+    "Front-End": [
+      "tutorials/front-end/naj-examples",
+      "tutorials/front-end/naj-workshop"
+    ],
+    "Smart Contracts": [
+      
+      {
+        "type": "subcategory",
+        "label": "AssemblyScript",
+        "ids": [
+          "tutorials/contracts/as-workshop",
+          "tutorials/contracts/token",
+          "tutorials/contracts/cross-contract-calls"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Rust",
+        "ids": [
+          "tutorials/contracts/intro-to-rust"
+        ]
+      }
+    ],
+    "Rainbow Bridge": [
+      "tutorials/rainbow-bridge-frontend-mainnet",
+      "tutorials/rainbow-bridge-frontend-testnet"
+      
+    ],
+    "Videos": [
+      "videos/accounts-keys",
+      "videos/contract-reviews",
+      "videos/live-app-review",
+      "videos/collections-u128-etc"
+    ]
+  },
+  "API": {
+    "API": [
+      "api/rpc",
+      "api/near-api-rest-server"
+    ],
+    "JavaScript Library": [
+      "api/naj-overview",
+      "api/naj-quick-reference",
+      "api/naj-cookbook"
+    ],
+    "FAQ": [
+      "faq/naj-faq"
+    ]
+  },
+  "stake": {
+    "Quickstart": [
+      "validator/staking-overview"
+    ],
+    "Validator": [
+      "roles/validator/hardware",
+      "validator/staking",
+      "validator/keys",
+      "validator/maintenance",
+      "validator/economics",
+      "validator/deploy-on-mainnet"
+    ],
+    "FAQ": [
+      "validator/staking-faq"
+    ]
+  },
+  "integrate": {
+    "Integration": [
+      "roles/integrator/exchange-integration",
+      "roles/integrator/implicit-accounts"
+    ],
+    "Understanding Errors": [
+      "roles/integrator/errors/introduction",
+      "roles/integrator/errors/error-implementation",
+      "roles/integrator/token-loss"
+    ],
+    "FAQ": [
+      "roles/integrator/faq"
+    ]
+  },
+  "tokens": {
+    "Token Basics": [
+      "tokens/token-custody",
+      "tokens/lockup",
+      "validator/delegation"
+    ]
+  },
+  "community": {
+    "Overview": [
+      "community/community-channels",
+      "community/community-faq"
+    ],
+    "Contribute": [
+      "community/contribute/contribute-overview",
+      "community/contribute/how-to-contribute",
+      "community/contribute/contribute-nearcore"
+    ],
+    "FAQ": [
+      "community/contribute/contribute-faq"
+    ]
+  }
+}

@@ -33,7 +33,7 @@ NEAR merges node updates from [nearcore releases](https://github.com/near/nearco
 Once `MainNet: Restricted` is live, planned updates to `TestNet` and `MainNet` will come via coordination with validators.
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 `BetaNet` provides cutting-edge testing grounds for validators, with weekly updates and frequent hard-forks. `BetaNet` is using the `beta` branch of `nearcore`, which is merged every Wednesday at 00:00 UTC and deployed on NEAR boot nodes shortly after. `BetaNet` is also the network used for Stake Wars.
 

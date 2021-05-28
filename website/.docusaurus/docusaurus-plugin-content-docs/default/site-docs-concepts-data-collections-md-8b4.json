@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/data-storage",
+  "id": "concepts/data-storage",
+  "isDocsHomePage": false,
+  "title": "Data Storage / Collections",
+  "description": "Overview",
+  "source": "@site/../docs/concepts/data-collections.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/data-storage",
+  "permalink": "/docs/concepts/data-storage",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/data-collections.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Data Storage",
+  "frontMatter": {
+    "id": "data-storage",
+    "title": "Data Storage / Collections",
+    "sidebar_label": "Data Storage"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "Account",
+    "permalink": "/docs/concepts/account"
+  },
+  "next": {
+    "title": "Storage Staking",
+    "permalink": "/docs/concepts/storage-staking"
+  }
+}

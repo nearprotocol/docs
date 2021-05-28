@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>AssemblyScript · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="The NEAR platform supports writing contracts in Rust and AssemblyScript." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="AssemblyScript · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="The NEAR platform supports writing contracts in Rust and AssemblyScript." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/develop/basics/getting-started" target="_self">Develop</a>
+              </li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>AssemblyScript</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Basics</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/basics/getting-started">Getting
+                        Started</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/basics/create-account">Create
+                        Account</a></li>
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/develop/basics/hackathon-startup-guide">Hackathon Guide</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Front-end</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/develop/front-end/introduction">Introduction</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/front-end/near-api-js">API JS
+                        Library</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Smart Contracts</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/contracts/overview">Overview</a></li>
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">AssemblyScript</h4>
+                      <ul>
+                        <li class="navListItem navListItemActive"><a class="navItem"
+                            href="/docs/develop/contracts/as/intro">Introduction</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/contracts/as/near-sdk-as">AS
+                            SDK</a></li>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/develop/contracts/as/testing-as-contracts">Testing</a></li>
+                      </ul>
+                    </div>
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">Rust</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/develop/contracts/rust/intro">Introduction</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/contracts/rust/near-sdk-rs">Rust
+                            SDK</a></li>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/develop/contracts/rust/testing-rust-contracts">Testing</a></li>
+                      </ul>
+                    </div>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Running A Node</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/node/running-a-node">Running a
+                        node</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/develop/node/running-a-node-windows">Running
+                        a node (Windows)</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Aurora Engine</h3>
+                  <ul class="">
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">EVM on NEAR</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/develop/evm/introduction">Introduction</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/evm/evm-network-status">Network
+                            Status</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/evm/truffle">Truffle</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/evm/near-eth-rpc">Proxy RPC
+                            Server</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/evm/near-web3-provider">Web3
+                            Provider</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/develop/evm/evm-testing">Testing
+                            Contracts</a></li>
+                      </ul>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/develop/contracts/as/intro.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">AssemblyScript</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p>The NEAR platform supports writing contracts in Rust and AssemblyScript.</p>
+                  <p>AssemblyScript is a dialect of TypeScript that compiles to Wasm. See the <a
+                      href="https://assemblyscript.org/introduction.html">official AssemblyScript docs</a> for more
+                    details.</p>
+                  <p>This document aims to introduce developers already comfortable with TypeScript to writing
+                    AssemblyScript on the NEAR platform.</p>
+                  <p>If you are not familiar with TypeScript then this <a
+                      href="https://learnxinyminutes.com/docs/typescript/">introduction</a> will be worth a quick look
+                    but do keep in mind that <strong>AssemblyScript is a <em>dialect of TypeScript</em></strong> so not
+                    all of the features of TypeScript are supported.</p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>AssemblyScript smart contract development is for non financial use cases.</p>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="quickstart"></a><a href="#quickstart" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Quickstart</h2>
+                  <ul>
+                    <li>You may use <a href="https://github.com/near/create-near-app"><code>create-near-app</code></a>
+                      to get started locally or explore <a href="http://near.dev/">examples</a> to work online in gitpod
+                      online IDE.</li>
+                    <li>You write contracts in <a href="https://assemblyscript.org/introduction.html">AssemblyScript</a>
+                      and use <code>near-sdk-as</code> to interact with the blockchain (storage, context, etc)</li>
+                    <li>The AssemblyScript is compiled to <a href="https://learnxinyminutes.com/docs/wasm/">Wasm</a> and
+                      (using either NEAR CLI, <code>near-api-js</code> or our RPC interface) it is deployed to an
+                      account on the NEAR platform</li>
+                    <li>When a method on the contract is invoked, NEAR routes the request to the proper shard (the one
+                      with the account that &quot;holds&quot; or &quot;owns&quot; the contract, see <a
+                        href="/docs/concepts/account">more about accounts here</a>)</li>
+                    <li>The contract method is executed on a <a
+                        href="https://github.com/near/nearcore/tree/master/runtime/near-vm-logic">virtual machine</a>
+                      which is spun up just for this execution (you can think of it like a serverless function on AWS
+                      lambda if you like)</li>
+                    <li>The results of the call are returned to your execution context (if using
+                      <code>near-api-js</code>, for example, log output from the contract will appear in your JavaScript
+                      developer console)</li>
+                  </ul>
+                  <p>For rich examples of AssemblyScript written for the NEAR platform check out:</p>
+                  <ul>
+                    <li><a href="http://near.dev">examples</a>: sample applications you can explore online with gitpod
+                      IDE.</li>
+                    <li><a href="https://github.com/nearprotocol/corgis">CryptoCorgis*</a>: a playful take on NFTs
+                      (non-fungible tokens)</li>
+                    <li><a href="https://github.com/nearprotocol/near-chess/tree/master/assembly">NEAR Chess</a>: a NEAR
+                      implementation of <a href="https://chessboardjs.com/">chessboard.js</a></li>
+                    <li><a
+                        href="https://github.com/near/near-sdk-as/tree/master/sdk/assembly"><code>near-sdk-as</code></a>:
+                      our library for writing near smart contracts</li>
+                  </ul>
+                  <p>*CryptoCorgis is currently a private repo available here: <code>github.com/near/corgis</code></p>
+                  <h2><a class="anchor" aria-hidden="true" id="basics"></a><a href="#basics" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Basics</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="contracts"></a><a href="#contracts" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Contracts</h3>
+                  <p>What is a &quot;contract?&quot; It's the container for all the variables, functions and state of
+                    the blockchain portion of your application.</p>
+                  <p>This is a fully functioning smart contract with 1 method called <code>hello</code> that takes no
+                    arguments:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, World!"</span>;
+}
+</code></pre>
+                  <p>We can call this method using NEAR CLI which in turn calls <code>near-api-js</code> which in turn
+                    calls our JSON RPC interface. As a developer we can leverage any of these interfaces depending on
+                    which level of abstraction we want to work with. NEAR CLI is most convenient from the terminal,
+                    <code>near-api-js</code> makes sense from a client or server-side JavaScript application and the RPC
+                    interface would be most useful if we prefer to make raw HTTP requests from some other context like a
+                    different programing language or environment not currently provided by the NEAR community.</p>
+                  <p>From within this contract method you can also access the blockchain execution context by importing
+                    the <code>context</code> object from <code>near-sdk-as</code>. This gives you access to blockchain
+                    data like the <code>sender</code> who signed the original transaction that caused the execution of
+                    this contract method. or the contract's name via <code>contractName</code>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="file-structure"></a><a href="#file-structure"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>File Structure</h3>
+                  <p>The fastest way to get started locally is to use <a
+                      href="https://github.com/near/create-near-app"><code>create-near-app</code></a> from your terminal
+                    or explore <a href="http://near.dev/">examples</a> if you would rather work online. Regardless of
+                    which of these environments you choose, the development and build process is similar.</p>
+                  <p>Contracts have <a href="https://assemblyscript.org/introduction.html">all of the features of
+                      AssemblyScript</a> at their disposal and contract files end with <code>.ts</code> since
+                    AssemblyScript is a dialect of TypeScript.</p>
+                  <pre><code class="hljs css language-bash">assembly
+  ├── main.ts   <span class="hljs-comment"># contains code for the contract</span>
+  └── model.ts  <span class="hljs-comment"># contains code for the model(s) accessible to the contract</span>
+</code></pre>
+                  <p>Contracts are a named collection of (exported) functions that have access (via
+                    <code>near-sdk-as</code>) to their execution context (sender, receiver, block height, etc) as well
+                    as storage services (key-value pair and convenience collections like Map, Vector and Deque), logging
+                    services and some utility functions.</p>
+                  <p>To keep things organized, contracts can use one or more data objects which are commonly added to
+                    the <code>model.ts</code> file.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="environment"></a><a href="#environment"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Environment</h3>
+                  <h4><a class="anchor" aria-hidden="true" id="imports"></a><a href="#imports" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Imports</h4>
+                  <p>All contracts and models must explicitly import features of the NEAR they intend to use. Not all of
+                    these features are used all of the time of course.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> {
+  context,            <span class="hljs-comment">// visibility into account, contract and blockchain details</span>
+  logging,            <span class="hljs-comment">// append to the execution environment log (appears in JS Developer Console when using near-api-js)</span>
+
+  storage,            <span class="hljs-comment">// key-value store for the contract (used by PersistentMap, PersistentVector and PersistentDeque)</span>
+
+  PersistentMap,      <span class="hljs-comment">// data structure that wraps storage to appear like a Map</span>
+  PersistentVector,   <span class="hljs-comment">// data structure that wraps storage to appear like a Vector</span>
+  PersistentDeque,    <span class="hljs-comment">// data structure that wraps storage to appear like a Deque</span>
+  PersistentSet,      <span class="hljs-comment">// data structure that wraps storage to appear like a Set</span>
+
+  ContractPromise,    <span class="hljs-comment">// make asynchronous calls to other contracts and receive callbacks</span>
+
+  base58,             <span class="hljs-comment">// utility base58 encoder</span>
+  base64,             <span class="hljs-comment">// utility base64 encoder / decoder</span>
+  math,               <span class="hljs-comment">// utility math functions for hashing using SHA and Keccak as well as pseudo-random data</span>
+  utils               <span class="hljs-comment">// utility type conversion and read_register</span>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"near-sdk-as"</span>;
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="assemblyscript"></a><a href="#assemblyscript"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>AssemblyScript</h4>
+                  <p>AssemblyScript provides <a href="https://assemblyscript.org/environment.html">a rich
+                      environment</a> including an <code>assert</code> function to improve the quality of your code,
+                    among others.</p>
+                  <pre><code class="hljs css language-ts">assert&lt;T&gt;(isTrueish: T, message?: <span class="hljs-built_in">string</span>): T
+
+<span class="hljs-comment">// usage</span>
+<span class="hljs-keyword">let</span> output: i8 = <span class="hljs-number">1</span>;
+assert(output == <span class="hljs-number">1</span>, <span class="hljs-string">"The value of output is not 1"</span>);
+</code></pre>
+                  <p>AssemblyScript is under heavy, active development including by members of our team. Language
+                    features include several built-in <a href="https://assemblyscript.org/types.html">types</a>, <a
+                      href="https://assemblyscript.org/environment.html#static-type-checks">static type checking</a>, <a
+                      href="https://assemblyscript.org/environment.html#sizes-and-alignments">sizing</a> and a few <a
+                      href="https://assemblyscript.org/environment.html#utility">utility</a> functions. A unit testing
+                    framework called <a href="https://github.com/jtenner/as-pect"><code>as-pect</code></a> is also
+                    available which we are currently integrating into our own samples.</p>
+                  <p>For more on AssemblyScript, consider the small AssemblyScript examples included with <a
+                      href="https://wasmbyexample.dev/all-examples-list.html">Wasm by Example</a> or more significant
+                    bodies of work that are <a
+                      href="https://assemblyscript.org/built-with-assemblyscript.html#built-with-assemblyscript">Built
+                      with AssemblyScript</a>.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="development"></a><a href="#development"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Development</h2>
+                  <p>If you choose to use <code>create-near-app</code>, we provide a set of helpful scripts in the
+                    <code>package.json</code> file that handle building and deployment as well as some useful local
+                    development automation.</p>
+                  <p>You can run <code>npm run dev</code> to start working with the provided sample and
+                    <code>npm run start</code> to deploy the example (using a temporary dev account) to TestNet.</p>
+                  <p>See the full list of scripts in <code>create-near-app</code>'s <code>package.json</code>:</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"npm run build:contract &amp;&amp; npm run build:web"</span>,
+    <span class="hljs-attr">"build:contract"</span>: <span class="hljs-string">"node asconfig.js"</span>,
+    <span class="hljs-attr">"build:web"</span>: <span class="hljs-string">"parcel build src/index.html --public-url ./"</span>,
+    <span class="hljs-attr">"dev:deploy:contract"</span>: <span class="hljs-string">"near dev-deploy"</span>,
+    <span class="hljs-attr">"deploy:contract"</span>: <span class="hljs-string">"near deploy"</span>,
+    <span class="hljs-attr">"deploy:pages"</span>: <span class="hljs-string">"gh-pages -d dist/"</span>,
+    <span class="hljs-attr">"deploy"</span>: <span class="hljs-string">"npm run build &amp;&amp; npm run deploy:contract &amp;&amp; npm run deploy:pages"</span>,
+    <span class="hljs-attr">"prestart"</span>: <span class="hljs-string">"npm run build:contract &amp;&amp; npm run dev:deploy:contract"</span>,
+    <span class="hljs-attr">"start"</span>: <span class="hljs-string">"env-cmd -f ./neardev/dev-account.env parcel src/index.html"</span>,
+    <span class="hljs-attr">"dev"</span>: <span class="hljs-string">"nodemon --watch assembly -e ts --exec \"npm run start\""</span>,
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"asp --nologo &amp;&amp; npm run build:contract &amp;&amp; jest test --runInBand"</span>
+  },
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="models"></a><a href="#models" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Models</h3>
+                  <p>There are <a
+                      href="https://github.com/search?q=org%3Anearprotocol+filename%3Amodel.ts+size%3A%3E50&amp;type=Code">multiple
+                      examples of model implementations</a> on our GitHub organization.</p>
+                  <p>The most sophisticated models currently available as open source are:</p>
+                  <ul>
+                    <li>models for <a
+                        href="https://github.com/nearprotocol/metanear-src/blob/master/assembly/model.ts">Meta NEAR</a>
+                    </li>
+                    <li>models for <a
+                        href="https://github.com/nearprotocol/near-place/blob/master/assembly/model.ts">NEAR Place</a>
+                    </li>
+                    <li>models for <a
+                        href="https://github.com/near/near-sdk-as/blob/master/sdk/assembly/__tests__/model.ts"><code>near-sdk-as</code>
+                        tests</a></li>
+                    <li>models for <a
+                        href="https://github.com/nearprotocol/near-chess/blob/master/assembly/model.ts">NEAR Chess</a>
+                    </li>
+                  </ul>
+                  <p><em>Note that some of the projects listed above may need to have some updates applied before a
+                      successful deployment is possible</em></p>
+                  <p>For convenience, here are highlights of just a few of the simpler examples.</p>
+                  <h4><a class="anchor" aria-hidden="true" id="models-define-new-types"></a><a
+                      href="#models-define-new-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Models define new types</h4>
+                  <p>At the most basic level, a model is a custom data container that defines a new type not currently
+                    available (as opposed to primitive types like integers, strings and bool which are always available)
+                  </p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-meta">@nearBindgen</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TextMessage {
+  sender: <span class="hljs-built_in">string</span>;
+  text: <span class="hljs-built_in">string</span>;
+  <span class="hljs-built_in">number</span>: u64;
+  isRead: bool;
+}
+<span class="hljs-comment">// see https://github.com/near/near-sdk-as/blob/master/assembly/__tests__/runtime/model.ts</span>
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="models-are-composable"></a><a
+                      href="#models-are-composable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Models are composable</h4>
+                  <p>Models can build on top of one another as with the sample below, taken from <a
+                      href="https://github.com/nearprotocol/corgis">CryptoCorgis</a>, which includes 3 models:</p>
+                  <ul>
+                    <li><code>CorgiMetaData</code> which wraps an array of strings</li>
+                    <li>the <code>Corgi</code> model which includes strings, an integer and also uses
+                      <code>CorgiMetaData</code></li>
+                    <li>and finally a <code>CorgiArray</code> which includes an array of <code>Corgi</code>s and
+                      maintains the length of that array as well</li>
+                  </ul>
+                  <pre><code class="hljs css language-ts"><span class="hljs-meta">@nearBindgen</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CorgiMetaData {
+  dna: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">string</span>&gt;;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Corgi {
+  owner: <span class="hljs-built_in">string</span>;
+  sender:<span class="hljs-built_in">string</span>;
+  message:<span class="hljs-built_in">string</span>;
+  dna: <span class="hljs-built_in">string</span>;
+  name: <span class="hljs-built_in">string</span>;
+  color:<span class="hljs-built_in">string</span>;
+  backgroundColor: <span class="hljs-built_in">string</span>;
+  rate: <span class="hljs-built_in">string</span>;
+  sausage : <span class="hljs-built_in">string</span>;
+  quote: <span class="hljs-built_in">string</span>;
+  level: i32;
+  metadata: CorgiMetaData;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CorgiArray {
+  corgis: <span class="hljs-built_in">Array</span>&lt;Corgi&gt;;
+  len: i32;
+}
+<span class="hljs-comment">// see https://github.com/nearprotocol/corgis/blob/master/assembly/model.ts</span>
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="models-are-just-classes"></a><a
+                      href="#models-are-just-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Models are just classes</h4>
+                  <p>Since models are just AssemblyScript classes, they support custom constructors and behavior, not
+                    just data, as with the example here:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-meta">@nearBindgen</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Greeter {
+  text: <span class="hljs-built_in">string</span>;
+
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">text: <span class="hljs-built_in">string</span></span>) {
+    <span class="hljs-keyword">this</span>.text = text;
+  }
+
+  greet(userId: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span> + userId;
+  }
+}
+<span class="hljs-comment">// see https://github.com/nearprotocol/blockbuster/blob/master/assembly/model.ts</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="context"></a><a href="#context" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Context</h3>
+                  <p>Contracts can import the blockchain <code>context</code> from <code>near-sdk-as</code>.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { context } <span class="hljs-keyword">from</span> <span class="hljs-string">'near-sdk-as'</span>
+
+<span class="hljs-comment">// contract code below this line can now make use of the context object</span>
+</code></pre>
+                  <p>This object provides context for contract execution including information about the transaction
+                    sender, blockchain height, and attached deposit available for use during contract execution, etc.
+                    The snippet below is the complete interface as currently implemented.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// REFERENCE ONLY</span>
+<span class="hljs-comment">// interface provided by the context object imported above</span>
+
+<span class="hljs-keyword">class</span> Context {
+
+  <span class="hljs-comment">// Context API</span>
+  <span class="hljs-keyword">get</span> sender(): <span class="hljs-built_in">string</span>            <span class="hljs-comment">// account ID that signed the original transaction that led to this execution (aka. signer account id)</span>
+  <span class="hljs-keyword">get</span> contractName(): <span class="hljs-built_in">string</span>      <span class="hljs-comment">// account ID of current contract being executed (aka. current account id)</span>
+  <span class="hljs-keyword">get</span> blockIndex(): u64           <span class="hljs-comment">// current block index (aka. height)</span>
+  <span class="hljs-keyword">get</span> storageUsage(): u64         <span class="hljs-comment">// contract account storage usage before the contract execution</span>
+
+  <span class="hljs-comment">// Economics API</span>
+  <span class="hljs-keyword">get</span> attachedDeposit(): u128     <span class="hljs-comment">// balance that was attached to the call that will be immediately deposited before the contract execution starts.</span>
+  <span class="hljs-keyword">get</span> accountBalance(): u128      <span class="hljs-comment">// balance attached to the given account. Excludes the `attachedDeposit` that was attached to the transaction.</span>
+  <span class="hljs-keyword">get</span> prepaidGas(): u64           <span class="hljs-comment">// gas attached to the call and available to pay for the gas fees</span>
+  <span class="hljs-keyword">get</span> usedGas(): u64              <span class="hljs-comment">// gas that was irreversibly used for contract execution (aka. burnt gas) + gas attached to any promises (cannot exceed prepaidGas)</span>
+}
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="state-and-data"></a><a href="#state-and-data"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>State and Data</h2>
+                  <p>Contract function calls are stateless. Any state that you want to save to the blockchain needs to
+                    be explicitly saved by interacting with the <code>storage</code> object.</p>
+                  <p>This object provides an interface to the blockchain storage. It is a standard key-value store where
+                    keys are strings and the values can be multiple types including <code>string</code>,
+                    <code>bytes</code>, <code>u64</code>. Anything else needs to be first converted into these types.
+                  </p>
+                  <p>All contract data is stored in the same key-value data store on the blockchain (called
+                    &quot;storage&quot; and imported from <code>near-sdk-as</code>) with a few convenience methods for
+                    reading, writing, searching and deleting keys and values using various data types.</p>
+                  <p>We also provide a few collections for convenience including <code>PersistentMap</code>,
+                    <code>PersistentVector</code>, <code>PersistentDeque</code> and <code>PersistentSet</code> which
+                    wrap the <code>Storage</code> class to mimic a Map, Vector (aka. Array), Deque and Set. And of
+                    course you can use these as examples as inspiration for your own custom data structures.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="storage"></a><a href="#storage" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Storage</h3>
+                  <p>The <code>Storage</code> class represents the only data store on the blockchain. All blockchain
+                    data uses this one interface.</p>
+                  <p>Contracts can import a reference to <code>storage</code> from <code>near-sdk-as</code>.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { storage } <span class="hljs-keyword">from</span> <span class="hljs-string">'near-sdk-as'</span>
+
+<span class="hljs-comment">// contract code below this line can now make use of the storage object</span>
+</code></pre>
+                  <p>The complete interface for the <code>Storage</code> class is provided by the snippet below with
+                    inline comments.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// REFERENCE ONLY</span>
+<span class="hljs-comment">// this is the interface provided by the storage object</span>
+
+<span class="hljs-keyword">class</span> Storage {
+  <span class="hljs-comment">// read and write text to storage</span>
+  setString(key: <span class="hljs-built_in">string</span>, value: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>
+  getString(key: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>
+
+  <span class="hljs-comment">// read and write an array of bytes to storage</span>
+  setBytes(key: <span class="hljs-built_in">string</span>, value: <span class="hljs-built_in">Uint8Array</span>): <span class="hljs-built_in">void</span>
+  getBytes(key: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Uint8Array</span> | <span class="hljs-literal">null</span>
+
+  <span class="hljs-comment">// check whether a key exists</span>
+  contains(key: <span class="hljs-built_in">string</span>): bool
+  hasKey(key: <span class="hljs-built_in">string</span>): bool       <span class="hljs-comment">// alias for contains()</span>
+
+  <span class="hljs-comment">// delete a key from storage</span>
+  <span class="hljs-keyword">delete</span>(key: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>
+
+  <span class="hljs-comment">// get string and data objects defined in model.ts</span>
+  <span class="hljs-comment">// return defaultValue if key not found</span>
+  <span class="hljs-comment">// (prefer getPrimitive&lt;T&gt; for bool or integer and getSome&lt;T&gt; if key is known to exist)</span>
+  <span class="hljs-keyword">set</span>&lt;T&gt;(key: <span class="hljs-built_in">string</span>, value: T): <span class="hljs-built_in">void</span>
+  <span class="hljs-keyword">get</span>&lt;T&gt;(key: <span class="hljs-built_in">string</span>, defaultValue: T | <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>): T | <span class="hljs-literal">null</span>
+
+  <span class="hljs-comment">// get bool or integer value stored under the key</span>
+  <span class="hljs-comment">// return defaultValue if key not found</span>
+  <span class="hljs-comment">// throw if any other type (use get&lt;T&gt;)</span>
+  <span class="hljs-comment">// (prefer get&lt;T&gt; for string or data objects defined in model.ts and getSome&lt;T&gt; if key is known to exist)</span>
+  getPrimitive&lt;T&gt;(key: <span class="hljs-built_in">string</span>, defaultValue: T): T
+
+  <span class="hljs-comment">// get bool, integer, string and data objects defined in model.ts</span>
+  <span class="hljs-comment">// throw if key not found</span>
+  <span class="hljs-comment">// (prefer get&lt;T&gt; for string or data objects defined in model.ts and getPrimitive&lt;T&gt; for bool or integer)</span>
+  getSome&lt;T&gt;(key: <span class="hljs-built_in">string</span>): T
+}
+</code></pre>
+                  <p>See the <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk-core/assembly/storage.ts"><code>Storage</code>
+                      class implementation here</a> for details</p>
+                  <h3><a class="anchor" aria-hidden="true" id="collections"></a><a href="#collections"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Collections</h3>
+                  <p>Several collections are provided including <code>PersistentMap</code>,
+                    <code>PersistentVector</code> and <code>PersistentDeque</code>.</p>
+                  <p>There are currently four types of collections. These all write and read from storage abstracting
+                    away a lot of what you might want to add to the storage object.</p>
+                  <p>These collection wrap the <code>Storage</code> class with convenience methods so you must always
+                    use a unique storage prefix for different collections to avoid data collision.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> {
+  PersistentMap,      <span class="hljs-comment">// implementation of a map you would find in most languages</span>
+  PersistentVector,   <span class="hljs-comment">// implementation of an array you would find in most languages</span>
+  PersistentDeque,    <span class="hljs-comment">// implementation of a deque (bidirectional queue)</span>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'near-sdk-as'</span>
+
+<span class="hljs-comment">// contract code below this line can now make use of these collections</span>
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="persistentmap"></a><a href="#persistentmap"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>PersistentMap</h4>
+                  <p><em>Acts like a map you would find in most languages</em></p>
+                  <p>A map class that implements a persistent unordered map. Note that <code>PersistentMap</code>
+                    doesn't store keys, so if you need to retrieve them, include keys in the values.</p>
+                  <ul>
+                    <li>
+                      <p>To create a map</p>
+                      <pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> PersistentMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"m"</span>)
+</code></pre>
+                    </li>
+                    <li>
+                      <p>To use the map</p>
+                      <pre><code class="hljs css language-ts">m.set(key, value)
+m.get(key)
+</code></pre>
+                    </li>
+                  </ul>
+                  <p>The complete interface for the <code>PersistentMap</code> class is provided by the snippet below
+                    with inline comments.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// REFERENCE ONLY</span>
+<span class="hljs-comment">// this is the interface provided by the PersistentMap object</span>
+
+<span class="hljs-keyword">class</span> PersistentMap&lt;K, V&gt; {
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">prefix: <span class="hljs-built_in">string</span></span>)                              // unique prefix to avoid data collision
+
+  set(<span class="hljs-params">key: K, value: V</span>): void                              // wraps Storage#set&lt;V&gt;
+  get(<span class="hljs-params">key: K, defaultValue: V | <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span></span>): V | null     // wraps Storage#get&lt;V&gt;
+  getSome(<span class="hljs-params">key: K</span>): V                                       // wraps Storage#getSome&lt;V&gt;, use if key is known to exist
+
+  contains(<span class="hljs-params">key: K</span>): bool                                   // wraps Storage#contains
+  delete(<span class="hljs-params">key: K</span>): void                                     // wraps Storage#delete
+}
+</code></pre>
+                  <p>Sample code using <code>PersistentMap</code> is in the <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk/assembly/__tests__/main.ts">tests for
+                      <code>near-sdk-as</code></a></p>
+                  <h4><a class="anchor" aria-hidden="true" id="persistentvector"></a><a href="#persistentvector"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>PersistentVector</h4>
+                  <p><em>Acts like an array</em></p>
+                  <p>A vector class that implements a persistent array.</p>
+                  <ul>
+                    <li>To create a vector
+                      <pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> vec = <span class="hljs-keyword">new</span> PersistentVector&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"v"</span>)
+</code></pre>
+                    </li>
+                    <li>To use the vector
+                      <pre><code class="hljs css language-ts">vec.push(value)
+vec.pop(value)
+vec.length
+</code></pre>
+                    </li>
+                  </ul>
+                  <p>The complete interface for the <code>PersistentVector</code> class is provided by the snippet below
+                    with inline comments.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// REFERENCE ONLY</span>
+<span class="hljs-comment">// this is the interface provided by the PersistentVector object</span>
+
+<span class="hljs-keyword">class</span> PersistentVector&lt;T&gt; {             <span class="hljs-comment">// referred to as "pv" below</span>
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">prefix: <span class="hljs-built_in">string</span></span>)         // unique prefix to avoid data collision
+
+  containsIndex(<span class="hljs-params">index: i32</span>): bool     // confirms that index is within range
+  get length(<span class="hljs-params"></span>): i32                   // get length of the pv
+  get isEmpty(<span class="hljs-params"></span>): bool                 // check whether pv is empty
+
+  @operator(<span class="hljs-params">"[]"</span>)                     // (<span class="hljs-params">index: i32</span>): T                  wraps Storage#getSome&lt;T&gt; with checks
+  @operator(<span class="hljs-params">"[]="</span>)                    // (<span class="hljs-params">index: i32, value: T</span>): void     wraps Storage#set&lt;T&gt; with checks
+  @operator(<span class="hljs-params">"{}"</span>)                     // (<span class="hljs-params">index: i32</span>): T                  wraps Storage#getSome&lt;T&gt;
+  @operator(<span class="hljs-params">"{}="</span>)                    // (<span class="hljs-params">index: i32, value: T</span>): void     wraps Storage#set&lt;T&gt;
+
+  push(<span class="hljs-params">element: T</span>): i32               // wraps Storage#set&lt;T&gt;
+  pushBack(<span class="hljs-params">element: T</span>): i32           // alias for pv.push
+
+  pop(<span class="hljs-params"></span>): T                            // wraps Storage#get&lt;T&gt; and Storage#delete
+  popBack(<span class="hljs-params"></span>): T                        // alias for pv.pop
+
+  get front(<span class="hljs-params"></span>): T                      // get first/front of pv (<span class="hljs-params">wraps Storage#getSome <span class="hljs-keyword">with</span> checks</span>)
+  get first(<span class="hljs-params"></span>): T                      // alias for pv.front
+
+  get back(<span class="hljs-params"></span>): T                       // get last/back of pv (<span class="hljs-params">wraps Storage#getSome <span class="hljs-keyword">with</span> checks</span>)
+  get last(<span class="hljs-params"></span>): T                       // alias for pv.back
+}
+</code></pre>
+                  <p>Sample code using <code>PersistentVector</code> is in the <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk/assembly/__tests__/main.ts">tests for
+                      <code>near-sdk-as</code></a></p>
+                  <h4><a class="anchor" aria-hidden="true" id="persistentdeque"></a><a href="#persistentdeque"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>PersistentDeque</h4>
+                  <p><em>Implementation of a deque (bidirectional queue)</em></p>
+                  <p>A deque class that implements a persistent bidirectional queue.</p>
+                  <ul>
+                    <li>To create a deque
+                      <pre><code class="hljs css language-ts"><span class="hljs-keyword">let</span> dq = <span class="hljs-keyword">new</span> PersistentDeque&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">"d"</span>)
+</code></pre>
+                    </li>
+                    <li>To use a deque
+                      <pre><code class="hljs css language-ts">dq.pushFront(value)
+dq.popBack()
+</code></pre>
+                    </li>
+                  </ul>
+                  <p>The complete interface for the <code>PersistentDeque</code> class is provided by the snippet below
+                    with inline comments.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// REFERENCE ONLY</span>
+<span class="hljs-comment">// this is the interface provided by the PersistentDeque object</span>
+
+<span class="hljs-keyword">class</span> PersistentDeque&lt;T&gt; {            <span class="hljs-comment">// referred to as "pdq" below</span>
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">prefix: <span class="hljs-built_in">string</span></span>)         // unique prefix to avoid data collision
+
+  containsIndex(<span class="hljs-params">index: i32</span>): bool     // checks whether pdq contains the given index
+  get length(<span class="hljs-params"></span>): i32                   // get length of the pdq
+  get isEmpty(<span class="hljs-params"></span>): bool                 // check whether pdq is empty
+
+  @operator(<span class="hljs-params">"[]"</span>)                     // (<span class="hljs-params">index: i32</span>): T                  wraps Storage#getSome&lt;T&gt; with checks to get T
+  @operator(<span class="hljs-params">"{}"</span>)                     // (<span class="hljs-params">index: i32</span>): T                  wraps Storage#getSome&lt;T&gt; to get T
+  @operator(<span class="hljs-params">"{}="</span>)                    // (<span class="hljs-params">index: i32, value: T</span>): void     wraps Storage#set&lt;T&gt; to set value&lt;T&gt; at index
+
+  pushFront(<span class="hljs-params">element: T</span>): i32          // add element to front of pdq (<span class="hljs-params">wraps Storage#<span class="hljs-keyword">set</span>&lt;T&gt;</span>)
+  popFront(<span class="hljs-params"></span>): T                       // get and remove first/front element (<span class="hljs-params">wraps Storage#getSome&lt;T&gt; and Storage#<span class="hljs-keyword">delete</span></span>)
+
+  pushBack(<span class="hljs-params">element: T</span>): i32           // add element to back of pdq (<span class="hljs-params">wraps Storage#<span class="hljs-keyword">set</span>&lt;T&gt;</span>)
+  popBack(<span class="hljs-params"></span>): T                        // get and remove last/back element (<span class="hljs-params">wraps Storage#getSome&lt;T&gt; and Storage#<span class="hljs-keyword">delete</span></span>)
+
+  get front(<span class="hljs-params"></span>): T                      // get first/front of pdq (<span class="hljs-params">wraps Storage#getSome <span class="hljs-keyword">with</span> checks</span>)
+  get first(<span class="hljs-params"></span>): T                      // alias for pdq.front
+
+  get back(<span class="hljs-params"></span>): T                       // get last/back of pdq (<span class="hljs-params">wraps Storage#getSome <span class="hljs-keyword">with</span> checks</span>)
+  get last(<span class="hljs-params"></span>): T                       // alias for pdq.back
+}
+</code></pre>
+                  <p>Sample code using <code>PersistentDeque</code> is in the <a
+                      href="https://github.com/near/near-sdk-as/blob/master/sdk/assembly/__tests__/main.ts">tests for
+                      <code>near-sdk-as</code></a></p>
+                  <blockquote class="info">
+                    <strong>did you know?</strong><br /><br />
+                    <p>If you're coming from JavaScript, you might not be familiar with the type declaration in the two
+                      brackets <code>&lt;&gt;</code>.</p>
+                    <p>In AssemblyScript, need to declare the types that any collection is going to take. This enforces
+                      that any data added to the collection must have the same type. If not, an error will be raised by
+                      the AssemblyScript compiler insisting that the types must all match. This adds a little up-front
+                      effort when programming but means far fewer run time errors happen because of type mismatches.</p>
+                  </blockquote>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>The letter passed in as an argument (ie. <code>&quot;m&quot;</code> in the case of the
+                      <code>PersistentMap</code>) is the key that gets assigned as a prefix to distinguish the
+                      collections from one another (precisely because they're persisted using the same underlying
+                      key-value storage that is controlled by the contract account).</p>
+                  </blockquote>
+                  <p>It's important when storing data to carefully consider the key in the key-value pair.</p>
+                  <p>With collection types, be sure to add a <strong>prefix</strong> that is unique to the account which
+                    will own the data <em>when the contract is deployed</em>.</p>
+                  <p>To understand why, consider that a single representation of &quot;storage&quot; (set of key-value
+                    pairs) is used by each account and so each key in the key-value pair must uniquely identify its
+                    data.</p>
+                  <p>This should come as no surprise until we consider that a collection type like
+                    <code>PersistentVector</code> (which behaves like an array) is using <em>exactly the same underlying
+                      account storage</em>. This is why we expose a <strong>prefix</strong> in the constructor of these
+                    collection types -- to avoid data collision with other collections.</p>
+                  <p>This means that storage used by a contract must always use a <strong>unique storage prefix</strong>
+                    for each collection to avoid data collision.</p>
+                  <p>NEAR persists all blockchain data as part of an account. For example, all <code>Storage</code> data
+                    is stored with the account that controls / owns the related contract. This is often an account
+                    dedicated to funding the operation of the contract (as is the case with all NEAR examples) or, if
+                    the design of your application requires that contracts are deployed to individual user accounts (as
+                    with one proposed design of an <a href="https://github.com/metanear/metanear-web">open web</a>) then
+                    the contract, along with all of its data, will be stored on each user account that participates in
+                    the application.</p>
+                  <p>You can read more about accounts <a href="/docs/concepts/account">here</a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="assemblyscript-tips"></a><a href="#assemblyscript-tips"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>AssemblyScript Tips</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="arrays"></a><a href="#arrays" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Arrays</h3>
+                  <p>Arrays are similar to Arrays in other languages. One key difference is in how they are initialized,
+                    and what that means for your app. Check out more details in the <a
+                      href="https://assemblyscript.org/stdlib/array.html#array">AssemblyScript docs</a>.</p>
+                  <p><em>(from the AssemblyScript documentation):</em></p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// The Array constructor implicitly sets `.length = 10`, leading to an array of</span>
+<span class="hljs-comment">// ten times `null` not matching the value type `string`. So, this will error:</span>
+<span class="hljs-keyword">var</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">10</span>);
+<span class="hljs-comment">// arr.length == 10 -&gt; ERROR</span>
+
+<span class="hljs-comment">// To account for this, the .create method has been introduced that initializes</span>
+<span class="hljs-comment">// the backing capacity normally but leaves `.length = 0`. So, this will work:</span>
+<span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.create&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">10</span>);
+<span class="hljs-comment">// arr.length == 0 -&gt; OK</span>
+
+<span class="hljs-comment">// When pushing to the latter array or subsequently inserting elements into it,</span>
+<span class="hljs-comment">// .length will automatically grow just like one would expect, with the backing</span>
+<span class="hljs-comment">// buffer already properly sized (no resize will occur). So, this is fine:</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) arr[i] = <span class="hljs-string">"notnull"</span>;
+<span class="hljs-comment">// arr.length == 10 -&gt; OK</span>
+</code></pre>
+                  <p>There is currently no syntactic sugar for array iterators like <code>map</code>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="iteration"></a><a href="#iteration" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Iteration</h3>
+                  <p>Iteration follows the standard AssemblyScript format:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// set i to a type u64</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: u64 = startIndex; i &lt; someValue; i++) {
+  <span class="hljs-comment">// do stuff</span>
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="classes"></a><a href="#classes" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Classes</h3>
+                  <p>Classes are normal AssemblyScript classes and more information can be found in the <a
+                      href="https://www.typescriptlang.org/docs/handbook/classes.html">AssemblyScript (a dialect of
+                      TypeScript) Handbook</a>. We don't have structs, we have AssemblyScript classes instead.</p>
+                  <p>You will generally want to define your classes in a different file and then import them:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// 1. define the class in the `assembly/model.ts` file</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> PostedMessage {
+  sender: <span class="hljs-built_in">string</span>;
+  text: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// 2. Import the class to your `assembly/main.ts` file</span>
+<span class="hljs-keyword">import</span> { PostedMessage } <span class="hljs-keyword">from</span> <span class="hljs-string">"./model"</span>;
+</code></pre>
+                  <p>There are no structs.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="functions"></a><a href="#functions" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Functions</h3>
+                  <p>Function declarations follow standard AssemblyScript conventions, including the parameters they
+                    take, optional arguments and return values. See the <a
+                      href="https://www.typescriptlang.org/docs/handbook/functions.html">AssemblyScript (a dialect of
+                      TypeScript) Handbook</a> for more info.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Events</h3>
+                  <p>Sometimes you want your front end to automatically update if something changes on the back end. For
+                    example, if you have a messaging app that should update your screen when your friend sends you a
+                    message. Currently, you will need to poll the chain to make this happen.</p>
+                  <p>In the future, we may expose event emitters and listeners as syntactic sugar. If this is important
+                    to you, reach out <a href="http://near.chat">on Discord</a>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="math"></a><a href="#math" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Math</h3>
+                  <p>Mathematical operations in AssemblyScript are done in the same way as JavaScript. See more in <a
+                      href="https://github.com/AssemblyScript/examples">these AssemblyScript examples</a>.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">namespace</span> math {
+  <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hash32Bytes</span>(<span class="hljs-params">data: <span class="hljs-built_in">Uint8Array</span></span>): <span class="hljs-title">u32</span>        // <span class="hljs-title">hash</span> <span class="hljs-title">a</span> <span class="hljs-title">given</span> <span class="hljs-title">Uint8Array</span>. <span class="hljs-title">Returns</span> <span class="hljs-title">hash</span> <span class="hljs-title">as</span> 32-<span class="hljs-title">bit</span> <span class="hljs-title">integer</span>.
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hash32</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">data: T</span>): <span class="hljs-title">u32</span>                   // <span class="hljs-title">hash</span> <span class="hljs-title">given</span> <span class="hljs-title">data</span>. <span class="hljs-title">Returns</span> <span class="hljs-title">hash</span> <span class="hljs-title">as</span> 32-<span class="hljs-title">bit</span> <span class="hljs-title">integer</span>.
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hash</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">data: T</span>): <span class="hljs-title">Uint8Array</span>              // <span class="hljs-title">hash</span> <span class="hljs-title">given</span> <span class="hljs-title">data</span>. <span class="hljs-title">Returns</span> <span class="hljs-title">hash</span> <span class="hljs-title">as</span> 32-<span class="hljs-title">byte</span> <span class="hljs-title">array</span>.
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomBuffer</span>(<span class="hljs-params">len: u32</span>): <span class="hljs-title">Uint8Array</span>        // <span class="hljs-title">fill</span> <span class="hljs-title">a</span> <span class="hljs-title">buffer</span> <span class="hljs-title">of</span> <span class="hljs-title">length</span> <span class="hljs-title">len</span> <span class="hljs-title">with</span> <span class="hljs-title">random</span> <span class="hljs-title">data</span>
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sha256</span>(<span class="hljs-params">inp: <span class="hljs-built_in">Uint8Array</span></span>): <span class="hljs-title">Uint8Array</span>       // <span class="hljs-title">return</span> <span class="hljs-title">a</span> <span class="hljs-title">SHA256</span> <span class="hljs-title">hash</span> <span class="hljs-title">of</span> <span class="hljs-title">the</span> <span class="hljs-title">input</span>
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">keccak256</span>(<span class="hljs-params">inp: <span class="hljs-built_in">Uint8Array</span></span>): <span class="hljs-title">Uint8Array</span>    // <span class="hljs-title">return</span> <span class="hljs-title">a</span> <span class="hljs-title">keccak256</span> <span class="hljs-title">hash</span> <span class="hljs-title">of</span> <span class="hljs-title">the</span> <span class="hljs-title">input</span>
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">keccak512</span>(<span class="hljs-params">inp: <span class="hljs-built_in">Uint8Array</span></span>): <span class="hljs-title">Uint8Array</span>    // <span class="hljs-title">return</span> <span class="hljs-title">a</span> <span class="hljs-title">keccak512</span> <span class="hljs-title">hash</span> <span class="hljs-title">of</span> <span class="hljs-title">the</span> <span class="hljs-title">input</span>
+  <span class="hljs-title">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomSeed</span>(<span class="hljs-params"></span>): <span class="hljs-title">Uint8Array</span>                  // <span class="hljs-title">return</span> <span class="hljs-title">a</span> <span class="hljs-title">random</span> <span class="hljs-title">seed</span> (<span class="hljs-params">used by randomBuffer() above</span>)
+}
+</span></span></span></span></span></span></span></span></code></pre>
+                  <p>You can find several examples of in our GitHub organization <a
+                      href="https://github.com/search?utf8=%E2%9C%93&amp;q=org%3Anearprotocol+randomBuffer+filename%3Amain.ts&amp;type=Code">using
+                      this link</a></p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// a function to generate DNA for Crypto Corgis</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateRandomDna</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">let</span> buf = math.randomBuffer(DNA_DIGITS);
+  <span class="hljs-keyword">let</span> b64 = base64.encode(buf);
+  <span class="hljs-keyword">return</span> b64;
+}
+</code></pre>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// a function to generate random numbers</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomNum</span>(<span class="hljs-params"></span>): <span class="hljs-title">u32</span> </span>{
+  <span class="hljs-keyword">let</span> buf = math.randomBuffer(<span class="hljs-number">4</span>);
+  <span class="hljs-keyword">return</span> (
+    (<span class="hljs-number">0xff</span> &amp; buf[<span class="hljs-number">0</span>]) &lt;&lt; <span class="hljs-number">24</span> |
+    (<span class="hljs-number">0xff</span> &amp; buf[<span class="hljs-number">1</span>]) &lt;&lt; <span class="hljs-number">16</span> |
+    (<span class="hljs-number">0xff</span> &amp; buf[<span class="hljs-number">2</span>]) &lt;&lt; <span class="hljs-number">8</span> |
+    (<span class="hljs-number">0xff</span> &amp; buf[<span class="hljs-number">3</span>]) &lt;&lt; <span class="hljs-number">0</span>
+  ) % <span class="hljs-number">100</span>;
+}
+
+<span class="hljs-comment">// using the randomNum() function above to build a useful heuristic</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateRandomLabel</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">let</span> rand = randomNum();
+  <span class="hljs-keyword">if</span> (rand &gt; <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"COMMON"</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (rand &gt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"UNCOMMON"</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (rand &gt; <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"RARE"</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (rand &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"VERY RARE"</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"ULTRA RARE"</span>;
+  }
+}
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="time"></a><a href="#time" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Time</h3>
+                  <p>Time is one of the most difficult concepts in blockchains. In a single-server-based environment
+                    like web developers are used to, the server's (or database's) clock is ok to rely on for creating
+                    timestamps.</p>
+                  <p>Because the blockchain's state is determined by a consensus among many nodes and must be
+                    deterministic and adversary-resistant, there is no way to settle on a &quot;correct&quot; clock time
+                    while code is being run.</p>
+                  <p>You can pull timestamps from the client side (ie. the JavaScript running on the user's computer)
+                    but that should come with all the usual warning about not trusting anything a client sends.</p>
+                  <p>For less exact measures of time, the block index value is sufficient. This will look something
+                    like:</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// Note: Not implemented yet...</span>
+contractContext.blockIndex();
+</code></pre>
+                  <p>Some solutions to the time issue include using &quot;trusted oracles&quot; but that's outside the
+                    scope of this doc.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="potential-gotchas"></a><a href="#potential-gotchas"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Potential Gotchas</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="view-and-change-functions"></a><a
+                      href="#view-and-change-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>View and Change functions</h3>
+                  <p>There are two types of functions that can interact with the blockchain -- &quot;view&quot;
+                    functions and &quot;change&quot; functions.
+                    The difference, however, does not exist on the contract level. Rather, developers, if they wish to
+                    use view functions,
+                    can mark certain functions to be &quot;view functions&quot; in the front-end or calling them through
+                    <code>near view</code> in <a href="https://github.com/near/near-cli">NEAR CLI</a>.</p>
+                  <ol>
+                    <li><strong>View</strong> functions do not actually change the state of the blockchain. Imagine a
+                      function which, for instance, just checks the balance of a particular account. Because no state is
+                      changed, these functions are lightweight and generally safe. <br />
+                      <br />
+                      A view function will fail if it tries to change the state or calls the following binding methods
+                      that are exposed from nearcore:
+                    </li>
+                  </ol>
+                  <ul>
+                    <li><code>signer_account_id</code></li>
+                    <li><code>signer_account_pk</code></li>
+                    <li><code>predecessor_account_id</code></li>
+                    <li><code>attached_deposit</code></li>
+                    <li><code>prepaid_gas</code></li>
+                    <li><code>used_gas</code></li>
+                    <li><code>promise_create</code></li>
+                    <li><code>promise_then</code></li>
+                    <li><code>promise_and</code></li>
+                    <li><code>promise_batch_create</code></li>
+                    <li><code>promise_batch_then</code></li>
+                    <li><code>promise_batch_action_create_account</code></li>
+                    <li><code>promise_batch_action_deploy_account</code></li>
+                    <li><code>promise_batch_action_function_call</code></li>
+                    <li><code>promise_batch_action_transfer</code></li>
+                    <li><code>promise_batch_action_stake</code></li>
+                    <li><code>promise_batch_action_add_key_with_full_access</code></li>
+                    <li><code>promise_batch_action_add_key_with_function_call</code></li>
+                    <li><code>promise_batch_action_delete_key</code></li>
+                    <li><code>promise_batch_action_delete_account</code></li>
+                    <li><code>promise_results_count</code></li>
+                    <li><code>promise_result</code></li>
+                    <li><code>promise_return</code></li>
+                  </ul>
+                  <ol start="2">
+                    <li><strong>Change</strong> functions modify state, for example by updating the balance someone
+                      holds in their account. You need to be careful with these functions so they typically require
+                      explicit user authorization and are treated somewhat differently.</li>
+                  </ol>
+                  <h3><a class="anchor" aria-hidden="true" id="private-and-public-functions"></a><a
+                      href="#private-and-public-functions" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Private and Public Functions</h3>
+                  <p>Methods with names prepended by an underscore <code>_</code> are not callable from outside the
+                    contract. All others are available publicly in the client.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_myPrivateFunction</span>(<span class="hljs-params">someInput: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">void</span> </span>{
+  <span class="hljs-comment">// Code here!</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myPublicFunction</span>(<span class="hljs-params">someInput: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">void</span> </span>{
+  <span class="hljs-comment">// Code here!</span>
+}
+</code></pre>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 12/9/2020 by OlegMakarenko</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/develop/contracts/overview"><span
+                class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button"
+              href="/docs/develop/contracts/as/near-sdk-as"><span>AS SDK</span><span class="arrow-next"> →</span></a>
+          </div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#quickstart">Quickstart</a></li>
+          <li><a href="#basics">Basics</a>
+            <ul class="toc-headings">
+              <li><a href="#contracts">Contracts</a></li>
+              <li><a href="#file-structure">File Structure</a></li>
+              <li><a href="#environment">Environment</a></li>
+            </ul>
+          </li>
+          <li><a href="#development">Development</a>
+            <ul class="toc-headings">
+              <li><a href="#models">Models</a></li>
+              <li><a href="#context">Context</a></li>
+            </ul>
+          </li>
+          <li><a href="#state-and-data">State and Data</a>
+            <ul class="toc-headings">
+              <li><a href="#storage">Storage</a></li>
+              <li><a href="#collections">Collections</a></li>
+            </ul>
+          </li>
+          <li><a href="#assemblyscript-tips">AssemblyScript Tips</a>
+            <ul class="toc-headings">
+              <li><a href="#arrays">Arrays</a></li>
+              <li><a href="#iteration">Iteration</a></li>
+              <li><a href="#classes">Classes</a></li>
+              <li><a href="#functions">Functions</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#math">Math</a></li>
+              <li><a href="#time">Time</a></li>
+            </ul>
+          </li>
+          <li><a href="#potential-gotchas">Potential Gotchas</a>
+            <ul class="toc-headings">
+              <li><a href="#view-and-change-functions">View and Change functions</a></li>
+              <li><a href="#private-and-public-functions">Private and Public Functions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

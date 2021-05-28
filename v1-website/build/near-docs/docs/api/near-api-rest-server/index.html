@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>NEAR API REST SERVER · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description"
+    content="&gt; [NEAR REST API Server](https://github.com/near-examples/near-api-rest-server) is a project that allows you create your own simple REST API server that interacts with the NEAR blockchain." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="NEAR API REST SERVER · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="&gt; [NEAR REST API Server](https://github.com/near-examples/near-api-rest-server) is a project that allows you create your own simple REST API server that interacts with the NEAR blockchain." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>API</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">API</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/api/rpc">RPC Endpoints</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/api/near-api-rest-server">REST API SERVER</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">JavaScript Library</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/api/naj-overview">Overview</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/api/naj-quick-reference">Quick Reference</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/api/naj-cookbook">Cookbook</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/naj-faq">JS Library FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/api/near-rest-api-server.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">NEAR API REST SERVER</h1>
+            </header>
+            <article>
+              <div><span>
+                  <blockquote>
+                    <p><a href="https://github.com/near-examples/near-api-rest-server">NEAR REST API Server</a> is a
+                      project that allows you create your own simple REST API server that interacts with the NEAR
+                      blockchain.</p>
+                  </blockquote>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Overview</h2>
+                  <p><em>Click on a route for more information and examples</em></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Route</th>
+                        <th>Method</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>CONTRACTS</strong></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#deploy"><code>/deploy</code></a></td>
+                        <td>POST</td>
+                        <td>Deploys a smart contract on NEAR.</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#view"><code>/view</code></a></td>
+                        <td>POST</td>
+                        <td>Performs a smart contract <strong>view</strong> call with no gas burnt.</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#call"><code>/call</code></a></td>
+                        <td>POST</td>
+                        <td>Performs a smart contract <strong>change</strong> call that burns gas.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>UTILS</strong></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#init"><code>/init</code></a></td>
+                        <td>POST</td>
+                        <td>Initializes the master account and updates <code>near-api-server-config.json</code></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#create_user"><code>/create_user</code></a></td>
+                        <td>POST</td>
+                        <td>Creates a NEAR <a
+                            href="https://docs.near.org/docs/concepts/account#subaccounts">sub-account</a> and stores
+                          credentials in <code>/storage</code>.</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#parse_seed_phrase"><code>/parse_seed_phrase</code></a></td>
+                        <td>POST</td>
+                        <td>Displays public and private key pair from a given seed phrase .</td>
+                      </tr>
+                      <tr>
+                        <td><strong>NFT EXAMPLE</strong></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><a href="#mint_nft"><code>/mint_nft</code></a></td>
+                        <td>POST</td>
+                        <td>Mints an NFT for a given contract.</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#transfer_nft"><code>/transfer_nft</code></a></td>
+                        <td>POST</td>
+                        <td>Transfers NFT ownership to a specified account.</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#view_nft"><code>/view_nft</code></a></td>
+                        <td>POST</td>
+                        <td>Returns owner, metadata, and approved account IDs for a given token ID.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Requirements</h2>
+                  <ul>
+                    <li><a href="https://docs.near.org/docs/develop/basics/create-account">NEAR Account</a> <em>(with
+                        access to private key or seed phrase)</em></li>
+                    <li><a href="https://nodejs.org/en/download/package-manager/">Node.js</a></li>
+                    <li><a href="https://www.npmjs.com/get-npm">npm</a> or <a
+                        href="https://yarnpkg.com/getting-started/install">Yarn</a></li>
+                    <li>API request tool such as <a href="https://www.postman.com/downloads/">Postman</a></li>
+                  </ul>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Setup</h2>
+                  <ol>
+                    <li>Clone repository</li>
+                  </ol>
+                  <pre><code class="hljs css language-bash">git <span class="hljs-built_in">clone</span> git@github.com:near-examples/near-api-server.git
+</code></pre>
+                  <ol start="2">
+                    <li>Install dependencies</li>
+                  </ol>
+                  <pre><code class="hljs css language-bash">npm install
+</code></pre>
+                  <ol start="3">
+                    <li>Configure <code>near-api-server.config.json</code></li>
+                  </ol>
+                  <p>Default settings:</p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"server_host"</span>: <span class="hljs-string">"localhost"</span>,
+  <span class="hljs-attr">"server_port"</span>: <span class="hljs-number">3000</span>,
+  <span class="hljs-attr">"rpc_node"</span>: <span class="hljs-string">"https://rpc.testnet.near.org"</span>,
+  <span class="hljs-attr">"allow_rpc_update"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+                  <p><em><strong>Note:</strong> <code>allow_rpc_update</code> determines if this param can be changed
+                      via <code>/init</code> route.</em></p>
+                  <ol start="4">
+                    <li>Start server</li>
+                  </ol>
+                  <pre><code class="hljs css language-bash">node app
+</code></pre>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="contracts"></a><a href="#contracts" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Contracts</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="deploy"></a><a href="#deploy" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/deploy</code></h3>
+                  <blockquote>
+                    <p><em>Deploys a smart contract to the NEAR blockchain based on the wasm file located in
+                        <code>/contracts</code> folder.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>account_id</code></td>
+                        <td><em>Account id that you will be deploying the contract to.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>seed_phrase</code> <em>OR</em> <code>private_key</code></td>
+                        <td><em>Seed phrase OR private key of the account id above.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>contract</code></td>
+                        <td><em>wasm file of compiled contract located in the <code>/contracts</code> folder of this
+                            project.</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em><strong>Note:</strong> Use <a
+                        href="https://docs.near.org/docs/tools/near-cli#near-login"><code>near login</code></a> to save
+                      your key pair to your local machine.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"seed_phrase"</span>: <span class="hljs-string">"witch collapse practice feed shame open despair creek road again ice least"</span>,
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"nft_simple.wasm"</span>
+}
+</code></pre>
+                  <p>
+                  <details>
+                    <summary><strong>Example Response:</strong> </summary>
+                    </p>
+                    <p>
+                    <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"status"</span>: {
+    <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-attr">"transaction"</span>: {
+    <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+    <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:Cgg4i7ciid8uG4K5Vnjzy5N4PXLst5aeH9ApRAUA3y8U"</span>,
+    <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"DeployContract"</span>: {
+          <span class="hljs-attr">"code"</span>: <span class="hljs-string">"hT9saWV3aok50F8JundSIWAW+lxOcBOns1zenB2fB4E="</span>
+        }
+      }
+    ],
+    <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"ed25519:3VrppDV8zMMRXErdBJVU9MMbbKZ4SK1pBZqXoyw3oSSiXTeyR2W7upNhhZPdFJ1tNBr9h9SnsTVeBm5W9Bhaemis"</span>,
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"HbokHoCGcjGQZrz8yU8QDqBeAm5BN8iPjaSMXu7Yp2KY"</span>
+  },
+  <span class="hljs-attr">"transaction_outcome"</span>: {
+    <span class="hljs-attr">"proof"</span>: [
+      {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"Dfjn2ro1dXrPqgzd5zU7eJpCMKnATm295ceocX73Qiqn"</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+      },
+      {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"9raAgMrEmLpL6uiynMAi9rykJrXPEZN4WSxLJUJXbipY"</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+      }
+    ],
+    <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"B64cQPDNkwiCcN3SGXU2U5Jz5M9EKF1hC6uDi4S15Fb3"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"HbokHoCGcjGQZrz8yU8QDqBeAm5BN8iPjaSMXu7Yp2KY"</span>,
+    <span class="hljs-attr">"outcome"</span>: {
+      <span class="hljs-attr">"logs"</span>: [],
+      <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"D94GcZVXE2WgPGuaJPJq8MdeEUidrN1FPkuU75NXWm7X"</span>],
+      <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">1733951676474</span>,
+      <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"173395167647400000000"</span>,
+      <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+      <span class="hljs-attr">"status"</span>: {
+        <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"D94GcZVXE2WgPGuaJPJq8MdeEUidrN1FPkuU75NXWm7X"</span>
+      }
+    }
+  },
+  <span class="hljs-attr">"receipts_outcome"</span>: [
+    {
+      <span class="hljs-attr">"proof"</span>: [
+        {
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"3HLkv7KrQ9LPptX658QiwkFagv8NwjcxF6ti15Een4uh"</span>,
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>
+        },
+        {
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"9raAgMrEmLpL6uiynMAi9rykJrXPEZN4WSxLJUJXbipY"</span>,
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+        }
+      ],
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"B64cQPDNkwiCcN3SGXU2U5Jz5M9EKF1hC6uDi4S15Fb3"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"D94GcZVXE2WgPGuaJPJq8MdeEUidrN1FPkuU75NXWm7X"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [],
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">1733951676474</span>,
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"173395167647400000000"</span>,
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+                    </p>
+                  </details>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="view"></a><a href="#view" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/view</code></h3>
+                  <blockquote>
+                    <p><em>Performs a smart contract view call that is free of charge (no gas burnt).</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>contract</code></td>
+                        <td><em>Account id of the smart contract you are calling.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>method</code></td>
+                        <td><em>Name of the public method on the contract you are calling.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>params</code></td>
+                        <td><em>Arguments the method of the contract takes. Pass an empty object if no args are
+                            needed.</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"inotel.pool.f863973.m0"</span>,
+  <span class="hljs-attr">"method"</span>: <span class="hljs-string">"get_accounts"</span>,
+  <span class="hljs-attr">"params"</span>: { <span class="hljs-attr">"from_index"</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">"limit"</span>: <span class="hljs-number">5</span> }
+}
+</code></pre>
+                  <p>
+                  <details>
+                    <summary><strong>Example Response:</strong> </summary>
+                    </p>
+                    <p>
+                    <pre><code class="hljs css language-json">[
+  {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"ino.lockup.m0"</span>,
+    <span class="hljs-attr">"unstaked_balance"</span>: <span class="hljs-string">"0"</span>,
+    <span class="hljs-attr">"staked_balance"</span>: <span class="hljs-string">"2719843984800963837328608365424"</span>,
+    <span class="hljs-attr">"can_withdraw"</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"ino.testnet"</span>,
+    <span class="hljs-attr">"unstaked_balance"</span>: <span class="hljs-string">"2"</span>,
+    <span class="hljs-attr">"staked_balance"</span>: <span class="hljs-string">"3044983795632859169857527919579"</span>,
+    <span class="hljs-attr">"can_withdraw"</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"ino.stakewars.testnet"</span>,
+    <span class="hljs-attr">"unstaked_balance"</span>: <span class="hljs-string">"2"</span>,
+    <span class="hljs-attr">"staked_balance"</span>: <span class="hljs-string">"21704174266817478470830456026"</span>,
+    <span class="hljs-attr">"can_withdraw"</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"ds4.testnet"</span>,
+    <span class="hljs-attr">"unstaked_balance"</span>: <span class="hljs-string">"3"</span>,
+    <span class="hljs-attr">"staked_balance"</span>: <span class="hljs-string">"10891355794195012441764921"</span>,
+    <span class="hljs-attr">"can_withdraw"</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"32oijafsiodjfas.testnet"</span>,
+    <span class="hljs-attr">"unstaked_balance"</span>: <span class="hljs-string">"3"</span>,
+    <span class="hljs-attr">"staked_balance"</span>: <span class="hljs-string">"383757424103247547511904666"</span>,
+    <span class="hljs-attr">"can_withdraw"</span>: <span class="hljs-literal">true</span>
+  }
+]
+</code></pre>
+                    </p>
+                  </details>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="call"></a><a href="#call" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/call</code></h3>
+                  <blockquote>
+                    <p><em>Performs a smart contract call that changes state and burns gas.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>account_id</code></td>
+                        <td><em>Account id that will be performing the call and will be charged for gas and attached
+                            tokens / deposit.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>seed_phrase</code> <em>OR</em> <code>private_key</code></td>
+                        <td><em>Seed phrase OR private key of the account id above.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>contract</code></td>
+                        <td><em>Account id of the smart contract you will be calling.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>method</code></td>
+                        <td><em>Public method on the smart contract that you will be calling.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>params</code></td>
+                        <td><em>Arguments the method of the contract takes. Pass an empty object if no args are
+                            needed.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>attached_gas</code></td>
+                        <td><em>Amount of gas you will be attaching to the call in <a
+                              href="https://docs.near.org/docs/concepts/gas#thinking-in-gas">TGas</a>.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>attached_tokens</code></td>
+                        <td><em>Amount of tokens to be sent to the contract you are calling in yoctoNEAR (10^-24
+                            NEAR).</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em><strong>Note:</strong> Use <a
+                        href="https://docs.near.org/docs/tools/near-cli#near-login"><code>near login</code></a> to save
+                      your key pair to your local machine.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"private_key"</span>: <span class="hljs-string">"2Kh6PJjxH5PTTsVnYqtgnnwXHeafvVGczDXoCb33ws8reyq8J4oBYix1KP2ugRQ7q9NQUyPcVFTtbSG3ARVKETfK"</span>,
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"guest-book.testnet"</span>,
+  <span class="hljs-attr">"method"</span>: <span class="hljs-string">"addMessage"</span>,
+  <span class="hljs-attr">"params"</span>: { <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Hello World"</span> },
+  <span class="hljs-attr">"attached_gas"</span>: <span class="hljs-string">"100000000000000"</span>,
+  <span class="hljs-attr">"attached_tokens"</span>: <span class="hljs-string">"0"</span>
+}
+</code></pre>
+                  <p>
+                  <details>
+                    <summary><strong>Example Response:</strong> </summary>
+                    </p>
+                    <p>
+                    <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"status"</span>: {
+    <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-attr">"transaction"</span>: {
+    <span class="hljs-attr">"signer_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+    <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:ASZEids5Qa8XMHX2S7LRL4bQRczi4YuMWXSM7S1HE5b"</span>,
+    <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"guest-book.testnet"</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"FunctionCall"</span>: {
+          <span class="hljs-attr">"method_name"</span>: <span class="hljs-string">"addMessage"</span>,
+          <span class="hljs-attr">"args"</span>: <span class="hljs-string">"eyJ0ZXh0IjoiSGVsbG8gV29ybGQifQ=="</span>,
+          <span class="hljs-attr">"gas"</span>: <span class="hljs-number">100000000000000</span>,
+          <span class="hljs-attr">"deposit"</span>: <span class="hljs-string">"0"</span>
+        }
+      }
+    ],
+    <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"ed25519:4T9FqsjYBxcitjd5GgHrv3i3hcdcJSNcwwG3jBUgs7zZCZ3uShAK44Hi3oYFefhr8e5UW3LLD49ofRpGXKwGqqot"</span>,
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"CniHtfQVzcyVWJaUrQibJyGdhLi5axsjsoSRvvFbJ1jv"</span>
+  },
+  <span class="hljs-attr">"transaction_outcome"</span>: {
+    <span class="hljs-attr">"proof"</span>: [
+      {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"EkzDGbbBHSAuJcCPmhKSqbnBKyLrMgXkrTEZZZQudHeH"</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+      },
+      {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"36j4PK6fsLChiVTBQnXS1ywVSgJgHo7FtWzd5y5jkK1B"</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+      }
+    ],
+    <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"CUAu2deED8UX4vkerCbsTMR7YkeKt8RQXknYMNrVvM7C"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"CniHtfQVzcyVWJaUrQibJyGdhLi5axsjsoSRvvFbJ1jv"</span>,
+    <span class="hljs-attr">"outcome"</span>: {
+      <span class="hljs-attr">"logs"</span>: [],
+      <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"B7xAYoga5vrKERK7wY7EHa2Z74LaRJwqPsh4esLrKeQF"</span>],
+      <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">2427992549888</span>,
+      <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"242799254988800000000"</span>,
+      <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+      <span class="hljs-attr">"status"</span>: {
+        <span class="hljs-attr">"SuccessReceiptId"</span>: <span class="hljs-string">"B7xAYoga5vrKERK7wY7EHa2Z74LaRJwqPsh4esLrKeQF"</span>
+      }
+    }
+  },
+  <span class="hljs-attr">"receipts_outcome"</span>: [
+    {
+      <span class="hljs-attr">"proof"</span>: [
+        {
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"6Uo6BajpAxiraJEv69RwhjYnC86u56cw29vRDB1SV4dv"</span>,
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+        }
+      ],
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"Ecq6pK74uiJFKxPTaasYuQcsEznnQjdzMAfsyrBpDo2u"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"B7xAYoga5vrKERK7wY7EHa2Z74LaRJwqPsh4esLrKeQF"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [<span class="hljs-string">"6S6m1TYuVPYovLu9FHGV5oLRnDXeNQ8NhXxYjcr91xAN"</span>],
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">3766420707221</span>,
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"376642070722100000000"</span>,
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"guest-book.testnet"</span>,
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+        }
+      }
+    },
+    {
+      <span class="hljs-attr">"proof"</span>: [
+        {
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"2za2YKUhyMfWbeEL7UKZxZcQbAqEmSPgPoYh9QDdeJQi"</span>,
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Left"</span>
+        },
+        {
+          <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"61aHEiTBBbPU8UEXgSQh42TujFkHXQQMSuTh13PLPwbG"</span>,
+          <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"Right"</span>
+        }
+      ],
+      <span class="hljs-attr">"block_hash"</span>: <span class="hljs-string">"6LfpzvCBkqq7h5uG9VjAHMwSpC3HMMBSAGNGhbrAJzKP"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"6S6m1TYuVPYovLu9FHGV5oLRnDXeNQ8NhXxYjcr91xAN"</span>,
+      <span class="hljs-attr">"outcome"</span>: {
+        <span class="hljs-attr">"logs"</span>: [],
+        <span class="hljs-attr">"receipt_ids"</span>: [],
+        <span class="hljs-attr">"gas_burnt"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"tokens_burnt"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-attr">"executor_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+        <span class="hljs-attr">"status"</span>: {
+          <span class="hljs-attr">"SuccessValue"</span>: <span class="hljs-string">""</span>
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+                    </p>
+                  </details>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="utils"></a><a href="#utils" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Utils</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="init"></a><a href="#init" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/init</code></h3>
+                  <blockquote>
+                    <p><em>Configures <code>near-api-server.config.json</code> and creates a master account that stores
+                        credentials in this file. This allows for &quot;simple methods&quot; to be called where you
+                        won't have to pass as many parameters, primarily the master account id and private key or seed
+                        phrase.</em></p>
+                  </blockquote>
+                  <p><strong>ATTN: SERVER MUST BE RESTARTED AFTER CALLING THIS ENDPOINT</strong></p>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>master_account_id</code></td>
+                        <td><em>Master account that has full access to the NFT contract below</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>seed_phrase</code> <em>OR</em> <code>private_key</code></td>
+                        <td><em>Seed phrase OR private key of the account id above.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>nft_contract</code></td>
+                        <td><em>Contract account that has NFT contract deployed to it</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>server_host</code></td>
+                        <td><em>Public IP address for your API server (localhost is default)</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>server_port</code></td>
+                        <td><em>(Port your API server will listen on)</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>rpc_node</code></td>
+                        <td><em><a href="https://docs.near.org/docs/concepts/networks">Network</a> your server will be
+                            running on (testnet, mainnet, or betanet)</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em><strong>Note:</strong> Use <a
+                        href="https://docs.near.org/docs/tools/near-cli#near-login"><code>near login</code></a> to save
+                      your key pair to your local machine.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"master_account_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"seed_phrase"</span>: <span class="hljs-string">"seed phrase for master_account_id goes here"</span>,
+  <span class="hljs-attr">"nft_contract"</span>: <span class="hljs-string">"nft-contract.example.testnet"</span>,
+  <span class="hljs-attr">"server_host"</span>: <span class="hljs-string">"localhost"</span>,
+  <span class="hljs-attr">"server_port"</span>: <span class="hljs-number">3000</span>,
+  <span class="hljs-attr">"rpc_node"</span>: <span class="hljs-string">"https://rpc.testnet.near.org"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Settings updated."</span>
+}
+</code></pre>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="create_user"></a><a href="#create_user"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/create_user</code></h3>
+                  <blockquote>
+                    <p><em>Creates a NEAR <a
+                          href="https://docs.near.org/docs/concepts/account#subaccounts">sub-account</a> using
+                        initialized master account and saves credentials to <code>/storage</code> directory. Requires <a
+                          href="#init"><code>/init</code></a> configuration with master account.</em></p>
+                  </blockquote>
+                  <p><strong>Note:</strong> <em>Only letters, digits, and - or _ separators are allowed.</em></p>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs">{
+    <span class="hljs-attr">"name"</span> : <span class="hljs-string">"satoshi"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Account satoshi.example.testnet created. Public key: ed25519:HW4koiHqLi5WdVHWy9fqBWHbLRrzfmvCiRAUVhMa14T2"</span>
+}
+</code></pre>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="parse_seed_phrase"></a><a href="#parse_seed_phrase"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/parse_seed_phrase</code></h3>
+                  <blockquote>
+                    <p><em>Converts seed phrase into public / private key pair.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs">{
+    <span class="hljs-attr">"seed_phrase"</span> : <span class="hljs-string">"witch collapse practice feed shame open despair creek road again ice least"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs">{
+    <span class="hljs-attr">"seedPhrase"</span>: <span class="hljs-string">"witch collapse practice feed shame open despair creek road again ice least"</span>,
+    <span class="hljs-attr">"secretKey"</span>: <span class="hljs-string">"ed25519:41oHMLtYygTsgwDzaMdjWRq48Sy9xJsitJGmMxgA9A7nvd65aT8vQwAvRdHi1nruPP47B6pNhW5T5TK8SsqCZmjn"</span>,
+    <span class="hljs-attr">"publicKey"</span>: <span class="hljs-string">"ed25519:Cgg4i7ciid8uG4K5Vnjzy5N4PXLst5aeH9ApRAUA3y8U"</span>
+}
+</code></pre>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="nfts"></a><a href="#nfts" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NFTs</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="mint_nft"></a><a href="#mint_nft" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/mint_nft</code></h3>
+                  <blockquote>
+                    <p><em>Mints a new NFT on a specified contract.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <h4><a class="anchor" aria-hidden="true" id="standard-nft-minting"></a><a href="#standard-nft-minting"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Standard NFT Minting</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>token_id</code></td>
+                        <td><em>ID for new token you are minting</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>metadata</code></td>
+                        <td><em>Metadata for the new token as a string.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>account_id</code></td>
+                        <td><em>Account ID for the new token owner.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>seed_phrase</code> <em>OR</em> <code>private_key</code></td>
+                        <td><em>Seed phrase OR private key for the NFT contract.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>nft_contract</code></td>
+                        <td><em>Account ID for the NFT contract your are minting on.</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em><strong>Note:</strong> Use <a
+                        href="https://docs.near.org/docs/tools/near-cli#near-login"><code>near login</code></a> to save
+                      your key pair to your local machine.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs">{
+    <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE-TOKEN"</span>,
+    <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+    <span class="hljs-attr">"private_key"</span>: <span class="hljs-string">"41oHMLtYygTsgwDzaMdjWRq48Sy9xJsitJGmMxgA9A7nvd65aT8vQwAvRdHi1nruPP47B6pNhW5T5TK8SsqCZmjn"</span>,
+    <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"nft.example.near"</span>,
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">[
+  {
+    <span class="hljs-attr">"token"</span>: {
+      <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+      <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+      <span class="hljs-attr">"approved_account_ids"</span>: [],
+      <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE_TOKEN"</span>
+    },
+    <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"Be7tV1h2dvhg53S2rartojeSUbNfQTB7ypuprmb6xRhw"</span>
+  }
+]
+</code></pre>
+                  <hr>
+                  <h4><a class="anchor" aria-hidden="true" id="simple-nft-minting"></a><a href="#simple-nft-minting"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Simple NFT Minting</h4>
+                  <p><em>Requires <a href="#init"><code>/init</code></a> configuration with master account.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE_TOKEN"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">[
+  {
+    <span class="hljs-attr">"token"</span>: {
+      <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+      <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+      <span class="hljs-attr">"approved_account_ids"</span>: [],
+      <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE_TOKEN"</span>
+    },
+    <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"Be7tV1h2dvhg53S2rartojeSUbNfQTB7ypuprmb6xRhw"</span>
+  }
+]
+</code></pre>
+                  <p><em>(<code>tx</code> is the transaction hash that can be queried in <a
+                        href="http://explorer.testnet.near.org">NEAR Explorer</a>)</em></p>
+                  <hr>
+                  <h4><a class="anchor" aria-hidden="true" id="batch-nft-minting-simple"></a><a
+                      href="#batch-nft-minting-simple" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Batch NFT minting (simple)</h4>
+                  <p><em>Requires <a href="#init"><code>/init</code></a> configuration with master account.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE_TOKEN_{inc}"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+  <span class="hljs-attr">"min"</span>: <span class="hljs-number">31</span>,
+  <span class="hljs-attr">"max"</span>: <span class="hljs-number">33</span>
+}
+</code></pre>
+                  <p><em>(This creates <code>EXAMPLE_TOKEN_1</code>, <code>EXAMPLE_TOKEN_2</code>, &amp;
+                      <code>EXAMPLE_TOKEN_3</code>)</em></p>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">[
+  {
+    <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"mAL92gb6g6hhubZBRewJk5vSwmmzm2SXmwdAfYqfWcG"</span>
+  },
+  {
+    <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"Dv9h8nWJLujkKpmw58ZR4QwAgPVprb4j5QarDUumoGEX"</span>
+  },
+  {
+    <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"J48F3vALJBbbUguKXp6e16g5vKVwzC2LtVBpsfEVFpYa"</span>
+  }
+]
+</code></pre>
+                  <p><em>(Above response are transaction hashes that can be queried in <a
+                        href="http://explorer.testnet.near.org">NEAR Explorer</a>)</em></p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="transfer_nft"></a><a href="#transfer_nft"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>/transfer_nft</code></h3>
+                  <blockquote>
+                    <p><em>Transfers ownership of NFT from specified contract on behalf of provided
+                        <code>enforce_owner_id</code> signed with <code>owner_private_key</code>.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <h4><a class="anchor" aria-hidden="true" id="standard-transfer-nft"></a><a
+                      href="#standard-transfer-nft" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Standard Transfer NFT</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>token_id</code></td>
+                        <td><em>Token ID of the token being transferred</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>receiver_id</code></td>
+                        <td><em>Account ID taking ownership of the NFT</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>enforce_owner_id</code></td>
+                        <td><em>Account ID for the account that currently owns the NFT.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>memo</code></td>
+                        <td><em>Optional message to the new token holder.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>owner_private_key</code></td>
+                        <td><em>Private key of the <code>enforce_owner_id</code>.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>nft_contract</code></td>
+                        <td><em>NFT contract that the token being transferred is on.</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><em><strong>Note:</strong> Use <a
+                        href="https://docs.near.org/docs/tools/near-cli#near-login"><code>near login</code></a> to save
+                      your key pair to your local machine.</em></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE-TOKEN"</span>,
+  <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"receiver.testnet"</span>,
+  <span class="hljs-attr">"enforce_owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"memo"</span>: <span class="hljs-string">"Here's a token I thought you might like! :)"</span>,
+  <span class="hljs-attr">"owner_private_key"</span>: <span class="hljs-string">"YOUR_PRIVATE_KEY"</span>,
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"nft.example.near"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"receiver.testnet"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+  <span class="hljs-attr">"approved_account_ids"</span>: [],
+  <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"5WdNgmNeA5UNpSMDRXemwJc95MB6J22LcvAaimuN5YzF"</span>
+}
+</code></pre>
+                  <p><em>(<code>tx</code> is the transaction hash that can be queried in <a
+                        href="http://explorer.testnet.near.org">NEAR Explorer</a>)</em></p>
+                  <hr>
+                  <h4><a class="anchor" aria-hidden="true" id="simple-transfer-nfts"></a><a href="#simple-transfer-nfts"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Simple Transfer NFTs</h4>
+                  <blockquote>
+                    <p><em>Requires <a href="#init"><code>/init</code></a> configuration with master account.</em></p>
+                  </blockquote>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Param</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>token_id</code></td>
+                        <td><em>Token ID of the token being transferred</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>receiver_id</code></td>
+                        <td><em>Account ID taking ownership of the NFT</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>enforce_owner_id</code></td>
+                        <td><em>Account ID for the account that currently owns the NFT.</em></td>
+                      </tr>
+                      <tr>
+                        <td><code>memo</code></td>
+                        <td><em>Optional message to new token holder.</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE-TOKEN"</span>,
+  <span class="hljs-attr">"receiver_id"</span>: <span class="hljs-string">"receiver.testnet"</span>,
+  <span class="hljs-attr">"enforce_owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"memo"</span>: <span class="hljs-string">"Here's a token I thought you might like! :)"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"receiver.testnet"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+  <span class="hljs-attr">"approved_account_ids"</span>: [],
+  <span class="hljs-attr">"tx"</span>: <span class="hljs-string">"5WdNgmNeA5UNpSMDRXemwJc95MB6J22LcvAaimuN5YzF"</span>
+}
+</code></pre>
+                  <p><em>(<code>tx</code> is the transaction hash that can be queried in <a
+                        href="http://explorer.testnet.near.org">NEAR Explorer</a>)</em></p>
+                  <hr>
+                  <h3><a class="anchor" aria-hidden="true" id="view_nft"></a><a href="#view_nft" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>view_nft</code></h3>
+                  <h4><a class="anchor" aria-hidden="true" id="standard-view-nft"></a><a href="#standard-view-nft"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Standard View NFT</h4>
+                  <blockquote>
+                    <p><em>Returns owner, metadata, and approved account IDs for a given token ID.</em></p>
+                  </blockquote>
+                  <p><strong>Method:</strong> <strong><code>POST</code></strong></p>
+                  <p><strong>Example:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"token_id"</span>: <span class="hljs-string">"EXAMPLE-TOKEN"</span>,
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"nft.example.testnet"</span>
+}
+</code></pre>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+  <span class="hljs-attr">"approved_account_ids"</span>: []
+}
+</code></pre>
+                  <hr>
+                  <h4><a class="anchor" aria-hidden="true" id="simple-view-nft"></a><a href="#simple-view-nft"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Simple View NFT</h4>
+                  <blockquote>
+                    <p><em>Receive detailed information about NFT using URL params. Requires <a
+                          href="#init"><code>/init</code></a> configuration with master account.</em></p>
+                  </blockquote>
+                  <p><strong>Example:</strong></p>
+                  <p><code>http://localhost:3000/view_nft/EXAMPLE-TOKEN</code></p>
+                  <p><strong>Example Response:</strong></p>
+                  <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"owner_id"</span>: <span class="hljs-string">"example.testnet"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu"</span>,
+  <span class="hljs-attr">"approved_account_ids"</span>: []
+}
+</code></pre>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="faker-data"></a><a href="#faker-data" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Faker data</h2>
+                  <blockquote>
+                    <p>Use the following tags below to use random data for testing purposes.</p>
+                  </blockquote>
+                  <ul>
+                    <li><code>{username}</code></li>
+                    <li><code>{number}</code></li>
+                    <li><code>{word}</code></li>
+                    <li><code>{words}</code></li>
+                    <li><code>{image}</code></li>
+                    <li><code>{color}</code></li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="video-presentation"></a><a href="#video-presentation"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Video Presentation</h2>
+                  <p><iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/d71OscmH4cA"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></p>
+                  </iframe>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 4/30/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/api/rpc"><span class="arrow-prev">←
+              </span><span>RPC Endpoints</span></a><a class="docs-next button"
+              href="/docs/api/naj-overview"><span>Overview</span><span class="arrow-next"> →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#setup">Setup</a></li>
+          <li><a href="#contracts">Contracts</a>
+            <ul class="toc-headings">
+              <li><a href="#deploy"><code>/deploy</code></a></li>
+              <li><a href="#view"><code>/view</code></a></li>
+              <li><a href="#call"><code>/call</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#utils">Utils</a>
+            <ul class="toc-headings">
+              <li><a href="#init"><code>/init</code></a></li>
+              <li><a href="#create_user"><code>/create_user</code></a></li>
+              <li><a href="#parse_seed_phrase"><code>/parse_seed_phrase</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#nfts">NFTs</a>
+            <ul class="toc-headings">
+              <li><a href="#mint_nft"><code>/mint_nft</code></a></li>
+              <li><a href="#transfer_nft"><code>/transfer_nft</code></a></li>
+              <li><a href="#view_nft"><code>view_nft</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#faker-data">Faker data</a></li>
+          <li><a href="#video-presentation">Video Presentation</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

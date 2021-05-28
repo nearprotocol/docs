@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Token Custody Options · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="There are several options available to manage your NEAR and NEAR-based assets. " />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Token Custody Options · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="There are several options available to manage your NEAR and NEAR-based assets. " />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class="siteNavGroupActive siteNavItemActive"><a href="/docs/tokens/token-custody"
+                  target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Token Basics</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Token Basics</h3>
+                  <ul class="">
+                    <li class="navListItem navListItemActive"><a class="navItem" href="/docs/tokens/token-custody">Token
+                        Custody</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tokens/lockup">Lockups Explained</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/delegation">Token Delegation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/tokens/token-custody.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Token Custody Options</h1>
+            </header>
+            <article>
+              <div><span>
+                  <p>There are several options available to manage your NEAR and NEAR-based assets.</p>
+                  <p>As with all blockchains, to claim or receive tokens you will need to generate a keypair which
+                    stores your crypto. You can do this directly by using a hardware wallet and the command line or
+                    indirectly by using a commercially available web or mobile wallet. All of these options are
+                    described below.</p>
+                  <ol>
+                    <li>Web Wallets</li>
+                    <li>Mobile Wallets</li>
+                    <li>Custodians</li>
+                    <li>CLI</li>
+                  </ol>
+                  <p><strong>Do not claim NEAR tokens to an exchange address! Claiming tokens to an exchange address
+                      might result in the loss of your tokens.</strong></p>
+                  <p>If you have chosen an option which doesn't allow you to check balances or lockup details, you can
+                    lookup your account using <a href="https://near.github.io/account-lookup">this tool</a>.</p>
+                  <p>This list will be regularly updated as more products and providers offer NEAR support. Feel free to
+                    send Pull Request to <a
+                      href="https://github.com/near/docs/edit/master/docs/tokens/token-custody.md">https://github.com/near/docs/edit/master/docs/tokens/token-custody.md</a>
+                    with new options.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="security--recovery"></a><a href="#security--recovery"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Security &amp; Recovery</h2>
+                  <p>For any applications or hardware wallet you use, the root of the security is in the <strong>seed
+                      phrase</strong>. No one else in the world should have access to this seed phrase. And if they
+                    manage to get access to it - they will be able to control your account and steal your funds.</p>
+                  <p>The seed phrase defines the private key managed by the application. This seed phrase can be used to
+                    recover access to your account if you lose access to your app / device or there is some software
+                    issue (which happens with all of the software).</p>
+                  <p>You <strong>MUST</strong> back it up (store it somewhere securely) and if you lose both seed phrase
+                    and the device - there is no way to get access to your account.</p>
+                  <p>E.g. Ledger, Trust Wallet, NEAR Wallet all ask to back up seed phrase. If Trust Wallet stops
+                    working, you lose your Ledger or NEAR Wallet front-end goes down - you can always use this seed
+                    phrase in another solution (including CLI) to recover the private key and access your funds.</p>
+                  <p>Note, NEAR Wallet has few less secure but more convenient options, which are just convenient ways
+                    to back up your seed phrase via email or sms. It's not recommeneded for large sums of money, as
+                    these are not very secure back up places (your email can be hacked or <a
+                      href="https://www.androidpolice.com/2020/01/14/princeton-sim-swap-hijacking-phone-numbers-paper/">SIM
+                      card can be highjacked</a> and hackers would be able to access your funds). We recommend to only
+                    use them for small amounts of money, similar to your wallet in the pocket.</p>
+                  <blockquote class="info">
+                    Ledger uses a single seed phrase for all applications and accounts on it. It is done by combining
+                    the seed phrase with an "HD path" - derivation paths.
+                    You can read more [in general about HD wallets and
+                    derivation](https://medium.com/myetherwallet/hd-wallets-and-derivation-paths-explained-865a643c7bf2)
+                    and [Ledger specifics around mulitple
+                    coins](https://ledger.readthedocs.io/en/latest/background/hd_use_cases.html). You just need to
+                    secure the seed phrase and know the paths from which accounts were derived. Even if you lose the
+                    paths, a simple search can be done to find them as they are ususally sequential.
+                  </blockquote>
+                  <h1><a class="anchor" aria-hidden="true" id="web-wallets"></a><a href="#web-wallets"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Web Wallets</h1>
+                  <h2><a class="anchor" aria-hidden="true"
+                      id="option-1-near-wallet-recommended-for-general-users"></a><a
+                      href="#option-1-near-wallet-recommended-for-general-users" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 1: NEAR Wallet (Recommended for general users)</h2>
+                  <p>The <a href="https://wallet.near.org">NEAR Web Wallet</a> provides a way to interact with NEAR
+                    network from web without needing to install a wallet.</p>
+                  <p>Currently, the NEAR Wallet doesn't allow you to create just a public key. Instead, if you have an
+                    allocation of NEAR tokens, ask your facilitator (e.g. CoinList or the NEAR Foundation) to send you a
+                    NEAR Drop and follow <a
+                      href="https://docs.google.com/document/d/13b3K_9f0YZudFrEAmagM4RcesK3DFxPBE5DswJ37Das">this
+                      guide</a>.</p>
+                  <p>NEAR Wallet also supports Ledger hardware devices for improved security. <em>Note: currently NEAR
+                      Wallet only supports single HD path on Ledger, meaning that all accounts will use the same public
+                      key.</em></p>
+                  <h3><a class="anchor" aria-hidden="true" id="importing-accounts-from-other-wallets"></a><a
+                      href="#importing-accounts-from-other-wallets" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Importing accounts from other wallets</h3>
+                  <p>NEAR Wallet supports importing existing accounts from other wallets.
+                    Currently only for accounts that have non-zero balance. If you just created an account and have 0
+                    balance on it - you must first fund it via transfer from another account / exchange.</p>
+                  <ol>
+                    <li>Open <a
+                        href="https://wallet.near.org/recover-seed-phrase">https://wallet.near.org/recover-seed-phrase</a>
+                    </li>
+                    <li>Enter the seed phrase you have from another wallet</li>
+                  </ol>
+                  <p>This will add an account to your NEAR Wallet.</p>
+                  <h4><a class="anchor" aria-hidden="true" id="importing-a-trustwallet-account-into-near-wallet"></a><a
+                      href="#importing-a-trustwallet-account-into-near-wallet" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Importing a TrustWallet Account into NEAR Wallet</h4>
+                  <p>You can follow these steps to import your Trust Wallet account into the NEAR Wallet:</p>
+                  <ol>
+                    <li>Go to <a
+                        href="https://wallet.near.org/recover-seed-phrase">https://wallet.near.org/recover-seed-phrase</a>
+                    </li>
+                    <li>Enter the 12 word seed phrase for your Trust Wallet account, then click &quot;Find My
+                      Account&quot;</li>
+                  </ol>
+                  <p>At this point, your account will have been &quot;restored&quot; into the NEAR Wallet. This means
+                    you will be able to sign transactions in the NEAR Wallet. What happens in the background is a new
+                    key is added to your account, which is stored in the browser.</p>
+                  <p>To add Ledger to your account, first install the NEAR Ledger app:</p>
+                  <ol>
+                    <li>Open Ledger Live</li>
+                    <li>Connect your Ledger, and update it to the latest firmware</li>
+                    <li>On Ledger Live, go to &quot;Settings&quot; and toggle on Developer Mode</li>
+                    <li>Search for and install the NEAR app unto your Ledger</li>
+                  </ol>
+                  <p>Then, on the NEAR Wallet site:</p>
+                  <ol start="5">
+                    <li>Go to <a href="https://wallet.near.org/profile">https://wallet.near.org/profile</a></li>
+                    <li>Scroll down until you see &quot;Hardware Devices&quot; on the right side of the screen, and
+                      select &quot;Enable&quot;</li>
+                    <li>Follow the instructions on-screen</li>
+                  </ol>
+                  <p>You will be given the option to &quot;Remove all other keys&quot;. Choosing &quot;yes&quot; means
+                    your Ledger will be required to sign all transactions for your account, which is the most secure
+                    option. Your Ledger key will be the only key on your account.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="option-2-mathwallet-chrome-extension"></a><a
+                      href="#option-2-mathwallet-chrome-extension" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 2: MathWallet Chrome Extension</h2>
+                  <p><a
+                      href="https://chrome.google.com/webstore/detail/math-wallet/afbcbjpbpfadlkmhmclhkeeodmamcflc">MathWallet
+                      Chrome Extension</a> provides MathWallet interface in the Web via a Chrome Extension.</p>
+                  <ol>
+                    <li>Follow URL above</li>
+                    <li>Click &quot;Switch Network&quot; to select NEAR
+                      3a. To create a new wallet use &quot;Create Wallet&quot;
+                      3b. Or select &quot;Import Wallet&quot; to import an existing account: enter seed phrase of the
+                      account and account id.</li>
+                  </ol>
+                  <h1><a class="anchor" aria-hidden="true" id="mobile-wallets"></a><a href="#mobile-wallets"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Mobile Wallets</h1>
+                  <h2><a class="anchor" aria-hidden="true" id="option-1-trust-wallet"></a><a
+                      href="#option-1-trust-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 1: Trust Wallet</h2>
+                  <p><a href="https://trustwallet.com/">Trust Wallet</a> is a very popular, non-custodial, wallet
+                    available on iOS and Android.</p>
+                  <p><em>Note that, as of October 2020, Trust Wallet does not have plans to enable staking/delegation
+                      from the wallet. Moreover, tokens claimed via the NEAR Foundation's claim process should not be
+                      directed to Trust Wallet, as the respective tokens might not be transferrable anymore. To transfer
+                      tokens you will have to recover the Trust Wallet account in NEAR Wallet by using the Trust
+                      Wallet's seed phrase.</em></p>
+                  <p><strong><em>Setup Trust Wallet and generate public key</em></strong></p>
+                  <ol>
+                    <li>Install Trust Wallet on your phone from App Store or Play Store</li>
+                    <li>Create a new wallet (or use existing if you already have one setup)</li>
+                    <li>Make sure to back up your recovery seed phase as you would usually do.</li>
+                    <li>In &quot;Settings&quot; in upper right corner, toggle NEAR.</li>
+                    <li>In the main wallet view, click on &quot;NEAR&quot; and then &quot;Receive&quot;.</li>
+                    <li>You will see QR code and address in the form
+                      <code>NEAR2F4vDeD9Brbo6cgPAPLMzXrZXza3EXfwS7hrK76SpHwBH4sEud</code> - this is a public key you can
+                      use to claim your tokens.</li>
+                  </ol>
+                  <p><em>Note: the current version of Trust Wallet in App / Play Stores doesn't show the actual balance
+                      on the account. A new version of Trust Wallet will address this.</em></p>
+                  <h2><a class="anchor" aria-hidden="true" id="option-2-mathwallet"></a><a href="#option-2-mathwallet"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 2: MathWallet</h2>
+                  <ul>
+                    <li><a href="https://mathwallet.org/">MathWallet</a> is a multi-platform (mobile/desktop/hardware)
+                      universal crypto wallet that enables token storage of 50+ chains.</li>
+                  </ul>
+                  <p>MathWallet also has a Chrome extension that supports NEAR, see section below.</p>
+                  <p><strong><em>Setup Near Account in MathWallet</em></strong></p>
+                  <ol>
+                    <li>Install MathWallet on your phone from <a
+                        href="https://mathwallet.org/">https://mathwallet.org/</a>.</li>
+                    <li>Switch to 'Near' chain.</li>
+                    <li>Create/import a Near account.</li>
+                    <li>You will see your Near address to send/receive tokens.</li>
+                  </ol>
+                  <h2><a class="anchor" aria-hidden="true" id="option-3-moonlet-wallet"></a><a
+                      href="#option-3-moonlet-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 3: Moonlet Wallet</h2>
+                  <p><a href="https://moonlet.io/">Moonlet</a> is a non-custodial digital asset wallet that enables
+                    users to securely store their crypto assets, spend their tokens, and manage their return from
+                    staking. It's a cross-platform crypto wallet, therefore available on AppStore, Google Play and as a
+                    Chrome Extension.</p>
+                  <p><strong><em>Setup Moonlet Wallet:</em></strong></p>
+                  <p>Either Create a new wallet, Recover an old one or Connect to your Ledger device.
+                    Add NEAR tokens to your main account and start staking to your favourite node.</p>
+                  <p><strong><em>Support Pages:</em></strong></p>
+                  <ul>
+                    <li>Check here for more about Near Staking within Moonlet: <a
+                        href="https://moonlet.io/near-staking/">https://moonlet.io/near-staking/</a></li>
+                    <li>Check this page to learn more about Ledger connectivity: <a
+                        href="https://moonlet.io/moonlet-a-ledger-ready-hodl-wallet/">https://moonlet.io/moonlet-a-ledger-ready-hodl-wallet/</a>
+                    </li>
+                  </ul>
+                  <h1><a class="anchor" aria-hidden="true" id="custodians-recommended-for-institutional-users"></a><a
+                      href="#custodians-recommended-for-institutional-users" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Custodians (Recommended for institutional users)</h1>
+                  <h2><a class="anchor" aria-hidden="true" id="option-1-finoa"></a><a href="#option-1-finoa"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 1: Finoa</h2>
+                  <p><em>Status: Currently available</em></p>
+                  <p><a href="https://finoa.io/">Finoa</a> is the first qualified custodian to offer NEAR asset custody.
+                    Check with <a href="https://finoa.io/contact">Finoa</a> to see if you are eligible and <a
+                      href="https://www.finoa.io/near">their NEAR guide</a> for more information about their offering.
+                  </p>
+                  <p><strong>Delegation and Staking:</strong> In early phases, users will be able to delegate funds to
+                    nodes run by Finoa or provided by Staking Facilities, Chorus One, Certus.One, Blockdaemon, Figment,
+                    BisonTrails or T-Systems.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="option-2-coinbase"></a><a href="#option-2-coinbase"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 2: Coinbase</h2>
+                  <p><em>Status: Implementation Phase, no estimated date</em></p>
+                  <p><strong>Delegation and Staking:</strong> Clients can delegate to any validator they want. Coinbase
+                    is not going to be running it's own validator, just setting up the functionality for clients to
+                    custody their funds with them and delegate to whichever validator they'd like whether that be a
+                    third party provider or one they'd like to run themselves.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="option-3-tbd"></a><a href="#option-3-tbd"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 3: TBD</h2>
+                  <p>(more added soon!)</p>
+                  <h1><a class="anchor" aria-hidden="true" id="cli-recommended-for-developers-and-validators"></a><a
+                      href="#cli-recommended-for-developers-and-validators" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>CLI (Recommended for developers and validators)</h1>
+                  <h2><a class="anchor" aria-hidden="true" id="option-1-ledger-via-cli"></a><a
+                      href="#option-1-ledger-via-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 1: Ledger via CLI</h2>
+                  <p>For users with advanced security requirements and the need for flexibility (developers and
+                    validators), we highly recommend using our command line interface <a
+                      href="/docs/tools/near-cli">(NEAR-CLI)</a> with a Ledger hardware device.</p>
+                  <p>This <a
+                      href="https://medium.com/@bonsfi/how-to-use-ledger-with-near-cli-648d5d990517">community-authored
+                      guide</a> walks through several common commands.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="installing-the-near-ledger-app"></a><a
+                      href="#installing-the-near-ledger-app" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Installing the NEAR Ledger App</h3>
+                  <p>You can install the NEAR Ledger app using <a href="https://www.ledger.com/ledger-live">Ledger
+                      Live</a> by:</p>
+                  <ol>
+                    <li>Open Ledger Live and install any available firmware updates</li>
+                    <li>Go to <code>Settings</code></li>
+                    <li>Under <code>Experimental Features</code> ensure <code>Developer Mode</code> is switched on</li>
+                    <li>Return to the <code>Manager</code> tab and search for NEAR</li>
+                    <li>Follow instructions to install the NEAR app on your device</li>
+                  </ol>
+                  <h3><a class="anchor" aria-hidden="true" id="updating-the-near-ledger-app"></a><a
+                      href="#updating-the-near-ledger-app" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Updating the NEAR Ledger App</h3>
+                  <p>You will need to have the latest Ledger device firmware installed (which can be done in Ledger
+                    Live's &quot;Manager&quot; tab) and the latest NEAR app. If you previously installed the NEAR app,
+                    it may need to be updated.</p>
+                  <p>Currently, while the NEAR app is in Development Mode (while Ledger finishes reviewing it), this
+                    update may only be possible by uninstalling and reinstalling the app from the &quot;Apps
+                    Installed&quot; section of the &quot;Manager&quot; tab.</p>
+                  <p>Make sure to quit the Ledger Live app when interacting with your ledger from the CLI or you'll get
+                    an error like <code>Error: cannot open device with path IOService ..........</code></p>
+                  <h3><a class="anchor" aria-hidden="true" id="to-generate-public-keys-via-web-app"></a><a
+                      href="#to-generate-public-keys-via-web-app" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>To generate public keys via Web App</h3>
+                  <p>[ <a href="https://ledger-keygen.neartools.dev">Here</a> ] is a simple web application that
+                    generates multiple keys using your Ledger device.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="to-generate-public-keys-via-cli"></a><a
+                      href="#to-generate-public-keys-via-cli" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>To generate public keys via CLI</h3>
+                  <ol>
+                    <li>
+                      <p>Make sure <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">you have
+                          npm installed</a></p>
+                    </li>
+                    <li>
+                      <p>Make sure you have quit Ledger Live (or you'll get an
+                        <code>Error: cannot open device with path IOService ..........</code> error)</p>
+                    </li>
+                    <li>
+                      <p>Install <code>near-cli</code> via <code>npm install -g near-cli</code> (or similar command on
+                        Windows). Note that you shouldn't use <code>sudo</code> as it causes problems with Node.js
+                        modules that have native C++ addons. If Node modules are installed in a place inaccessible by
+                        your OS user, you need to do <code>chown -R $USER /path/to/destination/</code> or equivalent on
+                        your OS.</p>
+                    </li>
+                    <li>
+                      <p>Log in your Ledger device and open the NEAR app. A message <code>Peding Ledger review</code>
+                        will appear. To continue, confirm the receiving of the message by the standard means (press both
+                        buttons on Ledger Nano S).</p>
+                    </li>
+                    <li>
+                      <p>Use the <code>near generate-key key --useLedgerKey</code> command to generate the key for your
+                        Ledger device. It will output a <em>public key</em> that can be used to claim your NEAR tokens.
+                        Note 1: in the case of generating a key using the Ledger device, the 2nd argument is ignored and
+                        can thus be anything.<br />
+                        Note 2: This command will output the <strong>same key</strong> no matter how many times it is
+                        run.</p>
+                    </li>
+                    <li>
+                      <p>If you want to generate more keys, you will need to provide an <a
+                          href="https://ethereum.stackexchange.com/questions/70017/can-someone-explain-the-meaning-of-derivation-path-in-wallet-in-plain-english-s">HD
+                          path</a> as a value to the <code>--useLedgerKey</code> flag. Each change in the last number
+                        will produce a new key and you can use any number, as the following examples show:</p>
+                      <pre><code class="hljs"> # Example 1: 
+ near generate-key key --useLedgerKey=&quot;44'/397'/0'/0'/2'&quot;
+ 
+ # Example 2: 
+ near generate-key key --useLedgerKey=&quot;44'/397'/0'/0'/11'&quot;
+</code></pre>
+                    </li>
+                    <li>
+                      <p>After confirming the key on your Ledger device (which should be opened in the NEAR app), the
+                        result in the console will be the following:</p>
+                      <pre><code class="hljs"> Using public key: ed25519:D9Brbo6cgPAPLMzXrZXza3EXfwS7hrK76SpHwBH4sEud
+</code></pre>
+                      <p>...which is the public key you can use to claiming your NEAR tokens. Note: the key includes the
+                        <code>ed25519:</code> portion, so the full key is
+                        <code>ed25519:D9Brbo6cgPAPLMzXrZXza3EXfwS7hrK76SpHwBH4sEud</code> in this example.</p>
+                    </li>
+                  </ol>
+                  <p><em>Best Practice: Keep a log (e.g. spreadsheet) of which HD paths map to which keys and what their
+                      purpose is so you don't end up accidentally re-using public keys and potentially de-anonymizing
+                      yourself</em></p>
+                  <h2><a class="anchor" aria-hidden="true" id="option-2-self-custody"></a><a
+                      href="#option-2-self-custody" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Option 2: Self custody</h2>
+                  <p>For professionals who have their own setup, you can self custody on an offline device or any other
+                    custom method (CloudHSM, etc).</p>
+                  <p>Generally, any software that can produce a valid <code>ed25519</code> key pair can be used to
+                    generate the keys. For NEAR consumption they should be encoded in base58 encoding.</p>
+                  <p>For example, if you have an offline device - you can install <a
+                      href="https://github.com/near/near-cli">near-cli</a> via <code>npm install -g near-cli</code> and
+                    generate keys in the following way:</p>
+                  <pre><code class="hljs css language-bash"><span class="hljs-built_in">export</span> NEAR_ENV=mainnet
+near generate-key some-account-name
+</code></pre>
+                  <p>It will output the public key in the format
+                    <code>Using public key: ed25519:D9Brbo6cgPAPLMzXrZXza3EXfwS7hrK76SpHwBH4sEud</code>, which is the
+                    public key which you can then use for claiming your NEAR tokens (it includes the
+                    <code>ed25519:</code> portion, so the full key is
+                    <code>ed25519:D9Brbo6cgPAPLMzXrZXza3EXfwS7hrK76SpHwBH4sEud</code> in this example).</p>
+                  <p>The private key is stored in the plain-text format in
+                    <code>~/.near-credentials/mainnet/some-account-name.json</code></p>
+                  <h3><a class="anchor" aria-hidden="true" id="verifying-control-of-your-account"></a><a
+                      href="#verifying-control-of-your-account" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Verifying Control of Your Account</h3>
+                  <p>If you have received an account (e.g. via the account claims process) associated with one of your
+                    Ledger keys, you can do a test transaction to verify if you have control over it. First, look up the
+                    key using the <a href="https://near.github.io/account-lookup/">Account Lookup tool</a>. Note the
+                    associated Account ID (the main account) and the Lockup Account ID, where your tokens are stored if
+                    you have a lockup.</p>
+                  <p>While you may not be able to move tokens in the lockup account (due to the lockup!), you can try a
+                    test transfer of <code>0.01 NEAR</code> to yourself from yourself using the Account ID. In this
+                    example, the full HD Path is used. HD Path 1 is the default used by the ledger anyway but you should
+                    replace the final number with whichever is associated with your ledger key:</p>
+                  <pre><code class="hljs">near send YOUR_ACCOUNT_NAME YOUR_ACCOUNT_NAME <span class="hljs-number">0.01</span> --useLedgerKey=<span class="hljs-string">"44'</span>/<span class="hljs-number">397</span><span class="hljs-string">'/0'</span>/<span class="hljs-number">0</span><span class="hljs-string">'/1'</span>
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="using-seed-phrases-in-cli"></a><a
+                      href="#using-seed-phrases-in-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Using seed phrases in CLI</h3>
+                  <p>Seed phrases can be generated by any tools (or offline), including by other wallet like NEAR Wallet
+                    or Trust Wallet.</p>
+                  <p>Given seed phrase, you can output keys and do any other actions by specifying seed phrase (and
+                    possibly HD derivation via <code>-seedPath</code>) via command line flags:</p>
+                  <pre><code class="hljs">near <span class="hljs-keyword">generate</span>-key --seedPhrase=<span class="hljs-string">"words of phrase here"</span>
+</code></pre>
+                  <p>For example, to send money using the seed phrase from another wallet, use:</p>
+                  <pre><code class="hljs">near send <span class="hljs-params">&lt;your account&gt;</span> <span class="hljs-params">&lt;other account&gt;</span> --seedPhrase=<span class="hljs-string">"words"</span>
+</code></pre>
+                  <p><strong>Note:</strong> The default network for <code>near-cli</code> is <code>testnet</code>. If
+                    you would like to change this to <code>mainnet</code> or <code>betanet</code>, please see <a
+                      href="/docs/tools/near-cli#network-selection"><code>near-cli</code> network selection</a> for
+                    instructions.</p>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/5/2021 by L1nkus</em></div>
+          <div class="docs-prevnext"><a class="docs-next button" href="/docs/tokens/lockup"><span>Lockups
+                Explained</span><span class="arrow-next"> →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#security--recovery">Security &amp; Recovery</a></li>
+          <li><a href="#option-1-near-wallet-recommended-for-general-users">Option 1: NEAR Wallet (Recommended for
+              general users)</a>
+            <ul class="toc-headings">
+              <li><a href="#importing-accounts-from-other-wallets">Importing accounts from other wallets</a></li>
+            </ul>
+          </li>
+          <li><a href="#option-2-mathwallet-chrome-extension">Option 2: MathWallet Chrome Extension</a></li>
+          <li><a href="#option-1-trust-wallet">Option 1: Trust Wallet</a></li>
+          <li><a href="#option-2-mathwallet">Option 2: MathWallet</a></li>
+          <li><a href="#option-3-moonlet-wallet">Option 3: Moonlet Wallet</a></li>
+          <li><a href="#option-1-finoa">Option 1: Finoa</a></li>
+          <li><a href="#option-2-coinbase">Option 2: Coinbase</a></li>
+          <li><a href="#option-3-tbd">Option 3: TBD</a></li>
+          <li><a href="#option-1-ledger-via-cli">Option 1: Ledger via CLI</a>
+            <ul class="toc-headings">
+              <li><a href="#installing-the-near-ledger-app">Installing the NEAR Ledger App</a></li>
+              <li><a href="#updating-the-near-ledger-app">Updating the NEAR Ledger App</a></li>
+              <li><a href="#to-generate-public-keys-via-web-app">To generate public keys via Web App</a></li>
+              <li><a href="#to-generate-public-keys-via-cli">To generate public keys via CLI</a></li>
+            </ul>
+          </li>
+          <li><a href="#option-2-self-custody">Option 2: Self custody</a>
+            <ul class="toc-headings">
+              <li><a href="#verifying-control-of-your-account">Verifying Control of Your Account</a></li>
+              <li><a href="#using-seed-phrases-in-cli">Using seed phrases in CLI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

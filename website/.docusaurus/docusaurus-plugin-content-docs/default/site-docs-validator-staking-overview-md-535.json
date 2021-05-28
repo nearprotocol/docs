@@ -1,0 +1,27 @@
+{
+  "unversionedId": "validator/staking-overview",
+  "id": "validator/staking-overview",
+  "isDocsHomePage": false,
+  "title": "Staking Orientation",
+  "description": "Welcome",
+  "source": "@site/../docs/validator/staking-overview.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/staking-overview",
+  "permalink": "/docs/validator/staking-overview",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-overview.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Orientation",
+  "frontMatter": {
+    "id": "staking-overview",
+    "title": "Staking Orientation",
+    "sidebar_label": "Orientation"
+  },
+  "sidebar": "stake",
+  "next": {
+    "title": "Hardware Requirements",
+    "permalink": "/docs/roles/validator/hardware"
+  }
+}

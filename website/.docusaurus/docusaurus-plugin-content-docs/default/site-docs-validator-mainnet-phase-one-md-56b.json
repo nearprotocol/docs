@@ -1,0 +1,31 @@
+{
+  "unversionedId": "validator/deploy-on-mainnet",
+  "id": "validator/deploy-on-mainnet",
+  "isDocsHomePage": false,
+  "title": "Deploy a Validator Node on MainNet",
+  "description": "Step-by-Step guide",
+  "source": "@site/../docs/validator/mainnet-phase-one.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/deploy-on-mainnet",
+  "permalink": "/docs/validator/deploy-on-mainnet",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/mainnet-phase-one.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Deploy on MainNet",
+  "frontMatter": {
+    "id": "deploy-on-mainnet",
+    "title": "Deploy a Validator Node on MainNet",
+    "sidebar_label": "Deploy on MainNet"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "The Economics of a Validator",
+    "permalink": "/docs/validator/economics"
+  },
+  "next": {
+    "title": "Staking FAQ",
+    "permalink": "/docs/validator/staking-faq"
+  }
+}

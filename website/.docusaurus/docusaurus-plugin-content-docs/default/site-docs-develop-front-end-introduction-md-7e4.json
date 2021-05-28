@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/front-end/introduction",
+  "id": "develop/front-end/introduction",
+  "isDocsHomePage": false,
+  "title": "front-end Introduction",
+  "description": "Overview",
+  "source": "@site/../docs/develop/front-end/introduction.md",
+  "sourceDirName": "develop/front-end",
+  "slug": "/develop/front-end/introduction",
+  "permalink": "/docs/develop/front-end/introduction",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/introduction.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Introduction",
+  "frontMatter": {
+    "id": "introduction",
+    "title": "front-end Introduction",
+    "sidebar_label": "Introduction"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Hackathon Startup Guide",
+    "permalink": "/docs/develop/basics/hackathon-startup-guide"
+  },
+  "next": {
+    "title": "near-api-js",
+    "permalink": "/docs/develop/front-end/near-api-js"
+  }
+}

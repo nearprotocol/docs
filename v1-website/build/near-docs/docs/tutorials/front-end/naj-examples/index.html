@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Examples Using near-api-js · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Overview" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Examples Using near-api-js · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Overview" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a>
+              </li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Front-End</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">General</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/create-transactions">Create a
+                        Transaction</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/ledger">Using a Ledger</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/figment">Figment Tutorials</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Front-End</h3>
+                  <ul class="">
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/tutorials/front-end/naj-examples">API Examples</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/tutorials/front-end/naj-workshop">API
+                        Workshop</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Smart Contracts</h3>
+                  <ul class="">
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">AssemblyScript</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/tutorials/contracts/as-workshop">AssemblyScript Workshop</a></li>
+                        <li class="navListItem"><a class="navItem" href="/docs/tutorials/contracts/token">Issue a
+                            Token</a></li>
+                        <li class="navListItem"><a class="navItem"
+                            href="/docs/tutorials/contracts/cross-contract-calls">Cross Contract Calls</a></li>
+                      </ul>
+                    </div>
+                    <div class="navGroup subNavGroup">
+                      <h4 class="navGroupSubcategoryTitle">Rust</h4>
+                      <ul>
+                        <li class="navListItem"><a class="navItem" href="/docs/tutorials/contracts/intro-to-rust">Intro
+                            to Rust</a></li>
+                      </ul>
+                    </div>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Rainbow Bridge</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/tutorials/rainbow-bridge-frontend-mainnet">Using Mainnet Frontend</a></li>
+                    <li class="navListItem"><a class="navItem"
+                        href="/docs/tutorials/rainbow-bridge-frontend-testnet">Using Testnet Frontend</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Videos</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/accounts-keys">Accounts &amp; keys</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/contract-reviews">Contract Reviews</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/live-app-review">Application
+                        Reviews</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/videos/collections-u128-etc">Misc</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/tutorials/front-end/naj-examples.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Examples Using near-api-js</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Overview</h2>
+                  <p>This page includes several examples of using <code>near-api-js</code> presented as a collection of
+                    code snippets.</p>
+                  <p><code>near-api-js</code> is a JavaScript/TypeScript library for development of DApps on the NEAR
+                    platform that can be used from any client or server-side JavaScript environment.</p>
+                  <p>Every code snippet on this page will work as expected if you copy and paste it into a &quot;working
+                    context&quot; by which we mean something like the <strong>Playground</strong> presented in the <a
+                      href="/docs/develop/front-end/introduction">introduction to <code>near-api-js</code></a>.</p>
+                  <p>Most of these examples either come directly from, or were heavily inspired by, the
+                    <code>near-api-js</code> test suite. You can see the <a
+                      href="https://github.com/near/near-api-js/tree/master/test">code on GitHub</a> if you're into that
+                    sort of thing.</p>
+                  <p>Keep in mind the <code>near-api-js</code> source has two main folders with hand-crafted code.</p>
+                  <ul>
+                    <li><code>/src</code></li>
+                    <li><code>/test</code></li>
+                  </ul>
+                  <p><em>All other folders in this repository are generated by automated scripts (see
+                      <code>package.json</code> in the repo for details)</em></p>
+                  <p>So, when looking for a feature of <code>near-api-js</code> in the source code, know that the
+                    <code>src</code> folder is the authority for functionality and <code>test</code> contains the code
+                    that exercises all of this functionality. The rest of the repo can (should?) be safely ignored.</p>
+                  <blockquote class="warning">
+                    <strong>heads up</strong><br /><br />
+                    <p>This document assumes you:</p>
+                    <ul>
+                      <li>already have a basic understanding of <code>near-api-js</code> which includes
+                        <ul>
+                          <li>how to include it in your client or server-side JavaScript project</li>
+                          <li>how to connect to the NEAR network</li>
+                        </ul>
+                      </li>
+                      <li>already know how to work with <a href="https://javascript.info/async-await">async / await</a>
+                        syntax in JavaScript</li>
+                    </ul>
+                    <p>For a refresher on these topics, please check out the <a
+                        href="/docs/develop/front-end/introduction">introduction to <code>near-api-js</code></a>.</p>
+                  </blockquote>
+                  <p>It's also worth mentioning now in case these examples seem overly simplistic that, for expediency
+                    in learning, the code below doesn't follow best practices. We add various properties to the
+                    <code>window</code> object, for example. While this is clearly not good practice in general (because
+                    it pollutes the global namespace) it's very useful for quick prototyping from the JavaScript
+                    Developer Console because it's easier for you to move through these examples while testing and
+                    validating your understanding along the way.</p>
+                  <p>In your own code, consider best practices as you normally would. The examples on this page are
+                    intended to minimize the time and effort required to become productive while learning. Exercise your
+                    own best judgement when building applications for your users in the wild.</p>
+                  <p>For our take on best practices with <code>near-api-js</code> and the rest of the NEAR platform,
+                    take a look at our <a href="https://github.com/near">GitHub org</a> and star a few of our internal
+                    tools like NEAR CLI, NEAR Wallet and NEAR Explorer, all of which use <code>near-api-js</code> under
+                    the hood. You can also <a href="https://near.org/newsletter/">subscribe to our newsletter</a> for
+                    updates about our starter kits, beta products and new tools as we release them the community.</p>
+                  <p>Happy hacking!</p>
+                  <h2><a class="anchor" aria-hidden="true" id="near-api-js-at-1000ft"></a><a
+                      href="#near-api-js-at-1000ft" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near-api-js</code> At 1000ft</h2>
+                  <p>This section introduces <code>near-api-js</code> at a very high level in an attempt to keep the
+                    &quot;map&quot; in full view. If at any point while working with <code>near-api-js</code> you find
+                    something doesn't make sense, this section should help you put it back in context. Either that or we
+                    need to make some adjustments! So don't hold back with those <a
+                      href="https://github.com/near/near-api-js/issues">issues</a> and <a
+                      href="https://github.com/near/near-api-js/pulls">pull requests</a> -- we remain very receptive to
+                    developer feedback.</p>
+                  <p>To begin, the playground presented in the <a
+                      href="/docs/develop/front-end/introduction">introduction to <code>near-api-js</code></a> surfaces
+                    3 objects including:</p>
+                  <ul>
+                    <li><code>near-api-js</code> (the library, the SDK, the big enchilada tostada)</li>
+                    <li><code>near</code> (the connection object returned by a call to <code>nearApi.connect()</code>)
+                    </li>
+                    <li><code>wallet</code> (convenience methods for authentication and credential management)</li>
+                  </ul>
+                  <p><br /></p>
+                  <h3><a class="anchor" aria-hidden="true" id="the-near-api-js-interface"></a><a
+                      href="#the-near-api-js-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>The <code>near-api-js</code> Interface</h3>
+                  <p>This is the reference to the top level <code>near-api-js</code> SDK (<a
+                      href="https://github.com/near/near-api-js/blob/master/src/">view source</a>)</p>
+                  <p><strong>classes / constructors</strong></p>
+                  <ul>
+                    <li><code>nearApi.Account</code> represents an account on the NEAR platform</li>
+                    <li><code>nearApi.Connection</code> represents a connection to the NEAR platform</li>
+                    <li><code>nearApi.Contract</code> represents a Smart Contract on the NEAR platform</li>
+                    <li><code>nearApi.InMemorySigner</code> is used for signing transactions before they're sent to the
+                      network</li>
+                    <li><code>nearApi.KeyPair</code> is used to generate new key pairs</li>
+                    <li><code>nearApi.WalletAccount</code> is used to instantiate a <code>wallet</code> (as per the big
+                      3 above)</li>
+                  </ul>
+                  <p><strong>utility collections</strong></p>
+                  <ul>
+                    <li><code>nearApi.keyStores</code> surfaces various key stores including
+                      <ul>
+                        <li><code>BrowserLocalStorageKeyStore</code> for client-side development (stores keys in
+                          <code>LocalStorage</code>)</li>
+                        <li><code>UnencryptedFileSystemKeyStore</code> for server-side development (stores keys in
+                          <code>./neardev/${network}/${account}.json</code>)</li>
+                        <li><code>InMemoryKeyStore</code> for testing</li>
+                        <li>and <code>MergeKeyStore</code> to support any combination of the above</li>
+                      </ul>
+                    </li>
+                    <li><code>nearApi.transactions</code> surfaces transaction factory methods (ie.
+                      <code>nearApi.transactions.addKey()</code> produces a hydrated <code>AddKey</code> transaction
+                      ready for serialization and signing before being sent to the network) and their parameters (ie.
+                      <code>FunctionCallPermission</code> is a type of <code>AccessKey</code> that may be used as a
+                      parameter to the <code>addKey()</code> method)</li>
+                    <li><code>nearApi.utils</code> surfaces various utility classes and functions including
+                      <ul>
+                        <li><code>KeyPairEd25519</code> for key pair generation using the ed25519 algorithm</li>
+                        <li>and serialization utilities <code>base_encode</code>, <code>base_decode</code>,
+                          <code>serialize</code> and <code>deserialize</code></li>
+                      </ul>
+                    </li>
+                    <li><code>nearApi.providers</code> surfaces access to the <code>JsonRpcProvider</code> which wraps
+                      the RPC interface</li>
+                  </ul>
+                  <p><strong>methods</strong></p>
+                  <ul>
+                    <li><code>nearApi.connect(config)</code> returns a <code>near</code> connection object given a
+                      configuration object as per the <a href="/docs/develop/front-end/introduction">introduction to
+                        <code>near-api-js</code></a></li>
+                    <li><code>nearApi.providers.getTransactionLastResult(fxo)</code> returns the result of the last
+                      transaction given a <code>FinalExecutionOutcome</code> object (the value returned after sending a
+                      signed transaction to the network)</li>
+                  </ul>
+                  <p><br /></p>
+                  <h3><a class="anchor" aria-hidden="true" id="the-near-connection-interface"></a><a
+                      href="#the-near-connection-interface" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>The <code>near</code> Connection Interface</h3>
+                  <p>This is an instance of the <code>nearApi.Connection</code> class (<a
+                      href="https://github.com/near/near-api-js/blob/master/src/connection.ts">view source</a>)</p>
+                  <p><strong>objects</strong></p>
+                  <ul>
+                    <li><code>near.config</code> exposes the original configuration data passed in at connection time
+                    </li>
+                    <li><code>near.connection.provider</code> exposes the <code>JsonRpcProvider</code></li>
+                    <li><code>near.connection.signer</code> exposes the <code>InMemorySigner</code></li>
+                  </ul>
+                  <p><strong>methods</strong></p>
+                  <ul>
+                    <li><code>near.connect(account)</code> returns a reference to a validated and fully hydrated account
+                      on the network</li>
+                    <li><code>near.loadContract(contract, options)</code> loads a previously deployed Smart Contract
+                      from the NEAR network for access in your client or server-side JavaScript.</li>
+                    <li><del><code>near.sendTokens(amount, sender, receiver)</code></del> (deprecated, use
+                      <code>account.sendMoney()</code> instead)</li>
+                  </ul>
+                  <p><br /></p>
+                  <h3><a class="anchor" aria-hidden="true" id="the-wallet-interface"></a><a href="#the-wallet-interface"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>The <code>wallet</code> Interface</h3>
+                  <p>This is an instance of the <code>nearApi.WalletAccount</code> class (<a
+                      href="https://github.com/near/near-api-js/blob/master/src/wallet-account.ts">view source</a>)</p>
+                  <p><strong>methods</strong></p>
+                  <ul>
+                    <li><code>wallet.requestSignIn(contract, appTitle, successUrl, failureUrl)</code> directs the
+                      current window through the NEAR Wallet authorization flow and back</li>
+                    <li><code>wallet.isSignedIn()</code> returns a boolean indicator of signed-in status</li>
+                    <li><code>wallet.getAccountId()</code> returns the name of the wallet account currently signed (as a
+                      string)</li>
+                    <li><code>wallet.signOut()</code> removes the <code>LocalStorage</code> entry that represents an
+                      authorized <code>WalletAccount</code> but leaves private keys intact</li>
+                  </ul>
+                  <blockquote class="info">
+                    <strong>did you know?</strong><br /><br />
+                    <p><a href="http://near.dev/">NEAR examples</a> includes several starter projects where you can see
+                      <code>near-api-js</code>, the <code>near</code> connection and the <code>wallet</code> in action
+                      by looking at <code>main.js</code> in the <code>src</code> folder. If you happen to notice a
+                      <code>main.ts</code> in the <code>assembly</code> folder, well, that's a contract.</p>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="near-api-js-in-pictures"></a><a
+                      href="#near-api-js-in-pictures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near-api-js</code> in Pictures</h2>
+                  <p><code>near-api-js</code> surfaces NEAR primitives as first class objects and facilitates
+                    communicate with the NEAR platform through our JSON-RPC interface.</p>
+                  <pre><code class="hljs css language-text">                                        o ----------------------- o
+                                        |                         |
+          o --------------- o           |  +-------------------+  |
+   use    |                 |  ------>  |  |                   |  |
+ -------> |   near-api-js   |    RPC    |  |   NEAR platform   |  |
+          |                 |  <------  |  |                   |  |
+          o --------------- o           |  +-------------------+  |
+                                        |                         |
+                                        o ----------------------- o
+</code></pre>
+                  <p>If we zoom in on <code>near-api-js</code> a little we'll notice a few key components that we can
+                    explore more deeply.</p>
+                  <pre><code class="hljs css language-text">   near-api-js (zoomed in)
+ o ------------------------------------------------------------------------ o
+|                                                                            |
+|             o -------- o  --->  o ------- o  |                             |
+|             | Contract |        | Account |  |                             |
+|             o -------- o  <---  o ------- o  |                             |
+|                                              |                             |
+|                           o ------------- o  |                             |
+|                           | WalletAccount |  |                             |
+|                           o ------------- o  |                             |
+|                                              |                             |
+|                             o ----------- o  |                             |
+|                             | Transaction |  |                             |
+|                             o ----------- o  |                             |
+|                                                                            | --->  o --------------- o | ------> |
+|                                                                            |       | JsonRpcProvider | |    RPC  |
+|                            |    o ------- o  |                             | <---  o --------------- o | <------ |
+|                            |    | KeyPair |  |                             |
+|  o -------------- o  --->  |    o ------- o  |                             |
+|  | InMemorySigner |        |                 |                             |
+|  o -------------- o  <---  |  o --------- o  |                             |
+|                            |  | KeyStores |  |                             |
+|                            |  o --------- o  |                             |
+|                                              |                             |
+|                                              |                             |
+|                               o --------- o  |                             |
+|                               | Utilities |  |                             |
+|                               o --------- o  |                             |
+|                                                                            |
+ o ------------------------------------------------------------------------ o
+</code></pre>
+                  <p>All communications with the NEAR platform pass through <code>JsonRpcProvider</code>. Anything else
+                    that's happening in <code>near-api-js</code> is intended to make our lives as developers easier.</p>
+                  <p>And of course the fact that this is JavaScript is equally arbitrary -- we could do the same with
+                    Java, C#, Ruby, Elixir, or any other language binding you prefer. The key is the JSON RPC interface
+                    with the NEAR platform.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="zooming-in"></a><a href="#zooming-in" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Zooming In</h2>
+                  <p>Some parts of <code>near-api-js</code> are better seen first because it will help you make sense of
+                    the library as a whole.</p>
+                  <p>The following short list of code snippets and examples should quickly give you a sense of how
+                    <code>near-api-js</code> works under ths hood.</p>
+                  <p>If you feel like any of this could be improved, please share your thoughts by submitting an issue
+                    to the <a href="https://github.com/near/docs/issues">documentation repo</a>.</p>
+                  <h3><a class="anchor" aria-hidden="true" id="jsonrpcprovider"></a><a href="#jsonrpcprovider"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>JsonRpcProvider</code></h3>
+                  <p>This class provides connectivity to the NEAR platform. It is used by all other parts of
+                    <code>near-api-js</code> when interacting with the NEAR network to send transactions.
+                    <code>JsonRpcProvider</code> can also be used as a standalone utility for querying the network via
+                    RPC calls directly for network status, processed transactions, blocks and chunks on the network.</p>
+                  <p>Here we've included the Typescript interface for <code>JsonRpcProvider</code> to make it clear
+                    which types are accepted as parameters and returned by the method calls.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// DO NOT TRY TO RUN THIS (it's incomplete TypeScript)</span>
+<span class="hljs-keyword">class</span> JsonRpcProvider <span class="hljs-keyword">extends</span> Provider {
+  <span class="hljs-keyword">async</span> status(): <span class="hljs-built_in">Promise</span>&lt;NodeStatusResult&gt; {}
+  <span class="hljs-keyword">async</span> block(blockId: BlockId): <span class="hljs-built_in">Promise</span>&lt;BlockResult&gt; {}
+  <span class="hljs-keyword">async</span> chunk(chunkId: ChunkId): <span class="hljs-built_in">Promise</span>&lt;ChunkResult&gt; {}
+  <span class="hljs-keyword">async</span> txStatus(
+    txHash: <span class="hljs-built_in">Uint8Array</span>,
+    accountId: <span class="hljs-built_in">string</span>
+  ): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+  <span class="hljs-keyword">async</span> query(path: <span class="hljs-built_in">string</span>, data: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt; {}
+  <span class="hljs-keyword">async</span> sendTransaction(
+    signedTransaction: SignedTransaction
+  ): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+}
+</code></pre>
+                  <p><em><a
+                        href="https://github.com/near/near-api-js/blob/master/src/providers/json-rpc-provider.ts">view
+                        source on Github</a></em></p>
+                  <p>Moving through this interface one method at a time ...</p>
+                  <h4><a class="anchor" aria-hidden="true" id="nearconnectionproviderstatus"></a><a
+                      href="#nearconnectionproviderstatus" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near.connection.provider.status()</code></h4>
+                  <p>This method returns a <a
+                      href="https://github.com/near/near-api-js/blob/3b37c330e9c00daf087c483d0e57d6e1b30f6647/src.ts/providers/provider.ts#L14">NodeStatusResult</a>
+                    which is good for getting the latest block hash or height, a list of validators, and a few other
+                    high level network details</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">await</span> near.connection.provider.status();
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="nearconnectionproviderblock"></a><a
+                      href="#nearconnectionproviderblock" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near.connection.provider.block</code></h4>
+                  <p>This method returns a <a
+                      href="https://github.com/near/nearcore/blob/324b42e70166bb17fcf2435c2d75365c1f12ac24/core/primitives/src/views.rs#L445"><code>BlockView</code></a>,
+                    one of NEAR platform's primitives, which itself is made up of a <code>BlockHeaderView</code> and a
+                    collection of <code>ChunkHeaderView</code>s</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// using the previous snippet to pull the latest block hash</span>
+<span class="hljs-keyword">let</span> chain = (<span class="hljs-keyword">await</span> near.connection.provider.status()).sync_info;
+<span class="hljs-keyword">let</span> hash = chain.latest_block_hash; <span class="hljs-comment">// &lt;-- note hash vs height</span>
+
+<span class="hljs-comment">// we can pass the results to the provider.block method</span>
+<span class="hljs-keyword">await</span> near.connection.provider.block(hash);
+</code></pre>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// using the previous snippet to pull the latest block hash</span>
+<span class="hljs-keyword">let</span> chain = (<span class="hljs-keyword">await</span> near.connection.provider.status()).sync_info;
+<span class="hljs-keyword">let</span> number = chain.latest_block_height; <span class="hljs-comment">// &lt;-- note height vs hash</span>
+
+<span class="hljs-comment">// we can pass the results to the provider.block method</span>
+<span class="hljs-keyword">await</span> near.connection.provider.block(number);
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="nearconnectionproviderchunk"></a><a
+                      href="#nearconnectionproviderchunk" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near.connection.provider.chunk</code></h4>
+                  <p>This method returns a <a
+                      href="https://github.com/near/nearcore/blob/324b42e70166bb17fcf2435c2d75365c1f12ac24/core/primitives/src/views.rs#L460"><code>ChunkView</code></a>,
+                    one of NEAR platform's primitives, which itself is made up of a <code>ChunkHeaderView</code> and a
+                    collection of <code>SignedTransactionView</code>s and a collection of <code>ReceiptView</code>s</p>
+                  <p>The code snippet below is too short to be useful except as an illustration. If you actually want to
+                    see results from the live network then the chunk hash should be queried using the <a
+                      href="#nearconnectionproviderchunk">provider.block</a> snippets above. Chunks are returned as a
+                    collection attached to a block.</p>
+                  <p><em>To avoid a longer example, a chunk hash was taken from the live network at time of writing but
+                      this may be invalid when you run it since it's a Testnet artifact which may be restarted. With
+                      Mainnet we could assume this would exist as long as the network survives.</em></p>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// best to fetch this chunk hash using the code above</span>
+<span class="hljs-comment">// if this call fails it's because this chunk hash is no longer valid</span>
+<span class="hljs-keyword">let</span> hash = <span class="hljs-string">"6SrBkhwVLAZC2YQJG3YUSef2UGf7UxwpsLZEY3dsZMKb"</span>;
+<span class="hljs-keyword">await</span> near.connection.provider.chunk(hash);
+</code></pre>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// to see a list of transactions processed on a block we have to map the</span>
+<span class="hljs-comment">// collection of [chunk_hash]es to chunks</span>
+<span class="hljs-keyword">let</span> block = <span class="hljs-keyword">await</span> near.connection.provider.block(
+  <span class="hljs-string">"A2AbjnAx9gbZNBE8URjWJB6gQy7wZEWuanZaQhkeE7pw"</span>
+);
+<span class="hljs-keyword">let</span> chunkFromChunkHash = <span class="hljs-keyword">async</span> (c) =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> near.connection.provider.chunk(c.chunk_hash);
+};
+<span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.all(block.chunks.map(chunkFromChunkHash));
+
+<span class="hljs-comment">// and there we will find the transaction that was available at the time of writing</span>
+<span class="hljs-comment">// in the 4th chunk of this block, along with some chunk header info, this transaction:</span>
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   transactions: [</span>
+<span class="hljs-comment">//     {</span>
+<span class="hljs-comment">//       actions: [{…}]</span>
+<span class="hljs-comment">//       hash: "3L37n7LowxfpFEJcQvYmoQPo4NpgV2ZUmr4vXSBYhxPL"</span>
+<span class="hljs-comment">//       nonce: 14</span>
+<span class="hljs-comment">//       public_key: "ed25519:91G4Y3jJk5hwYWQm4BZLVDLWh52axtjmc42P2VtyKh4"</span>
+<span class="hljs-comment">//       receiver_id: "cruz"</span>
+<span class="hljs-comment">//       signature: "ed25519:44mZ1CSMm1Ybku51413QTPS43gN7iSHkRBt1oFd2hdtu8Z2HFgsKr6CLGaCTKY3rwTcJnB3AWtGu1zZdb2DYbGqA"</span>
+<span class="hljs-comment">//       signer_id: "cruz"</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//   ]</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="nearconnectionprovidertxstatus"></a><a
+                      href="#nearconnectionprovidertxstatus" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near.connection.provider.txstatus</code></h4>
+                  <p>This method returns a [<code>FinalExecutionOutcome</code>].</p>
+                  <p>The code snippet below is too short to be useful except as an illustration. A better example would
+                    use a hash from a recent transaction that you sent to the network.</p>
+                  <p><em>To avoid a longer example, a transaction hash was taken from the live network at time of
+                      writing but this may be invalid when you run it since it's a Testnet artifact which may be
+                      restarted. With Mainnet we could assume this would exist as long as the network survives.</em></p>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// best to fetch this transaction hash using a call to the live network</span>
+<span class="hljs-comment">// if this call fails it's because this transaction hash is no longer valid</span>
+<span class="hljs-keyword">let</span> txHash = <span class="hljs-string">"3L37n7LowxfpFEJcQvYmoQPo4NpgV2ZUmr4vXSBYhxPL"</span>;
+<span class="hljs-keyword">let</span> decodedTxHash = nearAPI.utils.serialize.base_decode(
+  <span class="hljs-string">"3L37n7LowxfpFEJcQvYmoQPo4NpgV2ZUmr4vXSBYhxPL"</span>
+);
+<span class="hljs-keyword">await</span> near.connection.provider.txStatus(decodedTxHash, <span class="hljs-string">"accountid.testnet"</span>);
+</code></pre>
+                  <h4><a class="anchor" aria-hidden="true" id="nearconnectionproviderquery"></a><a
+                      href="#nearconnectionproviderquery" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>near.connection.provider.query</code></h4>
+                  <p>This method accepts RPC paths and returns their results as JSON.</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// this will return an AccountState for any account</span>
+<span class="hljs-keyword">let</span> account = <span class="hljs-string">"test.near"</span>;
+<span class="hljs-keyword">let</span> state = <span class="hljs-keyword">await</span> near.connection.provider.query(<span class="hljs-string">`account/<span class="hljs-subst">${account}</span>`</span>, <span class="hljs-string">""</span>);
+<span class="hljs-built_in">console</span>.table(state);
+</code></pre>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// this will return all access keys for any account</span>
+<span class="hljs-keyword">let</span> account = <span class="hljs-string">"test.near"</span>;
+<span class="hljs-keyword">let</span> keys = <span class="hljs-keyword">await</span> near.connection.provider.query(<span class="hljs-string">`access_key/<span class="hljs-subst">${account}</span>`</span>, <span class="hljs-string">""</span>);
+<span class="hljs-built_in">console</span>.dir(keys);
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="account"></a><a href="#account" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><code>Account</code></h3>
+                  <p>This class represents an account on the NEAR platform. It has a number of convenience methods that
+                    wrap valid transactions on the network and, if a call to <code>account.state()</code> does not throw
+                    an error then you can be sure that you have (a) a valid account ID that (b) exists on the networkId
+                    which you passed via the connection configuration and (c) you have at least one private key for
+                    which the account ID has a matching public access key (either <code>FullAccess</code> permissions or
+                    <code>FunctionCall</code> access permissions)</p>
+                  <blockquote class="info">
+                    <strong>did you know?</strong><br /><br />
+                    <p>Calling <code>await account.state()</code> on an account object validates <em>and</em> hydrates
+                      the object at the same time if you have control of at least one private key associated with the
+                      account already available in your <code>LocalStorage</code> (or
+                      <code>./neardev/${networkId}</code> folder for server-side development)</p>
+                    <p>There are 3 possible outcomes of a call to <code>await account.state()</code>:</p>
+                    <p>(1) If the call succeeds you will see a hydrated account object returned to the console</p>
+                    <pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"20000001999372696601"</span>,
+  <span class="hljs-attr">"code_hash"</span>: <span class="hljs-string">"11111111111111111111111111111111"</span>,
+  <span class="hljs-attr">"locked"</span>: <span class="hljs-string">"0"</span>,
+  <span class="hljs-attr">"storage_paid_at"</span>: <span class="hljs-number">1798245</span>,
+  <span class="hljs-attr">"storage_usage"</span>: <span class="hljs-number">1366</span>
+}
+
+<span class="hljs-comment">/**
+  Note the above is actually an AccountState struct as JSON but it's the most
+  visible part of a valid Account object in the JavaScript Developer Console.
+  The same object also includes a reference to the Account object through its
+  prototype
+*/</span>
+</code></pre>
+                    <p>(2) If you call <code>await account.state()</code> on an Account object using an account that
+                      <strong>does not exist</strong> on the configured network
+                      <code>account.connection.networkId</code> then you will see the following error:</p>
+                    <blockquote>
+                      <p><span
+                          class="error"><code>Server error: account ${accountId} does not exist while viewing</code></span>
+                      </p>
+                    </blockquote>
+                    <p>(3) If you call <code>await</code> to instantiate a new Account object without having the proper
+                      credentials you will see the following message emitted via <code>console.log</code> (client-side)
+                      or to <code>stdout</code> (server-side).</p>
+                    <blockquote>
+                      <p><code>Missing public key for ${accountId} in default</code></p>
+                    </blockquote>
+                  </blockquote>
+                  <p>Here we've included the Typescript interface for <code>Account</code> to make it clear which types
+                    are accepted as parameters and returned by the method calls.</p>
+                  <pre><code class="hljs css language-ts"><span class="hljs-comment">// account hydration and validation</span>
+<span class="hljs-keyword">async</span> fetchState(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {}
+<span class="hljs-keyword">async</span> state(): <span class="hljs-built_in">Promise</span>&lt;AccountState&gt; {}
+
+<span class="hljs-comment">// account management</span>
+<span class="hljs-keyword">async</span> createAccount(newAccountId: <span class="hljs-built_in">string</span>, publicKey: <span class="hljs-built_in">string</span> | PublicKey, amount: BN): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt;  {}
+<span class="hljs-keyword">async</span> deleteAccount(beneficiaryId: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+
+<span class="hljs-comment">// access key management</span>
+<span class="hljs-keyword">async</span> addKey(publicKey: <span class="hljs-built_in">string</span> | PublicKey, contractId?: <span class="hljs-built_in">string</span>, methodName?: <span class="hljs-built_in">string</span>, amount?: BN): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+<span class="hljs-keyword">async</span> deleteKey(publicKey: <span class="hljs-built_in">string</span> | PublicKey): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+<span class="hljs-keyword">async</span> getAccessKeys(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt; {}
+<span class="hljs-keyword">async</span> getAccountDetails(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt; {}
+
+<span class="hljs-comment">// contract management</span>
+<span class="hljs-keyword">async</span> deployContract(data: <span class="hljs-built_in">Uint8Array</span>): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+<span class="hljs-keyword">async</span> createAndDeployContract(contractId: <span class="hljs-built_in">string</span>, publicKey: <span class="hljs-built_in">string</span> | PublicKey, data: <span class="hljs-built_in">Uint8Array</span>, amount: BN): <span class="hljs-built_in">Promise</span>&lt;Account&gt; {}
+
+<span class="hljs-comment">// function invocation on Smart Contracts</span>
+<span class="hljs-keyword">async</span> viewFunction(contractId: <span class="hljs-built_in">string</span>, methodName: <span class="hljs-built_in">string</span>, args: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt; {}
+<span class="hljs-keyword">async</span> functionCall(contractId: <span class="hljs-built_in">string</span>, methodName: <span class="hljs-built_in">string</span>, args: <span class="hljs-built_in">any</span>, gas: <span class="hljs-built_in">number</span>, amount?: BN): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+
+<span class="hljs-comment">// sending money to other accounts and staking (also sending money that you get back if you behave)</span>
+<span class="hljs-keyword">async</span> sendMoney(receiverId: <span class="hljs-built_in">string</span>, amount: BN): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+<span class="hljs-keyword">async</span> stake(publicKey: <span class="hljs-built_in">string</span> | PublicKey, amount: BN): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+
+<span class="hljs-comment">// the method below could arguably be made public</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">async</span> signAndSendTransaction(receiverId: <span class="hljs-built_in">string</span>, actions: Action[]): <span class="hljs-built_in">Promise</span>&lt;FinalExecutionOutcome&gt; {}
+</code></pre>
+                  <p><em><a href="https://github.com/near/near-api-js/blob/master/src/account.ts">view source on
+                        GitHub</a></em></p>
+                  <hr>
+                  <blockquote class="warning">
+                    <strong>work in progress</strong> <span>expect the following content soon</span><br /><br />
+                    <ul>
+                      <li>
+                        <p>zooming in</p>
+                        <ul>
+                          <li>JsonRpcProvider
+                            <ul>
+                              <li>near.connection.provider.sendTransaction</li>
+                            </ul>
+                          </li>
+                          <li>Account
+                            <ul>
+                              <li>interface examples</li>
+                            </ul>
+                          </li>
+                          <li>Transaction
+                            <ul>
+                              <li>interface examples</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <p>cookbook</p>
+                        <ul>
+                          <li>create an account</li>
+                          <li>create a transaction</li>
+                          <li>sign a transaction</li>
+                          <li>send a transaction</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </blockquote>
+                  <hr>
+                  <h2><a class="anchor" aria-hidden="true" id="cookbook-recipes"></a><a href="#cookbook-recipes"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Cookbook Recipes</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="offline-transaction-signing-in-3-steps"></a><a
+                      href="#offline-transaction-signing-in-3-steps" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Offline transaction signing in 3 steps</h3>
+                  <p>Fetch latest block hash (requires online)</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> status = <span class="hljs-keyword">await</span> connection.provider.status();
+<span class="hljs-keyword">const</span> blockHash = status.sync_status.last_block_hash;
+</code></pre>
+                  <p>Create transaction (offline):</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> transaction = nearApi.transactions.createTransaction(
+  fromAccount,
+  publicKey,
+  receiverAccount,
+  nonce_for_publicKey,
+  actions,
+  blockHash
+);
+<span class="hljs-keyword">const</span> bytes = transaction.encode();
+</code></pre>
+                  <p>Sign transaction (offline with access to the key):</p>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> message = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(sha256.sha256.array(bytes));
+<span class="hljs-keyword">const</span> signature = <span class="hljs-keyword">await</span> signer.signMessage(message, accountId, networkId);
+<span class="hljs-keyword">const</span> signedTx = <span class="hljs-keyword">new</span> SignedTransaction({
+  transaction,
+  <span class="hljs-attr">signature</span>: <span class="hljs-keyword">new</span> Signature(signature.signature),
+});
+</code></pre>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/23/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/tutorials/figment"><span
+                class="arrow-prev">← </span><span>Figment Tutorials</span></a><a class="docs-next button"
+              href="/docs/tutorials/front-end/naj-workshop"><span>API Workshop</span><span class="arrow-next">
+                →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#near-api-js-at-1000ft"><code>near-api-js</code> At 1000ft</a>
+            <ul class="toc-headings">
+              <li><a href="#the-near-api-js-interface">The <code>near-api-js</code> Interface</a></li>
+              <li><a href="#the-near-connection-interface">The <code>near</code> Connection Interface</a></li>
+              <li><a href="#the-wallet-interface">The <code>wallet</code> Interface</a></li>
+            </ul>
+          </li>
+          <li><a href="#near-api-js-in-pictures"><code>near-api-js</code> in Pictures</a></li>
+          <li><a href="#zooming-in">Zooming In</a>
+            <ul class="toc-headings">
+              <li><a href="#jsonrpcprovider"><code>JsonRpcProvider</code></a></li>
+              <li><a href="#account"><code>Account</code></a></li>
+            </ul>
+          </li>
+          <li><a href="#cookbook-recipes">Cookbook Recipes</a>
+            <ul class="toc-headings">
+              <li><a href="#offline-transaction-signing-in-3-steps">Offline transaction signing in 3 steps</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

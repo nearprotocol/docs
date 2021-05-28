@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/rust/testing-rust-contracts",
+  "id": "develop/contracts/rust/testing-rust-contracts",
+  "isDocsHomePage": false,
+  "title": "Testing Rust Contracts",
+  "description": "There are a couple of ways to test Rust smart contracts in NEAR.",
+  "source": "@site/../docs/develop/contracts/rust/testing.md",
+  "sourceDirName": "develop/contracts/rust",
+  "slug": "/develop/contracts/rust/testing-rust-contracts",
+  "permalink": "/docs/develop/contracts/rust/testing-rust-contracts",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/testing.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Testing",
+  "frontMatter": {
+    "id": "testing-rust-contracts",
+    "title": "Testing Rust Contracts",
+    "sidebar_label": "Testing"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "near-sdk",
+    "permalink": "/docs/develop/contracts/rust/near-sdk-rs"
+  },
+  "next": {
+    "title": "Running a node",
+    "permalink": "/docs/develop/node/running-a-node"
+  }
+}

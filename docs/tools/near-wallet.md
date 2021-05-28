@@ -16,6 +16,6 @@ To deploy your own version of NEAR Wallet or to make contributions, please visit
 
 [[ Click Here ](/docs/develop/basics/create-account)] for an account creation walkthrough.
 
-![wallet welcome](/docs/assets/wallet-welcome.png)
+![wallet welcome](/img/wallet-welcome.png)
 
-![NEAR Wallet](/docs/assets/NEAR-Wallet.jpg)
+![NEAR Wallet](/img/NEAR-Wallet.jpg)

@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/front-end/naj-workshop",
+  "id": "tutorials/front-end/naj-workshop",
+  "isDocsHomePage": false,
+  "title": "Exploring NEAR Protocol APIs",
+  "description": "[This workshop ] includes several activities:",
+  "source": "@site/../docs/tutorials/front-end/naj-workshop.md",
+  "sourceDirName": "tutorials/front-end",
+  "slug": "/tutorials/front-end/naj-workshop",
+  "permalink": "/docs/tutorials/front-end/naj-workshop",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/front-end/naj-workshop.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "API Workshop",
+  "frontMatter": {
+    "id": "naj-workshop",
+    "title": "Exploring NEAR Protocol APIs",
+    "sidebar_label": "API Workshop"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Examples Using near-api-js",
+    "permalink": "/docs/tutorials/front-end/naj-examples"
+  },
+  "next": {
+    "title": "AssemblyScript Workshop",
+    "permalink": "/docs/tutorials/contracts/as-workshop"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "faq/developer-faq",
+  "id": "faq/developer-faq",
+  "isDocsHomePage": false,
+  "title": "Developer FAQ",
+  "description": "Working with Contracts",
+  "source": "@site/../docs/faq/developer-faq.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/developer-faq",
+  "permalink": "/docs/faq/developer-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/developer-faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Developer FAQ",
+  "frontMatter": {
+    "id": "developer-faq",
+    "title": "Developer FAQ",
+    "sidebar_label": "Developer FAQ"
+  }
+}

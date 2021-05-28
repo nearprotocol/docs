@@ -44,12 +44,12 @@ This sample project has a token smart contract and also some JavaScript tests th
 
 Once finished, the tests running in your terminal will appear like this:
 
-![Default Token Contract Test ](/docs/assets/default-token-contract-test.png)
+![Default Token Contract Test ](/img/default-token-contract-test.png)
 
 Note that `test-account-XXXXXXXXX_tTIMESTAMP-XXXXXXX` here is an automatically generated NEAR account for this particular project. Don't be distracted by these details, just compare the developer log output with the statements in the file `src/test.js`.
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 We are not going to keep any of the code from this template. It's just there as a starting point.
 
@@ -228,10 +228,10 @@ describe("Calculator", function() {
 
 Once finished, the completed test in your terminal will appear like this:
 
-![Jest tests running for Calculator Contract](/docs/assets/jest-tests-for-calculator-contract.png)
+![Jest tests running for Calculator Contract](/img/jest-tests-for-calculator-contract.png)
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 Just make a mental note that the in the logs, "Contract Called" and the "Contract Signer" are the same. This will be important later.
 </blockquote>
 
@@ -240,7 +240,7 @@ Normally, we would create a UI at this point, but since we're calling this from 
 ## Step 4 - Create a new contract for `Calculator Caller`
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 Keep the tab open that you've been working on, you're going to need the ID of the contract you just created later.
 
@@ -257,7 +257,7 @@ So let's make another smart contract.  Following the same steps as before in a _
 > - You should see a **Create Fresh Workspace** box at the top of your window
 > - click **Create** in the upper right hand corner
 
-![Create fresh workspace](/docs/assets/gitpod-create-fresh-workspace.png)
+![Create fresh workspace](/img/gitpod-create-fresh-workspace.png)
 
 
 We're doing this because we need to create an entirely separate contract deployed at a different address to demonstrate the capabilities of cross contract calls.
@@ -333,7 +333,7 @@ export class CalculatorApi {
 *(For more info on making cross-contract calls using `ContractPromise`, check out [ContractPromise](https://near.github.io/near-sdk-as/classes/_sdk_core_assembly_contract_.contractpromise.html) and [ContractPromiseResult](https://near.github.io/near-sdk-as/classes/_sdk_core_assembly_contract_.contractpromiseresult.html)*
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 **As a reminder**, using the previous contract (the tab you kept open earlier), find the ID of the contract.  You will use this to replace `dev-REPLACE_THIS_IDENTIFIER`.
 
@@ -437,11 +437,11 @@ Now let's test it out!
 
 You should see a successful test that looks something like this: 
 
-![Cross contract call Jest test](/docs/assets/cross-contract-call-jest-test.png)
+![Cross contract call Jest test](/img/cross-contract-call-jest-test.png)
 
 
 <blockquote class="warning">
-<strong>heads up</strong><br><br>
+<strong>heads up</strong><br /><br />
 
 Remember when we took a note that the 'Contract Called' and the 'Contract Signer' were the same in the test environment? Notice that they are different now! Can you figure out what this means?
 

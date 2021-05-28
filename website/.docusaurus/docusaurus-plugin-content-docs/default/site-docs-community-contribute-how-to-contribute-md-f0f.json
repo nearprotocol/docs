@@ -1,0 +1,31 @@
+{
+  "unversionedId": "community/contribute/how-to-contribute",
+  "id": "community/contribute/how-to-contribute",
+  "isDocsHomePage": false,
+  "title": "How to Contribute",
+  "description": "Ways to Contribute to the code",
+  "source": "@site/../docs/community/contribute/how-to-contribute.md",
+  "sourceDirName": "community/contribute",
+  "slug": "/community/contribute/how-to-contribute",
+  "permalink": "/docs/community/contribute/how-to-contribute",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/how-to-contribute.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "How to Contribute",
+  "frontMatter": {
+    "id": "how-to-contribute",
+    "title": "How to Contribute",
+    "sidebar_label": "How to Contribute"
+  },
+  "sidebar": "community",
+  "previous": {
+    "title": "Contributor Overview",
+    "permalink": "/docs/community/contribute/contribute-overview"
+  },
+  "next": {
+    "title": "Contribute to NearCore",
+    "permalink": "/docs/community/contribute/contribute-nearcore"
+  }
+}

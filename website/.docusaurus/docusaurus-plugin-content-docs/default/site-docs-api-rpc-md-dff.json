@@ -1,0 +1,27 @@
+{
+  "unversionedId": "api/rpc",
+  "id": "api/rpc",
+  "isDocsHomePage": false,
+  "title": "RPC Endpoints",
+  "description": "Setup",
+  "source": "@site/../docs/api/rpc.md",
+  "sourceDirName": "api",
+  "slug": "/api/rpc",
+  "permalink": "/docs/api/rpc",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/rpc.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "RPC Endpoints",
+  "frontMatter": {
+    "id": "rpc",
+    "title": "RPC Endpoints",
+    "sidebar_label": "RPC Endpoints"
+  },
+  "sidebar": "API",
+  "next": {
+    "title": "NEAR API REST SERVER",
+    "permalink": "/docs/api/near-api-rest-server"
+  }
+}

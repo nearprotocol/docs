@@ -1,0 +1,27 @@
+{
+  "unversionedId": "roles/integrator/exchange-integration",
+  "id": "roles/integrator/exchange-integration",
+  "isDocsHomePage": false,
+  "title": "Exchange Integration",
+  "description": "Transactions",
+  "source": "@site/../docs/roles/integrator/exchange-integration.md",
+  "sourceDirName": "roles/integrator",
+  "slug": "/roles/integrator/exchange-integration",
+  "permalink": "/docs/roles/integrator/exchange-integration",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/integrator/exchange-integration.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Exchange Integration",
+  "frontMatter": {
+    "id": "exchange-integration",
+    "title": "Exchange Integration",
+    "sidebar_label": "Exchange Integration"
+  },
+  "sidebar": "integrate",
+  "next": {
+    "title": "Implicit Accounts",
+    "permalink": "/docs/roles/integrator/implicit-accounts"
+  }
+}

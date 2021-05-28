@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/contracts/rust/near-sdk-rs",
+  "id": "develop/contracts/rust/near-sdk-rs",
+  "isDocsHomePage": false,
+  "title": "near-sdk",
+  "description": "https://docs.rs/near-sdk",
+  "source": "@site/../docs/develop/contracts/rust/near-sdk-rs.md",
+  "sourceDirName": "develop/contracts/rust",
+  "slug": "/develop/contracts/rust/near-sdk-rs",
+  "permalink": "/docs/develop/contracts/rust/near-sdk-rs",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/contracts/rust/near-sdk-rs.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Rust SDK",
+  "frontMatter": {
+    "id": "near-sdk-rs",
+    "title": "near-sdk",
+    "sidebar_label": "Rust SDK"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Rust",
+    "permalink": "/docs/develop/contracts/rust/intro"
+  },
+  "next": {
+    "title": "Testing Rust Contracts",
+    "permalink": "/docs/develop/contracts/rust/testing-rust-contracts"
+  }
+}

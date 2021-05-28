@@ -1,0 +1,27 @@
+{
+  "unversionedId": "develop/basics/getting-started",
+  "id": "develop/basics/getting-started",
+  "isDocsHomePage": false,
+  "title": "Getting Started",
+  "description": "---",
+  "source": "@site/../docs/develop/basics/getting-started.md",
+  "sourceDirName": "develop/basics",
+  "slug": "/develop/basics/getting-started",
+  "permalink": "/docs/develop/basics/getting-started",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/basics/getting-started.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Getting Started",
+  "frontMatter": {
+    "id": "getting-started",
+    "title": "Getting Started",
+    "sidebar_label": "Getting Started"
+  },
+  "sidebar": "develop",
+  "next": {
+    "title": "Creating a NEAR Account",
+    "permalink": "/docs/develop/basics/create-account"
+  }
+}

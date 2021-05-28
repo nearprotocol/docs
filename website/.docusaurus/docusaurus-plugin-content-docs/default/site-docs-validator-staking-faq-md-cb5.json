@@ -1,0 +1,27 @@
+{
+  "unversionedId": "validator/staking-faq",
+  "id": "validator/staking-faq",
+  "isDocsHomePage": false,
+  "title": "Staking FAQ",
+  "description": "What is a validator?",
+  "source": "@site/../docs/validator/staking-faq.md",
+  "sourceDirName": "validator",
+  "slug": "/validator/staking-faq",
+  "permalink": "/docs/validator/staking-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/validator/staking-faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Staking FAQ",
+  "frontMatter": {
+    "id": "staking-faq",
+    "title": "Staking FAQ",
+    "sidebar_label": "Staking FAQ"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Deploy a Validator Node on MainNet",
+    "permalink": "/docs/validator/deploy-on-mainnet"
+  }
+}

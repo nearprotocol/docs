@@ -14,7 +14,7 @@ NEAR has several [development networks](/docs/concepts/networks) operating indep
 
 To deploy your own version of NEAR Explorer or to make contributions, please visit our [GitHub repo](https://github.com/near/near-explorer).
 
-![NEAR Explorer](/docs/assets/near-explorer.jpg)
+![NEAR Explorer](/img/near-explorer.jpg)
 
 >Got a question?
 <a href="https://stackoverflow.com/questions/tagged/nearprotocol">

@@ -26,7 +26,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="rainbow bridge frontend" src="https://i.imgur.com/75KvTar.png" width="50%"/>
+<img alt="rainbow bridge frontend" src="https://i.imgur.com/75KvTar.png" width="50%" />
 
 (Fig. 1 Rainbow Bridge Home)
 
@@ -36,7 +36,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="network selection tool" src="https://i.imgur.com/DAvSqR5.png" width=40%>
+<img alt="network selection tool" src="https://i.imgur.com/DAvSqR5.png" width="40%" />
 
 (Fig. 2 Network Selection Tool)
 
@@ -46,7 +46,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="networks selection tool dropdown" src="https://i.imgur.com/FH8SVNC.png" width=40%/>
+<img alt="networks selection tool dropdown" src="https://i.imgur.com/FH8SVNC.png" width="40%" />
 
 (Fig. 3 Network Selection Tool Dropdown List)
 
@@ -64,7 +64,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="rainbow bridge wallet connection buttons"  src="https://i.imgur.com/6p7MZi6.png" width="40%"/>
+<img alt="rainbow bridge wallet connection buttons"  src="https://i.imgur.com/6p7MZi6.png" width="40%" />
 
 (Fig. 4 Ethereum and near account selection tools and transfer direction)
 
@@ -82,7 +82,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="wallet connection tool" src="https://i.imgur.com/GmNrbMq.png" width="40%"/>
+<img alt="wallet connection tool" src="https://i.imgur.com/GmNrbMq.png" width="40%" />
 
 (Fig. 5 MetaMask and WalletConnect Options )
 
@@ -96,7 +96,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="metaMask connection approval screen" src="https://i.imgur.com/0krVFKc.png" width="30%"/>
+<img alt="metaMask connection approval screen" src="https://i.imgur.com/0krVFKc.png" width="30%" />
 
 (Fig. 6 MetaMask Connect Page 1 )
 
@@ -104,7 +104,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="metaMask connection approval tool" src="https://i.imgur.com/MHeT8He.png" width="60%"/>
+<img alt="metaMask connection approval tool" src="https://i.imgur.com/MHeT8He.png" width="60%" />
 
 (Fig. 7 Permissions window)
 
@@ -116,7 +116,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="rainbow bridge network warning tool"  src="https://i.imgur.com/ItoWmZ6.png" width="60%"/>
+<img alt="rainbow bridge network warning tool"  src="https://i.imgur.com/ItoWmZ6.png" width="60%" />
 
 (Fig. 8 Network Selection Error)
 
@@ -126,7 +126,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="metaMask network selection tool" src="https://i.imgur.com/UsPJFEr.png" width="60%"/>
+<img alt="metaMask network selection tool" src="https://i.imgur.com/UsPJFEr.png" width="60%" />
 
 (Fig. 9 MetaMask Network Connection Option)
 
@@ -136,7 +136,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="connection eth tool status"  src="https://i.imgur.com/i0CSu5t.png" width="60%"/>
+<img alt="connection eth tool status"  src="https://i.imgur.com/i0CSu5t.png" width="60%" />
 
 (Fig. 10 Successful connection )
 
@@ -152,7 +152,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="metamask mobile tool" src="https://i.imgur.com/cEtsxx8.png" width="50%"/>
+<img alt="metamask mobile tool" src="https://i.imgur.com/cEtsxx8.png" width="50%" />
 
 (Fig 11 MetaMask Mobile Application; Image Source:https://metamask.io/download )
 
@@ -166,7 +166,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="near connection tool" src="https://i.imgur.com/oIsRy9i.png" width="40%"/>
+<img alt="near connection tool" src="https://i.imgur.com/oIsRy9i.png" width="40%" />
 
 (Fig 12 connect to near wallet button)
 
@@ -176,7 +176,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="near wallet approval" src="https://i.imgur.com/qYsu2db.png" width="30%"/>
+<img alt="near wallet approval" src="https://i.imgur.com/qYsu2db.png" width="30%" />
 
 (Fig 13 Near Wallet )
 
@@ -192,7 +192,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="initiating new rainbow bridge transfer"  src="https://i.imgur.com/1UuOrKA.png" width="30%"/>
+<img alt="initiating new rainbow bridge transfer"  src="https://i.imgur.com/1UuOrKA.png" width="30%" />
 
 (Fig. 14 Transfer Window)
 
@@ -202,7 +202,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="token selection tool"  src="https://i.imgur.com/rSeVUZD.png" width="30%"/>
+<img alt="token selection tool"  src="https://i.imgur.com/rSeVUZD.png" width="30%" />
 
 (Fig 15 Select ERC20 Menu)
 
@@ -224,15 +224,15 @@ sidebar_label: Using Testnet Frontend
 >
 > - To get a better idea of how this works and what this is, we will make our own token contract. Don't worry this can be done in a few simple steps. Let's pay a visit to [etherscan contract writing tool](https://ropsten.etherscan.io/token/0x722dd3f80bac40c951b51bdd28dd19d435762180#writeContract). You can switch the network if you'd like but know that this link will send you to the Ropsten Testnet.
 
-</center>
-
 <center>
 
-<img alt="connect to web 3 button" src="https://i.imgur.com/yVWGMHE.png" width="40%"/>
+<img alt="connect to web 3 button" src="https://i.imgur.com/yVWGMHE.png" width="40%" />
 
 (Fig 16. Connect to Web3 )
 
 </center>
+
+<center>
 
 > - Select on the Connect to Web3 button to get started. Select MetaMask and you should see the button turn into this. Upon first connection to your meta mask you may need to open the MetaMask browser extension to grant the application permission to interact with your wallet.
 >
@@ -242,7 +242,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="show me the money function"  src="https://i.imgur.com/qrg8BpC.png" width="40%"/>
+<img alt="show me the money function"  src="https://i.imgur.com/qrg8BpC.png" width="40%" />
 
 (Fig 17 Show Me the Money)
 
@@ -252,7 +252,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="Account 1 title eth address" src="https://i.imgur.com/WVOuaGw.png" width="40%"/>
+<img alt="Account 1 title eth address" src="https://i.imgur.com/WVOuaGw.png" width="40%" />
 
 (Fig. 18 MetaMask Browser Extension)
 
@@ -264,7 +264,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="test fee amount"  src="https://i.imgur.com/evKRpsJ.png" width="30%"/>
+<img alt="test fee amount"  src="https://i.imgur.com/evKRpsJ.png" width="30%" />
 
 (Fig. 19 Fee Confirmation Page)
 
@@ -276,7 +276,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img src="https://i.imgur.com/tLweJEg.png" width="30%"/>
+<img src="https://i.imgur.com/tLweJEg.png" width="30%" />
 
 (Fig. 20 Pending transaction)
 
@@ -286,7 +286,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="test contract summary" src="https://i.imgur.com/2qpyge6.png" width="30%"/>
+<img alt="test contract summary" src="https://i.imgur.com/2qpyge6.png" width="30%" />
 
 (Fig. 21 Success ful transaction)
 
@@ -296,7 +296,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="profile summary" src="https://i.imgur.com/MoriMq0.png" width="40%"/>
+<img alt="profile summary" src="https://i.imgur.com/MoriMq0.png" width="40%" />
 
 (Fig. 22 Where it says profile summary)
 
@@ -306,7 +306,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="amount available to transfer" src="https://i.imgur.com/6J09nhV.png" width="40%"/>
+<img alt="amount available to transfer" src="https://i.imgur.com/6J09nhV.png" width="40%" />
 
 (Fig. 23 Available to transfer)
 
@@ -316,7 +316,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="transfer confirmation" src="https://i.imgur.com/ox2jjO1.png" width="30%"/>
+<img alt="transfer confirmation" src="https://i.imgur.com/ox2jjO1.png" width="30%" />
 
 (Fig. 24 Confirm the Transfer)
 
@@ -324,7 +324,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="Locking tokens screen" src="https://i.imgur.com/xbzAlcQ.png" width="30%"/>
+<img alt="Locking tokens screen" src="https://i.imgur.com/xbzAlcQ.png" width="30%" />
 
 (Fig 25 Lock Tokens)
 
@@ -334,7 +334,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="pending Ethereum confirmations screen" src="https://i.imgur.com/QAsnEmr.png" width="30%"/>
+<img alt="pending Ethereum confirmations screen" src="https://i.imgur.com/QAsnEmr.png" width="30%" />
 
 (Fig 26 Waiting for Ethereum Confirmations)
 
@@ -342,7 +342,7 @@ sidebar_label: Using Testnet Frontend
 
 <center>
 
-<img alt="Minting tokens into wallet screen" src="https://i.imgur.com/H6Eh1On.png" width="30%"/>
+<img alt="Minting tokens into wallet screen" src="https://i.imgur.com/H6Eh1On.png" width="30%" />
 
 (Fig 27 Mint Tokens into NEAR Wallet)
 

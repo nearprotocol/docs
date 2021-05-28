@@ -1,0 +1,31 @@
+{
+  "unversionedId": "develop/node/running-a-node",
+  "id": "develop/node/running-a-node",
+  "isDocsHomePage": false,
+  "title": "Running a node",
+  "description": "Why?",
+  "source": "@site/../docs/develop/node/running-a-node.md",
+  "sourceDirName": "develop/node",
+  "slug": "/develop/node/running-a-node",
+  "permalink": "/docs/develop/node/running-a-node",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/running-a-node.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Running a node",
+  "frontMatter": {
+    "id": "running-a-node",
+    "title": "Running a node",
+    "sidebar_label": "Running a node"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Testing Rust Contracts",
+    "permalink": "/docs/develop/contracts/rust/testing-rust-contracts"
+  },
+  "next": {
+    "title": "Running a Node on Windows",
+    "permalink": "/docs/develop/node/running-a-node-windows"
+  }
+}

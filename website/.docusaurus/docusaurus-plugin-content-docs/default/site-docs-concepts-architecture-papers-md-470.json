@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/architecture/papers",
+  "id": "concepts/architecture/papers",
+  "isDocsHomePage": false,
+  "title": "Papers",
+  "description": "Join us as we dive deep into our technology.",
+  "source": "@site/../docs/concepts/architecture/papers.md",
+  "sourceDirName": "concepts/architecture",
+  "slug": "/concepts/architecture/papers",
+  "permalink": "/docs/concepts/architecture/papers",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/architecture/papers.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Papers",
+  "frontMatter": {
+    "id": "papers",
+    "title": "Papers",
+    "sidebar_label": "Papers"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "NEAR Protocol Specification",
+    "permalink": "/docs/concepts/architecture/specification"
+  },
+  "next": {
+    "title": "General FAQ",
+    "permalink": "/docs/faq/general-faq"
+  }
+}

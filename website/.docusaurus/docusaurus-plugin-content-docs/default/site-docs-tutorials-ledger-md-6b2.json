@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/ledger",
+  "id": "tutorials/ledger",
+  "isDocsHomePage": false,
+  "title": "Using a Ledger device w/ NEAR",
+  "description": "A Ledger device is a physical wallet, or hardware wallet, that stores your private keys used to sign transactions. This device offers an extra layer of security as its an isolated device from your computer or smartphone. The NEAR App on Ledger allows you to manage your NEAR accounts and NEAR tokens that have Ledger security enabled.",
+  "source": "@site/../docs/tutorials/ledger.md",
+  "sourceDirName": "tutorials",
+  "slug": "/tutorials/ledger",
+  "permalink": "/docs/tutorials/ledger",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/ledger.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Using a Ledger",
+  "frontMatter": {
+    "id": "ledger",
+    "title": "Using a Ledger device w/ NEAR",
+    "sidebar_label": "Using a Ledger"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Create Transactions",
+    "permalink": "/docs/tutorials/create-transactions"
+  },
+  "next": {
+    "title": "Figment Tutorials",
+    "permalink": "/docs/tutorials/figment"
+  }
+}

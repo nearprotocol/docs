@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/contracts/cross-contract-calls",
+  "id": "tutorials/contracts/cross-contract-calls",
+  "isDocsHomePage": false,
+  "title": "Guide to Cross Contract Calls",
+  "description": "Introduction",
+  "source": "@site/../docs/tutorials/contracts/cross-contract-calls.md",
+  "sourceDirName": "tutorials/contracts",
+  "slug": "/tutorials/contracts/cross-contract-calls",
+  "permalink": "/docs/tutorials/contracts/cross-contract-calls",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/cross-contract-calls.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Cross Contract Calls",
+  "frontMatter": {
+    "id": "cross-contract-calls",
+    "title": "Guide to Cross Contract Calls",
+    "sidebar_label": "Cross Contract Calls"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Issue your own token (ERC20)",
+    "permalink": "/docs/tutorials/contracts/token"
+  },
+  "next": {
+    "title": "An Introduction to Rust Smart Contracts",
+    "permalink": "/docs/tutorials/contracts/intro-to-rust"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unversionedId": "concepts/overview",
+  "id": "concepts/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "NEAR terminology",
+  "source": "@site/../docs/concepts/overview.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/overview",
+  "permalink": "/docs/concepts/overview",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/overview.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Overview",
+  "frontMatter": {
+    "id": "overview",
+    "title": "Overview",
+    "sidebar_label": "Overview"
+  }
+}

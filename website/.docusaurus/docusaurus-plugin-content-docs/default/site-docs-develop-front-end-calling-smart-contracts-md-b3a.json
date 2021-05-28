@@ -1,0 +1,22 @@
+{
+  "unversionedId": "develop/front-end/calling-smart-contracts",
+  "id": "develop/front-end/calling-smart-contracts",
+  "isDocsHomePage": false,
+  "title": "JavaScript",
+  "description": "What follows is a brief overview of how to invoke contracts from a client-side JavaScript context.  near-api-js supports both client and server-side JavaScript.",
+  "source": "@site/../docs/develop/front-end/calling-smart-contracts.md",
+  "sourceDirName": "develop/front-end",
+  "slug": "/develop/front-end/calling-smart-contracts",
+  "permalink": "/docs/develop/front-end/calling-smart-contracts",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/front-end/calling-smart-contracts.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "JavaScript",
+  "frontMatter": {
+    "id": "calling-smart-contracts",
+    "title": "JavaScript",
+    "sidebar_label": "JavaScript"
+  }
+}

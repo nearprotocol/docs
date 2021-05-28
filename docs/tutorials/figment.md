@@ -8,4 +8,4 @@ sidebar_label: Figment Tutorials
 >
 > [ [Click here ](https://learn.figment.io/network-documentation/near/near-pathway)] or the image above to check it out!
 
-[![Figment Learn](/docs/assets/figment-learn-color.png)](https://learn.figment.io/network-documentation/near/near-pathway)
+[![Figment Learn](/img/figment-learn-color.png)](https://learn.figment.io/network-documentation/near/near-pathway)

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "concepts/new-to-near",
+  "id": "concepts/new-to-near",
+  "isDocsHomePage": false,
+  "title": "New to NEAR?",
+  "description": "Welcome! This page is your map for getting to know the NEAR platform.",
+  "source": "@site/../docs/concepts/new-to-near.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/new-to-near",
+  "permalink": "/docs/concepts/new-to-near",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/new-to-near.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "New to NEAR?",
+  "frontMatter": {
+    "id": "new-to-near",
+    "title": "New to NEAR?",
+    "sidebar_label": "New to NEAR?"
+  },
+  "sidebar": "concepts",
+  "next": {
+    "title": "Account",
+    "permalink": "/docs/concepts/account"
+  }
+}

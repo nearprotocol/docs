@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>API JS Quick Reference · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description"
+    content="&gt; Here is a collection of the most commonly used methods within [`near-api-js`](https://github.com/near/near-api-js/). For more in-depth look into this library, please reference the [TypeDocs](https://near.github.io/near-api-js/)." />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="API JS Quick Reference · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description"
+    content="&gt; Here is a collection of the most commonly used methods within [`near-api-js`](https://github.com/near/near-api-js/). For more in-depth look into this library, please reference the [TypeDocs](https://near.github.io/near-api-js/)." />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class=""><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>JavaScript Library</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">API</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/api/rpc">RPC Endpoints</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/api/near-api-rest-server">REST API SERVER</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">JavaScript Library</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/api/naj-overview">Overview</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem"
+                        href="/docs/api/naj-quick-reference">Quick Reference</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/api/naj-cookbook">Cookbook</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/faq/naj-faq">JS Library FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/api/naj-quick-reference.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">API JS Quick Reference</h1>
+            </header>
+            <article>
+              <div><span>
+                  <blockquote>
+                    <p>Here is a collection of the most commonly used methods within <a
+                        href="https://github.com/near/near-api-js/"><code>near-api-js</code></a>. For more in-depth look
+                      into this library, please reference the <a
+                        href="https://near.github.io/near-api-js/">TypeDocs</a>.</p>
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Setup</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Install</h3>
+                  <pre><code class="hljs css language-bash">npm i near-api-js
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="import"></a><a href="#import" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Import</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-4-tab-5" class="nav-link active" data-group="group_4"
+                        data-tab="tab-group-4-content-5">Browser</div>
+                      <div id="tab-group-4-tab-6" class="nav-link" data-group="group_4"
+                        data-tab="tab-group-4-content-6">Node</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-4-content-5" class="tab-pane active" data-group="group_4" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> nearAPI <span class="hljs-keyword">from</span> <span class="hljs-string">"near-api-js"</span>;<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-4-content-6" class="tab-pane" data-group="group_4" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> nearAPI = <span class="hljs-built_in">require</span>(<span class="hljs-string">"near-api-js"</span>);<br /></code></pre>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3><a class="anchor" aria-hidden="true" id="key-store"></a><a href="#key-store" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Key Store</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-7-tab-8" class="nav-link active" data-group="group_7"
+                        data-tab="tab-group-7-content-8">Using Browser</div>
+                      <div id="tab-group-7-tab-9" class="nav-link" data-group="group_7"
+                        data-tab="tab-group-7-content-9">Using a File</div>
+                      <div id="tab-group-7-tab-10" class="nav-link" data-group="group_7"
+                        data-tab="tab-group-7-content-10">Using a private key string</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-7-content-8" class="tab-pane active" data-group="group_7" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-comment">// creates keyStore using private key in local storage</span><br /><span class="hljs-comment">// *** REQUIRES SignIn using walletConnection.requestSignIn() ***</span><br /><br /><span class="hljs-keyword">const</span> { keyStores } = nearAPI;<br /><span class="hljs-keyword">const</span> keyStore = <span class="hljs-keyword">new</span> keyStores.BrowserLocalStorageKeyStore();<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-7-content-9" class="tab-pane" data-group="group_7" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-comment">// creates keyStore from a provided file</span><br /><span class="hljs-comment">// you will need to pass the location of the .json key pair</span><br /><br /><span class="hljs-keyword">const</span> { keyStores } = nearAPI;<br /><span class="hljs-keyword">const</span> KEY_PATH = <span class="hljs-string">"~./near-credentials/testnet/example-account.json"</span>;<br /><span class="hljs-keyword">const</span> keyStore = <span class="hljs-keyword">new</span> keyStores.UnencryptedFileSystemKeyStore(KEY_PATH);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-7-content-10" class="tab-pane" data-group="group_7" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-comment">// creates keyStore from a private key string</span><br /><span class="hljs-comment">// you can define your key here or use an environment variable</span><br /><br /><span class="hljs-keyword">const</span> { keyStores, KeyPair } = nearAPI;<br /><span class="hljs-keyword">const</span> keyStore = <span class="hljs-keyword">new</span> keyStores.InMemoryKeyStore();<br /><span class="hljs-keyword">const</span> PRIVATE_KEY =<br />  <span class="hljs-string">"by8kdJoJHu7uUkKfoaLd2J2Dp1q1TigeWMG123pHdu9UREqPcshCM223kWadm"</span>;<br /><span class="hljs-comment">// creates a public / private key pair using the provided private key</span><br /><span class="hljs-keyword">const</span> keyPair = KeyPair.fromString(PRIVATE_KEY);<br /><span class="hljs-comment">// adds the keyPair you created to keyStore</span><br /><span class="hljs-keyword">await</span> keyStore.setKey(<span class="hljs-string">"testnet"</span>, <span class="hljs-string">"example-account.testnet"</span>, keyPair);<br /></code></pre>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><strong>Note:</strong> Key store is <strong><em>not required</em></strong> if you are not signing
+                    transactions <em>(using view call methods on a contract)</em></p>
+                  <h3><a class="anchor" aria-hidden="true" id="connect"></a><a href="#connect" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Connect</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-11-tab-12" class="nav-link active" data-group="group_11"
+                        data-tab="tab-group-11-content-12">TestNet</div>
+                      <div id="tab-group-11-tab-13" class="nav-link" data-group="group_11"
+                        data-tab="tab-group-11-content-13">MainNet</div>
+                      <div id="tab-group-11-tab-14" class="nav-link" data-group="group_11"
+                        data-tab="tab-group-11-content-14">BetaNet</div>
+                      <div id="tab-group-11-tab-15" class="nav-link" data-group="group_11"
+                        data-tab="tab-group-11-content-15">LocalNet</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-11-content-12" class="tab-pane active" data-group="group_11" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"testnet"</span>,<br />  keyStore, <span class="hljs-comment">// optional if not signing transactions</span><br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.testnet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.testnet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.testnet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.testnet.near.org"</span>,<br />};<br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-11-content-13" class="tab-pane" data-group="group_11" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"mainnet"</span>,<br />  keyStore, <span class="hljs-comment">// optional if not signing transactions</span><br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.mainnet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.mainnet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.mainnet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.mainnet.near.org"</span>,<br />};<br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-11-content-14" class="tab-pane" data-group="group_11" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"betanet"</span>,<br />  keyStore, <span class="hljs-comment">// optional if not signing transactions</span><br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.betanet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.betanet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.betanet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.betanet.near.org"</span>,<br />};<br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-11-content-15" class="tab-pane" data-group="group_11" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect } = nearAPI;<br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"local"</span>,<br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"http://localhost:3030"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"http://localhost:4000/wallet"</span>,<br />};<br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /></code></pre>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><a href="/docs/api/naj-quick-reference#key-store"><code>keyStore setup</code></a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="wallet"></a><a href="#wallet" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Wallet</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="connection"></a><a href="#connection" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Connection</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-16-tab-17" class="nav-link active" data-group="group_16"
+                        data-tab="tab-group-16-content-17">TestNet</div>
+                      <div id="tab-group-16-tab-18" class="nav-link" data-group="group_16"
+                        data-tab="tab-group-16-content-18">MainNet</div>
+                      <div id="tab-group-16-tab-19" class="nav-link" data-group="group_16"
+                        data-tab="tab-group-16-content-19">BetaNet</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-16-content-17" class="tab-pane active" data-group="group_16" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect, keyStores, WalletConnection } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"testnet"</span>,<br />  <span class="hljs-attr">keyStore</span>: <span class="hljs-keyword">new</span> keyStores.BrowserLocalStorageKeyStore(),<br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.testnet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.testnet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.testnet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.testnet.near.org"</span>,<br />};<br /><br /><span class="hljs-comment">// connect to NEAR</span><br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /><br /><span class="hljs-comment">// create wallet connection</span><br /><span class="hljs-keyword">const</span> wallet = <span class="hljs-keyword">new</span> WalletConnection(near);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-16-content-18" class="tab-pane" data-group="group_16" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect, keyStores, WalletConnection } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"mainnet"</span>,<br />  <span class="hljs-attr">keyStore</span>: <span class="hljs-keyword">new</span> keyStores.BrowserLocalStorageKeyStore(),<br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.mainnet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.mainnet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.mainnet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.mainnet.near.org"</span>,<br />};<br /><br /><span class="hljs-comment">// connect to NEAR</span><br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /><br /><span class="hljs-comment">// create wallet connection</span><br /><span class="hljs-keyword">const</span> wallet = <span class="hljs-keyword">new</span> WalletConnection(near);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-16-content-19" class="tab-pane" data-group="group_16" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { connect, keyStores, WalletConnection } = nearAPI;<br /><br /><span class="hljs-keyword">const</span> config = {<br />  <span class="hljs-attr">networkId</span>: <span class="hljs-string">"betanet"</span>,<br />  <span class="hljs-attr">keyStore</span>: <span class="hljs-keyword">new</span> keyStores.BrowserLocalStorageKeyStore(),<br />  <span class="hljs-attr">nodeUrl</span>: <span class="hljs-string">"https://rpc.betanet.near.org"</span>,<br />  <span class="hljs-attr">walletUrl</span>: <span class="hljs-string">"https://wallet.betanet.near.org"</span>,<br />  <span class="hljs-attr">helperUrl</span>: <span class="hljs-string">"https://helper.betanet.near.org"</span>,<br />  <span class="hljs-attr">explorerUrl</span>: <span class="hljs-string">"https://explorer.betanet.near.org"</span>,<br />};<br /><br /><span class="hljs-comment">// connect to NEAR</span><br /><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);<br /><br /><span class="hljs-comment">// create wallet connection</span><br /><span class="hljs-keyword">const</span> wallet = <span class="hljs-keyword">new</span> WalletConnection(near);<br /></code></pre>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3><a class="anchor" aria-hidden="true" id="sign-in"></a><a href="#sign-in" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Sign In</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// redirects user to wallet to authorize your dApp</span>
+<span class="hljs-comment">// this creates an access key that will be stored in the browser's local storage</span>
+<span class="hljs-comment">// access key can then be used to connect to NEAR and sign transactions via keyStore</span>
+
+<span class="hljs-keyword">const</span> signIn = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  wallet.requestSignIn(
+    <span class="hljs-string">"example-contract.testnet"</span>, <span class="hljs-comment">// contract requesting access</span>
+    <span class="hljs-string">"Example App"</span>, <span class="hljs-comment">// optional</span>
+    <span class="hljs-string">"http://YOUR-URL.com/success"</span>, <span class="hljs-comment">// optional</span>
+    <span class="hljs-string">"http://YOUR-URL.com/failure"</span> <span class="hljs-comment">// optional</span>
+  );
+};
+</code></pre>
+                  <p><strong>Note:</strong> Sign In is <strong><em>not required</em></strong> if you are using an
+                    alternative key store to local storage <strong><em>or</em></strong> you are not signing transactions
+                    <em>(using view call methods on a contract)</em></p>
+                  <h3><a class="anchor" aria-hidden="true" id="sign-out"></a><a href="#sign-out" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Sign Out</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> signOut = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  wallet.signOut();
+};
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="check-if-signed-in"></a><a href="#check-if-signed-in"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Check if Signed In</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">if</span>(wallet.isSignedIn()) =&gt; doSomething();
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="get-authorized-account-id"></a><a
+                      href="#get-authorized-account-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get Authorized Account Id</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// returns account Id as string</span>
+<span class="hljs-keyword">const</span> walletAccountId = wallet.getAccountId();
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="get-authorized-account-object"></a><a
+                      href="#get-authorized-account-object" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get Authorized Account Object</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// returns account object for transaction signing</span>
+<span class="hljs-keyword">const</span> walletAccountObj = wallet.account();
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="account"></a><a href="#account" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Account</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="load-account"></a><a href="#load-account"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Load Account</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="create-account"></a><a href="#create-account"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Create Account</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// creates a new account using funds from the account used to create it</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.createAccount(
+  <span class="hljs-string">"example-account2.testnet"</span>, <span class="hljs-comment">// new account name</span>
+  <span class="hljs-string">"8hSHprDq2StXwMtNd43wDTXQYsjXcD4MJTXQYsjXcc"</span>, <span class="hljs-comment">// public key for new account</span>
+  <span class="hljs-string">"10000000000000000000"</span> <span class="hljs-comment">// initial balance for new account in yoctoNEAR</span>
+);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="delete-account"></a><a href="#delete-account"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Delete Account</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// deletes account found in the `account` object</span>
+<span class="hljs-comment">// transfers remaining account balance to the accountId passed as an argument</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.deleteAccount(<span class="hljs-string">"beneficiary-account.testnet"</span>);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="get-account-balance"></a><a href="#get-account-balance"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get Account Balance</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// gets account balance</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.getAccountBalance();
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="get-account-details"></a><a href="#get-account-details"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get Account details</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// gets account details in terms of authorized apps and transactions</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.getAccountDetails();
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="send-tokens"></a><a href="#send-tokens"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Send Tokens</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// sends NEAR tokens</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"sender-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.sendMoney(
+  <span class="hljs-string">"receiver-account.testnet"</span>, <span class="hljs-comment">// receiver account</span>
+  <span class="hljs-string">"1000000000000000000000000"</span> <span class="hljs-comment">// amount in yoctoNEAR</span>
+);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="state"></a><a href="#state" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>State</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// gets the state of the account</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> account.state();
+<span class="hljs-built_in">console</span>.log(response);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="contract"></a><a href="#contract" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Contract</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="load-contract"></a><a href="#load-contract"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Load Contract</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-20-tab-21" class="nav-link active" data-group="group_20"
+                        data-tab="tab-group-20-content-21">Standard</div>
+                      <div id="tab-group-20-tab-22" class="nav-link" data-group="group_20"
+                        data-tab="tab-group-20-content-22">Using Wallet</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-20-content-21" class="tab-pane active" data-group="group_20" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> contract = <span class="hljs-keyword">new</span> nearAPI.Contract(<br />  account, <span class="hljs-comment">// the account object that is connecting</span><br />  <span class="hljs-string">"example-contract.testnet"</span>,<br />  {<br />    <span class="hljs-comment">// name of contract you're connecting to</span><br />    <span class="hljs-attr">viewMethods</span>: [<span class="hljs-string">"getMessages"</span>], <span class="hljs-comment">// view methods do not change state but usually return a value</span><br />    <span class="hljs-attr">changeMethods</span>: [<span class="hljs-string">"addMessage"</span>], <span class="hljs-comment">// change methods modify state</span><br />    <span class="hljs-attr">sender</span>: account, <span class="hljs-comment">// account object to initialize and sign transactions.</span><br />  }<br />);<br /></code></pre>
+                            <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-20-content-22" class="tab-pane" data-group="group_20" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> contract = <span class="hljs-keyword">new</span> nearAPI.Contract(<br />  wallet.account(), <span class="hljs-comment">// the account object that is connecting</span><br />  <span class="hljs-string">"example-contract.testnet"</span>,<br />  {<br />    <span class="hljs-comment">// name of contract you're connecting to</span><br />    <span class="hljs-attr">viewMethods</span>: [<span class="hljs-string">"getMessages"</span>], <span class="hljs-comment">// view methods do not change state but usually return a value</span><br />    <span class="hljs-attr">changeMethods</span>: [<span class="hljs-string">"addMessage"</span>], <span class="hljs-comment">// change methods modify state</span><br />    <span class="hljs-attr">sender</span>: wallet.Account(), <span class="hljs-comment">// account object to initialize and sign transactions.</span><br />  }<br />);<br /></code></pre>
+                            <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3><a class="anchor" aria-hidden="true" id="call-contract"></a><a href="#call-contract"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Call Contract</h3>
+                  <div class="tabs">
+                    <div class="nav-tabs">
+                      <div id="tab-group-23-tab-24" class="nav-link active" data-group="group_23"
+                        data-tab="tab-group-23-content-24">Change Method</div>
+                      <div id="tab-group-23-tab-25" class="nav-link" data-group="group_23"
+                        data-tab="tab-group-23-content-25">View Method</div>
+                      <div id="tab-group-23-tab-26" class="nav-link" data-group="group_23"
+                        data-tab="tab-group-23-content-26">View Method w/ args</div>
+                    </div>
+                    <div class="tab-content">
+                      <div id="tab-group-23-content-24" class="tab-pane active" data-group="group_23" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">await</span> contract.method_name(<br />  {<br />    <span class="hljs-attr">arg_name</span>: <span class="hljs-string">"value"</span>, <span class="hljs-comment">// argument name and value - pass empty object if no args required</span><br />  },<br />  <span class="hljs-number">300000000000000</span>, <span class="hljs-comment">// attached GAS (optional)</span><br />  <span class="hljs-number">1000000000000000000000000</span> <span class="hljs-comment">// attached deposit in yoctoNEAR (optional)</span><br />);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-23-content-25" class="tab-pane" data-group="group_23" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> contract.view_method_name();<br /><span class="hljs-built_in">console</span>.log(response);<br /></code></pre>
+                          </span></div>
+                      </div>
+                      <div id="tab-group-23-content-26" class="tab-pane" data-group="group_23" tabindex="-1">
+                        <div><span>
+                            <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> contract.view_method_name({ <span class="hljs-attr">arg_name</span>: <span class="hljs-string">"arg_value"</span> });<br /><span class="hljs-built_in">console</span>.log(response);<br /></code></pre>
+                          </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2><a class="anchor" aria-hidden="true" id="access-keys"></a><a href="#access-keys"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Access Keys</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="add-full-access-key"></a><a href="#add-full-access-key"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Add Full Access Key</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// takes public key as string for argument</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.addKey(<span class="hljs-string">"8hSHprDq2StXwMtNd43wDTXQYsjXcD4MJTXQYsjXcc"</span>);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="add-function-access-key"></a><a
+                      href="#add-function-access-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Add Function Access Key</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// adds function access key</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.addKey(
+  <span class="hljs-string">"8hSHprDq2StXwMtNd43wDTXQYsjXcD4MJTXQYsjXcc"</span>, <span class="hljs-comment">// public key for new account</span>
+  <span class="hljs-string">"example-account.testnet"</span>, <span class="hljs-comment">// contract this key is allowed to call (optional)</span>
+  <span class="hljs-string">"example_method"</span>, <span class="hljs-comment">// methods this key is allowed to call (optional)</span>
+  <span class="hljs-string">"2500000000000"</span> <span class="hljs-comment">// allowance key can use to call methods (optional)</span>
+);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="get-all-access-keys"></a><a href="#get-all-access-keys"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Get All Access Keys</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// returns all access keys associated with an account</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.getAccessKeys();
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h3><a class="anchor" aria-hidden="true" id="delete-access-key"></a><a href="#delete-access-key"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Delete Access Key</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// takes public key as string for argument</span>
+<span class="hljs-keyword">const</span> near = <span class="hljs-keyword">await</span> connect(config);
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> near.account(<span class="hljs-string">"example-account.testnet"</span>);
+<span class="hljs-keyword">await</span> account.deleteKey(<span class="hljs-string">"8hSHprDq2StXwMtNd43wDTXQYsjXcD4MJTXQYsjXcc"</span>);
+</code></pre>
+                  <p><a href="/docs/api/naj-quick-reference#connect"><code>config setup</code></a></p>
+                  <h2><a class="anchor" aria-hidden="true" id="utils"></a><a href="#utils" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Utils</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="near--yoctonear"></a><a href="#near--yoctonear"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>NEAR =&gt; yoctoNEAR</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// converts NEAR amount into yoctoNEAR (10^-24)</span>
+
+<span class="hljs-keyword">const</span> { utils } = nearAPI;
+<span class="hljs-keyword">const</span> amountInYocto = utils.format.parseNearAmount(<span class="hljs-string">"1"</span>);
+</code></pre>
+                  <h3><a class="anchor" aria-hidden="true" id="yoctonear--near"></a><a href="#yoctonear--near"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>YoctoNEAR =&gt; NEAR</h3>
+                  <pre><code class="hljs css language-js"><span class="hljs-comment">// converts yoctoNEAR (10^-24) amount into NEAR</span>
+
+<span class="hljs-keyword">const</span> { utils } = nearAPI;
+<span class="hljs-keyword">const</span> amountInNEAR = utils.format.formatNearAmount(<span class="hljs-string">"1000000000000000000000000"</span>);
+</code></pre>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 5/23/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/api/naj-overview"><span
+                class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button"
+              href="/docs/api/naj-cookbook"><span>Cookbook</span><span class="arrow-next"> →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#setup">Setup</a>
+            <ul class="toc-headings">
+              <li><a href="#install">Install</a></li>
+              <li><a href="#import">Import</a></li>
+              <li><a href="#key-store">Key Store</a></li>
+              <li><a href="#connect">Connect</a></li>
+            </ul>
+          </li>
+          <li><a href="#wallet">Wallet</a>
+            <ul class="toc-headings">
+              <li><a href="#connection">Connection</a></li>
+              <li><a href="#sign-in">Sign In</a></li>
+              <li><a href="#sign-out">Sign Out</a></li>
+              <li><a href="#check-if-signed-in">Check if Signed In</a></li>
+              <li><a href="#get-authorized-account-id">Get Authorized Account Id</a></li>
+              <li><a href="#get-authorized-account-object">Get Authorized Account Object</a></li>
+            </ul>
+          </li>
+          <li><a href="#account">Account</a>
+            <ul class="toc-headings">
+              <li><a href="#load-account">Load Account</a></li>
+              <li><a href="#create-account">Create Account</a></li>
+              <li><a href="#delete-account">Delete Account</a></li>
+              <li><a href="#get-account-balance">Get Account Balance</a></li>
+              <li><a href="#get-account-details">Get Account details</a></li>
+              <li><a href="#send-tokens">Send Tokens</a></li>
+              <li><a href="#state">State</a></li>
+            </ul>
+          </li>
+          <li><a href="#contract">Contract</a>
+            <ul class="toc-headings">
+              <li><a href="#load-contract">Load Contract</a></li>
+              <li><a href="#call-contract">Call Contract</a></li>
+            </ul>
+          </li>
+          <li><a href="#access-keys">Access Keys</a>
+            <ul class="toc-headings">
+              <li><a href="#add-full-access-key">Add Full Access Key</a></li>
+              <li><a href="#add-function-access-key">Add Function Access Key</a></li>
+              <li><a href="#get-all-access-keys">Get All Access Keys</a></li>
+              <li><a href="#delete-access-key">Delete Access Key</a></li>
+            </ul>
+          </li>
+          <li><a href="#utils">Utils</a>
+            <ul class="toc-headings">
+              <li><a href="#near--yoctonear">NEAR =&gt; yoctoNEAR</a></li>
+              <li><a href="#yoctonear--near">YoctoNEAR =&gt; NEAR</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

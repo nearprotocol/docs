@@ -1,0 +1,31 @@
+{
+  "unversionedId": "roles/validator/hardware",
+  "id": "roles/validator/hardware",
+  "isDocsHomePage": false,
+  "title": "Hardware Requirements",
+  "description": "This page covers the minimum and recommended hardware requirements for engaging with the NEAR platform as an application developer, validator, integrator or core contributor.",
+  "source": "@site/../docs/roles/validator/hardware.md",
+  "sourceDirName": "roles/validator",
+  "slug": "/roles/validator/hardware",
+  "permalink": "/docs/roles/validator/hardware",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/roles/validator/hardware.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Choosing Hardware",
+  "frontMatter": {
+    "id": "hardware",
+    "title": "Hardware Requirements",
+    "sidebar_label": "Choosing Hardware"
+  },
+  "sidebar": "stake",
+  "previous": {
+    "title": "Staking Orientation",
+    "permalink": "/docs/validator/staking-overview"
+  },
+  "next": {
+    "title": "Running a Validator Node",
+    "permalink": "/docs/validator/staking"
+  }
+}

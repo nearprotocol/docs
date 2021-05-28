@@ -1,0 +1,27 @@
+{
+  "unversionedId": "videos/collections-u128-etc",
+  "id": "videos/collections-u128-etc",
+  "isDocsHomePage": false,
+  "title": "Miscellaneous video concept",
+  "description": "This page contains videos that explore miscellaneous concepts of smart contract development on NEAR.",
+  "source": "@site/../docs/videos/collections-u128-etc.md",
+  "sourceDirName": "videos",
+  "slug": "/videos/collections-u128-etc",
+  "permalink": "/docs/videos/collections-u128-etc",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/collections-u128-etc.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Misc",
+  "frontMatter": {
+    "id": "collections-u128-etc",
+    "title": "Miscellaneous video concept",
+    "sidebar_label": "Misc"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "NEAR Application Reviews",
+    "permalink": "/docs/videos/live-app-review"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "faq/naj-faq",
+  "id": "faq/naj-faq",
+  "isDocsHomePage": false,
+  "title": "FAQs for NEAR-API-JS",
+  "description": "General",
+  "source": "@site/../docs/faq/naj-faq.md",
+  "sourceDirName": "faq",
+  "slug": "/faq/naj-faq",
+  "permalink": "/docs/faq/naj-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/faq/naj-faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "JS Library FAQ",
+  "frontMatter": {
+    "id": "naj-faq",
+    "title": "FAQs for NEAR-API-JS",
+    "sidebar_label": "JS Library FAQ"
+  },
+  "sidebar": "API",
+  "previous": {
+    "title": "NEAR-API-JS Cookbook",
+    "permalink": "/docs/api/naj-cookbook"
+  }
+}

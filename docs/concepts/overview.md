@@ -4,7 +4,7 @@ title: Overview
 sidebar_label: Overview
 ---
 
-![NEAR terminology](/docs/assets/near-terminology.png)
+![NEAR terminology](/img/near-terminology.png)
 
 - **Blockchain**: an incentivized, distributed, permanent, irrefutable record of computation and data
 - **Transaction**: a cryptographically signed request for work on the blockchain made up of one or more Actions

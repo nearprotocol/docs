@@ -1,0 +1,31 @@
+{
+  "unversionedId": "concepts/networks",
+  "id": "concepts/networks",
+  "isDocsHomePage": false,
+  "title": "NEAR Networks",
+  "description": "NEAR Protocol operates on several networks each operating with their own independent validators and unique state. These networks are as follows:",
+  "source": "@site/../docs/concepts/networks.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/networks",
+  "permalink": "/docs/concepts/networks",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/concepts/networks.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Networks",
+  "frontMatter": {
+    "id": "networks",
+    "title": "NEAR Networks",
+    "sidebar_label": "Networks"
+  },
+  "sidebar": "concepts",
+  "previous": {
+    "title": "NEAR Indexer",
+    "permalink": "/docs/concepts/indexer"
+  },
+  "next": {
+    "title": "Transaction",
+    "permalink": "/docs/concepts/transaction"
+  }
+}

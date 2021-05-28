@@ -1,0 +1,27 @@
+{
+  "unversionedId": "develop/node/compile-and-run-a-node",
+  "id": "develop/node/compile-and-run-a-node",
+  "isDocsHomePage": false,
+  "title": "How to compile and run nearcore",
+  "description": "This doc is written for developers, sysadmins, DevOps, or curious people who want to know how to compile and run a regular NEAR node natively (without containerization) for one of the following networks:",
+  "source": "@site/../docs/develop/node/compile-and-run-a-node.md",
+  "sourceDirName": "develop/node",
+  "slug": "/develop/node/compile-and-run-a-node",
+  "permalink": "/docs/develop/node/compile-and-run-a-node",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/develop/node/compile-and-run-a-node.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Compile and run a node",
+  "frontMatter": {
+    "id": "compile-and-run-a-node",
+    "title": "Compile and run a node",
+    "sidebar_label": "Compile and run a node"
+  },
+  "sidebar": "develop",
+  "previous": {
+    "title": "Running a Node on Windows",
+    "permalink": "/docs/develop/node/running-a-node-windows"
+  }
+}

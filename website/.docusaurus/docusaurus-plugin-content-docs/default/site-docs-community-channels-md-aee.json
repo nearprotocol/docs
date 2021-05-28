@@ -1,0 +1,27 @@
+{
+  "unversionedId": "community/community-channels",
+  "id": "community/community-channels",
+  "isDocsHomePage": false,
+  "title": "Community Channels",
+  "description": "Overview",
+  "source": "@site/../docs/community/channels.md",
+  "sourceDirName": "community",
+  "slug": "/community/community-channels",
+  "permalink": "/docs/community/community-channels",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/channels.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Community Channels",
+  "frontMatter": {
+    "id": "community-channels",
+    "title": "Community Channels",
+    "sidebar_label": "Community Channels"
+  },
+  "sidebar": "community",
+  "next": {
+    "title": "Community FAQ",
+    "permalink": "/docs/community/community-faq"
+  }
+}

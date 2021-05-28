@@ -1,0 +1,31 @@
+{
+  "unversionedId": "api/naj-cookbook",
+  "id": "api/naj-cookbook",
+  "isDocsHomePage": false,
+  "title": "NEAR-API-JS Cookbook",
+  "description": "Common use cases for near-api-js.",
+  "source": "@site/../docs/api/naj-cookbook.md",
+  "sourceDirName": "api",
+  "slug": "/api/naj-cookbook",
+  "permalink": "/docs/api/naj-cookbook",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/api/naj-cookbook.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Cookbook",
+  "frontMatter": {
+    "id": "naj-cookbook",
+    "title": "NEAR-API-JS Cookbook",
+    "sidebar_label": "Cookbook"
+  },
+  "sidebar": "API",
+  "previous": {
+    "title": "API JS Quick Reference",
+    "permalink": "/docs/api/naj-quick-reference"
+  },
+  "next": {
+    "title": "FAQs for NEAR-API-JS",
+    "permalink": "/docs/faq/naj-faq"
+  }
+}

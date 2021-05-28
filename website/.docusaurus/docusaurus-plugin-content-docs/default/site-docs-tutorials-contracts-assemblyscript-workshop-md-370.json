@@ -1,0 +1,31 @@
+{
+  "unversionedId": "tutorials/contracts/as-workshop",
+  "id": "tutorials/contracts/as-workshop",
+  "isDocsHomePage": false,
+  "title": "AssemblyScript Workshop",
+  "description": "[This workshop ] includes several activities:",
+  "source": "@site/../docs/tutorials/contracts/assemblyscript-workshop.md",
+  "sourceDirName": "tutorials/contracts",
+  "slug": "/tutorials/contracts/as-workshop",
+  "permalink": "/docs/tutorials/contracts/as-workshop",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/tutorials/contracts/assemblyscript-workshop.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "AssemblyScript Workshop",
+  "frontMatter": {
+    "id": "as-workshop",
+    "title": "AssemblyScript Workshop",
+    "sidebar_label": "AssemblyScript Workshop"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "Exploring NEAR Protocol APIs",
+    "permalink": "/docs/tutorials/front-end/naj-workshop"
+  },
+  "next": {
+    "title": "Issue your own token (ERC20)",
+    "permalink": "/docs/tutorials/contracts/token"
+  }
+}

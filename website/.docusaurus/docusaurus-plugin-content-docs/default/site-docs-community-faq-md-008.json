@@ -1,0 +1,31 @@
+{
+  "unversionedId": "community/community-faq",
+  "id": "community/community-faq",
+  "isDocsHomePage": false,
+  "title": "Community FAQ",
+  "description": "What is NEAR?",
+  "source": "@site/../docs/community/faq.md",
+  "sourceDirName": "community",
+  "slug": "/community/community-faq",
+  "permalink": "/docs/community/community-faq",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/faq.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "FAQ",
+  "frontMatter": {
+    "id": "community-faq",
+    "title": "Community FAQ",
+    "sidebar_label": "FAQ"
+  },
+  "sidebar": "community",
+  "previous": {
+    "title": "Community Channels",
+    "permalink": "/docs/community/community-channels"
+  },
+  "next": {
+    "title": "Contributor Overview",
+    "permalink": "/docs/community/contribute/contribute-overview"
+  }
+}

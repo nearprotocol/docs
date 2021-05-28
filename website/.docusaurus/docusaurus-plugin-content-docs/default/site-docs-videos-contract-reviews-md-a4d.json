@@ -1,0 +1,31 @@
+{
+  "unversionedId": "videos/contract-reviews",
+  "id": "videos/contract-reviews",
+  "isDocsHomePage": false,
+  "title": "NEAR Smart Contract Reviews",
+  "description": "Get insights and explanations directly from NEAR Core team members as they talk through the intricacies of smart contracts.",
+  "source": "@site/../docs/videos/contract-reviews.md",
+  "sourceDirName": "videos",
+  "slug": "/videos/contract-reviews",
+  "permalink": "/docs/videos/contract-reviews",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/videos/contract-reviews.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "sidebar_label": "Contract Reviews",
+  "frontMatter": {
+    "id": "contract-reviews",
+    "title": "NEAR Smart Contract Reviews",
+    "sidebar_label": "Contract Reviews"
+  },
+  "sidebar": "tutorials",
+  "previous": {
+    "title": "NEAR accounts and access keys",
+    "permalink": "/docs/videos/accounts-keys"
+  },
+  "next": {
+    "title": "NEAR Application Reviews",
+    "permalink": "/docs/videos/live-app-review"
+  }
+}

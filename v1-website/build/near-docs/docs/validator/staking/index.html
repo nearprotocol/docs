@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Running a Validator Node · NEAR Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Docusaurus" />
+  <meta name="description" content="## Staking on NEAR" />
+  <meta name="docsearch:language" content="en" />
+  <meta property="og:title" content="Running a Validator Node · NEAR Documentation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.near.org/" />
+  <meta property="og:description" content="## Staking on NEAR" />
+  <meta property="og:image" content="https://docs.near.org/img/near_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://docs.near.org/img/near_logo.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-100373569-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&amp;family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" />
+  <link rel="stylesheet" href="/css/copy-code-button.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <link rel="stylesheet" href="https://near.org/wp-content/themes/near-19/assets/dist/near.min.css" />
+  <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://use.fontawesome.com/221fd444f5.js"></script>
+  <script type="text/javascript" src="/js/copy-code-button.js"></script>
+  <script type="text/javascript" src="/js/mixpanel.js"></script>
+  <script src="/js/scrollSpy.js"></script>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/codetabs.js"></script>
+</head>
+
+<body class="sideNavVisible separateOnPageNav">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header><a href="/"><img class="logo" src="/img/near_logo.svg" alt="NEAR Documentation" /></a>
+        <div class="navigationWrapper navigationSlider">
+          <nav class="slidingNav">
+            <ul class="nav-site nav-site-internal">
+              <li class=""><a href="/docs/concepts/new-to-near" target="_self">Concepts</a></li>
+              <li class=""><a href="/docs/develop/basics/getting-started" target="_self">Develop</a></li>
+              <li class=""><a href="/docs/tools/near-cli" target="_self">Tools</a></li>
+              <li class=""><a href="/docs/tutorials/create-transactions" target="_self">Tutorials</a></li>
+              <li class=""><a href="/docs/api/rpc" target="_self">API</a></li>
+              <li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react"
+                  placeholder="Search the Docs..." title="Search the Docs..." /></li>
+              <li class=""><a href="/docs/community/community-channels" target="_self">Community</a></li>
+              <li class=""><a href="/docs/tokens/token-custody" target="_self">Tokens</a></li>
+              <li class="siteNavGroupActive"><a href="/docs/validator/staking-overview" target="_self">Stake</a></li>
+              <li class=""><a href="/docs/roles/integrator/exchange-integration" target="_self">Integrate</a></li>
+              <li class=""><a href="https://github.com/near/docs/issues" target="_blank">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="docsNavContainer" id="docsNav">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navBreadcrumb wrapper">
+                <div class="navToggle" id="navToggler">
+                  <div class="hamburger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                  </div>
+                </div>
+                <h2><i>›</i><span>Validator</span></h2>
+                <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+              </div>
+              <div class="navGroups">
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Quickstart</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/staking-overview">Orientation</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">Validator</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/roles/validator/hardware">Choosing
+                        Hardware</a></li>
+                    <li class="navListItem navListItemActive"><a class="navItem" href="/docs/validator/staking">Running
+                        the Node</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/keys">Understanding Keys</a></li>
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/maintenance">Node Maintenance</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/economics">Validator Economics</a>
+                    </li>
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/deploy-on-mainnet">Deploy on
+                        MainNet</a></li>
+                  </ul>
+                </div>
+                <div class="navGroup">
+                  <h3 class="navGroupCategoryTitle">FAQ</h3>
+                  <ul class="">
+                    <li class="navListItem"><a class="navItem" href="/docs/validator/staking-faq">Staking FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <script />
+          var coll = document.getElementsByClassName('collapsible');
+          var checkActiveCategory = true;
+          for (var i = 0; i < coll.length; i++) { var links=coll[i].nextElementSibling.getElementsByTagName('*'); if
+            (checkActiveCategory){ for (var j=0; j < links.length; j++) { if
+            (links[j].classList.contains('navListItemActive')){ coll[i].nextElementSibling.classList.toggle('hide');
+            coll[i].childNodes[1].classList.toggle('rotate'); checkActiveCategory=false; break; } } }
+            coll[i].addEventListener('click', function() { var arrow=this.childNodes[1];
+            arrow.classList.toggle('rotate'); var content=this.nextElementSibling; content.classList.toggle('hide'); });
+            } document.addEventListener('DOMContentLoaded', function() { createToggler('#navToggler', '#docsNav'
+            , 'docsSliderActive' ); createToggler('#tocToggler', 'body' , 'tocActive' ); var
+            headings=document.querySelector('.toc-headings'); headings && headings.addEventListener('click',
+            function(event) { var el=event.target; while(el !==headings){ if (el.tagName==='A' ) {
+            document.body.classList.remove('tocActive'); break; } else{ el=el.parentNode; } } }, false); function
+            createToggler(togglerSelector, targetSelector, className) { var
+            toggler=document.querySelector(togglerSelector); var target=document.querySelector(targetSelector); if
+            (!toggler) { return; } toggler.onclick=function(event) { event.preventDefault();
+            target.classList.toggle(className); }; } }); </script>
+        </nav>
+      </div>
+      <div class="container mainContainer docsContainer">
+        <div class="wrapper">
+          <div class="post">
+            <header class="postHeader"><a class="edit-page-link button"
+                href="https://github.com/near/docs/tree/master/docs/validator/staking.md" target="_blank"
+                rel="noreferrer noopener">Edit</a>
+              <h1 id="__docusaurus" class="postHeaderTitle">Running a Validator Node</h1>
+            </header>
+            <article>
+              <div><span>
+                  <h2><a class="anchor" aria-hidden="true" id="staking-on-near"></a><a href="#staking-on-near"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Staking on NEAR</h2>
+                  <h3><a class="anchor" aria-hidden="true" id="translations"></a><a href="#translations"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Translations</h3>
+                  <ul>
+                    <li><a href="/docs/validator/staking-kr">Korean</a></li>
+                    <li>Add your language too via <a href="https://github.com/near/docs/pull/385">Github pull
+                        request</a></li>
+                  </ul>
+                  <h3><a class="anchor" aria-hidden="true" id="_read-this-quickstart-guide-before-you-start_"></a><a
+                      href="#_read-this-quickstart-guide-before-you-start_" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a><em>READ THIS QUICKSTART GUIDE BEFORE YOU START</em></h3>
+                  <p>Wait until your node is fully synced before you send a staking transaction. An out of sync node
+                    cannot produce or validate blocks, so if you're chosen as a validator, you're at risk of being
+                    kicked out of the validator pool and losing your rewards if your node doesn't maintain the
+                    appropriate uptime (i.e. validate / produce the number of assigned blocks for that epoch).</p>
+                  <p>You can test your validator infrastructure on NEAR <em>TestNet</em>. You can generate an account
+                    with a few tokens from the <a href="https://wallet.testnet.near.org">NEAR wallet</a>, and use it to
+                    deploy your staking pool. Then, contact NEAR Core-dev on <a href="https://near.chat">Discord</a> to
+                    request sufficient stake to become validator on TestNet.</p>
+                  <ol>
+                    <li>For this current session: run the command <code>export NODE_ENV=testnet</code></li>
+                    <li>Add this same line (<code>export NODE_ENV=testnet</code>) to the end of the file
+                      <code>~/.bashrc</code> if you want to ensure this environment variable persists at machine
+                      restarts.
+                    </li>
+                  </ol>
+                  <p>TestNet is running on separate URLs for the explorer, the wallet and the Json RPC:</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th style="text-align:center">⛔️ MainNet</th>
+                        <th style="text-align:center">✅ TestNet</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align:center"><a href="https://explorer.near.org">https://explorer.near.org</a>
+                        </td>
+                        <td style="text-align:center"><a
+                            href="https://explorer.testnet.near.org">https://explorer.testnet.near.org</a></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><a href="https://wallet.near.org">https://wallet.near.org</a></td>
+                        <td style="text-align:center"><a
+                            href="https://wallet.testnet.near.org">https://wallet.testnet.near.org</a></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><a href="https://rpc.near.org">https://rpc.near.org</a></td>
+                        <td style="text-align:center"><a
+                            href="https://rpc.testnet.near.org">https://rpc.testnet.near.org</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Every new TestNet account receives automatically a few hundred tokens to deploy smart contracts and
+                    test your APIs.</p>
+                  <p>You can use <a href="https://github.com/near/nearup">nearup</a> to easily deploy your TestNet node
+                    on a VPS. If you plan to deploy on MainNet, <strong>you can't use nearup</strong>, and we suggest to
+                    follow the guidelines <a href="deploy-on-mainnet">here</a>.
+                    Join NEAR validator channels <a href="https://near.chat">on Discord</a> to receive technical support
+                    by NEAR team and the rest of the community.</p>
+                  <p>NEAR Validators should:</p>
+                  <ul>
+                    <li>Know how to compile, deploy and configure NEAR Validator nodes</li>
+                    <li>Understand the difference between <code>account_key</code>, <code>node_key</code>and
+                      <code>validator_key</code> (see the <a href="keys">keys on NEAR Platform</a> doc)
+                    </li>
+                    <li>Understand how to deploy a NEAR contract, and the difference betweek <code>view</code> and
+                      <code>call</code> methods. Know how to leverage them via <code>near-cli</code> and
+                      <code>near RPC</code>
+                    </li>
+                    <li>Have a monitoring platform in place, to measure the generated and missed blocks, peers and
+                      connectivity, current node version, along with the typical cpu, memory, storage and networking
+                      performance</li>
+                    <li>Understand the state of a validator: <code>proposals</code>, <code>next</code> and
+                      <code>current</code>
+                    </li>
+                    <li>Use the information above to control if the validator is falling outside of the active set, and
+                      what needs to be done to fix the issue</li>
+                    <li>Know where to find information about upcoming <a
+                        href="https://github.com/near/nearcore/releases">nearcore releases</a> and other tooling
+                      upgrades</li>
+                  </ul>
+                  <h2><a class="anchor" aria-hidden="true" id="node-hardware-requirements"></a><a
+                      href="#node-hardware-requirements" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Node hardware requirements</h2>
+                  <p>The minimum requirements to run a validator node on NEAR are:</p>
+                  <pre><code class="hljs css language-bash">At least 4 CPU cores
+At least 16GB RAM
+At least 100GB SSD (Note: HDD will not work)
+</code></pre>
+                  <p>More information is on the <a href="../roles/validator/hardware">Hardware Requirements</a> docs.
+                  </p>
+                  <h2><a class="anchor" aria-hidden="true" id="setting-up-your-environment"></a><a
+                      href="#setting-up-your-environment" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Setting up your environment</h2>
+                  <p><strong>IMPORTANT: Make sure you have the latest version of <a
+                        href="https://github.com/near/near-cli">NEAR CLI</a> and Node Version 12.x</strong></p>
+                  <p>You can instal and upgrade Near CLI by using npm:</p>
+                  <pre><code class="hljs css language-bash"><span class="hljs-comment"># Download Near CLI with npm:</span>
+npm i -g near-cli
+</code></pre>
+                  <p><strong>Note:</strong> The default network for <code>near-cli</code> is <code>testnet</code>. If
+                    you would like to change this to <code>mainnet</code> or <code>betanet</code>, please see <a
+                      href="/docs/tools/near-cli#network-selection"><code>near-cli</code> network selection</a> for
+                    instructions.</p>
+                  <p>Once Near CLI is installed, go ahead and run your node.</p>
+                  <blockquote class="info">
+                    <strong>Pro Tip</strong><br /><br />
+                    You don't have to run near-cli on your validator node: all staking commands are issued to the
+                    staking pool, which is a normal smart contract.
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="run-the-node"></a><a href="#run-the-node"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Run the Node</h2>
+                  <p>Please follow <a href="https://github.com/near/nearup">Nearup documentation</a> to start your
+                    TestNet node. Remeber that <code>nearup</code> doesn't support MainNet, so you will have to build
+                    your startup scripts and follow the <a href="deploy-on-mainnet">mainnet deployment guide</a>.</p>
+                  <p>At the first start, nearup will ask your validator account ID. Put a placeholder, like
+                    <code>coming_soon</code>, to let the node sync with the network while you deploy the staking pool:
+                  </p>
+                  <pre><code class="hljs">$ nearup run testnet --account-id coming_soon
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">29.190</span> INFO nearup - run: Home directory <span class="hljs-keyword">is</span> /home/nearkat/.near/testnet...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">29.191</span> INFO nodelib - setup_and_run: Using officially compiled binary
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">30.027</span> INFO util - download_binaries: Downloading latest deployed version <span class="hljs-keyword">for</span> testnet
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">30.028</span> INFO util - download_binaries: Downloading near to /home/nearkat/.nearup/near/testnet/near <span class="hljs-keyword">from</span> nearcore/Linux/<span class="hljs-number">1.16</span><span class="hljs-number">.0</span>/<span class="hljs-number">974</span>d93dc657f620d98de6589a2b5bc97be1db816/near...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">33.755</span> INFO util - download_binaries: Downloaded near to /home/nearkat/.nearup/near/testnet/near...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">33.758</span> INFO util - download_binaries: Making the near executable...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">33.758</span> INFO util - download_binaries: Downloading genesis-csv-to-json to /home/nearkat/.nearup/near/testnet/genesis-csv-to-json <span class="hljs-keyword">from</span> nearcore/Linux/<span class="hljs-number">1.16</span><span class="hljs-number">.0</span>/<span class="hljs-number">974</span>d93dc657f620d98de6589a2b5bc97be1db816/genesis-csv-to-json...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.710</span> INFO util - download_binaries: Downloaded genesis-csv-to-json to /home/nearkat/.nearup/near/testnet/genesis-csv-to-json...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.710</span> INFO util - download_binaries: Making the genesis-csv-to-json executable...
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.712</span> INFO nodelib - check_and_setup: Setting up network configuration.
+<span class="hljs-number">2020</span><span class="hljs-number">-10</span><span class="hljs-number">-16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.712</span> INFO nodelib - init_near: Initializing the node configuration using near binary...
+Oct <span class="hljs-number">16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.726</span>  INFO near: Version: <span class="hljs-number">1.16</span><span class="hljs-number">.0</span>-rc<span class="hljs-number">.1</span>, Build: <span class="hljs-number">974</span>d93dc-modified, Latest Protocol: <span class="hljs-number">39</span>
+Oct <span class="hljs-number">16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.727</span>  INFO near: Use key ed25519:<span class="hljs-number">4</span>msyQstQ3Z7Gq1qrwE78HPTRYdLFtCmJ9dydrrbUtrer <span class="hljs-keyword">for</span> coming_soon to stake.
+Oct <span class="hljs-number">16</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">34.727</span>  INFO near: Downloading config file <span class="hljs-keyword">from</span>: https:<span class="hljs-comment">//s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/testnet/genesis.json ...</span>
+</code></pre>
+                  <p>While the sync is in progres, you <strong>have to retrieve your validator key from</strong>
+                    <code>~/.near/testnet/validator_key.json</code>:
+                  </p>
+                  <pre><code class="hljs">{
+  <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"coming_soon"</span>,
+  <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:4msyQstQ3Z7Gq1qrwE78HPTRYdLFtCmJ9dydrrbUtrer"</span>,
+  <span class="hljs-attr">"secret_key"</span>: <span class="hljs-string">"ed25519:&lt;PRIVATE_KEY&gt;"</span>
+}
+</code></pre>
+                  <p>This key will be needed to do the <em>pairing</em> between your validator node and its staking
+                    pool.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="authorize-near-cli-to-your-testnet-account"></a><a
+                      href="#authorize-near-cli-to-your-testnet-account" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Authorize <code>near-cli</code> to your TestNet account</h2>
+                  <ol>
+                    <li>Configure <code>near-cli</code> to use TestNet, issuing the command
+                      <code>export NODE_ENV=testnet</code>
+                    </li>
+                    <li>Authenticate <code>near-cli</code> with your NEAR Wallet account, by running the command
+                      <code>near login</code>
+                    </li>
+                  </ol>
+                  <p>You will be asked to navigate to a url to authenticate your staking account. You can expect a resul
+                    similar to the one below:</p>
+                  <pre><code class="hljs css language-bash">$ near login
+
+Please authorize NEAR CLI on at least one of your accounts.
+
+If your browser doesn<span class="hljs-string">'t automatically open, please visit this URL
+https://wallet.testnet.near.org/login/?title=NEAR+CLI&amp;public_key=ed25519%3A7xuBXjTabXM1yZ8WQB1Ezj95BjDnqX63cKj6RBgYa3it&amp;success_url=http%3A%2F%2F127.0.0.1%3A5000
+Please authorize at least one account at the URL above.
+
+Which account did you authorize for use with NEAR CLI?
+Enter it here (if not redirected automatically):
+
+</span></code></pre>
+                  <p>Be careful to specify the same TestNet account ID in the browser and <code>near-cli</code>:</p>
+                  <pre><code class="hljs css language-bash">Which account did you authorize <span class="hljs-keyword">for</span> use with NEAR CLI?
+Enter it here (<span class="hljs-keyword">if</span> not redirected automatically):
+
+</code></pre>
+                  <p>Once you completed the login in the browser and put the account id in the input field above, you
+                    should expect a message like the one below:</p>
+                  <pre><code class="hljs">nearkat.testnet
+Logged <span class="hljs-keyword">in</span> <span class="hljs-keyword">as</span> [ nearkat.testnet ] <span class="hljs-keyword">with</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">key</span> [ ed25519:<span class="hljs-number">7</span>xuBXj... ] successfully
+</code></pre>
+                  <blockquote class="warning">
+                    <strong>Heads Up!</strong><br /><br />
+                    If you get an <i>ERR_CONNECTION_REFUSED</i> error, double-check that your browser is not trying to
+                    open the address http://127.0.0.1:5000. This is a wrong redirect of near-cli running on a remote
+                    instance, and can be ignored.
+                  </blockquote>
+                  <p>To test if your <code>near-cli</code> is capable to control your <code>testnet</code> account,
+                    issue the command:
+                    <code>$ near send nearkat.testnet testnet 0.1</code>, where <code>nearkat.testnet</code> is the
+                    sender, and <code>testnet</code> the recipient of <code>0.1</code> NEAR tokens. You can expect a
+                    result similar to this one:
+                  </p>
+                  <pre><code class="hljs">$ near <span class="hljs-built_in">send</span> quato.testnet testnet <span class="hljs-number">0.1</span>
+Sending <span class="hljs-number">0.1</span> NEAR <span class="hljs-built_in">to</span> testnet <span class="hljs-built_in">from</span> quato.testnet
+Transaction Id Hm6hRz8NS9sXV6yPzeyYJZwqTSUTYcifws3iu3VcbkyW
+To see <span class="hljs-keyword">the</span> transaction <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> transaction explorer, please <span class="hljs-built_in">open</span> this url <span class="hljs-keyword">in</span> your browser
+<span class="hljs-keyword">https</span>://explorer.testnet.near.org/transactions/Hm6hRz8NS9sXV6yPzeyYJZwqTSUTYcifws3iu3VcbkyW
+</code></pre>
+                  <h2><a class="anchor" aria-hidden="true" id="deploy-the-staking-pool"></a><a
+                      href="#deploy-the-staking-pool" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Deploy the staking pool</h2>
+                  <p>NEAR Protocol provides a staking pool smart contract from the <a
+                      href="https://github.com/near/initial-contracts">initial contracts</a> Github repository.</p>
+                  <p>Deploy your staking pool by sending the call method below to the <a
+                      href="https://github.com/near/core-contracts/tree/master/staking-pool-factory">staking pool
+                      factory</a>:</p>
+                  <pre><code class="hljs">near call pool.f863973.m0 create_staking_pool '{<span class="hljs-string">"staking_pool_id"</span>:<span class="hljs-string">"&lt;POOL_ID&gt;"</span>, <span class="hljs-string">"owner_id"</span>:<span class="hljs-string">"&lt;OWNER_ID&gt;"</span>, <span class="hljs-string">"stake_public_key"</span>:<span class="hljs-string">"&lt;VALIDATOR_KEY&gt;"</span>, <span class="hljs-string">"reward_fee_fraction"</span>: {<span class="hljs-string">"numerator"</span>: <span class="hljs-variable">&lt;X&gt;</span>, <span class="hljs-string">"denominator"</span>: <span class="hljs-variable">&lt;Y&gt;</span>}}' --account_id <span class="hljs-variable">&lt;OWNER_ID&gt;</span> --amount 50 --gas 300000000000000
+</code></pre>
+                  <p>Where:</p>
+                  <ul>
+                    <li><code>pool.f863973.m0</code> is the staking pool factory mentioned above</li>
+                    <li><code>&lt;POOL_ID&gt;</code> is the name of the staking pool contract. If you pass the parameter
+                      <code>heyheyhey</code> the result will be <code>heyheyhey.pool.f863973.m0</code>
+                    </li>
+                    <li><code>&lt;OWNER_ID&gt;</code> is the account authorized to send the <em>owner methods</em> to
+                      the pool, such as the validator key or the fees</li>
+                    <li><code>&lt;VALIDATOR_KEY&gt;</code> is the public key stored at
+                      <code>~/.near/testnet/validator_key.json</code> on your validator node (see <a
+                        href="staking#run-the-node">staking#run-the-node</a> step above)
+                    </li>
+                    <li><code>{&quot;numerator&quot;: &lt;X&gt;, &quot;denominator&quot;: &lt;Y&gt;}</code> set the
+                      validator fees. 10% of fees requires <code>x=10</code> and <code>y=100</code></li>
+                    <li><code>--amount 50</code> attaches 50 $NEAR to the transaction, as a reserve to pay the contract
+                      storage</li>
+                    <li><code>--gas 300000000000000</code> specifies the gas for the transaction (optional)</li>
+                  </ul>
+                  <p>You can expect a result similar to this one:</p>
+                  <pre><code class="hljs css language-bash">$ near call pool.f863973.m0 create_staking_pool <span class="hljs-string">'{"staking_pool_id":"quato", "owner_id":"quato.testnet", "stake_public_key":"ed25519:4msyQstQ3Z7Gq1qrwE78HPTRYdLFtCmJ9dydrrbUtrer", "reward_fee_fraction": {"numerator": 5, "denominator": 100}}'</span> --account_id quato.testnet --amount 50 --gas 300000000000000
+Scheduling a call: pool.f863973.m0.create_staking_pool({<span class="hljs-string">"staking_pool_id"</span>:<span class="hljs-string">"quato"</span>, <span class="hljs-string">"owner_id"</span>:<span class="hljs-string">"quato.testnet"</span>, <span class="hljs-string">"stake_public_key"</span>:<span class="hljs-string">"ed25519:4msyQstQ3Z7Gq1qrwE78HPTRYdLFtCmJ9dydrrbUtrer"</span>, <span class="hljs-string">"reward_fee_fraction"</span>: {<span class="hljs-string">"numerator"</span>: 5, <span class="hljs-string">"denominator"</span>: 100}}) with attached 50 NEAR
+Receipt: ByuKqFBuQY4oBu7GypRWEwUjAvxHacTJLGLfwUNjRunV
+  Failure [pool.f863973.m0]: Error: {<span class="hljs-string">"index"</span>:0}
+Receipts: 3Y8yjPkd894WSTaapyURe1moMtY8Yvbrjwmz3Pv3N2RZ, EeCy4HyRs8cuxsraxcaiW53gmvWL55xzTqDjfUaPcoXM
+  Log [pool.f863973.m0]: The staking pool @quato.pool.f863973.m0 was successfully created. Whitelisting...
+Transaction Id BYAffkmrssiErMDbmDrF2AoHKDLCQrcCe1Vk1CGEnBZB
+To see the transaction <span class="hljs-keyword">in</span> the transaction explorer, please open this url <span class="hljs-keyword">in</span> your browser
+https://explorer.testnet.near.org/transactions/BYAffkmrssiErMDbmDrF2AoHKDLCQrcCe1Vk1CGEnBZB
+<span class="hljs-literal">true</span>
+
+</code></pre>
+                  <p>The <code>true</code> statement in the last line and the explorer link provide proof that the
+                    staking pool is deployed and ready to receive the stake</p>
+                  <h2><a class="anchor" aria-hidden="true"
+                      id="configure-your-nodes-validator_keyjson-and-restart-nearup"></a><a
+                      href="#configure-your-nodes-validator_keyjson-and-restart-nearup" aria-hidden="true"
+                      class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1"
+                        viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Configure your node's <code>validator_key.json</code> and restart nearup</h2>
+                  <p>Once the staking pool is deployed, manually edit the file
+                    <code>~/.near/testnet/validator_key.json</code> on your validator node and replace
+                    <code>coming_soon</code> with your staking pool account name:
+                  </p>
+                  <pre><code class="hljs">{
+  <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"quato.pool.f863973.m0"</span>,
+  <span class="hljs-attr">"public_key"</span>: <span class="hljs-string">"ed25519:4msyQstQ3Z7Gq1qrwE78HPTRYdLFtCmJ9dydrrbUtrer"</span>,
+  <span class="hljs-attr">"secret_key"</span>: <span class="hljs-string">"ed25519:&lt;PRIVATE_KEY&gt;"</span>
+}
+</code></pre>
+                  <p>Once done, you can stop and restart nearup, with the command:
+                    <code>nearup stop</code>
+                  </p>
+                  <p>followed by:
+                    <code>nearup run testnet</code>
+                  </p>
+                  <blockquote class="warning">
+                    <strong>Heads Up!</strong><br /><br />
+                    Be sure that your node downloaded entirely the genesis.json file before giving the stop command to
+                    nearup.
+                  </blockquote>
+                  <h2><a class="anchor" aria-hidden="true" id="becoming-a-validator-in-the-_active-set_"></a><a
+                      href="#becoming-a-validator-in-the-_active-set_" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Becoming a Validator in the <em>active set</em></h2>
+                  <p>Once the staking pool is deployed, you can <em>stake</em> tokens using any of the methods offered
+                    in the <a href="delegation">delegation docs</a>. Make sure that you are using a tool that supports
+                    TestNet and not only MainNet.</p>
+                  <p>NEAR TestNet and MainNet require at least 24 hours bonding period to accept your staking pool bid.
+                    You can verify if you are a validator when in the logs of the node you see &quot;V/&quot; - where V
+                    means this node is currently a validator:</p>
+                  <p><img src="/img/validators%20%281%29.png" alt=""></p />
+                  <p>Legend: # 7153 | BlockHeight V/1 | 'V' (validator) or '—' (regular node)</p>
+                  <p>The 0/0/40 shows the total validators: connected peers / up to date peers / my peers. This number
+                    may change over time.</p>
+                  <p>To learn more about how validators are chosen, take a look at the <a
+                      href="/docs/validator/staking-faq">Staking FAQ</a>.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="see-the-list-of-current-and-future-validators"></a><a
+                      href="#see-the-list-of-current-and-future-validators" aria-hidden="true" class="hash-link"><svg
+                        class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16"
+                        width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>See the list of current and future validators</h2>
+                  <p>You can use <code>near-cli</code> to review the validator set in the next three epochs:</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Command</th>
+                        <th>Meaning</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>near proposals</code></td>
+                        <td>All validators that sent a staking transaction (<code>Proposal(Accepted)</code>), or are
+                          re-elected (<code>Rollover</code>)</td>
+                      </tr>
+                      <tr>
+                        <td><code>near validators next</code></td>
+                        <td>All validators that will produce blocks in the next epoch. Can be <code>New</code>,
+                          <code>Rewarded</code> or <code>Kicked out</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><code>near validators current</code></td>
+                        <td>All Validators that are producing blocks in the current epoch, and the number of block they
+                          produced</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <blockquote class="warning">
+                    <strong>Heads Up!</strong><br /><br />
+                    You have to wait at least 2 epochs (43,200 blocks each) before your
+                  </blockquote>
+                  <p><strong>Note:</strong> The default network for <code>near-cli</code> is <code>testnet</code>. If
+                    you would like to change this to <code>mainnet</code> or <code>betanet</code>, please see <a
+                      href="/docs/tools/near-cli#network-selection"><code>near-cli</code> network selection</a> for
+                    instructions.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="automatically-re-staking"></a><a
+                      href="#automatically-re-staking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon"
+                        aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Automatically re-staking</h2>
+                  <p>NEAR Protocol automatically re-stake all inflationary rewards, unless you decide to manually
+                    unstake some of the funds.</p>
+                  <h2><a class="anchor" aria-hidden="true" id="additional-links"></a><a href="#additional-links"
+                      aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16"
+                        version="1.1" viewBox="0 0 16 16" width="16">
+                        <path fill-rule="evenodd"
+                          d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                        </path>
+                      </svg></a>Additional links</h2>
+                  <ul>
+                    <li><a href="../tokens/lockup">Lockup contracts explained</a></li>
+                    <li><a href="https://github.com/near/core-contracts">NEAR Core Contracts on Github</a></li>
+                    <li><a href="https://github.com/nearprotocol/stakewars">NEAR Stake Wars</a></li>
+                  </ul>
+                  <blockquote>
+                    <p>Got a question?
+                      <a href="https://stackoverflow.com/questions/tagged/nearprotocol">
+                        <h8>Ask it on StackOverflow!</h8>
+                      </a>
+                    </p>
+                  </blockquote>
+                </span></div>
+            </article>
+          </div>
+          <div class="docLastUpdate"><em>Last updated on 2/5/2021 by Josh Ford</em></div>
+          <div class="docs-prevnext"><a class="docs-prev button" href="/docs/roles/validator/hardware"><span
+                class="arrow-prev">← </span><span>Choosing Hardware</span></a><a class="docs-next button"
+              href="/docs/validator/keys"><span>Understanding Keys</span><span class="arrow-next"> →</span></a></div>
+        </div>
+      </div>
+      <nav class="onPageNav">
+        <ul class="toc-headings">
+          <li><a href="#staking-on-near">Staking on NEAR</a>
+            <ul class="toc-headings">
+              <li><a href="#translations">Translations</a></li>
+              <li><a href="#_read-this-quickstart-guide-before-you-start_"><em>READ THIS QUICKSTART GUIDE BEFORE YOU
+                    START</em></a></li>
+            </ul>
+          </li>
+          <li><a href="#node-hardware-requirements">Node hardware requirements</a></li>
+          <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+          <li><a href="#run-the-node">Run the Node</a></li>
+          <li><a href="#authorize-near-cli-to-your-testnet-account">Authorize <code>near-cli</code> to your TestNet
+              account</a></li>
+          <li><a href="#deploy-the-staking-pool">Deploy the staking pool</a></li>
+          <li><a href="#configure-your-nodes-validator_keyjson-and-restart-nearup">Configure your node's
+              <code>validator_key.json</code> and restart nearup</a></li>
+          <li><a href="#becoming-a-validator-in-the-_active-set_">Becoming a Validator in the <em>active set</em></a>
+          </li>
+          <li><a href="#see-the-list-of-current-and-future-validators">See the list of current and future validators</a>
+          </li>
+          <li><a href="#automatically-re-staking">Automatically re-staking</a></li>
+          <li><a href="#additional-links">Additional links</a></li>
+        </ul>
+      </nav>
+    </div>
+    <footer class="relative pt-100 pb-40 md:pb-100 bg-black text-white mt-150">
+      <div class="absolute pin-t pin-r" style="max-width:50vw"><img
+          src="https://near.org/wp-content/themes/near-19/assets/img/neue/distortion-footer.svg?t=1600963469"
+          class="locked" style="transform:translateY(-60%)" alt="" /></div>
+      <div class="container">
+        <div class="row">
+          <div class="col md:w-1/4"><img
+              src="https://near.org/wp-content/themes/near-19/assets/img/neue/logomark-white.svg?t=1600963474"
+              class="locked" width="91" alt="" />
+            <ul class="list-reset text-24 font-black text-yellow mt-50">
+              <li><a href="https://wallet.testnet.near.org/" class="hover:text-white">Wallet</a></li>
+              <li><a href="https://explorer.near.org/" class="hover:text-white">Explorer</a></li>
+              <li><a href="https://near.dev/" class="hover:text-white">Examples</a></li>
+            </ul>
+          </div>
+          <div class="col md:w-3/4 mt-50 md:mt-0">
+            <ul class="list-reset flex flex-wrap -mx-20">
+              <li class="mx-20"><a href="https://gov.near.org" class="block hover:text-discourse" target="_blank"
+                  id="discourse-1"><span class="icon icon-36"><svg enable-background="new 0 0 34 35" viewBox="0 0 34 35"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m0 25.1c0-2.6 0-5.2 0-7.8 0-4.7 1.8-8.8 5.2-12.1 2.6-2.5 5.8-4 9.4-4.5 6.9-1.1 13.7 2.3 17.2 8.4 1.6 3 2.4 6.2 2.2 9.5-.4 4.6-2.3 8.5-5.7 11.6-2.5 2.2-5.4 3.6-8.6 4.1-.6.1-1.3.2-2 .2-5.7 0-11.4 0-17.1 0-.4 0-.5-.1-.5-.5-.1-3-.1-6-.1-8.9zm16.9-17.3c-.6 0-1.2.1-1.8.2-6.2 1.3-9.6 8.1-6.7 13.7.1.3.1.5.1.7-.5 1.6-1 3.2-1.4 4.7-.1.1-.1.3-.1.4.1.1.3 0 .4-.1 1.7-.4 3.4-.9 5.1-1.3.3-.1.6-.1.9.1 1.6.7 3.4.9 5.1.6 5.2-.8 8.9-5.7 8.1-11-.8-4.5-4.8-8-9.7-8z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Forum</span></a></li>
+              <li class="mx-20"><a href="https://twitter.com/nearprotocol" class="block hover:text-twitter"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512">
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Twitter</span></a></li>
+              <li class="mx-20"><a href="https://github.com/near" class="block hover:text-github" target="_blank"><span
+                    class="icon icon-36 "><svg height="36" viewBox="0 0 36 36" width="36"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m17.9991429 0c-9.93942861 0-17.9991429 8.058-17.9991429 18.0008571 0 7.9517143 5.15742857 14.6982858 12.3102857 17.0794286.9.1645714 1.2291429-.3908571 1.2291429-.8682857 0-.4268571-.0162857-1.5591429-.0248572-3.0608571-5.0065714 1.0868571-6.06342854-2.4137143-6.06342854-2.4137143-.81857143-2.0785715-1.99885715-2.6322857-1.99885715-2.6322857-1.63371428-1.1177143.12428572-1.0937143.12428572-1.0937143 1.806.1268571 2.75742857 1.8548571 2.75742857 1.8548571 1.60542857 2.7505714 4.2128571 1.956 5.238 1.4948572.1628571-1.1631429.6282857-1.956 1.1425714-2.406-3.9968571-.4542858-8.1985714-1.9988572-8.1985714-8.8962858 0-1.9654285.70114286-3.5717142 1.85228571-4.83-.18514285-.456-.80314285-2.28514281.17657143-4.76399996 0 0 1.51114286-.48342857 4.94999996 1.84542857 1.4357143-.39942857 2.9751429-.59914285 4.506-.606 1.5282858.00685715 3.0685715.20657143 4.5068572.606 3.4362857-2.32885714 4.944-1.84542857 4.944-1.84542857.9831428 2.47885715.3651428 4.30799996.1791428 4.76399996 1.1545715 1.2582858 1.8505715 2.8645715 1.8505715 4.83 0 6.9154286-4.2085715 8.436-8.2182857 8.8825715.6462857.5554285 1.2214285 1.6534285 1.2214285 3.3325714 0 2.4068571-.0214285 4.3482857-.0214285 4.938 0 .4817143.324 1.0414286 1.2377142.8657143 7.146-2.3845714 12.2991429-9.1277143 12.2991429-17.0768572 0-9.9428571-8.0597143-18.0008571-18.0008571-18.0008571">
+                      </path>
+                    </svg></span><span class="screen-reader-text">GitHub</span></a></li>
+              <li class="mx-20"><a href="http://near.chat" class="block hover:text-discord" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Discord</span></a></li>
+              <li class="mx-20"><a href="https://t.me/cryptonear" class="block hover:text-telegram"
+                  target="_blank"><span class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 496 512">
+                      <path
+                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">Telegram</span></a></li>
+              <li class="mx-20"><a href="https://near.org/wechat" class="block hover:text-wechat" target="_blank"><span
+                    class="icon icon-36 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">WeChat</span></a></li>
+              <li class="mx-20"><a href="https://www.youtube.com/channel/UCuKdIYVN8iE3fv8alyk1aMw"
+                  class="block hover:text-youtube" target="_blank"><span class="icon icon-36 "><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path
+                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                      </path>
+                    </svg></span><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+            <div class="row">
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Developers</h2>
+                <ul id="menu-developers-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a
+                      href="https://near.org/developers/">Overview</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a
+                      href="https://near.org/technology/">Technology</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a target="_blank"
+                      rel="noopener noreferrer" href="https://github.com/near" id="github">GitHub</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4720"><a
+                      href="https://near.org/bounties/">Bounties</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-580"><a
+                      href="https://near.org/grants/">Grants</a></li>
+                </ul>
+              </div>
+              <div class="col sm:w-1/3 mt-50">
+                <h2 class="text-24 font-black text-blue-light">Community</h2>
+                <ul id="menu-community-1" class="footer-menu list-reset mt-5 text-16 md:text-18">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6804"><a
+                      href="https://gov.near.org/">Forum</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4650"><a
+                      href="https://near.org/events">Events</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045"><a
+                      href="https://near.org/contributor/">Contributor Program</a></li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4157"><a
+                      href="https://near.org/guilds/">Guild Program</a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2945" />
+                  document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                  return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                  const search = document.getElementById('search_input_react');
+                  search && search.focus();
+                  }
+                  });
+                  </script>
+                  <script>
+                    var search = docsearch({
+
+                      apiKey: '058929d1d423f0f46d3278a102d58bfd',
+                      indexName: 'near',
+                      inputSelector: '#search_input_react'
+                    });
+                  </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "unversionedId": "community/contribute/bounties",
+  "id": "community/contribute/bounties",
+  "isDocsHomePage": false,
+  "title": "bounties",
+  "description": "NEAR Bounties",
+  "source": "@site/../docs/community/contribute/bounties.md",
+  "sourceDirName": "community/contribute",
+  "slug": "/community/contribute/bounties",
+  "permalink": "/docs/community/contribute/bounties",
+  "editUrl": "https://github.com/near/docs/tree/master/docs/../docs/community/contribute/bounties.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {}
+}

@@ -23,7 +23,7 @@ Balance changes on accounts can be tracked by using our [changes endpoint](/docs
   ```
 - You should see a result in your terminal that looks something like this:
 
-  ![token transfer result](/docs/assets/token_transfer_result.png)
+  ![token transfer result](/img/token_transfer_result.png)
 
 - Go to the provided URL to view your transaction in [NEAR Explorer](https://explorer.testnet.near.org/).
 - On this page in NEAR Explorer, note and copy the `BLOCK HASH` for this transaction.
@@ -43,7 +43,7 @@ Balance changes on accounts can be tracked by using our [changes endpoint](/docs
 
 - You should have a response that looks something like this:
 
-  ![balance changes result](/docs/assets/balance_changes_result.png)
+  ![balance changes result](/img/balance_changes_result.png)
 
 You can also view account balances by using the `query` method, which only requires an accountId.
 
@@ -60,7 +60,7 @@ You can also view account balances by using the `query` method, which only requi
 
 Your response should look like this:
 
-![account balance query](/docs/assets/account_balance_query.png)
+![account balance query](/img/account_balance_query.png)
 
 **Note:** Gas prices can change between blocks. Even for transactions with deterministic gas cost, the cost in NEAR could also be different.
 
